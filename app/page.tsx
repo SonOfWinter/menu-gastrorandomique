@@ -8,6 +8,7 @@ import {
   generateDisplayMenu,
   getMenuData,
 } from '@/lib/menu-generator';
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const mainColor = '#CF9A39';
