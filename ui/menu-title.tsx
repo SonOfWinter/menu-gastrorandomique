@@ -1,4 +1,11 @@
 import React from 'react';
+import { Tangerine } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const tangerine = Tangerine({
+  weight: "400",
+  subsets: ["latin"]
+})
 
 export default function MenuTitle({
   color, menuName, complementName, price,
@@ -11,7 +18,7 @@ export default function MenuTitle({
 
   return (
     <>
-      <h1 className="text-l" style={{ color: color }}>
+      <h1 className={cn(tangerine.className, "text-xl")} style={{ color: color }}>
         {menuName}
       </h1>
       <h2 className="text-s">{complementName}</h2>

@@ -1,3 +1,4 @@
+import { Montserrat } from 'next/font/google';
 import {
   DisplayMenu,
   Menu,
@@ -8,8 +9,13 @@ import {
   generateDisplayMenu,
   getMenuData,
 } from '@/lib/menu-generator';
-export const dynamic = "force-dynamic";
+import { cn } from '@/lib/utils';
 
+export const dynamic = 'force-dynamic';
+
+const montserrat = Montserrat({
+  subsets: ["latin"]
+});
 export default async function Home() {
   const mainColor = '#CF9A39';
   const data: Menu = getMenuData();
@@ -18,7 +24,10 @@ export default async function Home() {
   return (
     <main
       style={{ backgroundImage: `url(${backgroundImage.src})` }}
-      className="w-screen h-screen relative bg-bottom bg-cover bg-no-repeat overflow-y-auto"
+      className={cn(
+        montserrat.className,
+        'w-screen h-screen relative bg-bottom bg-cover bg-no-repeat overflow-y-auto',
+      )}
     >
       <MenuPage
         mainColor={mainColor}
