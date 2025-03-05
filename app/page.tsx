@@ -10,12 +10,16 @@ import {
   getMenuData,
 } from '@/lib/menu-generator';
 import { cn } from '@/lib/utils';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
-
 const montserrat = Montserrat({
-  subsets: ["latin"]
+  subsets: ['latin'],
 });
+export const metadata: Metadata = {
+  title: 'Menu Gastrorandomique',
+  description: 'Générateur de menus gastronomiques aléatoires',
+};
 export default async function Home() {
   const mainColor = '#CF9A39';
   const data: Menu = getMenuData();
