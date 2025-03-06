@@ -1557,8 +1557,8 @@ const ingredients: Ingredient[] = [
       genre: "m",
       nombre: 's',
       types: ["legume"],
-      determimantPrincipal: "de",
-      determinantSecondaire: "du",
+      determimantPrincipal: "d'",
+      determinantSecondaire: "de l'",
       adjectifPossessif: "son"
     },
     {
