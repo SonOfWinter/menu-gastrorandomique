@@ -3,7 +3,7 @@ import { Complement } from '@/types/menu';
 const complements: Complement[] = [
   {
     id: '9e360d34-d3a5-45d1-a367-81f7e3005e52',
-    nom: 'À déguster sans modération (sauf si vous êtes au régime)',
+    nom: 'À déguster sans modération',
   },
   {
     id: '6d3151bc-9d9b-4c80-bc86-378dcd849c20',
@@ -11,7 +11,7 @@ const complements: Complement[] = [
   },
   {
     id: '496a322b-80ce-4868-ba68-5011c62564d6',
-    nom: 'Avec des ingrédients secrets… ou pas',
+    nom: 'Avec des ingrédients secrets',
   },
   {
     id: '2cff6ef3-7f52-489d-ae83-370d783a6a92',
@@ -23,11 +23,11 @@ const complements: Complement[] = [
   },
   {
     id: 'a91d98df-f57e-4a9a-a971-b4287cb5eaa9',
-    nom: 'Faites confiance au chef, il sait ce qu\'il fait (normalement)',
+    nom: 'Faites confiance au chef, il sait ce qu\'il fait',
   },
   {
     id: 'b97b42f0-e448-4698-8d5c-2cae3dbd74cb',
-    nom: 'Garanti sans calories (ou presque)',
+    nom: 'Garanti sans calories',
   },
   {
     id: '38f98628-2999-49ec-ad6d-5b7799ca3a7c',
@@ -43,27 +43,19 @@ const complements: Complement[] = [
   },
   {
     id: '4eb247f8-fbf9-49b3-af0a-1d60ed4e503b',
-    nom: 'Notre chef l’adore, vous aussi (normalement)',
+    nom: 'Notre chef l’adore, vous aussi',
   },
   {
     id: '7f12f454-a9cc-45f7-87a8-2983acc9fe14',
-    nom: 'Offre spéciale : une explosion de saveurs garantie',
+    nom: 'Une explosion de saveurs garantie',
   },
   {
     id: 'f933b402-8b6a-4bd6-bbdb-df914ac63971',
     nom: 'On mange quoi aujourd\'hui ?',
   },
   {
-    id: '24c43b40-d85e-4385-9091-0bc5f32b17db',
-    nom: 'On ne vous dira pas ce qu\'il y a dedans, mais vous allez aimer',
-  },
-  {
     id: 'b635f05d-4365-4d9b-a664-d96badafcfcd',
-    nom: 'Parce que la vie est trop courte pour manger triste',
-  },
-  {
-    id: 'aef11010-9bad-498c-b8a0-3795266ae798',
-    nom: 'Parce que le fast-food, c\'est surfait',
+    nom: 'Parce que la vie est trop courte pour ne pas manger',
   },
   {
     id: 'dcdfd89c-bcf4-4e66-9bc4-52000f8fd39b',
@@ -99,7 +91,7 @@ const complements: Complement[] = [
   },
   {
     id: '5f00a1f6-30d2-4933-a039-618667ef157d',
-    nom: 'Préparé avec amour (et un peu de mystère)',
+    nom: 'Préparé avec amour',
   },
   {
     id: '39bee698-395f-4bc6-afed-1773e18266b5',
@@ -155,7 +147,7 @@ const complements: Complement[] = [
   },
   {
     id: '25d2fdfa-f046-4381-b66f-66af5c800e13',
-    nom: 'Un menu qui a du caractère (et du goût)',
+    nom: 'Un menu qui a du caractère',
   },
   {
     id: 'edf17844-df21-40a0-8e91-0781fd5829fd',
@@ -244,6 +236,14 @@ const complements: Complement[] = [
   {
     id: '4a1b11ea-a4ed-41c5-91c6-985fddb9968b',
     nom: 'Uniquement si vous avez faim',
+  },
+  {
+    id: '395bf11b-af3c-49fa-abe4-718f1ca701cd',
+    nom: 'À partager entre amis',
+  },
+  {
+    id: '71c46ec1-21e1-4255-8397-179b88368f6e',
+    nom: 'À partager en famille',
   },
 ];
 export default complements;
