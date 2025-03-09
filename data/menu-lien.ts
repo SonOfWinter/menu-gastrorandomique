@@ -1,4 +1,4 @@
-import { Lien } from '@/types/title';
+import { Lien } from '@/types/menu';
 
 const liens: Lien[] = [
   {

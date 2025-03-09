@@ -14,7 +14,7 @@ import {
   TYPE_ENTREE,
   TYPE_PLAT,
   TYPE_DESSERT,
-} from '@/types/title';
+} from '@/types/menu';
 import capitalize from '@/lib/capitalize';
 import random from '@/lib/random';
 import intersection from '@/lib/intersection';
@@ -82,6 +82,7 @@ export const generate = (data: Menu, mainType: TypePlat): Dish => {
   return {
     main: generateMain(data, platPrincipal, ingredients),
     second: generateSecond(data, platPrincipal, ingredients),
+    sauce: generateSauce(data),
   };
 };
 
@@ -115,10 +116,11 @@ const generateMain = (
   return capitalize(main);
 };
 
-const getIngredient = (ingredients: Ingredient[]): Ingredient => {
+const getIngredient = (ingredients: Ingredient[], typeFilter?: TypeAliment): Ingredient => {
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) =>
-    !alreadyUsed.ingredients.includes(item.id),
-  );
+  {
+    return !alreadyUsed.ingredients.includes(item.id) && (!typeFilter || item.types.includes(typeFilter));
+  });
   const selected = filteredIngredients[random(0, filteredIngredients.length - 1)];
   alreadyUsed.ingredients.push(selected.id);
   return selected;
@@ -177,3 +179,14 @@ const generateSecond = (
   }
   return second;
 };
+
+function generateSauce(data: Menu) {
+  const ingredientSauce: Ingredient = getIngredient(ingredients, 'sauce');
+  const nameDrivedByIngredient: NomProps = `nom_${ingredientSauce.genre}_${ingredientSauce.nombre}` as NomProps;
+  const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
+    data.adjectifs,
+    ingredientSauce,
+  );
+  return 'avec ça sauce de ' + ' ' + ingredientSauce.nom + ' ' + adjectifSauce[nameDrivedByIngredient];
+}
+

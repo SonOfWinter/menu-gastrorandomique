@@ -1,4 +1,4 @@
-import { Plat } from '@/types/title';
+import { Plat } from '@/types/menu';
 
 const plats: Plat[] = [
   {

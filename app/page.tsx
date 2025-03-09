@@ -2,7 +2,7 @@ import { Montserrat } from 'next/font/google';
 import {
   DisplayMenu,
   Menu,
-} from '@/types/title';
+} from '@/types/menu';
 import MenuPage from '@/ui/menuPage';
 import backgroundImage from '../public/background.avif';
 import {

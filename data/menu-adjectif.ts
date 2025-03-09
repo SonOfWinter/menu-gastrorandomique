@@ -1,4 +1,4 @@
-import { Adjectif } from '@/types/title';
+import { Adjectif } from '@/types/menu';
 
 const adjectifs: Adjectif[] = [
   {

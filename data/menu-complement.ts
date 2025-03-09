@@ -1,4 +1,4 @@
-import { Complement } from '@/types/title';
+import { Complement } from '@/types/menu';
 
 const complements: Complement[] = [
   {

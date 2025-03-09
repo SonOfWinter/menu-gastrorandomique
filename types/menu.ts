@@ -38,6 +38,7 @@ export type DisplayMenu = {
 export type Dish = {
   main: string;
   second: string;
+  sauce?: string;
 }
 
 

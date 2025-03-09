@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayMenu } from '@/types/title';
+import { DisplayMenu } from '@/types/menu';
 import Border from '@/ui/border';
 import MenuTitle from '@/ui/menu-title';
 import MenuSection from '@/ui/menu-section';
@@ -8,7 +8,7 @@ export default function MenuPage({ mainColor, menu }: { mainColor: string, menu:
 
   return (
     <article
-      className="block relative min-h-full h-auto w-full overflow-hidden bg-white m-0 md:my-[10vh] mx-auto md:w-auto md:min-h-0 md:h-[80vh] md:aspect-[210/297]"
+      className="block relative min-h-full md:min-h-0 h-auto max-w-full w-full overflow-hidden bg-white m-0 md:my-[10vh] mx-auto md:w-[21cm]"
     >
       <Border color={mainColor} />
       <div className="flex flex-col gap-[60px] h-full my-20 mx-16">

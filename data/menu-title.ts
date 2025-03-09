@@ -1,4 +1,4 @@
-import { Title } from '@/types/title';
+import { Title } from '@/types/menu';
 
 const titles: Title[] = [
   { id: '6d840960-3410-4d69-834d-7568418349a2', nom: 'Lunch menu' },

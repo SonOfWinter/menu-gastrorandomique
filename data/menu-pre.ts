@@ -1,4 +1,4 @@
-import { Pre } from '@/types/title';
+import { Pre } from '@/types/menu';
 
 const pres: Pre[] = [
   {

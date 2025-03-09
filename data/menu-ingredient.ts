@@ -1,4 +1,4 @@
-import { Ingredient } from '@/types/title';
+import { Ingredient } from '@/types/menu';
 
 const ingredients: Ingredient[] = [
     {
