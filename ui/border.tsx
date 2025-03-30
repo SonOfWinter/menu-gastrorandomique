@@ -7,7 +7,7 @@ export default function Border({ color }: {
   return (
     <div
       id="border"
-      className="top-0 absolute w-[calc(100%-56px)] h-[calc(100%-56px)] m-[28px] border-2 border-solid p-2"
+      className="top-0 z-0 absolute w-[calc(100%-56px)] h-[calc(100%-56px)] m-[28px] border-2 border-solid p-2"
       style={{ borderColor: color }}
     >
       <div
