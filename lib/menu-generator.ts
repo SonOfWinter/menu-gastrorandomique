@@ -16,7 +16,7 @@ import titles from '@/data/menu-title';
 import liens from '@/data/menu-lien';
 import ingredients from '@/data/menu-ingredient';
 import complements from '@/data/menu-complement';
-import { TypeAliment } from '@/types/enums/TypeAliment';
+import { TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { Dish } from '@/types/dish';

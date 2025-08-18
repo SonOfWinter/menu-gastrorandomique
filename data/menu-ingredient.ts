@@ -1,4 +1,4 @@
-import { TypeAliment } from '@/types/enums/TypeAliment';
+import { TypeAliment } from '@/types/enums/type-aliment';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
