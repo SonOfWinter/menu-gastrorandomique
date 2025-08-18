@@ -11,6 +11,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Metadata } from 'next';
 import { DisplayMenu } from '@/types/display-menu';
+import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 const montserrat = Montserrat({
@@ -23,7 +24,12 @@ export const metadata: Metadata = {
 export default async function Home() {
   const mainColor = '#CF9A39';
   const data: Menu = getMenuData();
-  const menu: DisplayMenu = generateDisplayMenu(data, 3);
+
+  const cookieStore = await cookies()
+
+  const view = cookieStore.get('view');
+  const glitchLevel: number = Math.min((view ? Number.parseInt(view.value) : 0), 20);
+  const menu: DisplayMenu = generateDisplayMenu(data, 3, glitchLevel);
 
   return (
     <main
