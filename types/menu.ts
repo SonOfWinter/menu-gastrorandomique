@@ -1,40 +1,45 @@
 export enum TypeAliment {
-  Legume = 'legume',
-  Fruit = 'fruit',
-  Vianderouge = 'vianderouge',
-  Viandeblanche = 'viandeblanche',
-  Poisson = 'poisson',
-  Fruitdemer = 'fruitdemer',
-  Champignon = 'champignon',
-  Sauce = 'sauce',
-  Salade = 'salade',
-  Base = 'base',
-  Soft = 'soft',
-  Alcool = 'alcool',
-  Fromage = 'fromage',
-  Liquide = 'liquide',
-  Fruitacoque = 'fruitacoque',
-  Sucre = 'sucre',
-  Cereale = 'cereale'
+  LEGUME = 'legume',
+  FRUIT = 'fruit',
+  VIANDE_ROUGE = 'viande rouge',
+  VIANDE_BLANCHE = 'viande blanche',
+  POISSON = 'poisson',
+  FRUIT_DE_MER = 'fruit de mer',
+  CHAMPIGNON = 'champignon',
+  SAUCE = 'sauce',
+  SALADE = 'salade',
+  BASE = 'base',
+  SOFT = 'soft',
+  ALCOOL = 'alcool',
+  FROMAGE = 'fromage',
+  LIQUIDE = 'liquide',
+  FRUIT_A_COQUE = 'fruit a coque',
+  SUCRE = 'sucre',
+  CEREALE = 'cereale'
 }
 
 export enum Genre {
-  Feminin = 'f',
-  Masculin = 'm',
+  FEMININ = 'f',
+  MASCULIN = 'm',
 }
 
 export enum Nombre {
-  Singulier = 's',
-  Pluriel = 'p',
+  SINGULIER = 's',
+  PLURIEL = 'p',
 }
 
 export enum TypePlat {
-  Entree = 'entree',
-  Plat = 'plat',
-  Dessert = 'dessert'
+  ENTREE = 'entree',
+  PLAT = 'plat',
+  DESSERT = 'dessert'
 }
 
-export type TypeSuite = 'determinantPrincipal' | 'determinantSecondaire' | 'adjectifPossessif';
+export enum TypeDeterminant {
+  PRINCIPAL = 'principal',
+  SECONDAIRE = 'secondaire',
+  POSSESSIF = 'possessif',
+}
+
 export type NomProps = 'nom_m_s' | 'nom_m_p' | 'nom_f_s' | 'nom_f_p';
 
 export type DisplayMenu = {
@@ -61,9 +66,7 @@ export type Ingredient = {
   genre: Genre,
   nombre: Nombre,
   types: TypeAliment[],
-  determinantPrincipal: string,
-  determinantSecondaire: string,
-  adjectifPossessif: string,
+  determinants: Record<TypeDeterminant, string>
 }
 
 export type Plat = {
@@ -107,7 +110,7 @@ export type Lien = {
   nom_m_p: string;
   nom_f_s: string;
   nom_f_p: string;
-  suite: TypeSuite;
+  suite: TypeDeterminant;
 }
 
 export type Title = {

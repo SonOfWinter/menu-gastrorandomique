@@ -10,7 +10,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'acidulés',
     nom_f_s: 'acidulée',
     nom_f_p: 'acidulées',
-    types: [TypeAliment.Alcool, TypeAliment.Fruit, TypeAliment.Liquide, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Salade],
+    types: [TypeAliment.ALCOOL, TypeAliment.FRUIT, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.SALADE],
   },
   {
     id: 'bfe1e421-0b50-48d6-a6a1-0114dda27356',
@@ -18,7 +18,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'affinés',
     nom_f_s: 'affinée',
     nom_f_p: 'affinées',
-    types: [TypeAliment.Vianderouge, TypeAliment.Fromage],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE],
   },
   {
     id: '85d4586e-9477-47c1-8b71-77c98b1694b1',
@@ -26,7 +26,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'allégés',
     nom_f_s: 'allégée',
     nom_f_p: 'allégées',
-    types: [TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: 'c80a0266-0d29-4bd4-b763-241dc9ffcc37',
@@ -34,7 +34,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'alpestres',
     nom_f_s: 'alpestre',
     nom_f_p: 'alpestres',
-    types: [TypeAliment.Fromage, TypeAliment.Champignon, TypeAliment.Legume, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FROMAGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '2d97ee90-454d-43b3-b05d-e59fcd7011d2',
@@ -42,7 +42,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'amers',
     nom_f_s: 'amère',
     nom_f_p: 'amères',
-    types: [TypeAliment.Base, TypeAliment.Alcool, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Sauce, TypeAliment.Salade, TypeAliment.Soft],
+    types: [TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.SOFT],
   },
   {
     id: 'c3829151-da74-4ac8-b661-1c54ffd74c10',
@@ -50,7 +50,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'anglais',
     nom_f_s: 'anglaise',
     nom_f_p: 'anglaises',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'ba9d73dd-a011-4905-bfbd-5825305153a0',
@@ -58,7 +58,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'AOP',
     nom_f_s: 'AOP',
     nom_f_p: 'AOP',
-    types: [TypeAliment.Alcool, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Base, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '3f4d9398-8139-48f9-a6bc-2a773539d74e',
@@ -66,7 +66,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'aromatiques',
     nom_f_s: 'aromatique',
     nom_f_p: 'aromatiques',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: 'b045340c-017c-48e9-b6d8-f97c34d2829a',
@@ -74,7 +74,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'artisanaux',
     nom_f_s: 'artisanale',
     nom_f_p: 'artisanales',
-    types: [TypeAliment.Alcool, TypeAliment.Fromage, TypeAliment.Sucre, TypeAliment.Soft, TypeAliment.Sauce],
+    types: [TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.SOFT, TypeAliment.SAUCE],
   },
   {
     id: 'd48fa7c2-625c-494b-b26f-d190eaeb338e',
@@ -82,7 +82,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'atypiques',
     nom_f_s: 'atypique',
     nom_f_p: 'atypiques',
-    types: [TypeAliment.Alcool, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Base, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'f1c121bc-259f-41b2-8412-d597e2ef99c6',
@@ -90,7 +90,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'au beurre',
     nom_f_s: 'au beurre',
     nom_f_p: 'au beurre',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Base, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'c268aa28-a0ff-4f3d-9402-75a0e6e1fe1e',
@@ -98,7 +98,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'authentiques',
     nom_f_s: 'authentique',
     nom_f_p: 'authentiques',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Cereale, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '97337652-de08-4b06-80a5-a0ac698664a1',
@@ -106,7 +106,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'barigoules',
     nom_f_s: 'barigoule',
     nom_f_p: 'barigoules',
-    types: [TypeAliment.Legume, TypeAliment.Salade],
+    types: [TypeAliment.LEGUME, TypeAliment.SALADE],
   },
   {
     id: '79d4d2e9-a820-4894-afa9-e759ac2b9c24',
@@ -114,7 +114,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'basquaises',
     nom_f_s: 'basquaise',
     nom_f_p: 'basquaises',
-    types: [TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '6748e897-772e-4722-b1b4-f6c5a3e06633',
@@ -122,7 +122,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'belges',
     nom_f_s: 'belge',
     nom_f_p: 'belges',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Legume, TypeAliment.Fruitacoque, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Soft, TypeAliment.Fromage, TypeAliment.Cereale, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '6f1e6464-6d09-4812-9e9d-3081aa6dc86b',
@@ -130,7 +130,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'beurrés',
     nom_f_s: 'beurrée',
     nom_f_p: 'beurrées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sauce, TypeAliment.Base, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'd426c919-ac68-4787-8052-9ccfe53dc4fa',
@@ -138,7 +138,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'bistrotiers',
     nom_f_s: 'bistrotière',
     nom_f_p: 'bistrotières',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Salade, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Soft, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'cd8e6039-9142-452f-adfc-fcfca7096d50',
@@ -146,7 +146,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'blanchis',
     nom_f_s: 'blanchie',
     nom_f_p: 'blanchies',
-    types: [TypeAliment.Legume, TypeAliment.Salade],
+    types: [TypeAliment.LEGUME, TypeAliment.SALADE],
   },
   {
     id: '2f7f3c32-60be-43f5-b1fb-7b56f5c862cc',
@@ -154,7 +154,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'bleus',
     nom_f_s: 'bleue',
     nom_f_p: 'bleues',
-    types: [TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '15d9d42a-bef8-4a43-9353-b83ab000a1de',
@@ -162,7 +162,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'braisés',
     nom_f_s: 'braisée',
     nom_f_p: 'braisées',
-    types: [TypeAliment.Champignon, TypeAliment.Base, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Legume, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'd704e274-3945-4262-9297-3ef817ac5c17',
@@ -170,7 +170,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'braisés longuement',
     nom_f_s: 'braisée longuement',
     nom_f_p: 'braisées longuement',
-    types: [TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'e5e0be0c-38eb-44da-b56f-79e97850eddb',
@@ -178,7 +178,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'bruts',
     nom_f_s: 'brute',
     nom_f_p: 'brutes',
-    types: [TypeAliment.Fruit, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Sucre, TypeAliment.Cereale],
+    types: [TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE, TypeAliment.CEREALE],
   },
   {
     id: 'c182ae40-aab9-4539-8113-417001e68e52',
@@ -186,7 +186,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'cadencés',
     nom_f_s: 'cadencée',
     nom_f_p: 'cadencées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Fruit, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'dafe303c-dfe1-4324-81fe-0f151b5df049',
@@ -194,7 +194,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'campagnards',
     nom_f_s: 'campagnarde',
     nom_f_p: 'campagnardes',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Base, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '2f4456de-9707-433a-a76a-ec04b91796d1',
@@ -202,7 +202,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'canailles',
     nom_f_s: 'canaille',
     nom_f_p: 'canailles',
-    types: [TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Fruit, TypeAliment.Salade, TypeAliment.Fromage, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Sucre, TypeAliment.Cereale],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE, TypeAliment.CEREALE],
   },
   {
     id: '42207163-6460-4198-8328-3147f33daafc',
@@ -210,7 +210,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'caramélisés',
     nom_f_s: 'caramélisée',
     nom_f_p: 'caramélisées',
-    types: [TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '26565dd7-812f-4713-8dc7-be5b05f6178e',
@@ -218,7 +218,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'cendrés',
     nom_f_s: 'cendrée',
     nom_f_p: 'cendrées',
-    types: [TypeAliment.Viandeblanche, TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
   },
   {
     id: 'eb564d32-0fc5-45c2-b265-ed8e7a4c504a',
@@ -226,7 +226,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'chauds',
     nom_f_s: 'chaude',
     nom_f_p: 'chaudes',
-    types: [TypeAliment.Cereale, TypeAliment.Alcool, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Champignon, TypeAliment.Poisson, TypeAliment.Liquide, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Sauce, TypeAliment.Salade, TypeAliment.Legume, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'a95ca92a-0205-4e3f-9895-b4e68fe6263c',
@@ -234,7 +234,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'confisés',
     nom_f_s: 'confisée',
     nom_f_p: 'confisées',
-    types: [TypeAliment.Viandeblanche, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Sauce],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE],
   },
   {
     id: 'e79530b4-9ca7-418f-8323-454c363b93db',
@@ -242,7 +242,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'confits',
     nom_f_s: 'confite',
     nom_f_p: 'confites',
-    types: [TypeAliment.Fruit],
+    types: [TypeAliment.FRUIT],
   },
   {
     id: 'cdf65b75-0309-4995-aa16-0fd88b962951',
@@ -250,7 +250,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'corsés',
     nom_f_s: 'corsée',
     nom_f_p: 'corsées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Cereale, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '072fbb58-03bc-40e4-8864-49d9fa9054fd',
@@ -258,7 +258,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'coupés au couteau',
     nom_f_s: 'coupée au couteau',
     nom_f_p: 'coupées au couteau',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '213e726b-d6db-43b1-b57a-19a91954128c',
@@ -266,7 +266,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'craquants',
     nom_f_s: 'craquante',
     nom_f_p: 'craquantes',
-    types: [TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Sucre],
+    types: [TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
   },
   {
     id: 'a1002ba2-500d-467a-852f-970f9d4aae15',
@@ -274,7 +274,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'crémeux',
     nom_f_s: 'crémeuse',
     nom_f_p: 'crémeuses',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Soft, TypeAliment.Alcool],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.SOFT, TypeAliment.ALCOOL],
   },
   {
     id: '1bb5beda-cc4c-46a7-92be-db6e2be14a16',
@@ -282,7 +282,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'croquants',
     nom_f_s: 'croquante',
     nom_f_p: 'croquantes',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sucre],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SUCRE],
   },
   {
     id: '0ea5263b-c2c0-4384-a1e5-939021eabce7',
@@ -290,7 +290,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'croustillants',
     nom_f_s: 'croustillante',
     nom_f_p: 'croustillantes',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Base, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sucre],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE],
   },
   {
     id: 'a8b896ec-c180-44af-b463-543fbf4de805',
@@ -298,7 +298,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'croustillés',
     nom_f_s: 'croustillée',
     nom_f_p: 'croustillées',
-    types: [TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '29ca49ea-5fe9-4142-90eb-3082f16c523b',
@@ -306,7 +306,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'crus',
     nom_f_s: 'crue',
     nom_f_p: 'crues',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Base, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '09aa231d-faca-4d53-97c1-d285c38f23a4',
@@ -314,7 +314,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'cuits à point',
     nom_f_s: 'cuite à point',
     nom_f_p: 'cuites à point',
-    types: [TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '62350f2d-4a36-40a9-a29c-9bddaf5031ab',
@@ -322,7 +322,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'cuits sous vide',
     nom_f_s: 'cuite sous vide',
     nom_f_p: 'cuites sous vide',
-    types: [TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Fruit],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT],
   },
   {
     id: '315b4edc-0684-442a-a0a8-8ccd53074f08',
@@ -330,7 +330,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'd\'autrefois',
     nom_f_s: 'd\'autrefois',
     nom_f_p: 'd\'autrefois',
-    types: [TypeAliment.Alcool, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'b458e149-2ff0-4d59-a1d6-e1389e4313b2',
@@ -338,7 +338,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'de la pêche du jour',
     nom_f_s: 'de la pêche du jour',
     nom_f_p: 'de la pêche du jour',
-    types: [TypeAliment.Fruitdemer, TypeAliment.Poisson],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
   },
   {
     id: 'accece93-792c-431a-931b-70c41189607c',
@@ -346,7 +346,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'de la région',
     nom_f_s: 'de la région',
     nom_f_p: 'de la région',
-    types: [TypeAliment.Cereale, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Fruitdemer, TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Poisson, TypeAliment.Champignon, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '8718c3e3-83d5-4be6-9e4c-7cfbde6979b1',
@@ -354,7 +354,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'déglacés',
     nom_f_s: 'déglacée',
     nom_f_p: 'déglacées',
-    types: [TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '79f60b65-63e9-4864-955e-279a26d07dd6',
@@ -362,7 +362,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'dorés',
     nom_f_s: 'dorée',
     nom_f_p: 'dorées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '0b3ffb0b-743d-4c84-8b1c-e8446f556b0b',
@@ -370,7 +370,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'du chef',
     nom_f_s: 'du chef',
     nom_f_p: 'du chef',
-    types: [TypeAliment.Fromage, TypeAliment.Base, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Champignon, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FROMAGE, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '8e2d3736-e502-4bd5-b6b7-58ac13844457',
@@ -378,7 +378,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'du soir',
     nom_f_s: 'du soir',
     nom_f_p: 'du soir',
-    types: [TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Champignon, TypeAliment.Legume, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Base, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '89590f1a-e88e-4c19-863f-ea73b5f1257a',
@@ -386,7 +386,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'du terroir',
     nom_f_s: 'du terroir',
     nom_f_p: 'du terroir',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Liquide, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Poisson, TypeAliment.Fromage, TypeAliment.Legume, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '0c5f76cc-19fe-4cec-a0bf-c2ef90f189c1',
@@ -394,7 +394,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'écumés',
     nom_f_s: 'écumée',
     nom_f_p: 'écumées',
-    types: [TypeAliment.Fruitdemer, TypeAliment.Poisson],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
   },
   {
     id: 'e0353486-d4f8-4134-b3d0-324c81a8416f',
@@ -402,7 +402,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'effilochés',
     nom_f_s: 'effilochée',
     nom_f_p: 'effilochées',
-    types: [TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '3f4ab221-893e-4ed5-89b6-129d0131d343',
@@ -410,7 +410,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'en croute',
     nom_f_s: 'en croute',
     nom_f_p: 'en croute',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'b3695029-0b02-4714-8810-89fef452dfcd',
@@ -418,7 +418,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'en sauce',
     nom_f_s: 'en sauce',
     nom_f_p: 'en sauce',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'acfc1706-b1e3-4774-a180-83c12b90f88a',
@@ -426,7 +426,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'épicés',
     nom_f_s: 'épicée',
     nom_f_p: 'épicées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'b41c653f-ff26-4a82-88c7-19c67bd8396d',
@@ -434,7 +434,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'érotiques',
     nom_f_s: 'érotique',
     nom_f_p: 'érotiques',
-    types: [TypeAliment.Viandeblanche, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Sauce, TypeAliment.Alcool, TypeAliment.Soft, TypeAliment.Fruit],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.SAUCE, TypeAliment.ALCOOL, TypeAliment.SOFT, TypeAliment.FRUIT],
   },
   {
     id: 'cf721270-4977-4cdf-be62-335b34f0da74',
@@ -442,7 +442,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'exotiques',
     nom_f_s: 'exotique',
     nom_f_p: 'exotiques',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Sauce],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.SAUCE],
   },
   {
     id: 'c7b92358-d48f-4c40-8bba-34b3c451be26',
@@ -450,7 +450,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'faisandés',
     nom_f_s: 'faisandée',
     nom_f_p: 'faisandées',
-    types: [TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'fc79ad72-c222-4dba-a17e-b167d6c78215',
@@ -458,7 +458,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fermiers',
     nom_f_s: 'fermière',
     nom_f_p: 'fermières',
-    types: [TypeAliment.Fromage, TypeAliment.Vianderouge, TypeAliment.Legume, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FROMAGE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '9b64e615-6ec3-4fee-bbdc-ca1a867a6fd2',
@@ -466,7 +466,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fermiers affinés',
     nom_f_s: 'fermière affinée',
     nom_f_p: 'fermières affinées',
-    types: [TypeAliment.Fromage],
+    types: [TypeAliment.FROMAGE],
   },
   {
     id: '42e27791-fd82-408a-b6b5-994ef1005427',
@@ -474,7 +474,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'feuilletés',
     nom_f_s: 'feuilletée',
     nom_f_p: 'feuilletées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '1eec0fc3-92ce-4ad0-a28a-23ab8619adab',
@@ -482,7 +482,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'flambés',
     nom_f_s: 'flambée',
     nom_f_p: 'flambées',
-    types: [TypeAliment.Sucre, TypeAliment.Fruit],
+    types: [TypeAliment.SUCRE, TypeAliment.FRUIT],
   },
   {
     id: 'a68c6e6e-7331-4257-ac57-5249f627df11',
@@ -490,7 +490,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fleur de sel',
     nom_f_s: 'fleur de sel',
     nom_f_p: 'fleur de sel',
-    types: [TypeAliment.Viandeblanche, TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '63f2cad3-a7c5-40a7-a0d2-9ac88c22accd',
@@ -498,7 +498,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fondants',
     nom_f_s: 'fondante',
     nom_f_p: 'fondantes',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Salade, TypeAliment.Fromage],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FROMAGE],
   },
   {
     id: '240beb66-96e7-4747-846c-4d120e6fd0cb',
@@ -506,7 +506,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fondues',
     nom_f_s: 'fondue',
     nom_f_p: 'fondues',
-    types: [TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Sucre, TypeAliment.Sauce, TypeAliment.Fromage],
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.FROMAGE],
   },
   {
     id: '68a3cc65-5da8-4b2f-a6fa-d88032b36c57',
@@ -514,7 +514,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'forestiers',
     nom_f_s: 'forestière',
     nom_f_p: 'forestières',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '1d4af96e-ab86-4fc7-bc4b-03de43d35a06',
@@ -522,7 +522,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fouettés',
     nom_f_s: 'fouettée',
     nom_f_p: 'fouettées',
-    types: [TypeAliment.Sucre, TypeAliment.Sauce, TypeAliment.Salade],
+    types: [TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.SALADE],
   },
   {
     id: 'f48d6d7e-2abc-4716-a1a6-d24b9817d039',
@@ -530,7 +530,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'frais',
     nom_f_s: 'fraiche',
     nom_f_p: 'fraiches',
-    types: [TypeAliment.Base, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Champignon, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'fee74ddc-6116-41d8-96a5-0e407cba1bc8',
@@ -538,7 +538,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'frits',
     nom_f_s: 'frite',
     nom_f_p: 'frites',
-    types: [TypeAliment.Base, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Champignon, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'a4123b1f-2422-474a-9423-8bd9fcc33533',
@@ -546,7 +546,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'froids',
     nom_f_s: 'froide',
     nom_f_p: 'froides',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Vianderouge, TypeAliment.Fruitdemer, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '68085941-ecc9-4456-82cd-b221782acbe6',
@@ -554,7 +554,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fumés',
     nom_f_s: 'fumée',
     nom_f_p: 'fumées',
-    types: [TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Poisson, TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Salade, TypeAliment.Fromage, TypeAliment.Cereale, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '46eca7a5-7b31-480f-b02e-db301f095083',
@@ -562,7 +562,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'fumés',
     nom_f_s: 'fumée',
     nom_f_p: 'fumées',
-    types: [TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Poisson, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'ec296ef9-c1a4-49bb-bcd0-9b8fbdb2889c',
@@ -570,7 +570,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'garnis',
     nom_f_s: 'garnie',
     nom_f_p: 'garnies',
-    types: [TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Champignon, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '034201d6-9969-47f6-b014-c4627e430127',
@@ -578,7 +578,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'gélifiés',
     nom_f_s: 'gélifiée',
     nom_f_p: 'gélifiées',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Soft, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '7927594b-2961-4c7b-ae5d-0e1093a7ff80',
@@ -586,7 +586,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'généreux',
     nom_f_s: 'généreuse',
     nom_f_p: 'généreuses',
-    types: [TypeAliment.Alcool, TypeAliment.Cereale, TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Fruitdemer, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Soft, TypeAliment.Salade, TypeAliment.Sucre, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SOFT, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'eab7dadd-edc4-443d-89c6-d605fb821005',
@@ -594,7 +594,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'givrés',
     nom_f_s: 'givrée',
     nom_f_p: 'givrées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Fruit, TypeAliment.Cereale, TypeAliment.Base, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Soft, TypeAliment.Alcool, TypeAliment.Liquide],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.SOFT, TypeAliment.ALCOOL, TypeAliment.LIQUIDE],
   },
   {
     id: 'cdaaa6e2-34ca-4736-9d26-9f8de2a18463',
@@ -602,7 +602,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'glacés',
     nom_f_s: 'glacée',
     nom_f_p: 'glacées',
-    types: [TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Sucre],
+    types: [TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SUCRE],
   },
   {
     id: '85220ca1-e9f2-479d-a1ae-a2dc0db25d45',
@@ -610,7 +610,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'goutus',
     nom_f_s: 'goutue',
     nom_f_p: 'goutues',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Liquide, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'ddfb50a6-14d7-4820-9f8a-4d2a52c9fa1a',
@@ -618,7 +618,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'grands crus',
     nom_f_s: 'grande crue',
     nom_f_p: 'grandes crues',
-    types: [TypeAliment.Alcool],
+    types: [TypeAliment.ALCOOL],
   },
   {
     id: 'a6b173ff-45dc-498f-86cb-5fa1ef577047',
@@ -626,7 +626,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'gratinés',
     nom_f_s: 'gratinée',
     nom_f_p: 'gratinées',
-    types: [TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'f96f1c23-3681-433e-9cad-1b7c74bbbd95',
@@ -634,7 +634,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'hachés',
     nom_f_s: 'hachée',
     nom_f_p: 'hachées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'f08f1c18-c4b3-49e9-99e0-00adfe555ae8',
@@ -642,7 +642,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'harmonieux',
     nom_f_s: 'harmonieuse',
     nom_f_p: 'harmonieuses',
-    types: [TypeAliment.Base, TypeAliment.Alcool, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Liquide, TypeAliment.Salade, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Fruitdemer, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '3446e240-d5cc-47dc-a1a2-b3926ee36e43',
@@ -650,7 +650,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'infusés',
     nom_f_s: 'infusée',
     nom_f_p: 'infusées',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Liquide, TypeAliment.Sauce, TypeAliment.Legume, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Champignon],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.LEGUME, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON],
   },
   {
     id: 'e2443be7-4948-47cf-892a-d5d0ce3c843d',
@@ -658,7 +658,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'iodés',
     nom_f_s: 'iodée',
     nom_f_p: 'iodées',
-    types: [TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Sauce],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SAUCE],
   },
   {
     id: '5c97ec46-73b4-4de9-8e7d-79500d3c32f4',
@@ -666,7 +666,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'juteux',
     nom_f_s: 'juteuse',
     nom_f_p: 'juteuses',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: '0cda0a9b-707a-4844-b4a8-5f1e97c3bc8e',
@@ -674,7 +674,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'lactés',
     nom_f_s: 'lactée',
     nom_f_p: 'lactées',
-    types: [TypeAliment.Fromage, TypeAliment.Sucre, TypeAliment.Alcool, TypeAliment.Soft, TypeAliment.Sauce],
+    types: [TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.SOFT, TypeAliment.SAUCE],
   },
   {
     id: 'ef122479-ffd4-4af0-8bbe-db7abef39e4a',
@@ -682,7 +682,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'lacustres',
     nom_f_s: 'lacustre',
     nom_f_p: 'lacustres',
-    types: [TypeAliment.Fruitdemer, TypeAliment.Poisson],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
   },
   {
     id: '21e00597-b578-46c9-a18b-6d4f2db2f827',
@@ -690,7 +690,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'léchés',
     nom_f_s: 'léchée',
     nom_f_p: 'léchées',
-    types: [TypeAliment.Fromage, TypeAliment.Viandeblanche, TypeAliment.Vianderouge],
+    types: [TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '678c7162-c58d-4da3-9815-b8a8f890f06c',
@@ -698,7 +698,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'légers',
     nom_f_s: 'légère',
     nom_f_p: 'légères',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '27b75d11-fbd4-443e-879f-0a84f8d51646',
@@ -706,7 +706,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'lissés',
     nom_f_s: 'lissée',
     nom_f_p: 'lissées',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Fruit, TypeAliment.Champignon, TypeAliment.Legume, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Fromage, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Cereale, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '434db9dd-1f27-4f15-bd5b-c02b93fecf48',
@@ -714,7 +714,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'lustrés',
     nom_f_s: 'lustrée',
     nom_f_p: 'lustrées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON],
   },
   {
     id: '2130a847-a280-4ba3-ba9d-96083e838020',
@@ -722,7 +722,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'macérés',
     nom_f_s: 'macérée',
     nom_f_p: 'macérées',
-    types: [TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruitacoque, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '00f96968-decd-478d-b7bf-14c52654580f',
@@ -730,7 +730,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'maigres',
     nom_f_s: 'maigre',
     nom_f_p: 'maigres',
-    types: [TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '5858d434-baa1-41cf-a24c-1df4165edacd',
@@ -738,7 +738,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'marbrés',
     nom_f_s: 'marbrée',
     nom_f_p: 'marbrées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Sucre, TypeAliment.Fruit, TypeAliment.Sauce, TypeAliment.Soft, TypeAliment.Base],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.BASE],
   },
   {
     id: 'fe643ce0-aa5f-4aa2-ad5e-53964659586a',
@@ -746,7 +746,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'marinés',
     nom_f_s: 'marinée',
     nom_f_p: 'marinées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Sauce, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '6dc89f4a-e66f-4978-bd66-8f7caf50f580',
@@ -754,7 +754,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'marmitons',
     nom_f_s: 'marmitone',
     nom_f_p: 'marmitones',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Fruit, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '1b2fb818-9998-4432-a5cf-36ef848823ea',
@@ -762,7 +762,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'meringués',
     nom_f_s: 'meringuée',
     nom_f_p: 'meringuées',
-    types: [TypeAliment.Base, TypeAliment.Sucre, TypeAliment.Fruit, TypeAliment.Sauce],
+    types: [TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.SAUCE],
   },
   {
     id: '5b1eeeb8-04e0-4db7-8765-af9930af3fad',
@@ -770,7 +770,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'meuniers',
     nom_f_s: 'meunière',
     nom_f_p: 'meunières',
-    types: [TypeAliment.Poisson, TypeAliment.Fruitdemer],
+    types: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
   },
   {
     id: 'fd7d7481-f17c-40e5-bda3-4288843802ef',
@@ -778,7 +778,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'meurette',
     nom_f_s: 'meurette',
     nom_f_p: 'meurette',
-    types: [TypeAliment.Base],
+    types: [TypeAliment.BASE],
   },
   {
     id: 'bdb82031-a42a-479e-8f96-8754c4a6a919',
@@ -786,7 +786,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'mi-cuits',
     nom_f_s: 'mi-cuite',
     nom_f_p: 'mi-cuites',
-    types: [TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Viandeblanche],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '38fb2d20-fa80-4dc9-8a5a-6ccf813ff58e',
@@ -794,7 +794,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'mijotés',
     nom_f_s: 'mijotée',
     nom_f_p: 'mijotées',
-    types: [TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Poisson, TypeAliment.Fruitdemer, TypeAliment.Viandeblanche],
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'dc076ea3-06ab-44cc-8d4e-3c03482f5733',
@@ -802,7 +802,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'mixés',
     nom_f_s: 'mixée',
     nom_f_p: 'mixées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '779a11c2-5548-4daf-a270-fc8aebbfd527',
@@ -810,7 +810,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'moelleux',
     nom_f_s: 'moelleuse',
     nom_f_p: 'moelleuses',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Fruit, TypeAliment.Alcool],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT, TypeAliment.ALCOOL],
   },
   {
     id: 'ba4e338c-d41e-4e93-8a24-2dc737f53042',
@@ -818,7 +818,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'mouillés au vin',
     nom_f_s: 'mouillée au vin',
     nom_f_p: 'mouillées au vin',
-    types: [TypeAliment.Champignon, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Legume],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME],
   },
   {
     id: '71fad201-e2cb-472f-8295-95effd6fda3f',
@@ -826,7 +826,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'mûrs à point',
     nom_f_s: 'mûre à point',
     nom_f_p: 'mûres à point',
-    types: [TypeAliment.Fruit, TypeAliment.Fromage],
+    types: [TypeAliment.FRUIT, TypeAliment.FROMAGE],
   },
   {
     id: '1d929a4d-8d0d-4c58-add9-48d8355b77b2',
@@ -834,7 +834,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'muscadés',
     nom_f_s: 'muscadée',
     nom_f_p: 'muscadées',
-    types: [TypeAliment.Champignon, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Salade],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SALADE],
   },
   {
     id: 'de1072c8-9b2d-48e0-ad7b-1b1599a1f509',
@@ -842,7 +842,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'nacrés',
     nom_f_s: 'nacrée',
     nom_f_p: 'nacrées',
-    types: [TypeAliment.Poisson, TypeAliment.Fruitdemer, TypeAliment.Sauce],
+    types: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE],
   },
   {
     id: 'df958bec-0855-4318-a116-3c4788e3518a',
@@ -850,7 +850,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'nappés',
     nom_f_s: 'nappée',
     nom_f_p: 'nappées',
-    types: [TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Viandeblanche],
+    types: [TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '239eb83b-78dd-40fc-8801-0ace0ca7fcc3',
@@ -858,7 +858,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'onctueux',
     nom_f_s: 'onctueuse',
     nom_f_p: 'onctueuses',
-    types: [TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Champignon, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: '15e4ec18-3d69-4dc6-8a5f-6e85445a1b71',
@@ -866,7 +866,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'panés',
     nom_f_s: 'panée',
     nom_f_p: 'panées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Salade, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '0bc092e9-71e9-427c-b185-133704c22017',
@@ -874,7 +874,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'parfumés',
     nom_f_s: 'parfumée',
     nom_f_p: 'parfumées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '3f06039c-5dcd-48ca-ab1e-1b5c108ef5e3',
@@ -882,7 +882,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'parmentiers',
     nom_f_s: 'parmentière',
     nom_f_p: 'parmentières',
-    types: [TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Legume, TypeAliment.Poisson],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON],
   },
   {
     id: 'd99cac95-5a38-4725-90ab-ce863e3cfee8',
@@ -890,7 +890,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'persillés',
     nom_f_s: 'persillée',
     nom_f_p: 'persillées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE],
   },
   {
     id: 'a040d12b-83e9-4a30-9fef-53a8c9a029c7',
@@ -898,7 +898,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'pétillants',
     nom_f_s: 'pétillante',
     nom_f_p: 'pétillantes',
-    types: [TypeAliment.Alcool, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Cereale, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Soft, TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.ALCOOL, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: '20e43428-37c6-4cc6-8b66-16fd708652d6',
@@ -906,7 +906,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'pimentés',
     nom_f_s: 'pimentée',
     nom_f_p: 'pimentées',
-    types: [TypeAliment.Alcool, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Liquide, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '95541993-d763-4fd5-ba07-e33e21f2ebb9',
@@ -914,7 +914,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'pochés',
     nom_f_s: 'pochée',
     nom_f_p: 'pochées',
-    types: [TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Sucre, TypeAliment.Sauce],
+    types: [TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.SAUCE],
   },
   {
     id: 'ab0a319a-acd2-4c68-b524-322d9ced3523',
@@ -922,7 +922,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'poêlés',
     nom_f_s: 'poêlée',
     nom_f_p: 'poêlées',
-    types: [TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '1088345b-911e-4c29-8d32-e9db0d6f88f0',
@@ -930,7 +930,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'poivrés',
     nom_f_s: 'poivrée',
     nom_f_p: 'poivrées',
-    types: [TypeAliment.Alcool, TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Vianderouge, TypeAliment.Poisson, TypeAliment.Base, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '15678479-f5a8-441c-ad27-9d3243d9ceac',
@@ -938,7 +938,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'pressés',
     nom_f_s: 'pressée',
     nom_f_p: 'pressées',
-    types: [TypeAliment.Fruit, TypeAliment.Legume],
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME],
   },
   {
     id: 'f9ea1442-65e1-4294-ab11-a3cdd0271b1d',
@@ -946,7 +946,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'rafraîchis',
     nom_f_s: 'rafraîchie',
     nom_f_p: 'rafraîchies',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Fruitdemer, TypeAliment.Fromage],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE],
   },
   {
     id: 'aeb3bd5a-c579-4466-9dd7-0ab7d0eb5b09',
@@ -954,7 +954,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'réchauffés',
     nom_f_s: 'réchauffée',
     nom_f_p: 'réchauffées',
-    types: [TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Sauce, TypeAliment.Legume, TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Viandeblanche],
+    types: [TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '86a86caa-e1be-4a61-b5e6-790fa8b8e37c',
@@ -962,7 +962,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'réduits',
     nom_f_s: 'réduite',
     nom_f_p: 'réduites',
-    types: [TypeAliment.Sauce],
+    types: [TypeAliment.SAUCE],
   },
   {
     id: '28e64f61-d408-4cb5-8088-e9de2baae870',
@@ -970,7 +970,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'réhaussés',
     nom_f_s: 'réhaussée',
     nom_f_p: 'réhaussées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Cereale, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Fruit, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Liquide, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '63c54cb6-0f7f-4509-a1da-1150eb63827a',
@@ -978,7 +978,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'réinventés',
     nom_f_s: 'réinventée',
     nom_f_p: 'réinventées',
-    types: [TypeAliment.Fromage, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Alcool, TypeAliment.Liquide, TypeAliment.Soft],
+    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SOFT],
   },
   {
     id: 'e0318e54-f6a9-4368-a09e-8b756a068546',
@@ -986,7 +986,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'réveillés',
     nom_f_s: 'réveillée',
     nom_f_p: 'réveillées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Sauce, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Cereale],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
   },
   {
     id: '48e141cf-cdd7-4f29-a023-7669d378952c',
@@ -994,7 +994,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'réveillés aux épices',
     nom_f_s: 'réveillée aux épices',
     nom_f_p: 'réveillées aux épices',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Fruit, TypeAliment.Alcool, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Cereale, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'b5d412c9-6643-48d1-a15a-6225c2c05d36',
@@ -1002,7 +1002,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'rosés',
     nom_f_s: 'rosée',
     nom_f_p: 'rosées',
-    types: [TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_ROUGE],
   },
   {
     id: 'a277b8b3-4058-40bc-804b-9fc7706928ad',
@@ -1010,7 +1010,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'rotis',
     nom_f_s: 'rotie',
     nom_f_p: 'roties',
-    types: [TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Legume, TypeAliment.Champignon],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
   },
   {
     id: '8f263037-bb5f-45b2-a751-6becbe6ab12a',
@@ -1018,7 +1018,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'rôtis au sautoir',
     nom_f_s: 'rôtie au sautoir',
     nom_f_p: 'rôties au sautoir',
-    types: [TypeAliment.Vianderouge, TypeAliment.Legume, TypeAliment.Champignon, TypeAliment.Poisson, TypeAliment.Viandeblanche],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'd104fc28-435f-4029-902c-d188a024016d',
@@ -1026,7 +1026,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'roulés',
     nom_f_s: 'roulée',
     nom_f_p: 'roulées',
-    types: [TypeAliment.Sucre, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Legume],
+    types: [TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME],
   },
   {
     id: '201bff70-eaeb-45ff-a123-5aa5d6ead083',
@@ -1034,7 +1034,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'rustiques',
     nom_f_s: 'rustique',
     nom_f_p: 'rustiques',
-    types: [TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Champignon, TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Sauce],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
   },
   {
     id: '37d29dd6-f6d8-487c-b882-98a11a3260a7',
@@ -1042,7 +1042,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'sablés',
     nom_f_s: 'sablée',
     nom_f_p: 'sablées',
-    types: [TypeAliment.Sucre, TypeAliment.Fruit, TypeAliment.Sauce],
+    types: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.SAUCE],
   },
   {
     id: 'a3ed7593-dd5e-49e5-bdb3-2b057f24c204',
@@ -1050,7 +1050,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'safranés',
     nom_f_s: 'safranée',
     nom_f_p: 'safranées',
-    types: [TypeAliment.Alcool, TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Legume, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'fb327b74-4049-42f8-8055-ceaaaa54d728',
@@ -1058,7 +1058,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'saignants',
     nom_f_s: 'saignante',
     nom_f_p: 'saignantes',
-    types: [TypeAliment.Vianderouge],
+    types: [TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '073daee5-1a1c-4c46-b91a-2017ebc257eb',
@@ -1066,7 +1066,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'salés',
     nom_f_s: 'salée',
     nom_f_p: 'salées',
-    types: [TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '77dbe19a-b72b-4af3-8a52-8d16cfa19ca1',
@@ -1074,7 +1074,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'saumurés',
     nom_f_s: 'saumurée',
     nom_f_p: 'saumurées',
-    types: [TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Poisson, TypeAliment.Fruitdemer],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
   },
   {
     id: 'd48ac030-112c-47fb-a214-47fbcf626b69',
@@ -1082,7 +1082,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'sautés',
     nom_f_s: 'sautée',
     nom_f_p: 'sautées',
-    types: [TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '733a1bd4-df48-4103-a7af-cc9b05e953c3',
@@ -1090,7 +1090,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'sauvages',
     nom_f_s: 'sauvage',
     nom_f_p: 'sauvages',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Vianderouge, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'bc65d537-d8f1-4d93-ad96-f4b141f16e20',
@@ -1098,7 +1098,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'sauvageons',
     nom_f_s: 'sauvageonne',
     nom_f_p: 'sauvageonnes',
-    types: [TypeAliment.Vianderouge, TypeAliment.Viandeblanche, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Legume, TypeAliment.Fruit, TypeAliment.Fruitdemer],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER],
   },
   {
     id: '61960de9-b3f6-4538-ba7e-90f6c578949b',
@@ -1106,7 +1106,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'snackés',
     nom_f_s: 'snackée',
     nom_f_p: 'snackées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '60d61db1-56b6-4dd3-bdc4-cef536897745',
@@ -1114,7 +1114,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'soufflés',
     nom_f_s: 'soufflée',
     nom_f_p: 'soufflées',
-    types: [TypeAliment.Sucre, TypeAliment.Fruit, TypeAliment.Legume],
+    types: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.LEGUME],
   },
   {
     id: '3320fac4-f3da-43fe-bfb0-955e2485ff21',
@@ -1122,7 +1122,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'soyeux',
     nom_f_s: 'soyeuse',
     nom_f_p: 'soyeuses',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Cereale, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'ec73c961-29ce-412c-b47e-af20356827f2',
@@ -1130,7 +1130,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'sublimés',
     nom_f_s: 'sublimée',
     nom_f_p: 'sublimées',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Fruitdemer, TypeAliment.Poisson, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Fruit, TypeAliment.Liquide, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Soft, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '8a47693f-dfc8-4e17-b13a-11d80005f542',
@@ -1138,7 +1138,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'sucrés',
     nom_f_s: 'sucrée',
     nom_f_p: 'sucrées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Liquide, TypeAliment.Alcool, TypeAliment.Soft],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.LIQUIDE, TypeAliment.ALCOOL, TypeAliment.SOFT],
   },
   {
     id: '943bd279-2dd6-4879-9f71-4d4a49fc9536',
@@ -1146,7 +1146,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'suspendus',
     nom_f_s: 'suspendue',
     nom_f_p: 'suspendues',
-    types: [TypeAliment.Base, TypeAliment.Champignon, TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Poisson, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Vianderouge, TypeAliment.Sucre, TypeAliment.Viandeblanche],
+    types: [TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'a02f00cf-6be2-4e47-b1dc-abdc146e37db',
@@ -1154,7 +1154,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'tartinés',
     nom_f_s: 'tartinée',
     nom_f_p: 'tartinées',
-    types: [TypeAliment.Sucre, TypeAliment.Fromage, TypeAliment.Poisson, TypeAliment.Vianderouge],
+    types: [TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE],
   },
   {
     id: 'fa1984c9-fb1b-4999-a255-4aa394d0e799',
@@ -1162,7 +1162,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'tendres',
     nom_f_s: 'tendre',
     nom_f_p: 'tendres',
-    types: [TypeAliment.Vianderouge, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fromage, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Poisson, TypeAliment.Viandeblanche, TypeAliment.Sucre],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE],
   },
   {
     id: '03dcb67f-286e-48c0-a118-733d6cc73bb8',
@@ -1170,7 +1170,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'tièdes',
     nom_f_s: 'tiède',
     nom_f_p: 'tièdes',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Fruitdemer, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '5a112954-ad26-4793-86df-9f5d852e6916',
@@ -1178,7 +1178,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'toastés',
     nom_f_s: 'toastée',
     nom_f_p: 'toastées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitdemer, TypeAliment.Legume, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'a4c0d47b-21f4-4840-83c8-0f837e70b212',
@@ -1186,7 +1186,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'torréfiés',
     nom_f_s: 'torréfiée',
     nom_f_p: 'torréfiées',
-    types: [TypeAliment.Base, TypeAliment.Sucre, TypeAliment.Cereale],
+    types: [TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.CEREALE],
   },
   {
     id: 'd7ac1e88-b5dd-40a2-9717-cfdb612d8594',
@@ -1194,7 +1194,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'torsadés',
     nom_f_s: 'torsadée',
     nom_f_p: 'torsadées',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sucre],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SUCRE],
   },
   {
     id: 'cec6fbc8-089b-4079-8bbf-9fe8500ddb46',
@@ -1202,7 +1202,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'traditionnels',
     nom_f_s: 'traditionnelle',
     nom_f_p: 'traditionnelles',
-    types: [TypeAliment.Champignon, TypeAliment.Fruitacoque, TypeAliment.Cereale, TypeAliment.Fruit, TypeAliment.Base, TypeAliment.Fromage, TypeAliment.Alcool, TypeAliment.Legume, TypeAliment.Liquide, TypeAliment.Poisson, TypeAliment.Fruitdemer, TypeAliment.Sauce, TypeAliment.Salade, TypeAliment.Viandeblanche, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Vianderouge],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE],
   },
   {
     id: '78ca8897-99e2-4f89-9713-ff31a7981431',
@@ -1210,7 +1210,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'truffés',
     nom_f_s: 'truffée',
     nom_f_p: 'truffées',
-    types: [TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Cereale, TypeAliment.Base, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'cd6aacb9-8c0b-4e92-b030-ed94f2e8dcd5',
@@ -1218,7 +1218,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'typiques',
     nom_f_s: 'typique',
     nom_f_p: 'typiques',
-    types: [TypeAliment.Alcool, TypeAliment.Base, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruitacoque, TypeAliment.Liquide, TypeAliment.Legume, TypeAliment.Fruitdemer, TypeAliment.Salade, TypeAliment.Soft, TypeAliment.Sucre, TypeAliment.Sauce, TypeAliment.Fruit, TypeAliment.Poisson, TypeAliment.Vianderouge, TypeAliment.Viandeblanche],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: '71f2e7ac-f1ac-4fcb-8214-2273bf9d717c',
@@ -1226,7 +1226,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'vanillés',
     nom_f_s: 'vanillée',
     nom_f_p: 'vanillées',
-    types: [TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: '56e05cdf-14f9-4eeb-b895-39c04578fd27',
@@ -1234,7 +1234,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'vegan',
     nom_f_s: 'vegan',
     nom_f_p: 'vegan',
-    types: [TypeAliment.Alcool, TypeAliment.Cereale, TypeAliment.Champignon, TypeAliment.Fromage, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Salade, TypeAliment.Sauce, TypeAliment.Sucre],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
     id: '912fb85a-d554-4d78-8552-7cd2f0d1fb9d',
@@ -1242,7 +1242,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'végétales',
     nom_f_s: 'végétale',
     nom_f_p: 'végétales',
-    types: [TypeAliment.Champignon, TypeAliment.Fruit, TypeAliment.Legume, TypeAliment.Sauce, TypeAliment.Salade],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SALADE],
   },
   {
     id: '055c89a8-6de2-47d2-b8b6-f95773aa376d',
@@ -1250,7 +1250,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'veloutés',
     nom_f_s: 'veloutée',
     nom_f_p: 'veloutées',
-    types: [TypeAliment.Fruit, TypeAliment.Champignon, TypeAliment.Fruitdemer, TypeAliment.Fruitacoque, TypeAliment.Legume, TypeAliment.Fromage, TypeAliment.Poisson, TypeAliment.Salade],
+    types: [TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.FROMAGE, TypeAliment.POISSON, TypeAliment.SALADE],
   },
   {
     id: 'fe299ba2-4ea3-4750-98b8-bdac3b242ecb',
@@ -1258,7 +1258,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'vieillis en cave',
     nom_f_s: 'vieillie en cave',
     nom_f_p: 'vieillies en cave',
-    types: [TypeAliment.Alcool, TypeAliment.Vianderouge, TypeAliment.Sauce],
+    types: [TypeAliment.ALCOOL, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
   },
   {
     id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
@@ -1266,7 +1266,7 @@ const adjectifs: Adjectif[] = [
     nom_m_p: 'vinaigrés',
     nom_f_s: 'vinaigrée',
     nom_f_p: 'vinaigrées',
-    types: [TypeAliment.Sauce, TypeAliment.Salade, TypeAliment.Legume],
+    types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME],
   },
 
 ];

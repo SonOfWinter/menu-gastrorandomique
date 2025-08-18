@@ -11,6 +11,7 @@ import {
   Lien,
   Dish,
   DisplayMenu,
+  TypeDeterminant,
 } from '@/types/menu';
 import capitalize from '@/lib/capitalize';
 import random from '@/lib/random';
@@ -55,9 +56,9 @@ export function generateDisplayMenu(data: Menu): DisplayMenu {
     price: round(random(30.0, 250.0, true), 2),
     title: data.titles[random(0, data.titles.length - 1)].nom,
     complement: data.complements[random(0, data.complements.length - 1)].nom,
-    entree: generate(data, TypePlat.Entree),
-    plat: generate(data, TypePlat.Plat),
-    dessert: generate(data, TypePlat.Dessert),
+    entree: generate(data, TypePlat.ENTREE),
+    plat: generate(data, TypePlat.PLAT),
+    dessert: generate(data, TypePlat.DESSERT),
   };
 }
 
@@ -100,8 +101,8 @@ const generateMain = (
     const prePrincipal: Pre = data.pres[random(0, data.pres.length - 1)];
     main += `${prePrincipal[nameDrivedByPlat]} `;
   }
-  main += `${platPrincipal.nom} ${ingredientPrincipal.determinantPrincipal}`;
-  if (!ingredientPrincipal.determinantPrincipal.endsWith('\'')) {
+  main += `${platPrincipal.nom} ${ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL]}`;
+  if (!ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL].endsWith('\'')) {
     main += ' ';
   }
   main += `${ingredientPrincipal.nom} ${adjectifPrincipal[nameDrivedByIngredientPrincipal]}`;
@@ -159,7 +160,7 @@ const generateSecond = (
   const ingredientSecondaire: Ingredient = getIngredient(ingredients);
   const nameDrivedByIngredientSecondaire: NomProps = `nom_${ingredientSecondaire.genre}_${ingredientSecondaire.nombre}` as NomProps;
 
-  const preIngredient: string = ingredientSecondaire[lienSecondaire.suite];
+  const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSecondaire,
@@ -178,7 +179,7 @@ const generateSecond = (
 };
 
 function generateSauce(data: Menu) {
-  const ingredientSauce: Ingredient = getIngredient(ingredients, TypeAliment.Sauce);
+  const ingredientSauce: Ingredient = getIngredient(ingredients, TypeAliment.SAUCE);
   const nameDrivedByIngredient: NomProps = `nom_${ingredientSauce.genre}_${ingredientSauce.nombre}` as NomProps;
   const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,

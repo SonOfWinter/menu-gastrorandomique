@@ -1,4 +1,7 @@
-import { Lien } from '@/types/menu';
+import {
+  Lien,
+  TypeDeterminant,
+} from '@/types/menu';
 
 const liens: Lien[] = [
   {
@@ -7,7 +10,7 @@ const liens: Lien[] = [
     nom_m_p: 'accompagnés',
     nom_f_s: 'accompagnée',
     nom_f_p: 'accompagnées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '1adcf0ff-d7fe-44e9-ab24-956dfbdf47d6',
@@ -15,7 +18,7 @@ const liens: Lien[] = [
     nom_m_p: 'accompagnés de',
     nom_f_s: 'accompagnée de',
     nom_f_p: 'accompagnées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '854e8224-63be-4304-8fa8-84465150fcfc',
@@ -23,7 +26,7 @@ const liens: Lien[] = [
     nom_m_p: 'adoucis par',
     nom_f_s: 'adoucie par',
     nom_f_p: 'adoucies par',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'abfe0e34-548d-4213-af47-309301b6aca8',
@@ -31,7 +34,7 @@ const liens: Lien[] = [
     nom_m_p: 'agrémentés',
     nom_f_s: 'agrémentée',
     nom_f_p: 'agrémentées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '4010c449-50b4-4de5-9a6f-1c91447ad57a',
@@ -39,7 +42,7 @@ const liens: Lien[] = [
     nom_m_p: 'agrémentés de',
     nom_f_s: 'agrémentée de',
     nom_f_p: 'agrémentées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'f5a0a39e-b8ce-4ac3-bc38-e9f40c140e04',
@@ -47,7 +50,7 @@ const liens: Lien[] = [
     nom_m_p: 'arrosés',
     nom_f_s: 'arrosée',
     nom_f_p: 'arrosées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '4dc0e0e1-cf4e-4837-b4c3-b465fe100948',
@@ -55,7 +58,7 @@ const liens: Lien[] = [
     nom_m_p: 'assaisonnés',
     nom_f_s: 'assaisonnée',
     nom_f_p: 'assaisonnées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'f9b4d1ac-ecdf-4ec1-920f-3904294330bc',
@@ -63,7 +66,7 @@ const liens: Lien[] = [
     nom_m_p: 'aux éclats',
     nom_f_s: 'aux éclats',
     nom_f_p: 'aux éclats',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '8aacdfeb-4f9d-4fde-936c-6c5e45af7007',
@@ -71,7 +74,7 @@ const liens: Lien[] = [
     nom_m_p: 'avec',
     nom_f_s: 'avec',
     nom_f_p: 'avec',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'fdf37498-96bd-4aa5-b2f1-f103ccdf1aae',
@@ -79,7 +82,7 @@ const liens: Lien[] = [
     nom_m_p: 'baignés dans',
     nom_f_s: 'baignée dans',
     nom_f_p: 'baignées dans',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '422214b7-57b3-4c61-a8ef-0391bb0a84be',
@@ -87,7 +90,7 @@ const liens: Lien[] = [
     nom_m_p: 'bordés',
     nom_f_s: 'bordée',
     nom_f_p: 'bordées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'b016a0f1-2872-4901-92bf-e16577bab4d4',
@@ -95,7 +98,7 @@ const liens: Lien[] = [
     nom_m_p: 'bordés de',
     nom_f_s: 'bordée de',
     nom_f_p: 'bordées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'f4a015ec-6836-4517-a706-b92d483adfce',
@@ -103,7 +106,7 @@ const liens: Lien[] = [
     nom_m_p: 'caressés',
     nom_f_s: 'caressée',
     nom_f_p: 'caressées',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'b89c7cf5-7d58-4168-b8f8-7c33a5202e67',
@@ -111,7 +114,7 @@ const liens: Lien[] = [
     nom_m_p: 'contrastés par',
     nom_f_s: 'contrastée par',
     nom_f_p: 'contrastées par',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '5da96c38-2762-4464-87a9-2cbf7a772ce7',
@@ -119,7 +122,7 @@ const liens: Lien[] = [
     nom_m_p: 'coulant sur',
     nom_f_s: 'coulant sur',
     nom_f_p: 'coulant sur',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'b6cca5e3-56c4-4901-b299-07d18676dcd1',
@@ -127,7 +130,7 @@ const liens: Lien[] = [
     nom_m_p: 'couronnés de',
     nom_f_s: 'couronnée de',
     nom_f_p: 'couronnées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '62b0304e-0b95-4aed-9bab-51de7bd1aaa1',
@@ -135,7 +138,7 @@ const liens: Lien[] = [
     nom_m_p: 'délicatement parfumés de',
     nom_f_s: 'délicatement parfumée de',
     nom_f_p: 'délicatement parfumées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '6b2ce88c-4704-4446-a119-e87a455d84fc',
@@ -143,7 +146,7 @@ const liens: Lien[] = [
     nom_m_p: 'délicatement posés sur',
     nom_f_s: 'délicatement posée sur',
     nom_f_p: 'délicatement posées sur',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '302e6edb-985d-458f-b9c4-34dcb61bc9b5',
@@ -151,7 +154,7 @@ const liens: Lien[] = [
     nom_m_p: 'déposés sur',
     nom_f_s: 'déposée sur',
     nom_f_p: 'déposées sur',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'd377de34-61e6-4307-9cff-f47b222e74d3',
@@ -159,7 +162,7 @@ const liens: Lien[] = [
     nom_m_p: 'doucement relevés de',
     nom_f_s: 'doucement relevée de',
     nom_f_p: 'doucement relevées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '01c04be1-39b9-450b-8f4c-ca6a23107cf3',
@@ -167,7 +170,7 @@ const liens: Lien[] = [
     nom_m_p: 'en harmonie avec',
     nom_f_s: 'en harmonie avec',
     nom_f_p: 'en harmonie avec',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '07a23f63-7d71-477e-a466-4602d7475752',
@@ -175,7 +178,7 @@ const liens: Lien[] = [
     nom_m_p: 'enrobés de',
     nom_f_s: 'enrobée de',
     nom_f_p: 'enrobées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'f3a6690a-df40-48fd-b348-b951e15ef598',
@@ -183,7 +186,7 @@ const liens: Lien[] = [
     nom_m_p: 'enveloppés dans',
     nom_f_s: 'enveloppée dans',
     nom_f_p: 'enveloppées dans',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '0ec60d8c-a91a-40e2-bb5e-981c19644382',
@@ -191,7 +194,7 @@ const liens: Lien[] = [
     nom_m_p: 'escortés',
     nom_f_s: 'escortée',
     nom_f_p: 'escortées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '19dab334-7826-4fcb-a103-ff322ecb5672',
@@ -199,7 +202,7 @@ const liens: Lien[] = [
     nom_m_p: 'escortés par',
     nom_f_s: 'escortée par',
     nom_f_p: 'escortées par',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '4df5fb59-ac77-49c4-bb52-5781ca58bb40',
@@ -207,7 +210,7 @@ const liens: Lien[] = [
     nom_m_p: 'et',
     nom_f_s: 'et',
     nom_f_p: 'et',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '5e87590f-b16a-4284-9105-f8f901951dbc',
@@ -215,7 +218,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa farandole',
     nom_f_s: 'et sa farandole',
     nom_f_p: 'et sa farandole',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'fa3865b6-1f38-434a-a8fa-28f14f808d3f',
@@ -223,7 +226,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa mélodie',
     nom_f_s: 'et sa mélodie',
     nom_f_p: 'et sa mélodie',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '61d7c8af-c77b-4b57-8724-1ad37223006b',
@@ -231,7 +234,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa myriade',
     nom_f_s: 'et sa myriade',
     nom_f_p: 'et sa myriade',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '2031a4a8-5cd4-43d3-a1fc-2e42f36f2842',
@@ -239,7 +242,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa sérénade',
     nom_f_s: 'et sa sérénade',
     nom_f_p: 'et sa sérénade',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'c584ff9d-29c1-4851-b5a6-cf0811d18a35',
@@ -247,7 +250,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa symphonie',
     nom_f_s: 'et sa symphonie',
     nom_f_p: 'et sa symphonie',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '863ddd77-8a6f-47b9-a89f-71d34a1f58cb',
@@ -255,7 +258,7 @@ const liens: Lien[] = [
     nom_m_p: 'et son accompagnement',
     nom_f_s: 'et son accompagnement',
     nom_f_p: 'et son accompagnement',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'e3ccb54b-f5f6-4d26-bce4-2455c88ee8e7',
@@ -263,7 +266,7 @@ const liens: Lien[] = [
     nom_m_p: 'et son nuage',
     nom_f_s: 'et son nuage',
     nom_f_p: 'et son nuage',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '2d7a765a-ac66-4316-85a6-542e2c1a0246',
@@ -271,7 +274,7 @@ const liens: Lien[] = [
     nom_m_p: 'et son sirop',
     nom_f_s: 'et son sirop',
     nom_f_p: 'et son sirop',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '5f54a9d2-f709-41ef-ae7f-d6d588e73bfe',
@@ -279,7 +282,7 @@ const liens: Lien[] = [
     nom_m_p: 'exaltés par',
     nom_f_s: 'exaltée par',
     nom_f_p: 'exaltées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '94d11bbd-4cb6-4772-aa12-d6db5d8d106f',
@@ -287,7 +290,7 @@ const liens: Lien[] = [
     nom_m_p: 'exaltés par',
     nom_f_s: 'exaltée par',
     nom_f_p: 'exaltées par',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '3ea89034-4b33-402b-b58f-6a1941f2b134',
@@ -295,7 +298,7 @@ const liens: Lien[] = [
     nom_m_p: 'fleurant bon',
     nom_f_s: 'fleurant bonne',
     nom_f_p: 'fleurant bonnes',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '5de45e3a-0e46-44c4-b1ec-bc90be1cf9ff',
@@ -303,7 +306,7 @@ const liens: Lien[] = [
     nom_m_p: 'frôlant',
     nom_f_s: 'frôlant',
     nom_f_p: 'frôlant',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '9fc01594-74a1-4ab9-b4fe-5135eefe2c85',
@@ -311,7 +314,7 @@ const liens: Lien[] = [
     nom_m_p: 'fusionnés avec',
     nom_f_s: 'fusionnée avec',
     nom_f_p: 'fusionnées avec',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '463d44c1-302f-4e0f-bb54-5018d503161a',
@@ -319,7 +322,7 @@ const liens: Lien[] = [
     nom_m_p: 'généreusement garnis de',
     nom_f_s: 'généreusement garnie de',
     nom_f_p: 'généreusement garnies de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'e6b3716e-ff2f-4dc6-ac1c-05f4d7cf7398',
@@ -327,7 +330,7 @@ const liens: Lien[] = [
     nom_m_p: 'habillés de',
     nom_f_s: 'habillée de',
     nom_f_p: 'habillées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'd8c15f59-d837-49bc-81be-889c645a3c45',
@@ -335,7 +338,7 @@ const liens: Lien[] = [
     nom_m_p: 'imbibés de',
     nom_f_s: 'imbibée de',
     nom_f_p: 'imbibées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '84ed66c5-da03-4023-a27a-352ebc072746',
@@ -343,7 +346,7 @@ const liens: Lien[] = [
     nom_m_p: 'imbriqués avec',
     nom_f_s: 'imbriquée avec',
     nom_f_p: 'imbriquées avec',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '676bc799-b424-4888-ba1a-01e72bb7298c',
@@ -351,7 +354,7 @@ const liens: Lien[] = [
     nom_m_p: 'incrustés de',
     nom_f_s: 'incrustée de',
     nom_f_p: 'incrustées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'fc45e78f-e638-4517-9109-c2a7b8121864',
@@ -359,7 +362,7 @@ const liens: Lien[] = [
     nom_m_p: 'infusés de',
     nom_f_s: 'infusée de',
     nom_f_p: 'infusées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '9fb61a73-ca5b-4470-a7a8-3230dbfbdb56',
@@ -367,7 +370,7 @@ const liens: Lien[] = [
     nom_m_p: 'mariés à',
     nom_f_s: 'mariée à',
     nom_f_p: 'mariées à',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '2e776830-549a-4edb-9d65-9cdcddff69ee',
@@ -375,7 +378,7 @@ const liens: Lien[] = [
     nom_m_p: 'mijotés avec',
     nom_f_s: 'mijotée avec',
     nom_f_p: 'mijotées avec',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'f8f24d62-c36e-47d8-b4dd-c22d87e86f5f',
@@ -383,7 +386,7 @@ const liens: Lien[] = [
     nom_m_p: 'nappés',
     nom_f_s: 'nappée',
     nom_f_p: 'nappées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '1a1eca31-b3d2-4fe9-9455-9682ae66411c',
@@ -391,7 +394,7 @@ const liens: Lien[] = [
     nom_m_p: 'parfumés avec',
     nom_f_s: 'parfumée avec',
     nom_f_p: 'parfumées avec',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'da8adf5c-0b80-4468-8af1-6d2de889fc5c',
@@ -399,7 +402,7 @@ const liens: Lien[] = [
     nom_m_p: 'parsemés d’éclats',
     nom_f_s: 'parsemée d’éclats',
     nom_f_p: 'parsemées d’éclats',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'c241a55d-1fe5-4908-a4ca-b27ea7329ead',
@@ -407,7 +410,7 @@ const liens: Lien[] = [
     nom_m_p: 'parsemés de',
     nom_f_s: 'parsemée de',
     nom_f_p: 'parsemées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'a4ed9b58-1029-400c-9404-557626a49050',
@@ -415,7 +418,7 @@ const liens: Lien[] = [
     nom_m_p: 'prolongés par',
     nom_f_s: 'prolongée par',
     nom_f_p: 'prolongées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '6be13aaf-8ef0-4048-8724-6e99585050d3',
@@ -423,7 +426,7 @@ const liens: Lien[] = [
     nom_m_p: 'rehaussés d’une touche',
     nom_f_s: 'rehaussée d’une touche',
     nom_f_p: 'rehaussées d’une touche',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '9fd6b764-2743-4a08-a908-acdfcc0533b3',
@@ -431,7 +434,7 @@ const liens: Lien[] = [
     nom_m_p: 'rehaussés par',
     nom_f_s: 'rehaussée par',
     nom_f_p: 'rehaussées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'd29aed9a-a46f-4b7b-a8ce-2cd31a6bbfff',
@@ -439,7 +442,7 @@ const liens: Lien[] = [
     nom_m_p: 'relevés',
     nom_f_s: 'relevée',
     nom_f_p: 'relevées',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '26ac90b1-c773-4cb3-8c85-7bbe6eaa4f18',
@@ -447,7 +450,7 @@ const liens: Lien[] = [
     nom_m_p: 'rôtis avec',
     nom_f_s: 'rôtie avec',
     nom_f_p: 'rôties avec',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '2439d3eb-e516-44ab-9704-bdce94560103',
@@ -455,7 +458,7 @@ const liens: Lien[] = [
     nom_m_p: 'rôtissants avec',
     nom_f_s: 'rôtissante avec',
     nom_f_p: 'rôtissantes avec',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '539d49b4-030f-4fa6-8a0f-8ae87975e8a2',
@@ -463,7 +466,7 @@ const liens: Lien[] = [
     nom_m_p: 'saupoudrés de',
     nom_f_s: 'saupoudrée de',
     nom_f_p: 'saupoudrées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'd6b6de90-ccfe-4a55-a956-1db3a5afa30f',
@@ -471,7 +474,7 @@ const liens: Lien[] = [
     nom_m_p: 'soulignés par',
     nom_f_s: 'soulignée par',
     nom_f_p: 'soulignées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '4b1e4ec4-3e4a-4aa7-b2c2-ca2d1924a6dc',
@@ -479,7 +482,7 @@ const liens: Lien[] = [
     nom_m_p: 'sous un voile',
     nom_f_s: 'sous un voile',
     nom_f_p: 'sous un voile',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: '55e0326a-a02e-47f8-88cb-1296ee1aac18',
@@ -487,7 +490,7 @@ const liens: Lien[] = [
     nom_m_p: 'soutenus par',
     nom_f_s: 'soutenue par',
     nom_f_p: 'soutenues par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '638a73d1-6a65-40ce-9951-062a4c27eb17',
@@ -495,7 +498,7 @@ const liens: Lien[] = [
     nom_m_p: 'sublimés par',
     nom_f_s: 'sublimée par',
     nom_f_p: 'sublimées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '39a7903a-00f8-4bc3-84b5-755d55a5db09',
@@ -503,7 +506,7 @@ const liens: Lien[] = [
     nom_m_p: 'sur son lit',
     nom_f_s: 'sur son lit',
     nom_f_p: 'sur son lit',
-    suite: 'determinantPrincipal',
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'f2af7440-64be-4478-abcc-221686bc3907',
@@ -511,7 +514,7 @@ const liens: Lien[] = [
     nom_m_p: 'tapissés de',
     nom_f_s: 'tapissée de',
     nom_f_p: 'tapissées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '1c125fa1-42ed-4962-a9c4-a0bf3a3e4a4b',
@@ -519,7 +522,7 @@ const liens: Lien[] = [
     nom_m_p: 'teintés de',
     nom_f_s: 'teintée de',
     nom_f_p: 'teintées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'c77b83c9-75ba-4e50-bf03-cb477c4c7d15',
@@ -527,7 +530,7 @@ const liens: Lien[] = [
     nom_m_p: 'tendrement accompagnés de',
     nom_f_s: 'tendrement accompagnée de',
     nom_f_p: 'tendrement accompagnées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'a1ac43fb-0033-40f1-8125-c6f2127d04ef',
@@ -535,7 +538,7 @@ const liens: Lien[] = [
     nom_m_p: 'tendus vers',
     nom_f_s: 'tendue vers',
     nom_f_p: 'tendues vers',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '497f177c-390d-4d9c-852e-26d9a96ea97b',
@@ -543,7 +546,7 @@ const liens: Lien[] = [
     nom_m_p: 'transcendés par',
     nom_f_s: 'transcendée par',
     nom_f_p: 'transcendées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'bf5b5914-3777-478b-814f-98d2e1db4332',
@@ -551,7 +554,7 @@ const liens: Lien[] = [
     nom_m_p: 'trempés dans',
     nom_f_s: 'trempée dans',
     nom_f_p: 'trempées dans',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '6285e932-6b96-4692-9f95-14c6102722f1',
@@ -559,7 +562,7 @@ const liens: Lien[] = [
     nom_m_p: 'unis à',
     nom_f_s: 'unie à',
     nom_f_p: 'unies à',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: '8139c67e-0986-4fb1-b791-98a2cfd8d5f1',
@@ -567,7 +570,7 @@ const liens: Lien[] = [
     nom_m_p: 'valorisés par',
     nom_f_s: 'valorisée par',
     nom_f_p: 'valorisées par',
-    suite: 'determinantSecondaire',
+    suite: TypeDeterminant.SECONDAIRE,
   },
   {
     id: 'c6f08f38-ae70-4464-ab32-2fc23b31fa87',
@@ -575,7 +578,7 @@ const liens: Lien[] = [
     nom_m_p: 'vibrants avec',
     nom_f_s: 'vibrante avec',
     nom_f_p: 'vibrantes avec',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '1c21b7cb-b837-4680-a5b5-2068b3831e4f',
@@ -583,7 +586,7 @@ const liens: Lien[] = [
     nom_m_p: 'voilés dans',
     nom_f_s: 'voilée dans',
     nom_f_p: 'voilées dans',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: 'abab420f-3acd-44ba-812f-f95f2de9e560',
@@ -591,7 +594,7 @@ const liens: Lien[] = [
     nom_m_p: 'voilés de',
     nom_f_s: 'voilée de',
     nom_f_p: 'voilées de',
-    suite: 'adjectifPossessif',
+    suite: TypeDeterminant.POSSESSIF,
   },
 ];
 export default liens;
