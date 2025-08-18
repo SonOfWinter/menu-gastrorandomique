@@ -40,7 +40,7 @@ export enum TypeDeterminant {
   POSSESSIF = 'possessif',
 }
 
-export type NomProps = 'nom_m_s' | 'nom_m_p' | 'nom_f_s' | 'nom_f_p';
+export type NomForms = Record<Genre, Record<Nombre, string>>
 
 export type DisplayMenu = {
   price: number;
@@ -71,45 +71,36 @@ export type Ingredient = {
 
 export type Plat = {
   id: string;
-  nom: string,
-  genre: Genre,
-  nombre: Nombre,
-  types: TypePlat[],
-  entree: TypeAliment[],
-  plat: TypeAliment[],
-  dessert: TypeAliment[],
+  nom: string;
+  genre: Genre;
+  nombre: Nombre;
+  types: TypePlat[];
+  entree: TypeAliment[];
+  plat: TypeAliment[];
+  dessert: TypeAliment[];
 }
 
 export type Adjectif = {
   id: string;
-  nom_m_s: string,
-  nom_m_p: string,
-  nom_f_s: string,
-  nom_f_p: string,
-  types: TypeAliment[],
+  noms: NomForms;
+  types: TypeAliment[];
 }
 
 export type Pre = {
   id: string;
-  nom_m_s: string,
-  nom_m_p: string,
-  nom_f_s: string,
-  nom_f_p: string,
-  types: TypePlat[],
+  noms: NomForms;
+  types: TypePlat[];
 }
 
 export type Post = {
   id: string;
-  nom: string,
-  types: TypePlat[]
+  nom: string;
+  types: TypePlat[];
 }
 
 export type Lien = {
   id: string;
-  nom_m_s: string;
-  nom_m_p: string;
-  nom_f_s: string;
-  nom_f_p: string;
+  noms: NomForms;
   suite: TypeDeterminant;
 }
 

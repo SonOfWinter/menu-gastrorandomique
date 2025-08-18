@@ -1,5 +1,4 @@
 import {
-  NomProps,
   TypePlat,
   Menu,
   Plat,
@@ -91,21 +90,19 @@ const generateMain = (
 ): string => {
   let main: string = '';
   const ingredientPrincipal: Ingredient = getIngredient(ingredients);
-  const nameDrivedByIngredientPrincipal: NomProps = `nom_${ingredientPrincipal.genre}_${ingredientPrincipal.nombre}` as NomProps;
   const adjectifPrincipal: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientPrincipal,
   );
-  const nameDrivedByPlat: NomProps = `nom_${platPrincipal.genre}_${platPrincipal.nombre}` as NomProps;
   if (random(1, 3) === 3) {
     const prePrincipal: Pre = data.pres[random(0, data.pres.length - 1)];
-    main += `${prePrincipal[nameDrivedByPlat]} `;
+    main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
   main += `${platPrincipal.nom} ${ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL]}`;
   if (!ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL].endsWith('\'')) {
     main += ' ';
   }
-  main += `${ingredientPrincipal.nom} ${adjectifPrincipal[nameDrivedByIngredientPrincipal]}`;
+  main += `${ingredientPrincipal.nom} ${adjectifPrincipal.noms[ingredientPrincipal.genre][ingredientPrincipal.nombre]}`;
 
   if (random(1, 3) === 3) {
     const postPrincipal: Post = data.posts[random(0, data.posts.length - 1)];
@@ -115,9 +112,9 @@ const generateMain = (
 };
 
 const getIngredient = (ingredients: Ingredient[], typeFilter?: TypeAliment): Ingredient => {
-  const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) =>
-  {
-    return !alreadyUsed.ingredients.includes(item.id) && (!typeFilter || item.types.includes(typeFilter));
+  const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {
+    return !alreadyUsed.ingredients.includes(item.id) && (!typeFilter || item.types.includes(
+      typeFilter));
   });
   const selected = filteredIngredients[random(0, filteredIngredients.length - 1)];
   alreadyUsed.ingredients.push(selected.id);
@@ -154,22 +151,19 @@ const generateSecond = (
   ingredients: Ingredient[],
 ): string => {
   let second: string = '';
-
-  const nameDrivedByPlat: NomProps = `nom_${platPrincipal.genre}_${platPrincipal.nombre}` as NomProps;
   const lienSecondaire: Lien = data.liens[random(0, data.liens.length - 1)];
   const ingredientSecondaire: Ingredient = getIngredient(ingredients);
-  const nameDrivedByIngredientSecondaire: NomProps = `nom_${ingredientSecondaire.genre}_${ingredientSecondaire.nombre}` as NomProps;
 
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSecondaire,
   );
-  second += `${lienSecondaire[nameDrivedByPlat]} ${preIngredient}`;
+  second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}`;
   if (!preIngredient.endsWith('\'')) {
     second += ' ';
   }
-  second += `${ingredientSecondaire.nom} ${adjectifSecondaire[nameDrivedByIngredientSecondaire]}`;
+  second += `${ingredientSecondaire.nom} ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;
 
   if (random(1, 3) === 3) {
     const postSecondaire: Post = data.posts[random(0, data.posts.length - 1)];
@@ -180,11 +174,10 @@ const generateSecond = (
 
 function generateSauce(data: Menu) {
   const ingredientSauce: Ingredient = getIngredient(ingredients, TypeAliment.SAUCE);
-  const nameDrivedByIngredient: NomProps = `nom_${ingredientSauce.genre}_${ingredientSauce.nombre}` as NomProps;
   const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSauce,
   );
-  return 'avec ça sauce de ' + ' ' + ingredientSauce.nom + ' ' + adjectifSauce[nameDrivedByIngredient];
+  return 'avec ça sauce de ' + ' ' + ingredientSauce.nom + ' ' + adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre];
 }
 

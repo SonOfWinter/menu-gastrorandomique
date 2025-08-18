@@ -1,4 +1,6 @@
 import {
+  Genre,
+  Nombre,
   Pre,
   TypePlat,
 } from '@/types/menu';
@@ -6,426 +8,744 @@ import {
 const pres: Pre[] = [
   {
     id: '33023faa-abcb-4c56-9e08-a5d35c69ba16',
-    nom_m_s: 'l\'aérien',
-    nom_m_p: 'les aériens',
-    nom_f_s: 'l\'aérienne',
-    nom_f_p: 'les aériennes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'aérien',
+        [Nombre.PLURIEL]: 'les aériens',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'aérienne',
+        [Nombre.PLURIEL]: 'les aériennes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'cbb038c4-e9fe-4c7a-945f-11cb530bbc49',
-    nom_m_s: 'l\'alléchant',
-    nom_m_p: 'les alléchants',
-    nom_f_s: 'l\'alléchante',
-    nom_f_p: 'les alléchantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'alléchant',
+        [Nombre.PLURIEL]: 'les alléchants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'alléchante',
+        [Nombre.PLURIEL]: 'les alléchantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '27e89818-acf2-422d-8230-3e3c79607be4',
-    nom_m_s: 'l\'ancestral',
-    nom_m_p: 'les ancestraux',
-    nom_f_s: 'l\'ancestrale',
-    nom_f_p: 'les ancestrales',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'ancestral',
+        [Nombre.PLURIEL]: 'les ancestraux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'ancestrale',
+        [Nombre.PLURIEL]: 'les ancestrales',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'e75143cd-11e1-4d30-a84f-e527185f2871',
-    nom_m_s: 'l\'appétissant',
-    nom_m_p: 'les appétissants',
-    nom_f_s: 'l\'appétissante',
-    nom_f_p: 'les appétissantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'appétissant',
+        [Nombre.PLURIEL]: 'les appétissants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'appétissante',
+        [Nombre.PLURIEL]: 'les appétissantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '2db2867b-80d7-4484-baf6-e3b045153fa2',
-    nom_m_s: 'l\'aromatique',
-    nom_m_p: 'les aromatiques',
-    nom_f_s: 'l\'aromatique',
-    nom_f_p: 'les aromatiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'aromatique',
+        [Nombre.PLURIEL]: 'les aromatiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'aromatique',
+        [Nombre.PLURIEL]: 'les aromatiques',
+      },
+    },
     types: [TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '0ee0fb53-150f-4eb4-a649-9eb85e9e92eb',
-    nom_m_s: 'l\'audacieux',
-    nom_m_p: 'les audacieux',
-    nom_f_s: 'l\'audacieuse',
-    nom_f_p: 'les audacieuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'audacieux',
+        [Nombre.PLURIEL]: 'les audacieux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'audacieuse',
+        [Nombre.PLURIEL]: 'les audacieuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '24dab967-4882-41ff-ad97-1f1efa998f5f',
-    nom_m_s: 'l\'authentique',
-    nom_m_p: 'les authentiques',
-    nom_f_s: 'l\'authentique',
-    nom_f_p: 'les authentiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.PLURIEL]: 'les authentiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.PLURIEL]: 'les authentiques',
+      },
+    },
     types: [TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '402baa14-d6c2-429e-85b7-f0eae75b3795',
-    nom_m_s: 'l\'authentique',
-    nom_m_p: 'les authentiques',
-    nom_f_s: 'l\'authentique',
-    nom_f_p: 'les authentiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.PLURIEL]: 'les authentiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.PLURIEL]: 'les authentiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
   },
   {
     id: '3a8cf34d-d80f-4772-be9a-3f336dab79b6',
-    nom_m_s: 'l\'avant-gardiste',
-    nom_m_p: 'les avant-gardistes',
-    nom_f_s: 'l\'avant-gardiste',
-    nom_f_p: 'les avant-gardistes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'avant-gardiste',
+        [Nombre.PLURIEL]: 'les avant-gardistes',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'avant-gardiste',
+        [Nombre.PLURIEL]: 'les avant-gardistes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'e55c2b74-7f34-4bb1-9808-d6b5e106f992',
-    nom_m_s: 'l\'excellent',
-    nom_m_p: 'les excellents',
-    nom_f_s: 'l\'excellente',
-    nom_f_p: 'les excellentes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'excellent',
+        [Nombre.PLURIEL]: 'les excellents',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'excellente',
+        [Nombre.PLURIEL]: 'les excellentes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '02a753db-1cf4-4baa-9575-9c0516d6987c',
-    nom_m_s: 'l\'incomparable',
-    nom_m_p: 'les incomparables',
-    nom_f_s: 'l\'incomparable',
-    nom_f_p: 'les incomparables',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'incomparable',
+        [Nombre.PLURIEL]: 'les incomparables',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'incomparable',
+        [Nombre.PLURIEL]: 'les incomparables',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '91e9cfca-91f9-4b12-9ce8-b67e5993a7fb',
-    nom_m_s: 'l\'incontournable',
-    nom_m_p: 'les incontournables',
-    nom_f_s: 'l\'incontournable',
-    nom_f_p: 'les incontournables',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'incontournable',
+        [Nombre.PLURIEL]: 'les incontournables',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'incontournable',
+        [Nombre.PLURIEL]: 'les incontournables',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'f8cd1543-1c83-4e05-bdd3-a835c43ef32d',
-    nom_m_s: 'l\'indémodable',
-    nom_m_p: 'les indémodables',
-    nom_f_s: 'l\'indémodable',
-    nom_f_p: 'les indémodables',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'indémodable',
+        [Nombre.PLURIEL]: 'les indémodables',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'indémodable',
+        [Nombre.PLURIEL]: 'les indémodables',
+      },
+    },
     types: [TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '354a0d91-d9e9-4d63-b6d0-1f1a21437bb7',
-    nom_m_s: 'l\'innovant',
-    nom_m_p: 'les innovants',
-    nom_f_s: 'l\'innovante',
-    nom_f_p: 'les innovantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'innovant',
+        [Nombre.PLURIEL]: 'les innovants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'innovante',
+        [Nombre.PLURIEL]: 'les innovantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'bd5a9a01-c8a7-47ec-b46e-aedd54a06022',
-    nom_m_s: 'l\'inoubliable',
-    nom_m_p: 'les inoubliables',
-    nom_f_s: 'l\'inoubliable',
-    nom_f_p: 'les inoubliables',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'inoubliable',
+        [Nombre.PLURIEL]: 'les inoubliables',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'inoubliable',
+        [Nombre.PLURIEL]: 'les inoubliables',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '691cd7bc-9e3a-4cd2-9362-657624b6db2f',
-    nom_m_s: 'l\'intrigant',
-    nom_m_p: 'les intrigants',
-    nom_f_s: 'l\'intrigante',
-    nom_f_p: 'les intrigantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'intrigant',
+        [Nombre.PLURIEL]: 'les intrigants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'intrigante',
+        [Nombre.PLURIEL]: 'les intrigantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '2455cdc2-5eab-44f6-ae3d-5452fd761700',
-    nom_m_s: 'l\'odoriférant',
-    nom_m_p: 'les odoriférants',
-    nom_f_s: 'l\'odoriférante',
-    nom_f_p: 'les odoriférantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'odoriférant',
+        [Nombre.PLURIEL]: 'les odoriférants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'odoriférante',
+        [Nombre.PLURIEL]: 'les odoriférantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '17219316-681d-44c6-88a9-760006799c1c',
-    nom_m_s: 'le captivant',
-    nom_m_p: 'les captivants',
-    nom_f_s: 'la captivante',
-    nom_f_p: 'les captivantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le captivant',
+        [Nombre.PLURIEL]: 'les captivants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la captivante',
+        [Nombre.PLURIEL]: 'les captivantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '355d8032-e464-4faf-855c-5f6e21ab2219',
-    nom_m_s: 'le célèbre',
-    nom_m_p: 'les célèbres',
-    nom_f_s: 'la célèbre',
-    nom_f_p: 'les célèbres',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le célèbre',
+        [Nombre.PLURIEL]: 'les célèbres',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la célèbre',
+        [Nombre.PLURIEL]: 'les célèbres',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '2ae5c08e-63e6-4561-ae54-4e98423c2b3f',
-    nom_m_s: 'le charmant',
-    nom_m_p: 'les charmants',
-    nom_f_s: 'la charmante',
-    nom_f_p: 'les charmantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le charmant',
+        [Nombre.PLURIEL]: 'les charmants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la charmante',
+        [Nombre.PLURIEL]: 'les charmantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'c1d238e0-b7e4-4dfb-8583-9bb933b8aaf8',
-    nom_m_s: 'le classique',
-    nom_m_p: 'les classiques',
-    nom_f_s: 'la classique',
-    nom_f_p: 'les classiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le classique',
+        [Nombre.PLURIEL]: 'les classiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la classique',
+        [Nombre.PLURIEL]: 'les classiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '1dc5c87a-cd8f-4627-8bf1-fbf53f0cbd17',
-    nom_m_s: 'le cultissime',
-    nom_m_p: 'les cultissimes',
-    nom_f_s: 'la cultissime',
-    nom_f_p: 'les cultissimes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le cultissime',
+        [Nombre.PLURIEL]: 'les cultissimes',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la cultissime',
+        [Nombre.PLURIEL]: 'les cultissimes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'b9939ac9-c3ce-42b2-900e-8f3d705811a9',
-    nom_m_s: 'le délicieux',
-    nom_m_p: 'les délicieux',
-    nom_f_s: 'la délicieuse',
-    nom_f_p: 'les délicieuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le délicieux',
+        [Nombre.PLURIEL]: 'les délicieux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la délicieuse',
+        [Nombre.PLURIEL]: 'les délicieuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '6262778f-785b-4e03-8d2d-cd2ff9443c0b',
-    nom_m_s: 'le divin',
-    nom_m_p: 'les divins',
-    nom_f_s: 'la divine',
-    nom_f_p: 'les divines',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le divin',
+        [Nombre.PLURIEL]: 'les divins',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la divine',
+        [Nombre.PLURIEL]: 'les divines',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'd35b2b94-eefb-4526-b993-ea6010057fa7',
-    nom_m_s: 'le doux',
-    nom_m_p: 'les doux',
-    nom_f_s: 'la douce',
-    nom_f_p: 'les douces',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le doux',
+        [Nombre.PLURIEL]: 'les doux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la douce',
+        [Nombre.PLURIEL]: 'les douces',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'cb1c6eaf-03cf-450f-8db0-ec9a82e36890',
-    nom_m_s: 'le élégant',
-    nom_m_p: 'les élégants',
-    nom_f_s: 'la élégante',
-    nom_f_p: 'les élégantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le élégant',
+        [Nombre.PLURIEL]: 'les élégants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la élégante',
+        [Nombre.PLURIEL]: 'les élégantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '526f7eb6-23a6-4e82-b118-1fac712b93a3',
-    nom_m_s: 'le fabuleux',
-    nom_m_p: 'les fabuleux',
-    nom_f_s: 'la fabuleuse',
-    nom_f_p: 'les fabuleuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le fabuleux',
+        [Nombre.PLURIEL]: 'les fabuleux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la fabuleuse',
+        [Nombre.PLURIEL]: 'les fabuleuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'd95c3fdc-ef8c-45f6-9782-64a3a79a64e1',
-    nom_m_s: 'le fameux',
-    nom_m_p: 'les fameux',
-    nom_f_s: 'la fameuse',
-    nom_f_p: 'les fameuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le fameux',
+        [Nombre.PLURIEL]: 'les fameux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la fameuse',
+        [Nombre.PLURIEL]: 'les fameuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'bf103d82-7467-482c-b450-e0f068f91379',
-    nom_m_s: 'le formidable',
-    nom_m_p: 'les formidables',
-    nom_f_s: 'la formidable',
-    nom_f_p: 'les formidables',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le formidable',
+        [Nombre.PLURIEL]: 'les formidables',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la formidable',
+        [Nombre.PLURIEL]: 'les formidables',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '606a3430-00dc-4747-80e3-1514d5e9c930',
-    nom_m_s: 'le généreux',
-    nom_m_p: 'les généreux',
-    nom_f_s: 'la généreuse',
-    nom_f_p: 'les généreuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le généreux',
+        [Nombre.PLURIEL]: 'les généreux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la généreuse',
+        [Nombre.PLURIEL]: 'les généreuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '54d41b14-94ca-4cb8-8c36-bc33a83d0dff',
-    nom_m_s: 'le gourmand',
-    nom_m_p: 'les gourmands',
-    nom_f_s: 'la gourmande',
-    nom_f_p: 'les gourmandes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le gourmand',
+        [Nombre.PLURIEL]: 'les gourmands',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la gourmande',
+        [Nombre.PLURIEL]: 'les gourmandes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '7033f0e9-7aee-4c75-96bd-3c47f95f3387',
-    nom_m_s: 'le goûteux',
-    nom_m_p: 'les goûteux',
-    nom_f_s: 'la goûteuse',
-    nom_f_p: 'les goûteuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le goûteux',
+        [Nombre.PLURIEL]: 'les goûteux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la goûteuse',
+        [Nombre.PLURIEL]: 'les goûteuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'a206cc32-63c3-4578-ab62-b726974ec580',
-    nom_m_s: 'le légendaire',
-    nom_m_p: 'les légendaires',
-    nom_f_s: 'la légendaire',
-    nom_f_p: 'les légendaires',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le légendaire',
+        [Nombre.PLURIEL]: 'les légendaires',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la légendaire',
+        [Nombre.PLURIEL]: 'les légendaires',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '7803cdf6-be36-4ac9-b38f-2442beba17af',
-    nom_m_s: 'le magnifique',
-    nom_m_p: 'les magnifiques',
-    nom_f_s: 'la magnifique',
-    nom_f_p: 'les magnifiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le magnifique',
+        [Nombre.PLURIEL]: 'les magnifiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la magnifique',
+        [Nombre.PLURIEL]: 'les magnifiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '44118d11-3444-465c-884a-038efde50f15',
-    nom_m_s: 'le majestueux',
-    nom_m_p: 'les majestueux',
-    nom_f_s: 'la majestueuse',
-    nom_f_p: 'les majestueuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le majestueux',
+        [Nombre.PLURIEL]: 'les majestueux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la majestueuse',
+        [Nombre.PLURIEL]: 'les majestueuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '3f10297f-2474-4842-8fd0-abad18e091ca',
-    nom_m_s: 'le mirifique',
-    nom_m_p: 'les mirifiques',
-    nom_f_s: 'la mirifique',
-    nom_f_p: 'les mirifiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le mirifique',
+        [Nombre.PLURIEL]: 'les mirifiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la mirifique',
+        [Nombre.PLURIEL]: 'les mirifiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '3385bab0-5ed4-472e-b734-67557d13ee64',
-    nom_m_s: 'le mythique',
-    nom_m_p: 'les mythiques',
-    nom_f_s: 'la mythique',
-    nom_f_p: 'les mythiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le mythique',
+        [Nombre.PLURIEL]: 'les mythiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la mythique',
+        [Nombre.PLURIEL]: 'les mythiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'a7309c35-6401-4daa-8697-e10190764065',
-    nom_m_s: 'le noble',
-    nom_m_p: 'les nobles',
-    nom_f_s: 'la noble',
-    nom_f_p: 'les nobles',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le noble',
+        [Nombre.PLURIEL]: 'les nobles',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la noble',
+        [Nombre.PLURIEL]: 'les nobles',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'fb8c441a-c08d-49dc-ac1b-fd3597da69f5',
-    nom_m_s: 'le parfait',
-    nom_m_p: 'les parfaits',
-    nom_f_s: 'la parfaite',
-    nom_f_p: 'les parfaites',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le parfait',
+        [Nombre.PLURIEL]: 'les parfaits',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la parfaite',
+        [Nombre.PLURIEL]: 'les parfaites',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'f086ec2d-c766-41bc-906d-a6229508ae99',
-    nom_m_s: 'le poétique',
-    nom_m_p: 'les poétiques',
-    nom_f_s: 'la poétique',
-    nom_f_p: 'les poétiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le poétique',
+        [Nombre.PLURIEL]: 'les poétiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la poétique',
+        [Nombre.PLURIEL]: 'les poétiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'ba3a3ed9-2b66-48bb-bad1-8ce6eaee65cb',
-    nom_m_s: 'le prodigieux',
-    nom_m_p: 'les prodigieux',
-    nom_f_s: 'la prodigieuse',
-    nom_f_p: 'les prodigieuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le prodigieux',
+        [Nombre.PLURIEL]: 'les prodigieux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la prodigieuse',
+        [Nombre.PLURIEL]: 'les prodigieuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'd24f63b6-0e3c-46b1-9282-7a6c174f3466',
-    nom_m_s: 'le raffiné',
-    nom_m_p: 'les raffinés',
-    nom_f_s: 'la raffinée',
-    nom_f_p: 'les raffinées',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le raffiné',
+        [Nombre.PLURIEL]: 'les raffinés',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la raffinée',
+        [Nombre.PLURIEL]: 'les raffinées',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '0ae6e7d5-a992-4f9c-a4e0-89055ebf2fd5',
-    nom_m_s: 'le réconfortant',
-    nom_m_p: 'les réconfortants',
-    nom_f_s: 'la réconfortante',
-    nom_f_p: 'les réconfortantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le réconfortant',
+        [Nombre.PLURIEL]: 'les réconfortants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la réconfortante',
+        [Nombre.PLURIEL]: 'les réconfortantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'c9dabc3e-d398-4877-b0c3-86e48ef13f1b',
-    nom_m_s: 'le réinventé',
-    nom_m_p: 'les réinventés',
-    nom_f_s: 'la réinventée',
-    nom_f_p: 'les réinventées',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le réinventé',
+        [Nombre.PLURIEL]: 'les réinventés',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la réinventée',
+        [Nombre.PLURIEL]: 'les réinventées',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '1a7d8082-4d5e-46b3-8c76-2ae839fde6bb',
-    nom_m_s: 'le rustique',
-    nom_m_p: 'les rustiques',
-    nom_f_s: 'la rustique',
-    nom_f_p: 'les rustiques',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le rustique',
+        [Nombre.PLURIEL]: 'les rustiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la rustique',
+        [Nombre.PLURIEL]: 'les rustiques',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'd40886ef-1e98-4260-9ec3-19687f1bf72d',
-    nom_m_s: 'le savoureux',
-    nom_m_p: 'les savoureux',
-    nom_f_s: 'la savoureuse',
-    nom_f_p: 'les savoureuses',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le savoureux',
+        [Nombre.PLURIEL]: 'les savoureux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la savoureuse',
+        [Nombre.PLURIEL]: 'les savoureuses',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '04b68152-50c5-4911-be46-5f87a824aa25',
-    nom_m_s: 'le sensationnel',
-    nom_m_p: 'les sensationnels',
-    nom_f_s: 'la sensationnelle',
-    nom_f_p: 'les sensationnelles',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le sensationnel',
+        [Nombre.PLURIEL]: 'les sensationnels',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la sensationnelle',
+        [Nombre.PLURIEL]: 'les sensationnelles',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '25e06564-6ef9-4fab-9ecb-ff651e7b67fa',
-    nom_m_s: 'le sophistiqué',
-    nom_m_p: 'les sophistiqués',
-    nom_f_s: 'la sophistiquée',
-    nom_f_p: 'les sophistiquées',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le sophistiqué',
+        [Nombre.PLURIEL]: 'les sophistiqués',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la sophistiquée',
+        [Nombre.PLURIEL]: 'les sophistiquées',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'e7c8bced-857e-4f19-8eaa-f5c5e4415c9d',
-    nom_m_s: 'le subtil',
-    nom_m_p: 'les subtils',
-    nom_f_s: 'la subtile',
-    nom_f_p: 'les subtiles',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le subtil',
+        [Nombre.PLURIEL]: 'les subtils',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la subtile',
+        [Nombre.PLURIEL]: 'les subtiles',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: 'eea2e206-0546-432c-9cca-cbf4b98b4f38',
-    nom_m_s: 'le succulent',
-    nom_m_p: 'les succulents',
-    nom_f_s: 'la succulente',
-    nom_f_p: 'les succulentes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le succulent',
+        [Nombre.PLURIEL]: 'les succulents',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la succulente',
+        [Nombre.PLURIEL]: 'les succulentes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '630118c2-d8b7-42f3-83f9-4a4c226ed38c',
-    nom_m_s: 'le surprenant',
-    nom_m_p: 'les surprenants',
-    nom_f_s: 'la surprenante',
-    nom_f_p: 'les surprenantes',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le surprenant',
+        [Nombre.PLURIEL]: 'les surprenants',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la surprenante',
+        [Nombre.PLURIEL]: 'les surprenantes',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '25f25a19-7c82-4ea1-a962-cc143e8e146b',
-    nom_m_s: 'le tendre',
-    nom_m_p: 'les tendres',
-    nom_f_s: 'la tendre',
-    nom_f_p: 'les tendres',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le tendre',
+        [Nombre.PLURIEL]: 'les tendres',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la tendre',
+        [Nombre.PLURIEL]: 'les tendres',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
     id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
-    nom_m_s: 'le traditionnel',
-    nom_m_p: 'les traditionnels',
-    nom_f_s: 'la traditionnelle',
-    nom_f_p: 'les traditionnelles',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le traditionnel',
+        [Nombre.PLURIEL]: 'les traditionnels',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la traditionnelle',
+        [Nombre.PLURIEL]: 'les traditionnelles',
+      },
+    },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
 ];
