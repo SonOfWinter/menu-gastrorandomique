@@ -17,13 +17,16 @@ export enum TypeAliment {
   Fruitacoque = 'fruitacoque',
   Sucre = 'sucre',
   Cereale = 'cereale'
-};
+}
 export type Genre = 'f' | 'm';
 export type Nombre = 's' | 'p';
-export const TYPE_ENTREE = 'entree';
-export const TYPE_PLAT = 'plat';
-export const TYPE_DESSERT = 'dessert';
-export type TypePlat = 'entree' | 'plat' | 'dessert';
+
+export enum TypePlat {
+  Entree = 'entree',
+  Plat = 'plat',
+  Dessert = 'dessert'
+}
+
 export type TypeSuite = 'determimantPrincipal' | 'determinantSecondaire' | 'adjectifPossessif';
 export type NomProps = 'nom_m_s' | 'nom_m_p' | 'nom_f_s' | 'nom_f_p';
 

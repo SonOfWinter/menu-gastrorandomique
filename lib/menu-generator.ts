@@ -11,9 +11,6 @@ import {
   Lien,
   Dish,
   DisplayMenu,
-  TYPE_ENTREE,
-  TYPE_PLAT,
-  TYPE_DESSERT,
 } from '@/types/menu';
 import capitalize from '@/lib/capitalize';
 import random from '@/lib/random';
@@ -58,9 +55,9 @@ export function generateDisplayMenu(data: Menu): DisplayMenu {
     price: round(random(30.0, 250.0, true), 2),
     title: data.titles[random(0, data.titles.length - 1)].nom,
     complement: data.complements[random(0, data.complements.length - 1)].nom,
-    entree: generate(data, TYPE_ENTREE),
-    plat: generate(data, TYPE_PLAT),
-    dessert: generate(data, TYPE_DESSERT),
+    entree: generate(data, TypePlat.Entree),
+    plat: generate(data, TypePlat.Plat),
+    dessert: generate(data, TypePlat.Dessert),
   };
 }
 
