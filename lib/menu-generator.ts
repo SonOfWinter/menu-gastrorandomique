@@ -2,7 +2,6 @@ import {
   Menu,
 
 
-
 } from '@/types/menu';
 import capitalize from '@/lib/capitalize';
 import random from '@/lib/random';
@@ -48,22 +47,31 @@ export function getMenuData(): Menu {
 
 const getRandom = <T>(arr: T[]): T => arr[random(0, arr.length - 1)];
 
-export function generateDisplayMenu(data: Menu, count: number = 1): DisplayMenu {
+const isGlitch = (glitchLevel: number): boolean => {
+  return glitchLevel > 0 && random(1, 20) <= glitchLevel;
+}
+export function generateDisplayMenu(
+  data: Menu,
+  count: number = 1,
+  glitchLevel: number = 0,
+): DisplayMenu {
   alreadyUsed.ingredients = [];
   alreadyUsed.adjectifs = [];
   return {
     price: round(random(30.0, 250.0, true), 2),
     title: getRandom(data.titles).nom,
     complement: getRandom(data.complements).nom,
-    entree: Array.from({ length: count }, () => generate(data, TypePlat.ENTREE)),
-    plat: Array.from({ length: count }, () => generate(data, TypePlat.PLAT)),
-    dessert: Array.from({ length: count }, () => generate(data, TypePlat.DESSERT)),
+    entree: Array.from({ length: count }, () => generate(data, TypePlat.ENTREE, glitchLevel)),
+    plat: Array.from({ length: count }, () => generate(data, TypePlat.PLAT, glitchLevel)),
+    dessert: Array.from({ length: count }, () => generate(data, TypePlat.DESSERT, glitchLevel)),
   };
 }
 
-export const generate = (data: Menu, mainType: TypePlat): Dish => {
+export const generate = (data: Menu, mainType: TypePlat, glitchLevel: number): Dish => {
   const platPrincipal: Plat = getPlatByType(data.plats, mainType);
-  const typeAliments: TypeAliment[] = [...platPrincipal.typeAliments[mainType]];
+  const typeAliments: TypeAliment[] = isGlitch(glitchLevel)
+    ? [...platPrincipal.typeAliments[mainType]]
+    : Object.values(TypeAliment);
   const ingredients: Ingredient[] = typeAliments && Array.isArray(typeAliments)
     ? [...data.ingredients].filter((item: Ingredient) =>
       intersection(
@@ -72,9 +80,9 @@ export const generate = (data: Menu, mainType: TypePlat): Dish => {
       ).length > 0,
     ) : [];
   return {
-    main: generateMain(data, platPrincipal, ingredients),
-    second: generateSecond(data, platPrincipal, ingredients),
-    sauce: generateSauce(data),
+    main: generateMain(data, platPrincipal, ingredients, glitchLevel),
+    second: generateSecond(data, platPrincipal, ingredients, glitchLevel),
+    sauce: generateSauce(data, glitchLevel),
   };
 };
 
@@ -82,6 +90,7 @@ const generateMain = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
+  glitchLevel: number,
 ): string => {
   let main: string = '';
   const ingredientPrincipal: Ingredient | null = getIngredient(ingredients);
@@ -91,7 +100,9 @@ const generateMain = (
   const adjectifPrincipal: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientPrincipal,
-  );
+    glitchLevel,
+
+);
   if (random(1, 3) === 3) {
     const prePrincipal: Pre = getRandom(data.pres);
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
@@ -110,17 +121,13 @@ const generateMain = (
 };
 
 const getIngredient = (ingredients: Ingredient[], typeFilter?: TypeAliment): Ingredient | null => {
-  console.log('alreadyUsed before', alreadyUsed);
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {
     return !alreadyUsed.ingredients.includes(item.id) && (!typeFilter || item.types.includes(
       typeFilter));
   });
-  console.log('filteredIngredients', filteredIngredients);
-  if (filteredIngredients.length > 0 ) {
+  if (filteredIngredients.length > 0) {
     const selected = getRandom(filteredIngredients);
-    console.log('selected', selected);
     alreadyUsed.ingredients.push(selected.id);
-    console.log('alreadyUsed after', alreadyUsed);
     return selected;
   }
   return null;
@@ -137,14 +144,17 @@ const getPlatByType = (plats: Plat[], mainType: TypePlat): Plat => {
 const getAdjectifBasedOnIngredient = (
   adjectifs: Adjectif[],
   ingredient: Ingredient,
+  glitchLevel: number
 ): Adjectif => {
-  const filteredAdjectifs = adjectifs.filter((item: Adjectif) =>
-    intersection(
-      [...item.types],
-      [...ingredient.types],
-    ).length > 0
-    && !alreadyUsed.adjectifs.includes(item.id),
-  );
+  const filteredAdjectifs = isGlitch(glitchLevel)
+    ? adjectifs.filter((item: Adjectif) =>
+      intersection(
+        [...item.types],
+        [...ingredient.types],
+      ).length > 0
+      && !alreadyUsed.adjectifs.includes(item.id),
+    )
+    : adjectifs;
   const selected = getRandom(filteredAdjectifs);
   alreadyUsed.adjectifs.push(selected.id);
   return selected;
@@ -154,6 +164,7 @@ const generateSecond = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
+  glitchLevel: number
 ): string => {
   let second: string = '';
   const lienSecondaire: Lien = getRandom(data.liens);
@@ -165,6 +176,7 @@ const generateSecond = (
   const adjectifSecondaire: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSecondaire,
+    glitchLevel
   );
   second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}`;
   if (!preIngredient.endsWith('\'')) {
@@ -179,7 +191,7 @@ const generateSecond = (
   return second;
 };
 
-function generateSauce(data: Menu): string {
+function generateSauce(data: Menu, glitchLevel: number): string {
   const ingredientSauce: Ingredient | null = getIngredient(ingredients, TypeAliment.SAUCE);
   if (!ingredientSauce) {
     return '';
@@ -187,6 +199,7 @@ function generateSauce(data: Menu): string {
   const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSauce,
+    glitchLevel
   );
   return 'avec ça sauce de ' + ' ' + ingredientSauce.nom + ' ' + adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre];
 }
