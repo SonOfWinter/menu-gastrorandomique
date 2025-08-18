@@ -1,11 +1,10 @@
-import { DeepReadonly } from '@/types/common/deep-readonly';
 import { Dish } from '@/types/dish';
 
-export type DisplayMenu = DeepReadonly<{
+export type DisplayMenu = {
   price: number;
   title: string;
   complement: string;
-  entree: Dish;
-  plat: Dish;
-  dessert: Dish;
-}>
+  entree: Dish[];
+  plat: Dish[];
+  dessert: Dish[];
+}

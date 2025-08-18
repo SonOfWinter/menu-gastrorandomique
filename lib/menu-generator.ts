@@ -46,26 +46,26 @@ export function getMenuData(): Menu {
   };
 }
 
-export function generateDisplayMenu(data: Menu): DisplayMenu {
+const getRandom = <T>(arr: T[]): T => arr[random(0, arr.length - 1)];
+
+export function generateDisplayMenu(data: Menu, count: number = 1): DisplayMenu {
   alreadyUsed.ingredients = [];
   alreadyUsed.adjectifs = [];
   return {
     price: round(random(30.0, 250.0, true), 2),
-    title: data.titles[random(0, data.titles.length - 1)].nom,
-    complement: data.complements[random(0, data.complements.length - 1)].nom,
-    entree: generate(data, TypePlat.ENTREE),
-    plat: generate(data, TypePlat.PLAT),
-    dessert: generate(data, TypePlat.DESSERT),
+    title: getRandom(data.titles).nom,
+    complement: getRandom(data.complements).nom,
+    entree: Array.from({ length: count }, () => generate(data, TypePlat.ENTREE)),
+    plat: Array.from({ length: count }, () => generate(data, TypePlat.PLAT)),
+    dessert: Array.from({ length: count }, () => generate(data, TypePlat.DESSERT)),
   };
 }
 
 export const generate = (data: Menu, mainType: TypePlat): Dish => {
   const platPrincipal: Plat = getPlatByType(data.plats, mainType);
-
   const typeAliments: TypeAliment[] = [...platPrincipal.typeAliments[mainType]];
-
   const ingredients: Ingredient[] = typeAliments && Array.isArray(typeAliments)
-    ? data.ingredients.filter((item: Ingredient) =>
+    ? [...data.ingredients].filter((item: Ingredient) =>
       intersection(
         [...item.types],
         typeAliments,
@@ -84,13 +84,16 @@ const generateMain = (
   ingredients: Ingredient[],
 ): string => {
   let main: string = '';
-  const ingredientPrincipal: Ingredient = getIngredient(ingredients);
+  const ingredientPrincipal: Ingredient | null = getIngredient(ingredients);
+  if (!ingredientPrincipal) {
+    return '';
+  }
   const adjectifPrincipal: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientPrincipal,
   );
   if (random(1, 3) === 3) {
-    const prePrincipal: Pre = data.pres[random(0, data.pres.length - 1)];
+    const prePrincipal: Pre = getRandom(data.pres);
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
   main += `${platPrincipal.nom} ${ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL]}`;
@@ -100,27 +103,34 @@ const generateMain = (
   main += `${ingredientPrincipal.nom} ${adjectifPrincipal.noms[ingredientPrincipal.genre][ingredientPrincipal.nombre]}`;
 
   if (random(1, 3) === 3) {
-    const postPrincipal: Post = data.posts[random(0, data.posts.length - 1)];
+    const postPrincipal: Post = getRandom(data.posts);
     main += ` ${postPrincipal.nom}`;
   }
   return capitalize(main);
 };
 
-const getIngredient = (ingredients: Ingredient[], typeFilter?: TypeAliment): Ingredient => {
+const getIngredient = (ingredients: Ingredient[], typeFilter?: TypeAliment): Ingredient | null => {
+  console.log('alreadyUsed before', alreadyUsed);
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {
     return !alreadyUsed.ingredients.includes(item.id) && (!typeFilter || item.types.includes(
       typeFilter));
   });
-  const selected = filteredIngredients[random(0, filteredIngredients.length - 1)];
-  alreadyUsed.ingredients.push(selected.id);
-  return selected;
+  console.log('filteredIngredients', filteredIngredients);
+  if (filteredIngredients.length > 0 ) {
+    const selected = getRandom(filteredIngredients);
+    console.log('selected', selected);
+    alreadyUsed.ingredients.push(selected.id);
+    console.log('alreadyUsed after', alreadyUsed);
+    return selected;
+  }
+  return null;
 };
 
 const getPlatByType = (plats: Plat[], mainType: TypePlat): Plat => {
   const filterredPlats: Plat[] = plats.filter((item: Plat) =>
     item.types?.includes(mainType),
   );
-  return filterredPlats[random(0, filterredPlats.length - 1)];
+  return getRandom(filterredPlats);
 };
 
 
@@ -135,7 +145,7 @@ const getAdjectifBasedOnIngredient = (
     ).length > 0
     && !alreadyUsed.adjectifs.includes(item.id),
   );
-  const selected = filteredAdjectifs[random(0, filteredAdjectifs.length - 1)];
+  const selected = getRandom(filteredAdjectifs);
   alreadyUsed.adjectifs.push(selected.id);
   return selected;
 };
@@ -146,9 +156,11 @@ const generateSecond = (
   ingredients: Ingredient[],
 ): string => {
   let second: string = '';
-  const lienSecondaire: Lien = data.liens[random(0, data.liens.length - 1)];
-  const ingredientSecondaire: Ingredient = getIngredient(ingredients);
-
+  const lienSecondaire: Lien = getRandom(data.liens);
+  const ingredientSecondaire: Ingredient | null = getIngredient(ingredients);
+  if (!ingredientSecondaire) {
+    return '';
+  }
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
@@ -161,14 +173,17 @@ const generateSecond = (
   second += `${ingredientSecondaire.nom} ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;
 
   if (random(1, 3) === 3) {
-    const postSecondaire: Post = data.posts[random(0, data.posts.length - 1)];
+    const postSecondaire: Post = getRandom(data.posts);
     second += ` ${postSecondaire.nom}`;
   }
   return second;
 };
 
-function generateSauce(data: Menu) {
-  const ingredientSauce: Ingredient = getIngredient(ingredients, TypeAliment.SAUCE);
+function generateSauce(data: Menu): string {
+  const ingredientSauce: Ingredient | null = getIngredient(ingredients, TypeAliment.SAUCE);
+  if (!ingredientSauce) {
+    return '';
+  }
   const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSauce,

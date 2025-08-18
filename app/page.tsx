@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const mainColor = '#CF9A39';
   const data: Menu = getMenuData();
-  const menu: DisplayMenu = generateDisplayMenu(data);
+  const menu: DisplayMenu = generateDisplayMenu(data, 3);
 
   return (
     <main

@@ -25,21 +25,21 @@ export default function MenuPage({ mainColor, menu }: { mainColor: string, menu:
           <MenuSection
             color={mainColor}
             title="Entrée"
-            dish={menu.entree}
+            dishes={menu.entree}
           />
 
           <MenuSection
             color={mainColor}
             title="Plat"
-            dish={menu.plat}
+            dishes={menu.plat}
           />
 
           <MenuSection
             color={mainColor}
             title="Dessert"
-            dish={menu.dessert}
+            dishes={menu.dessert}
           />
-          <MenuRefreshButton/>
+          <MenuRefreshButton />
         </div>
       </div>
     </article>

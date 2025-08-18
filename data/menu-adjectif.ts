@@ -72,7 +72,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'amères',
       },
     },
-    types: [TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.SOFT],
+    types: [TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.SOFT, TypeAliment.FRUIT_A_COQUE],
   },
   {
     id: 'c3829151-da74-4ac8-b661-1c54ffd74c10',
