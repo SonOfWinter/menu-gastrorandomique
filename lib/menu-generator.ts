@@ -30,11 +30,6 @@ const alreadyUsed: { ingredients: string[], adjectifs: string[] } = {
   adjectifs: [],
 };
 
-// Fonction générique pour accéder à une propriété de manière sécurisée
-function getField<T extends object, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
-}
-
 export function getMenuData(): Menu {
   return {
     adjectifs: adjectifs,
@@ -64,15 +59,12 @@ export function generateDisplayMenu(data: Menu): DisplayMenu {
 export const generate = (data: Menu, mainType: TypePlat): Dish => {
   const platPrincipal: Plat = getPlatByType(data.plats, mainType);
 
-  const typeAliments: string | TypePlat[] | TypeAliment[] = getField(
-    platPrincipal,
-    mainType,
-  );
+  const typeAliments: TypeAliment[] = [...platPrincipal.typeAliments[mainType]];
 
   const ingredients: Ingredient[] = typeAliments && Array.isArray(typeAliments)
     ? data.ingredients.filter((item: Ingredient) =>
       intersection(
-        item.types,
+        [...item.types],
         typeAliments,
       ).length > 0,
     ) : [];
@@ -135,8 +127,8 @@ const getAdjectifBasedOnIngredient = (
 ): Adjectif => {
   const filteredAdjectifs = adjectifs.filter((item: Adjectif) =>
     intersection(
-      item.types,
-      ingredient.types,
+      [...item.types],
+      [...ingredient.types],
     ).length > 0
     && !alreadyUsed.adjectifs.includes(item.id),
   );

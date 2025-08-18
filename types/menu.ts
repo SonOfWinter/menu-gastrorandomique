@@ -1,3 +1,6 @@
+export type DeepReadonly<T> = {
+  readonly [K in keyof T]: DeepReadonly<T[K]>
+}
 export enum TypeAliment {
   LEGUME = 'legume',
   FRUIT = 'fruit',
@@ -42,77 +45,75 @@ export enum TypeDeterminant {
 
 export type NomForms = Record<Genre, Record<Nombre, string>>
 
-export type DisplayMenu = {
+export type DisplayMenu = DeepReadonly<{
   price: number;
   title: string;
   complement: string;
   entree: Dish;
   plat: Dish;
   dessert: Dish;
-}
+}>
 
-export type Dish = {
+export type Dish = DeepReadonly<{
   main: string;
   second: string;
   sauce?: string;
-}
+}>
 
 
 // Tables
 
-export type Ingredient = {
+export type Ingredient = DeepReadonly<{
   id: string;
   nom: string,
   genre: Genre,
   nombre: Nombre,
   types: TypeAliment[],
   determinants: Record<TypeDeterminant, string>
-}
+}>
 
-export type Plat = {
+export type Plat = DeepReadonly<{
   id: string;
   nom: string;
   genre: Genre;
   nombre: Nombre;
   types: TypePlat[];
-  entree: TypeAliment[];
-  plat: TypeAliment[];
-  dessert: TypeAliment[];
-}
+  typeAliments: Record<TypePlat, TypeAliment[]>
+}>
 
-export type Adjectif = {
+export type Adjectif = DeepReadonly<{
   id: string;
   noms: NomForms;
   types: TypeAliment[];
-}
+}>
 
-export type Pre = {
+export type Pre = DeepReadonly<{
   id: string;
   noms: NomForms;
   types: TypePlat[];
-}
+}>
 
-export type Post = {
+export type Post = DeepReadonly<{
   id: string;
   nom: string;
   types: TypePlat[];
-}
+}>
 
-export type Lien = {
+export type Lien = DeepReadonly<{
   id: string;
   noms: NomForms;
   suite: TypeDeterminant;
-}
+}>
 
-export type Title = {
+export type Title = DeepReadonly<{
   id: string;
   nom: string;
-}
+}>
 
-export type Complement = {
+export type Complement = DeepReadonly<{
   id: string;
   nom: string;
-}
+}>
 
 export interface Menu {
   ingredients: Ingredient[];

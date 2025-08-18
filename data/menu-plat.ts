@@ -13,9 +13,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'e2c2c50e-c7b9-43f5-bd4f-fd614c076437',
@@ -23,9 +25,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '4406b6e6-65a4-4115-9724-562b14a7e631',
@@ -33,9 +37,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '2fe246aa-bcc8-49f7-a82c-edfc397e4b11',
@@ -43,9 +49,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'e50a5e48-1787-4f18-9cd6-2b1ac8f6a1b9',
@@ -53,9 +61,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    plat: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'e200e42a-3ba2-48a1-a921-e3fb2c57c19e',
@@ -63,9 +73,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    plat: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '44579597-d265-4b19-8ddd-96e71b90b241',
@@ -73,9 +85,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.ALCOOL],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.ALCOOL],
+    },
   },
   {
     id: 'd60233a5-3562-46fd-a074-289f4c76494b',
@@ -83,9 +97,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'fc84f7cd-bcb6-4139-91d2-4183c49eebf2',
@@ -93,9 +109,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '76fb492e-b094-4695-9cf8-a03f26794aa5',
@@ -103,9 +121,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '08a350b2-8b05-426a-a171-1c51fea3c215',
@@ -113,9 +133,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '589709bd-b6ad-4f82-9f31-8b34d06d5bc1',
@@ -123,9 +145,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'abed26a5-a5d9-4db6-8365-7452a731aaee',
@@ -133,9 +157,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '1445d9c0-098e-48f0-a345-ee97c9ee3df6',
@@ -143,9 +169,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '7bebbe8b-60e1-44ba-8828-4f5218a2a260',
@@ -153,9 +181,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    plat: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '22028d3c-662e-4140-8765-f316779295df',
@@ -163,9 +193,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '3daecc0b-6dff-453b-939f-7a358c372e16',
@@ -173,9 +205,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'ebebcf06-e200-4f97-92b0-2f24f61e6566',
@@ -183,9 +217,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '540b64a5-3757-4acd-a862-4f6fa435ccd3',
@@ -193,9 +229,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'c9254ac8-97b3-49a0-bdff-4341b240721e',
@@ -203,9 +241,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
-    plat: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: '0b417e00-4a02-407f-92c5-a136d6235f75',
@@ -213,9 +253,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    plat: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '6d5e674b-491f-48d9-8e46-7c98a1584f9b',
@@ -223,9 +265,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '9839b92c-9b73-4cdb-95fe-cbcf1921541c',
@@ -233,9 +277,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    },
   },
   {
     id: 'c48f686f-b3c5-4b7d-a9ef-2c892180c7fb',
@@ -243,9 +289,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '05a7b833-87e6-4729-8867-47bc9a8b8d41',
@@ -253,9 +301,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '18fe9886-42f5-48fc-a894-27aad53639ac',
@@ -263,9 +313,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '71763660-d091-4236-af32-75ef0ff2cb06',
@@ -273,9 +325,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '5618e9cc-07af-4f5c-82ba-00743a0fb5ef',
@@ -283,9 +337,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE],
+    },
   },
   {
     id: 'a6cb11df-f9e6-4503-a3f0-fc66e76fad36',
@@ -293,9 +349,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '0fec96c2-69cf-45d6-8cbe-6cf20fdc8bf0',
@@ -303,9 +361,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.POISSON],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '48de74ae-d7da-4871-9ea9-33dc1178ffa6',
@@ -313,9 +373,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.POISSON, TypeAliment.FRUIT],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'c8bc6575-8ef0-463d-a431-44da96823365',
@@ -323,9 +385,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '59f38372-0497-492d-b284-f1ae9f903a78',
@@ -333,9 +397,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '39978627-5270-44fe-9529-e23455e423b0',
@@ -343,9 +409,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME],
-    plat: [],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: '07fa643c-1f96-431f-b9ab-b9aff1a97aef',
@@ -353,9 +421,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.CHAMPIGNON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '35e2f86a-958e-4a15-9f3d-ccac7f48c0a1',
@@ -363,9 +433,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: '1b86ee6a-5500-4216-b835-cd65d1d45b5e',
@@ -373,9 +445,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: '6a0d8b0d-e32a-4c82-8b81-a4d8f9e0b2c4',
@@ -383,9 +457,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: 'bfc532ee-5bec-493c-a7b4-b06af99d4518',
@@ -393,9 +469,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'f351ab76-4b33-459e-b706-c77698827234',
@@ -403,9 +481,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'cdf82744-0a3d-4d77-aa8d-0a989e734dce',
@@ -413,9 +493,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '8bb3a064-1d75-41fa-8d61-02ce0ed2938d',
@@ -423,9 +505,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'ea68f462-ef08-4b5e-b01b-c2520e5bd40e',
@@ -433,9 +517,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FRUIT_DE_MER],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'fdccdb44-8518-4eac-990f-57f7b91b01d3',
@@ -443,9 +529,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '55980bfb-0816-486a-9da4-db700dd738df',
@@ -453,9 +541,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE, TypeAliment.BASE, TypeAliment.SAUCE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE, TypeAliment.BASE, TypeAliment.SAUCE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '016c1755-cc0e-4398-9ce9-9f881eba9098',
@@ -463,9 +553,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '35b79a94-21b3-40ea-a9f0-e64c51522585',
@@ -473,9 +565,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON],
-    plat: [TypeAliment.FROMAGE, TypeAliment.BASE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER],
-    dessert: [TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [TypeAliment.FROMAGE, TypeAliment.BASE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '1e0fdab2-8ca6-49b8-9bc4-14f59f8c57cd',
@@ -483,9 +577,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '5487f708-2889-4c42-9711-5bcb375d3dbd',
@@ -493,9 +589,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-    plat: [],
-    dessert: [TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '4b709473-fd82-415a-8e50-347e012d10b8',
@@ -503,9 +601,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '241db88c-14bf-4b59-9047-5162992b07fe',
@@ -513,9 +613,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-    plat: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-    dessert: [TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '53ec9b52-6711-4532-86e6-b9b3c8d3098f',
@@ -523,9 +625,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'af5ca371-e747-4210-b12d-70b7d169c893',
@@ -533,9 +637,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'b7d0c8b8-f7ea-4aec-b52d-a3b9b8625349',
@@ -543,9 +649,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '07dac626-ea9d-4941-a607-8deb1cc4d685',
@@ -553,9 +661,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'a27fe87b-a87d-44e6-b390-7ce44a666ef9',
@@ -563,9 +673,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'b7d69e93-9849-4ddc-9ff9-b64d4acd92f8',
@@ -573,9 +685,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '8949e6c4-9024-4291-aa06-e5433457a9ff',
@@ -583,9 +697,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '40883b0c-604a-45b8-b05b-7ec127c39efb',
@@ -593,9 +709,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME],
-    plat: [TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '5f820293-ccba-4e24-9d25-5f172cbbb349',
@@ -603,9 +721,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'f2253207-6039-4b6e-81ba-6c92bb8d839f',
@@ -613,9 +733,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '5cd041ff-6e2f-48e3-b0a7-8a178b47bb77',
@@ -623,9 +745,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.SAUCE, TypeAliment.BASE],
-    plat: [TypeAliment.BASE, TypeAliment.SAUCE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.SAUCE, TypeAliment.BASE],
+      [TypePlat.PLAT]: [TypeAliment.BASE, TypeAliment.SAUCE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'efd32c52-52c6-4291-856c-3cfdfcd647ec',
@@ -633,9 +757,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'c26302c9-1ed3-4352-864e-08d861208fef',
@@ -643,9 +769,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.SALADE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.ALCOOL],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.ALCOOL],
+    },
   },
   {
     id: 'be820653-7f8d-44ae-b39d-c01425f03698',
@@ -653,9 +781,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'ff40a245-5081-408f-a5ed-16560c89db62',
@@ -663,9 +793,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL],
-    plat: [TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL],
+    },
   },
   {
     id: '97f2fd5c-0a5f-461b-b724-159d7e0c46b5',
@@ -673,9 +805,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT],
+    },
   },
   {
     id: '7d83492d-8672-4abe-91b3-5f607e3bbeaf',
@@ -683,9 +817,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '2f5e2a55-7023-4bab-b189-ecb4928580ca',
@@ -693,9 +829,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: 'cc14b59e-0897-4d3a-bb0f-25d4ec5fb20b',
@@ -703,9 +841,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '5137b4e4-0fb3-4c43-9ba6-1a48e1a4b71d',
@@ -713,9 +853,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '8bb8230e-b828-4924-aa75-22f9691c67ea',
@@ -723,9 +865,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '71794881-cf0b-4f18-b5bf-af8fdc3f3604',
@@ -733,9 +877,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '637d19e2-c52c-4a42-87ee-75801a24786a',
@@ -743,9 +889,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'affac66a-cb4e-407b-8eea-dea498df2d66',
@@ -753,9 +901,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME],
-    plat: [TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'a1cf7a82-59df-481b-9e69-c6722996b738',
@@ -763,9 +913,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'c39f0074-9496-40d4-8dd0-c367b9142d47',
@@ -773,9 +925,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE],
+    },
   },
   {
     id: 'cb00c56e-bc5f-4438-abb6-b9e1cc0bbd78',
@@ -783,9 +937,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT],
-    plat: [],
-    dessert: [TypeAliment.LEGUME, TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.LEGUME, TypeAliment.FRUIT],
+    },
   },
   {
     id: '7e13bae1-b977-46ef-91e6-28049db188f2',
@@ -793,9 +949,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '648fd4f5-f1df-45ab-9ab5-53e5c8563f2d',
@@ -803,9 +961,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '388a37ef-8074-4d3d-850b-96f9f29e5b23',
@@ -813,9 +973,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '5c1d524b-294b-4a4b-801c-802921945c18',
@@ -823,9 +985,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON],
-    plat: [TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.BASE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.BASE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'a2f59cb5-12bc-4978-97ba-fd95d294df3a',
@@ -833,9 +997,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.ALCOOL],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.ALCOOL],
+    },
   },
   {
     id: 'f99df7a5-070a-444e-a8d0-aaa00a6677f2',
@@ -843,9 +1009,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '3ed36ec9-6f53-47e3-bad0-c7e252a7abe7',
@@ -853,9 +1021,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '973f9dfd-8855-4150-b722-5c264911f938',
@@ -863,9 +1033,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '133eb817-a95a-462d-a0ec-46e735d47eea',
@@ -873,9 +1045,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '3776bb26-8855-44b5-9863-dcce9d4ac056',
@@ -883,9 +1057,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '9965b7ab-8271-4156-8def-c2247a547f3c',
@@ -893,9 +1069,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.SALADE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: '17d90736-e144-46d1-a7a8-56de513cbf6a',
@@ -903,9 +1081,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.LEGUME],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.LEGUME],
+    },
   },
   {
     id: '771a9788-fdfa-4f0c-b5c9-ec05fe229afd',
@@ -913,9 +1093,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '385b6543-7c60-4fe5-ba40-7c00270d448b',
@@ -923,9 +1105,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '9446d4bd-a76b-4cb0-bef5-df4fe101ad5a',
@@ -933,9 +1117,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'ac804549-179f-400f-a6a6-40cb7c68bad2',
@@ -943,9 +1129,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'ae424d3b-d32f-41ae-8a90-3877e3025bd6',
@@ -953,9 +1141,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '5847310b-1df6-4658-abac-71504443819b',
@@ -963,9 +1153,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '6f5b8952-1524-4659-bb81-b4433596829f',
@@ -973,9 +1165,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'c29fd7b9-62cf-4a13-afd8-be422773a8ad',
@@ -983,9 +1177,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.SALADE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '7b188848-f821-4d09-b48f-4cb8da799925',
@@ -993,9 +1189,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'b97c528b-b235-4762-a381-d6500208a893',
@@ -1003,9 +1201,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '17a3c19d-0014-44cd-9f18-d44e7a39144b',
@@ -1013,9 +1213,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '49d0c859-84bb-46b5-8412-d68caa0c0aa5',
@@ -1023,9 +1225,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'ad7186e0-ff82-45ff-bff6-3cda9dafe747',
@@ -1033,9 +1237,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '421723d0-0f21-470e-a050-ef23c26cd31b',
@@ -1043,9 +1249,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'c0bee774-7226-4b6e-97ec-d4b712d563d3',
@@ -1053,9 +1261,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '74b86d31-5943-410e-8524-fd1d7ee12e80',
@@ -1063,9 +1273,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '381426e3-5c29-4495-9c46-37cf1441265d',
@@ -1073,9 +1285,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '19ae041e-9dac-4a7b-a66b-adc18c6332ff',
@@ -1083,9 +1297,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    plat: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '54b1fd44-64e7-4afc-b898-76a07389239e',
@@ -1093,9 +1309,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '7647d364-8b93-4cb3-a006-cbe024e23edc',
@@ -1103,9 +1321,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '735e3d6a-82b6-4dce-8406-14a39546fb26',
@@ -1113,9 +1333,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '68fa4858-3b2b-419e-a0dd-88f04b593d7b',
@@ -1123,9 +1345,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'cff359a1-efd5-460b-897c-386c2e69c3e5',
@@ -1133,9 +1357,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '80cedc10-2fc9-4516-ab0a-e156e0965002',
@@ -1143,9 +1369,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '34ad2823-4bc3-4837-8291-5f0ded9e786a',
@@ -1153,9 +1381,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'f2c9daeb-f988-4b52-8bdc-17b952ad3076',
@@ -1163,9 +1393,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '07f34c34-394f-4fa6-a1fa-ed8c936d24b1',
@@ -1173,9 +1405,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: 'f421af47-9a57-43e2-a5ca-4caf7990a591',
@@ -1183,9 +1417,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'b447fe02-3474-4fd1-b015-8c89d3c4800d',
@@ -1193,9 +1429,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'e93f5e6b-7a97-457d-a1f7-5c22e04ea863',
@@ -1203,9 +1441,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '71bc7b44-1afe-4030-9326-74c72c0a9a6a',
@@ -1213,9 +1453,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '598a067d-6002-468d-beb9-467284c283b6',
@@ -1223,9 +1465,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '1ca7c11e-b67e-4735-995b-460849c6c291',
@@ -1233,9 +1477,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '6146dcce-0631-4ace-aea5-f45d426d5849',
@@ -1243,9 +1489,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.SALADE],
-    plat: [TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '0c03f37f-20d7-4742-8863-57d501c906b8',
@@ -1253,9 +1501,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.ALCOOL],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.ALCOOL],
+    },
   },
   {
     id: '2e516d6f-db3b-4969-94ec-f7cc201914c2',
@@ -1263,9 +1513,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'b1c7b031-6252-4223-bf08-08a3814ca1c6',
@@ -1273,9 +1525,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
+    },
   },
   {
     id: '0deb5b6a-28b2-41c6-b38d-41b3a127bd89',
@@ -1283,9 +1537,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '0477d7ae-28e0-4228-9b7b-aae9e63f309c',
@@ -1293,9 +1549,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '963d90af-cf5b-406f-a1a0-54fca6b55833',
@@ -1303,9 +1561,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME],
-    plat: [TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '68512c78-6a3e-42bb-9952-88c47b0de21e',
@@ -1313,9 +1573,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.FROMAGE],
-    plat: [TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'b44f661f-19f3-4331-97ef-0ea5475fbf7e',
@@ -1323,9 +1585,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: 'e091fcac-8f00-4cf7-9de9-2d4f20b8f2ee',
@@ -1333,9 +1597,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '1bb2f69d-559b-480c-886b-d2429fab001c',
@@ -1343,9 +1609,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '8e9907b0-5177-466e-b791-62a8ec4151e5',
@@ -1353,9 +1621,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '97ed1786-7035-4eb1-b2ea-7891ed330322',
@@ -1363,9 +1633,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'd56cfe91-09a3-46a3-ad5e-c3ff1882d9ba',
@@ -1373,9 +1645,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '6458d843-6c55-464e-a46d-a92f52475664',
@@ -1383,9 +1657,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '281813ba-6732-4382-b7cf-dd9e1c897bd7',
@@ -1393,9 +1669,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'dbeb7119-9cbb-45a9-be44-d28a9919c647',
@@ -1403,9 +1681,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'fde43988-ed5f-4408-b113-4e0e5ab0d062',
@@ -1413,9 +1693,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '7eaa9bf5-5858-4395-b8a4-95443921ead2',
@@ -1423,9 +1705,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '545984cb-7815-42ef-aaaa-b345aff1a312',
@@ -1433,9 +1717,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '752c7d48-72cb-48d8-9cce-2d35e2e54684',
@@ -1443,9 +1729,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.CEREALE, TypeAliment.SALADE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.LEGUME],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.CEREALE, TypeAliment.SALADE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.LEGUME],
+    },
   },
   {
     id: 'c69fa8eb-5281-4aad-abca-fad16b7afd32',
@@ -1453,9 +1741,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: 'ad6d0a36-6a75-487a-8e4d-0f4f68d8a821',
@@ -1463,9 +1753,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
-    plat: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '169b0e21-37a0-41ee-96cf-5c4370a37d43',
@@ -1473,9 +1765,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '7f47912c-6eaf-4c98-8dd3-0197086f5e97',
@@ -1483,9 +1777,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '72f6e57d-a366-4c6c-a3b6-4e620272377b',
@@ -1493,9 +1789,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '7ca0388b-a31b-40af-b9a6-e4602d58bf45',
@@ -1503,9 +1801,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: '291d4af0-a19a-4762-bc5f-57166381449d',
@@ -1513,9 +1813,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '52a54e7f-5a03-4f47-8cf1-12925be118f8',
@@ -1523,9 +1825,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '75fb2f42-18ee-44b8-9f7d-1b5f0148c3c0',
@@ -1533,9 +1837,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '1cbd4eed-ddd7-42aa-b946-c50b73aa390c',
@@ -1543,9 +1849,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '587b4332-2c1f-4b37-8d93-3566a4f6445f',
@@ -1553,9 +1861,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'e33da3e4-58f2-42b2-a68d-8d0c5f54ebbf',
@@ -1563,9 +1873,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.VIANDE_ROUGE],
-    plat: [TypeAliment.VIANDE_ROUGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: '417d9752-5be7-4d31-a240-ed7fdb1d589c',
@@ -1573,9 +1885,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    entree: [TypeAliment.LEGUME],
-    plat: [TypeAliment.LEGUME],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'da8b0894-876d-4034-8ea8-ba0e26fbfc81',
@@ -1583,9 +1897,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
-    entree: [],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    },
   },
   {
     id: '0393c2a0-6c55-47d3-9fba-ba9ba2cec7e4',
@@ -1593,9 +1909,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
   {
     id: 'b0c09ec6-1e98-4924-8b96-39a55cd9ce30',
@@ -1603,9 +1921,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'fedeed26-ce9f-4342-b870-d3b838154a9a',
@@ -1613,9 +1933,11 @@ const plats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-    plat: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
+    },
   },
   {
     id: 'c3c4c019-1c71-4f47-851e-7d3cce813941',
@@ -1623,9 +1945,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
-    entree: [TypeAliment.LEGUME],
-    plat: [],
-    dessert: [TypeAliment.FRUIT],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT],
+    },
   },
   {
     id: '8f7bad05-2076-4e62-a74b-de561d900266',
@@ -1633,9 +1957,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
-    entree: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-    plat: [],
-    dessert: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    typeAliments: {
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
+    },
   },
   {
     id: '8ba55a4c-268c-4bad-adbb-15b73f476553',
@@ -1643,9 +1969,11 @@ const plats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.PLAT],
-    entree: [],
-    plat: [TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE],
-    dessert: [],
+    typeAliments: {
+      [TypePlat.ENTREE]: [],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [],
+    },
   },
 ];
 export default plats;
