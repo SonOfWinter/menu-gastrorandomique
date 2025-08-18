@@ -7,7 +7,7 @@ const liens: Lien[] = [
     nom_m_p: 'accompagnés',
     nom_f_s: 'accompagnée',
     nom_f_p: 'accompagnées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '1adcf0ff-d7fe-44e9-ab24-956dfbdf47d6',
@@ -31,7 +31,7 @@ const liens: Lien[] = [
     nom_m_p: 'agrémentés',
     nom_f_s: 'agrémentée',
     nom_f_p: 'agrémentées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '4010c449-50b4-4de5-9a6f-1c91447ad57a',
@@ -47,7 +47,7 @@ const liens: Lien[] = [
     nom_m_p: 'arrosés',
     nom_f_s: 'arrosée',
     nom_f_p: 'arrosées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '4dc0e0e1-cf4e-4837-b4c3-b465fe100948',
@@ -55,7 +55,7 @@ const liens: Lien[] = [
     nom_m_p: 'assaisonnés',
     nom_f_s: 'assaisonnée',
     nom_f_p: 'assaisonnées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'f9b4d1ac-ecdf-4ec1-920f-3904294330bc',
@@ -63,7 +63,7 @@ const liens: Lien[] = [
     nom_m_p: 'aux éclats',
     nom_f_s: 'aux éclats',
     nom_f_p: 'aux éclats',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '8aacdfeb-4f9d-4fde-936c-6c5e45af7007',
@@ -87,7 +87,7 @@ const liens: Lien[] = [
     nom_m_p: 'bordés',
     nom_f_s: 'bordée',
     nom_f_p: 'bordées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'b016a0f1-2872-4901-92bf-e16577bab4d4',
@@ -191,7 +191,7 @@ const liens: Lien[] = [
     nom_m_p: 'escortés',
     nom_f_s: 'escortée',
     nom_f_p: 'escortées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '19dab334-7826-4fcb-a103-ff322ecb5672',
@@ -215,7 +215,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa farandole',
     nom_f_s: 'et sa farandole',
     nom_f_p: 'et sa farandole',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'fa3865b6-1f38-434a-a8fa-28f14f808d3f',
@@ -223,7 +223,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa mélodie',
     nom_f_s: 'et sa mélodie',
     nom_f_p: 'et sa mélodie',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '61d7c8af-c77b-4b57-8724-1ad37223006b',
@@ -231,7 +231,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa myriade',
     nom_f_s: 'et sa myriade',
     nom_f_p: 'et sa myriade',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '2031a4a8-5cd4-43d3-a1fc-2e42f36f2842',
@@ -239,7 +239,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa sérénade',
     nom_f_s: 'et sa sérénade',
     nom_f_p: 'et sa sérénade',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'c584ff9d-29c1-4851-b5a6-cf0811d18a35',
@@ -247,7 +247,7 @@ const liens: Lien[] = [
     nom_m_p: 'et sa symphonie',
     nom_f_s: 'et sa symphonie',
     nom_f_p: 'et sa symphonie',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '863ddd77-8a6f-47b9-a89f-71d34a1f58cb',
@@ -255,7 +255,7 @@ const liens: Lien[] = [
     nom_m_p: 'et son accompagnement',
     nom_f_s: 'et son accompagnement',
     nom_f_p: 'et son accompagnement',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'e3ccb54b-f5f6-4d26-bce4-2455c88ee8e7',
@@ -263,7 +263,7 @@ const liens: Lien[] = [
     nom_m_p: 'et son nuage',
     nom_f_s: 'et son nuage',
     nom_f_p: 'et son nuage',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '2d7a765a-ac66-4316-85a6-542e2c1a0246',
@@ -271,7 +271,7 @@ const liens: Lien[] = [
     nom_m_p: 'et son sirop',
     nom_f_s: 'et son sirop',
     nom_f_p: 'et son sirop',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '5f54a9d2-f709-41ef-ae7f-d6d588e73bfe',
@@ -383,7 +383,7 @@ const liens: Lien[] = [
     nom_m_p: 'nappés',
     nom_f_s: 'nappée',
     nom_f_p: 'nappées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '1a1eca31-b3d2-4fe9-9455-9682ae66411c',
@@ -399,7 +399,7 @@ const liens: Lien[] = [
     nom_m_p: 'parsemés d’éclats',
     nom_f_s: 'parsemée d’éclats',
     nom_f_p: 'parsemées d’éclats',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'c241a55d-1fe5-4908-a4ca-b27ea7329ead',
@@ -423,7 +423,7 @@ const liens: Lien[] = [
     nom_m_p: 'rehaussés d’une touche',
     nom_f_s: 'rehaussée d’une touche',
     nom_f_p: 'rehaussées d’une touche',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '9fd6b764-2743-4a08-a908-acdfcc0533b3',
@@ -439,7 +439,7 @@ const liens: Lien[] = [
     nom_m_p: 'relevés',
     nom_f_s: 'relevée',
     nom_f_p: 'relevées',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '26ac90b1-c773-4cb3-8c85-7bbe6eaa4f18',
@@ -479,7 +479,7 @@ const liens: Lien[] = [
     nom_m_p: 'sous un voile',
     nom_f_s: 'sous un voile',
     nom_f_p: 'sous un voile',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: '55e0326a-a02e-47f8-88cb-1296ee1aac18',
@@ -503,7 +503,7 @@ const liens: Lien[] = [
     nom_m_p: 'sur son lit',
     nom_f_s: 'sur son lit',
     nom_f_p: 'sur son lit',
-    suite: 'determimantPrincipal',
+    suite: 'determinantPrincipal',
   },
   {
     id: 'f2af7440-64be-4478-abcc-221686bc3907',

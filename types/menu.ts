@@ -1,5 +1,4 @@
 export enum TypeAliment {
-  Vide = 'vide',
   Legume = 'legume',
   Fruit = 'fruit',
   Vianderouge = 'vianderouge',
@@ -18,8 +17,16 @@ export enum TypeAliment {
   Sucre = 'sucre',
   Cereale = 'cereale'
 }
-export type Genre = 'f' | 'm';
-export type Nombre = 's' | 'p';
+
+export enum Genre {
+  Feminin = 'f',
+  Masculin = 'm',
+}
+
+export enum Nombre {
+  Singulier = 's',
+  Pluriel = 'p',
+}
 
 export enum TypePlat {
   Entree = 'entree',
@@ -27,7 +34,7 @@ export enum TypePlat {
   Dessert = 'dessert'
 }
 
-export type TypeSuite = 'determimantPrincipal' | 'determinantSecondaire' | 'adjectifPossessif';
+export type TypeSuite = 'determinantPrincipal' | 'determinantSecondaire' | 'adjectifPossessif';
 export type NomProps = 'nom_m_s' | 'nom_m_p' | 'nom_f_s' | 'nom_f_p';
 
 export type DisplayMenu = {
@@ -54,7 +61,7 @@ export type Ingredient = {
   genre: Genre,
   nombre: Nombre,
   types: TypeAliment[],
-  determimantPrincipal: string,
+  determinantPrincipal: string,
   determinantSecondaire: string,
   adjectifPossessif: string,
 }

@@ -100,8 +100,8 @@ const generateMain = (
     const prePrincipal: Pre = data.pres[random(0, data.pres.length - 1)];
     main += `${prePrincipal[nameDrivedByPlat]} `;
   }
-  main += `${platPrincipal.nom} ${ingredientPrincipal.determimantPrincipal}`;
-  if (!ingredientPrincipal.determimantPrincipal.endsWith('\'')) {
+  main += `${platPrincipal.nom} ${ingredientPrincipal.determinantPrincipal}`;
+  if (!ingredientPrincipal.determinantPrincipal.endsWith('\'')) {
     main += ' ';
   }
   main += `${ingredientPrincipal.nom} ${adjectifPrincipal[nameDrivedByIngredientPrincipal]}`;
