@@ -1,9 +1,9 @@
 import React from 'react';
-import { DisplayMenu } from '@/types/menu';
 import Border from '@/ui/border';
 import MenuTitle from '@/ui/menu-title';
 import MenuSection from '@/ui/menu-section';
 import MenuRefreshButton from '@/ui/menu-refresh-button';
+import { DisplayMenu } from '@/types/display-menu';
 
 export default function MenuPage({ mainColor, menu }: { mainColor: string, menu: DisplayMenu }) {
 

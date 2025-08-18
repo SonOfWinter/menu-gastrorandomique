@@ -1,9 +1,7 @@
-import {
-  Genre,
-  Lien,
-  Nombre,
-  TypeDeterminant,
-} from '@/types/menu';
+import { Genre } from '@/types/enums/genre';
+import { Nombre } from '@/types/enums/nombre';
+import { TypeDeterminant } from '@/types/enums/type-determinant';
+import { Lien } from '@/types/data/lien';
 
 const liens: Lien[] = [
   {

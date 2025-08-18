@@ -1,10 +1,8 @@
-import {
-  Genre,
-  Ingredient,
-  Nombre,
-  TypeAliment,
-  TypeDeterminant,
-} from '@/types/menu';
+import { TypeAliment } from '@/types/enums/TypeAliment';
+import { Genre } from '@/types/enums/genre';
+import { Nombre } from '@/types/enums/nombre';
+import { TypeDeterminant } from '@/types/enums/type-determinant';
+import { Ingredient } from '@/types/data/ingredient';
 
 const ingredients: Ingredient[] = [
   {

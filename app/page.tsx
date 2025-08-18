@@ -1,6 +1,5 @@
 import { Montserrat } from 'next/font/google';
 import {
-  DisplayMenu,
   Menu,
 } from '@/types/menu';
 import MenuPage from '@/ui/menuPage';
@@ -11,6 +10,7 @@ import {
 } from '@/lib/menu-generator';
 import { cn } from '@/lib/utils';
 import { Metadata } from 'next';
+import { DisplayMenu } from '@/types/display-menu';
 
 export const dynamic = 'force-dynamic';
 const montserrat = Montserrat({

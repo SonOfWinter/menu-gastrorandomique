@@ -1,9 +1,7 @@
-import {
-  Adjectif,
-  Genre,
-  Nombre,
-  TypeAliment,
-} from '@/types/menu';
+import { TypeAliment } from '@/types/enums/TypeAliment';
+import { Genre } from '@/types/enums/genre';
+import { Nombre } from '@/types/enums/nombre';
+import { Adjectif } from '@/types/data/adjectif';
 
 const adjectifs: Adjectif[] = [
   {

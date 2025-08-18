@@ -1,9 +1,7 @@
-import {
-  Genre,
-  Nombre,
-  Pre,
-  TypePlat,
-} from '@/types/menu';
+import { Genre } from '@/types/enums/genre';
+import { Nombre } from '@/types/enums/nombre';
+import { TypePlat } from '@/types/enums/type-plat';
+import { Pre } from '@/types/data/pre';
 
 const pres: Pre[] = [
   {

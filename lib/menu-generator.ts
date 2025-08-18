@@ -1,16 +1,8 @@
 import {
-  TypePlat,
   Menu,
-  Plat,
-  Ingredient,
-  TypeAliment,
-  Adjectif,
-  Pre,
-  Post,
-  Lien,
-  Dish,
-  DisplayMenu,
-  TypeDeterminant,
+
+
+
 } from '@/types/menu';
 import capitalize from '@/lib/capitalize';
 import random from '@/lib/random';
@@ -24,6 +16,17 @@ import titles from '@/data/menu-title';
 import liens from '@/data/menu-lien';
 import ingredients from '@/data/menu-ingredient';
 import complements from '@/data/menu-complement';
+import { TypeAliment } from '@/types/enums/TypeAliment';
+import { TypePlat } from '@/types/enums/type-plat';
+import { TypeDeterminant } from '@/types/enums/type-determinant';
+import { Dish } from '@/types/dish';
+import { DisplayMenu } from '@/types/display-menu';
+import { Ingredient } from '@/types/data/ingredient';
+import { Plat } from '@/types/data/plat';
+import { Adjectif } from '@/types/data/adjectif';
+import { Pre } from '@/types/data/pre';
+import { Post } from '@/types/data/post';
+import { Lien } from '@/types/data/lien';
 
 const alreadyUsed: { ingredients: string[], adjectifs: string[] } = {
   ingredients: [],

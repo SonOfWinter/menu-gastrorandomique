@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
 import { Tangerine } from 'next/font/google';
-import { Dish } from '@/types/menu';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
+import { Dish } from '@/types/dish';
 
 const tangerine = Tangerine({
   weight: '400',

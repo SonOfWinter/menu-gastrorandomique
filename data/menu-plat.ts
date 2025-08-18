@@ -1,10 +1,8 @@
-import {
-  Genre,
-  Nombre,
-  Plat,
-  TypeAliment,
-  TypePlat,
-} from '@/types/menu';
+import { TypeAliment } from '@/types/enums/TypeAliment';
+import { Genre } from '@/types/enums/genre';
+import { Nombre } from '@/types/enums/nombre';
+import { TypePlat } from '@/types/enums/type-plat';
+import { Plat } from '@/types/data/plat';
 
 const plats: Plat[] = [
   {

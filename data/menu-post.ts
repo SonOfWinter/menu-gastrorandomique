@@ -1,7 +1,5 @@
-import {
-  Post,
-  TypePlat,
-} from '@/types/menu';
+import { TypePlat } from '@/types/enums/type-plat';
+import { Post } from '@/types/data/post';
 
 const posts: Post[] = [
   {
