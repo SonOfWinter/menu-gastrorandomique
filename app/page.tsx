@@ -28,7 +28,7 @@ export default async function Home() {
   const cookieStore = await cookies()
 
   const view = cookieStore.get('view');
-  const glitchLevel: number = Math.min((view ? Number.parseInt(view.value) : 0), 20);
+  const glitchLevel: number = view ? Number.parseInt(view.value) : 0;
   const menu: DisplayMenu = generateDisplayMenu(data, 3, glitchLevel);
 
   return (
