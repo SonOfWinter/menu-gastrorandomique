@@ -1,22 +1,23 @@
-export type TypeAliment =
-  'vide'
-  | 'legume'
-  | 'fruit'
-  | 'vianderouge'
-  | 'viandeblanche'
-  | 'poisson'
-  | 'fruitdemer'
-  | 'champignon'
-  | 'sauce'
-  | 'salade'
-  | 'base'
-  | 'soft'
-  | 'alcool'
-  | 'fromage'
-  | 'liquide'
-  | 'fruitacoque'
-  | 'sucre'
-  | 'cereale';
+export enum TypeAliment {
+  Vide = 'vide',
+  Legume = 'legume',
+  Fruit = 'fruit',
+  Vianderouge = 'vianderouge',
+  Viandeblanche = 'viandeblanche',
+  Poisson = 'poisson',
+  Fruitdemer = 'fruitdemer',
+  Champignon = 'champignon',
+  Sauce = 'sauce',
+  Salade = 'salade',
+  Base = 'base',
+  Soft = 'soft',
+  Alcool = 'alcool',
+  Fromage = 'fromage',
+  Liquide = 'liquide',
+  Fruitacoque = 'fruitacoque',
+  Sucre = 'sucre',
+  Cereale = 'cereale'
+};
 export type Genre = 'f' | 'm';
 export type Nombre = 's' | 'p';
 export const TYPE_ENTREE = 'entree';

@@ -181,7 +181,7 @@ const generateSecond = (
 };
 
 function generateSauce(data: Menu) {
-  const ingredientSauce: Ingredient = getIngredient(ingredients, 'sauce');
+  const ingredientSauce: Ingredient = getIngredient(ingredients, TypeAliment.Sauce);
   const nameDrivedByIngredient: NomProps = `nom_${ingredientSauce.genre}_${ingredientSauce.nombre}` as NomProps;
   const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
