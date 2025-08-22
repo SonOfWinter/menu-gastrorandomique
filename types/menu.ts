@@ -6,6 +6,7 @@ import { Post } from '@/types/data/post';
 import { Lien } from '@/types/data/lien';
 import { Title } from '@/types/data/title';
 import { Complement } from '@/types/data/complement';
+import { PreSauce } from '@/types/data/pre-sauce';
 
 export interface Menu {
   ingredients: Ingredient[];
@@ -16,4 +17,5 @@ export interface Menu {
   liens: Lien[];
   titles: Title[];
   complements: Complement[];
+  preSauces: PreSauce[];
 }

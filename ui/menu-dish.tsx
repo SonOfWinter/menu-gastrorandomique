@@ -32,6 +32,12 @@ export default function MenuDish({ dish }: {
       <p className="font-normal text-s leading-4 text-center opacity-60 mt-2 pointer-events-auto">
         {dish.second}
       </p>
+      {dish.sauce ?
+        <p className="font-normal text-s italic leading-4 text-center opacity-40 mt-2 pointer-events-auto">
+          {dish.sauce}
+        </p>
+        : null
+      }
     </article>
   );
 }
