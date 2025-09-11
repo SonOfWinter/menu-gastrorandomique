@@ -15,6 +15,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -27,6 +28,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -39,6 +41,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -51,6 +54,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -63,6 +67,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -75,6 +80,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -87,6 +93,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -99,6 +106,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -111,6 +119,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -123,6 +132,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -135,6 +145,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -147,6 +158,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -159,6 +171,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -171,6 +184,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -183,6 +197,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -195,6 +210,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -207,6 +223,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -219,6 +236,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -231,6 +249,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -243,6 +262,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -255,6 +275,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -267,6 +288,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -279,6 +301,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -291,6 +314,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -303,6 +327,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -315,6 +340,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -327,6 +353,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -339,6 +366,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -351,6 +379,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -363,6 +392,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -375,6 +405,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -387,6 +418,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -399,6 +431,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -411,6 +444,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -423,6 +457,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -435,6 +470,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -447,6 +483,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -459,6 +496,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -471,6 +509,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -483,6 +522,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -495,6 +535,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -507,6 +548,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -519,6 +561,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -531,6 +574,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -543,6 +587,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -555,6 +600,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -567,6 +613,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -579,6 +626,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -591,6 +639,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -603,6 +652,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -615,6 +665,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -627,6 +678,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -639,6 +691,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -651,6 +704,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -663,6 +717,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -675,6 +730,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -687,6 +743,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -699,6 +756,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -711,6 +769,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -723,6 +782,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -735,6 +795,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -747,6 +808,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -759,6 +821,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -771,6 +834,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -783,6 +847,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -795,6 +860,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -807,6 +873,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -819,6 +886,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -831,6 +899,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -843,6 +912,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -855,6 +925,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -867,6 +938,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -879,6 +951,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -891,6 +964,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -903,6 +977,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -915,6 +990,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -927,6 +1003,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -939,6 +1016,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -951,6 +1029,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -963,6 +1042,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -975,6 +1055,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -987,6 +1068,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -999,6 +1081,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'de l\'',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1011,6 +1094,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1023,6 +1107,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1035,6 +1120,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1047,6 +1133,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1059,6 +1146,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1071,6 +1159,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1083,6 +1172,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1095,6 +1185,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1107,6 +1198,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1119,6 +1211,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1131,6 +1224,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1143,6 +1237,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1155,6 +1250,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1167,6 +1263,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1179,6 +1276,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1191,6 +1289,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1203,6 +1302,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1215,6 +1315,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1227,6 +1328,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1239,6 +1341,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1251,6 +1354,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1263,6 +1367,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1275,6 +1380,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1287,6 +1393,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1299,6 +1406,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1311,6 +1419,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1323,6 +1432,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1335,6 +1445,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1347,6 +1458,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1359,6 +1471,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1371,6 +1484,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1383,6 +1497,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1395,6 +1510,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1407,6 +1523,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1419,6 +1536,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1431,6 +1549,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1443,6 +1562,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1455,6 +1575,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1467,6 +1588,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1479,6 +1601,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1491,6 +1614,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1503,6 +1627,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1515,6 +1640,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1527,6 +1653,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1539,6 +1666,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1551,6 +1679,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1563,6 +1692,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1575,6 +1705,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1587,6 +1718,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1599,6 +1731,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1611,6 +1744,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1623,6 +1757,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1635,6 +1770,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1647,6 +1783,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1659,6 +1796,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1671,6 +1809,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1683,6 +1822,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1695,6 +1835,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1707,6 +1848,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1719,6 +1861,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1731,6 +1874,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1743,6 +1887,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1755,6 +1900,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1767,6 +1913,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1779,6 +1926,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1791,6 +1939,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1803,6 +1952,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1815,6 +1965,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1827,6 +1978,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1839,6 +1991,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1851,6 +2004,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1863,6 +2017,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -1875,6 +2030,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1887,6 +2043,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1899,6 +2056,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1911,6 +2069,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1923,6 +2082,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -1935,6 +2095,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1947,6 +2108,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1959,6 +2121,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1971,6 +2134,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1983,6 +2147,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -1995,6 +2160,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2007,6 +2173,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2019,6 +2186,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2031,6 +2199,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2043,6 +2212,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2055,6 +2225,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2067,6 +2238,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2079,6 +2251,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2091,6 +2264,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2103,6 +2277,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2115,6 +2290,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2127,6 +2303,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2139,6 +2316,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2151,6 +2329,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2163,6 +2342,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2175,6 +2355,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2187,6 +2368,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2199,6 +2381,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2211,6 +2394,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2223,6 +2407,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2235,6 +2420,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2247,6 +2433,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2259,6 +2446,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2271,6 +2459,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2283,6 +2472,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2295,6 +2485,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2307,6 +2498,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2319,6 +2511,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2331,6 +2524,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2343,6 +2537,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2355,6 +2550,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2367,6 +2563,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2379,6 +2576,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2391,6 +2589,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2403,6 +2602,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2415,6 +2615,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2427,6 +2628,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2439,6 +2641,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2451,6 +2654,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2463,6 +2667,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2475,6 +2680,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2487,6 +2693,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2499,6 +2706,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2511,6 +2719,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2523,6 +2732,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2535,6 +2745,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2547,6 +2758,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2559,6 +2771,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2571,6 +2784,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2583,6 +2797,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2595,6 +2810,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2607,6 +2823,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2619,6 +2836,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2631,6 +2849,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2643,6 +2862,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2655,6 +2875,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2667,6 +2888,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2679,6 +2901,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2691,6 +2914,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2703,6 +2927,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2715,6 +2940,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2727,6 +2953,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
   {
@@ -2739,6 +2966,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
     },
   },
   {
@@ -2751,6 +2979,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2763,6 +2992,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
   {
@@ -2775,6 +3005,7 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
 ];

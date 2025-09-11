@@ -1,4 +1,3 @@
-import { TypePlat } from '@/types/enums/type-plat';
 import { PreSauce } from '@/types/data/pre-sauce';
 import { Nombre } from '@/types/enums/nombre';
 import { Genre } from '@/types/enums/genre';
@@ -9,91 +8,43 @@ const preSauces: PreSauce[] = [
     id: '33023faa-abcb-4c56-9e08-a5d35c69ba16',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'avec ça sauce',
-        [Nombre.PLURIEL]: 'avec ça sauce',
+        [Nombre.SINGULIER]: 'avec',
+        [Nombre.PLURIEL]: 'avec',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'avec ça sauce',
-        [Nombre.PLURIEL]: 'avec ça sauce',
+        [Nombre.SINGULIER]: 'avec',
+        [Nombre.PLURIEL]: 'avec',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL,
-  },
-  {
-    id: '33023faa-abcb-4c56-9e08-a5d35c69ba16',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'avec son coulis',
-        [Nombre.PLURIEL]: 'avec son coulis',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'avec son coulis',
-        [Nombre.PLURIEL]: 'avec son coulis',
-      },
-    },
-    types: [TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL,
-  },
-  {
-    id: '7b467604-b67f-475a-aa9a-05bcff93f01c',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'avec son chutney',
-        [Nombre.PLURIEL]: 'avec son chutney',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'avec son chutney',
-        [Nombre.PLURIEL]: 'avec son chutney',
-      },
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.POSSESSIF,
   },
   {
     id: '0d1b43c7-3a67-4c0c-87a4-8e59e53b9181',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'accompagné de sa sauce',
-        [Nombre.PLURIEL]: 'accompagnés de sa sauce',
+        [Nombre.SINGULIER]: 'accompagné',
+        [Nombre.PLURIEL]: 'accompagnés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'accompagnée de sa sauce',
-        [Nombre.PLURIEL]: 'accompagnées de sa sauce',
+        [Nombre.SINGULIER]: 'accompagnée',
+        [Nombre.PLURIEL]: 'accompagnées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: null,
-  },
-  {
-    id: 'b02941d7-fef2-4f2d-b94b-dcd2869f09bc',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'accompagné de sa fermentation',
-        [Nombre.PLURIEL]: 'accompagnés de sa fermentation',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'accompagnée de sa fermentation',
-        [Nombre.PLURIEL]: 'accompagnées de sa fermentation',
-      },
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: null,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: '46e925e1-843c-4218-bb58-85d5d9c16b34',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'rehaussé d’un filet',
-        [Nombre.PLURIEL]: 'rehaussés d’un filet',
+        [Nombre.SINGULIER]: 'rehaussé',
+        [Nombre.PLURIEL]: 'rehaussés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'rehaussée d’un filet',
-        [Nombre.PLURIEL]: 'rehaussées d’un filet',
+        [Nombre.SINGULIER]: 'rehaussée',
+        [Nombre.PLURIEL]: 'rehaussées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: '5f38c14a-2698-4e63-a36f-2d3fb5811c77',
@@ -107,87 +58,77 @@ const preSauces: PreSauce[] = [
         [Nombre.PLURIEL]: 'nappées',
       },
     },
-    types: [TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: '2caa88b9-d81e-4c63-b2cf-5d7f5f2dc65d',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'parfumé d’un jus',
-        [Nombre.PLURIEL]: 'parfumés d’un jus',
+        [Nombre.SINGULIER]: 'parfumé',
+        [Nombre.PLURIEL]: 'parfumés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'parfumée d’un jus',
-        [Nombre.PLURIEL]: 'parfumées d’un jus',
+        [Nombre.SINGULIER]: 'parfumée',
+        [Nombre.PLURIEL]: 'parfumées',
       },
     },
-    types: [TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: 'a4f6ed0d-ef9c-4a4f-9689-1f6b0a37d329',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'agrémenté d’un coulis',
-        [Nombre.PLURIEL]: 'agrémentés d’un coulis',
+        [Nombre.SINGULIER]: 'agrémenté',
+        [Nombre.PLURIEL]: 'agrémentés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'agrémentée d’un coulis',
-        [Nombre.PLURIEL]: 'agrémentées d’un coulis',
+        [Nombre.SINGULIER]: 'agrémentée',
+        [Nombre.PLURIEL]: 'agrémentées',
       },
     },
-    types: [TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: 'e72c8442-2d6e-4a35-914c-2c33e4a6c902',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'relevé d’une émulsion',
-        [Nombre.PLURIEL]: 'relevés d’une émulsion',
+        [Nombre.SINGULIER]: 'relevé',
+        [Nombre.PLURIEL]: 'relevés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'relevée d’une émulsion',
-        [Nombre.PLURIEL]: 'relevées d’une émulsion',
+        [Nombre.SINGULIER]: 'relevée',
+        [Nombre.PLURIEL]: 'relevées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: 'cd432ca9-2493-42e3-8928-1dfc29e3f16c',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'arrosé d’un sirop',
-        [Nombre.PLURIEL]: 'arrosés d’un sirop',
+        [Nombre.SINGULIER]: 'arrosé',
+        [Nombre.PLURIEL]: 'arrosés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'arrosée d’un sirop',
-        [Nombre.PLURIEL]: 'arrosées d’un sirop',
+        [Nombre.SINGULIER]: 'arrosée',
+        [Nombre.PLURIEL]: 'arrosées',
       },
     },
-    types: [TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
   {
     id: '21c142d8-184b-47dd-9d6d-0d9e80a5b51d',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'enrobé d’une crème',
-        [Nombre.PLURIEL]: 'enrobés d’une crème',
+        [Nombre.SINGULIER]: 'enrobé',
+        [Nombre.PLURIEL]: 'enrobés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'enrobée d’une crème',
-        [Nombre.PLURIEL]: 'enrobées d’une crème',
+        [Nombre.SINGULIER]: 'enrobée',
+        [Nombre.PLURIEL]: 'enrobées',
       },
     },
-    types: [TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL,
+    suite: TypeDeterminant.INDEFINI,
   },
 ];
 export default preSauces;
-
-// TODO séparer les phrase et type de sauce
-// phrase : avec sa / accompagné de sa / rehaussé d’un / nappé / parfumé d’un / agrémenté d’un / relevé d’une / arrosé d’un / enrobé d’une
-// type de sauce : sauce / coulis / filet / jus / émulsion / sirop / crème / chutney / compotée / confit / réduction / espuma / velouté / dip / dressing / marinade / gremolata / persillade / tapenade / pesto

@@ -12,6 +12,7 @@ import liens from '@/data/menu-lien';
 import ingredients from '@/data/menu-ingredient';
 import preSauces from '@/data/menu-pre-sauce';
 import complements from '@/data/menu-complement';
+import sauceTypes from '@/data/menu-sauce-type';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
@@ -24,6 +25,7 @@ import { Pre } from '@/types/data/pre';
 import { Post } from '@/types/data/post';
 import { Lien } from '@/types/data/lien';
 import { PreSauce } from '@/types/data/pre-sauce';
+import { SauceType } from '@/types/data/sauce-type';
 
 const alreadyUsed: { ingredients: string[], adjectifs: string[] } = {
   ingredients: [],
@@ -41,6 +43,7 @@ export function getMenuData(): Menu {
     posts: posts,
     pres: pres,
     preSauces: preSauces,
+    sauceTypes: sauceTypes,
   };
 }
 
@@ -207,29 +210,40 @@ function generateSauce(
   typePlat: TypePlat,
   inconsistentLevel: number,
 ): string {
+  const preSauce = getPreSauce(data);
+  const typeSauce = getSauceType(data, typePlat);
+
+
+  let preSuite: string = typeSauce.determinants[preSauce.suite];
+  if (preSuite !== '' && !preSuite.endsWith('\'')) {
+    preSuite = preSuite + ' ';
+  }
   const ingredientSauce: Ingredient | null = getIngredient(ingredients, TypeAliment.SAUCE, false);
   if (!ingredientSauce) {
     return '';
+  }
+  let typeSuite: string = ingredientSauce.determinants[typeSauce.suite];
+  if (typeSuite !== '' && !typeSuite.endsWith('\'')) {
+    typeSuite = typeSuite + ' ';
   }
   const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSauce,
     inconsistentLevel,
   );
-  const preSauce = getPreSauce(data, typePlat);
-  let suite: string = preSauce.suite
-    ? ingredientSauce.determinants[preSauce.suite]
-    : '';
 
-  if (suite !== '' && !suite.endsWith('\'')) {
-    suite = suite + ' ';
-  }
-  return preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + suite + ingredientSauce.nom + ' ' + adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre];
+
+  return preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + ingredientSauce.nom + ' ' + adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre];
 }
 
-function getPreSauce(data: Menu, typePlat: TypePlat): PreSauce {
-  const availablePreSauces = [...data.preSauces].filter((item: PreSauce) =>
+function getPreSauce(data: Menu): PreSauce {
+  const availablePreSauces = [...data.preSauces];
+  return getRandom(availablePreSauces);
+}
+
+function getSauceType(data: Menu, typePlat: TypePlat): SauceType {
+  const availableSauceTypes = [...data.sauceTypes].filter((item: SauceType) =>
     item.types.includes(typePlat),
   );
-  return getRandom(availablePreSauces);
+  return getRandom(availableSauceTypes);
 }

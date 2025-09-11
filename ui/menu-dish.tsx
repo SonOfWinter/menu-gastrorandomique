@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 import { Dish } from '@/types/dish';
 import { cn } from '@/lib/utils';
 import { Tangerine } from 'next/font/google';
+import { copyText } from '@/lib/copy-text';
 
 const tangerine = Tangerine({
   weight: '400',
@@ -12,16 +13,18 @@ const tangerine = Tangerine({
 export default function MenuDish({ dish }: {
   dish: Dish
 }) {
+
   const copyToClipboard = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     event.preventDefault();
-    navigator.clipboard.writeText(dish.main + ' ' + dish.second)
+    copyText(dish.main + ' ' + dish.second + (dish.sauce ? ' ' + dish.sauce : ''))
       .then(() => {
         toast('Texte copié dans le presse-papiers');
       }).catch(() => {
       toast('Erreur lors de la copie du texte');
     });
   };
+
   return (
     <article onClick={copyToClipboard}>
       <h4

@@ -7,6 +7,7 @@ import { Lien } from '@/types/data/lien';
 import { Title } from '@/types/data/title';
 import { Complement } from '@/types/data/complement';
 import { PreSauce } from '@/types/data/pre-sauce';
+import { SauceType } from '@/types/data/sauce-type';
 
 export interface Menu {
   ingredients: Ingredient[];
@@ -18,4 +19,5 @@ export interface Menu {
   titles: Title[];
   complements: Complement[];
   preSauces: PreSauce[];
+  sauceTypes: SauceType[];
 }

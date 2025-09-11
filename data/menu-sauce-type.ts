@@ -1,0 +1,295 @@
+import { SauceType } from '@/types/data/sauce-type';
+import { Genre } from '@/types/enums/genre';
+import { Nombre } from '@/types/enums/nombre';
+import { TypeDeterminant } from '@/types/enums/type-determinant';
+import { TypePlat } from '@/types/enums/type-plat';
+
+const sauceTypes: SauceType[] = [
+  {
+    id: '7b1817cb-d36b-4627-9be4-e5eec06cdbd4',
+    nom: 'sauce',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+
+  },
+
+  {
+    id: 'cc0a0d1e-bbd7-4508-ba0d-7225fef80450',
+    nom: 'coulis',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '8faebfb9-f926-45b8-8423-11ea9ec8a026',
+    nom: 'filet',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: 'c8ccff59-63dd-4658-9a80-35c5719adedc',
+    nom: 'jus',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '0a21acc6-5aaa-4ad0-aa99-d2213613146d',
+    nom: 'émulsion',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'd\'',
+      [TypeDeterminant.SECONDAIRE]: 'de l’',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: 'af2d5ff6-18e3-48ac-a407-763f8b481002',
+    nom: 'sirop',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '5c338b1f-09d0-4997-9195-808561ccdbeb',
+    nom: 'crème',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '928628cf-31e0-493c-8371-49d7bf6cd8cb',
+    nom: 'chutney',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '13359cc0-503e-4653-85d4-03733fac078a',
+    nom: 'compotée',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '09b17f69-d798-4e24-9f30-9dd4eb08165d',
+    nom: 'confit',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '4ba6c0de-dc81-41e0-af0c-eb0835d4f3ca',
+    nom: 'réduction',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '383de825-cf6b-4ebb-a91c-f93d8dccf9f2',
+    nom: 'espuma',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'd\'',
+      [TypeDeterminant.SECONDAIRE]: 'de l’',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '0a6684d2-4e9b-4ae7-9aaa-e0b2422fa651',
+    nom: 'velouté',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '65ed7dfe-f71d-404a-93e1-9bb1193d81aa',
+    nom: 'dip',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: 'bc5fbd73-06fb-478e-8874-8a68637fa527',
+    nom: 'marinade',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '6a715077-3dc0-4970-a1d9-e39dcad513f8',
+    nom: 'gremolata',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '3848751f-69d1-4ab7-bd5a-7bddc229c5d5',
+    nom: 'persillade',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '7aa9b03a-41d2-44e3-a3a3-043d45a005be',
+    nom: 'tapenade',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+
+  {
+    id: '0330e920-d083-4f49-95e0-7feaa4f43b3c',
+    nom: 'pesto',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL
+  },
+];
+
+export default sauceTypes;
