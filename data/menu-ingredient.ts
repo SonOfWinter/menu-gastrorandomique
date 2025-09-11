@@ -166,7 +166,7 @@ const ingredients: Ingredient[] = [
     nom: 'aubergine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
@@ -194,6 +194,18 @@ const ingredients: Ingredient[] = [
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd\'',
       [TypeDeterminant.SECONDAIRE]: 'de l\'',
+      [TypeDeterminant.POSSESSIF]: 'son',
+    },
+  },
+  {
+    id: 'ec2c64bc-bf91-4f4a-bea2-49befce526c4',
+    nom: 'babeurre',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.SAUCE, TypeAliment.LIQUIDE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
     },
   },
@@ -814,7 +826,7 @@ const ingredients: Ingredient[] = [
     nom: 'coing',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -975,6 +987,18 @@ const ingredients: Ingredient[] = [
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
       [TypeDeterminant.POSSESSIF]: 'sa',
+    },
+  },
+  {
+    id: '836ea409-a3fd-4386-bd3a-e77413ac654c',
+    nom: 'échalote',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'd\'',
+      [TypeDeterminant.SECONDAIRE]: 'de l\'',
+      [TypeDeterminant.POSSESSIF]: 'de l\'',
     },
   },
   {
@@ -1867,6 +1891,18 @@ const ingredients: Ingredient[] = [
   },
   {
     id: 'f6bd29ce-1276-44d1-9fc6-72e7895908d9',
+    nom: 'oignon',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'd\'',
+      [TypeDeterminant.SECONDAIRE]: 'de l\'',
+      [TypeDeterminant.POSSESSIF]: 'son',
+    },
+  },
+  {
+    id: 'f6bd29ce-1276-44d1-9fc6-72e7895908d9',
     nom: 'oignon blanc',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
@@ -2050,7 +2086,7 @@ const ingredients: Ingredient[] = [
     nom: 'petits pois',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2062,7 +2098,19 @@ const ingredients: Ingredient[] = [
     nom: 'piment',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+    },
+  },
+  {
+    id: '8606742e-90fd-49d1-8026-646c04f2d4a6',
+    nom: 'piment rouge',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2074,7 +2122,7 @@ const ingredients: Ingredient[] = [
     nom: 'pistache',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: [TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -2134,7 +2182,7 @@ const ingredients: Ingredient[] = [
     nom: 'pois chiches',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2142,11 +2190,23 @@ const ingredients: Ingredient[] = [
     },
   },
   {
+    id: 'dc8f1293-88de-4399-96e5-51adfabf8e65',
+    nom: 'poivre',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+    },
+  },
+  {
     id: '718976c4-2a57-4a84-8510-d5d9511a695b',
     nom: 'poivron',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2182,7 +2242,7 @@ const ingredients: Ingredient[] = [
     nom: 'pomme',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SALADE],
+    types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -2710,7 +2770,7 @@ const ingredients: Ingredient[] = [
     nom: 'yuzu',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',

@@ -36,6 +36,21 @@ const preSauces: PreSauce[] = [
     suite: TypeDeterminant.PRINCIPAL,
   },
   {
+    id: '7b467604-b67f-475a-aa9a-05bcff93f01c',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'avec son chutney',
+        [Nombre.PLURIEL]: 'avec son chutney',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'avec son chutney',
+        [Nombre.PLURIEL]: 'avec son chutney',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    suite: TypeDeterminant.PRINCIPAL,
+  },
+  {
     id: '0d1b43c7-3a67-4c0c-87a4-8e59e53b9181',
     noms: {
       [Genre.MASCULIN]: {
@@ -45,6 +60,21 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: {
         [Nombre.SINGULIER]: 'accompagnée de sa sauce',
         [Nombre.PLURIEL]: 'accompagnées de sa sauce',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: null,
+  },
+  {
+    id: 'b02941d7-fef2-4f2d-b94b-dcd2869f09bc',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'accompagné de sa fermentation',
+        [Nombre.PLURIEL]: 'accompagnés de sa fermentation',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'accompagnée de sa fermentation',
+        [Nombre.PLURIEL]: 'accompagnées de sa fermentation',
       },
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
@@ -157,3 +187,7 @@ const preSauces: PreSauce[] = [
   },
 ];
 export default preSauces;
+
+// TODO séparer les phrase et type de sauce
+// phrase : avec sa / accompagné de sa / rehaussé d’un / nappé / parfumé d’un / agrémenté d’un / relevé d’une / arrosé d’un / enrobé d’une
+// type de sauce : sauce / coulis / filet / jus / émulsion / sirop / crème / chutney / compotée / confit / réduction / espuma / velouté / dip / dressing / marinade / gremolata / persillade / tapenade / pesto
