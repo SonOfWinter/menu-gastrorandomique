@@ -4,7 +4,7 @@ import { toast } from 'sonner';
 import { Dish } from '@/types/dish';
 import { cn } from '@/lib/utils';
 import { Tangerine } from 'next/font/google';
-import { copyText } from '@/lib/copy-text';
+import { copyText } from '@/lib/client/copy-text';
 
 const tangerine = Tangerine({
   weight: '400',

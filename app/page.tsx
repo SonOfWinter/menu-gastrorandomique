@@ -1,17 +1,11 @@
 import { Montserrat } from 'next/font/google';
-import {
-  Menu,
-} from '@/types/menu';
 import MenuPage from '@/ui/menuPage';
 import backgroundImage from '../public/background.avif';
-import {
-  generateDisplayMenu,
-  getMenuData,
-} from '@/lib/menu-generator';
 import { cn } from '@/lib/utils';
 import { Metadata } from 'next';
 import { DisplayMenu } from '@/types/display-menu';
 import { cookies } from 'next/headers';
+import generateMenu from '@/lib/generate-menu';
 
 export const dynamic = 'force-dynamic';
 const montserrat = Montserrat({
@@ -23,13 +17,13 @@ export const metadata: Metadata = {
 };
 export default async function Home() {
   const mainColor = '#CF9A39';
-  const data: Menu = getMenuData();
+
 
   const cookieStore = await cookies()
 
   const inconsistent = cookieStore.get('inconsistent');
   const inconsistentLevel: number = inconsistent ? Number.parseInt(inconsistent.value) : 0;
-  const menu: DisplayMenu = generateDisplayMenu(data, 3, inconsistentLevel);
+  const menu: DisplayMenu = generateMenu(3, inconsistentLevel);
 
   return (
     <main

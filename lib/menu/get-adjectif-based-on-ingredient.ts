@@ -1,0 +1,29 @@
+import { Adjectif } from '@/types/data/adjectif';
+import { Ingredient } from '@/types/data/ingredient';
+import isInconsistent from '@/lib/menu/is-inconsistent';
+import intersection from '@/lib/utils/intersection';
+import getRandom from '@/lib/menu/get-random';
+import {
+  addAdjectifsAlreadyUsed,
+  getAdjectifsAlreadyUsed,
+} from '@/lib/ssr-cache';
+
+const getAdjectifBasedOnIngredient = (
+  adjectifs: Adjectif[],
+  ingredient: Ingredient,
+  inconsistentLevel: number,
+): Adjectif => {
+  const filteredAdjectifs = isInconsistent(inconsistentLevel)
+    ? adjectifs.filter((item: Adjectif) =>
+      intersection(
+        [...item.types],
+        [...ingredient.types],
+      ).length > 0
+      && !getAdjectifsAlreadyUsed().includes(item.id),
+    )
+    : adjectifs;
+  const selected = getRandom(filteredAdjectifs);
+  addAdjectifsAlreadyUsed(selected.id);
+  return selected;
+};
+export default getAdjectifBasedOnIngredient;
