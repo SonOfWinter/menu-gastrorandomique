@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: 'Menu Gastrorandomique',
   description: 'Générateur de menus gastronomiques aléatoires',
 };
+
 export default async function Home() {
   const mainColor = '#CF9A39';
 

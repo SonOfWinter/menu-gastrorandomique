@@ -10,6 +10,7 @@ import getRandom from '@/lib/menu/get-random';
 import { SauceType } from '@/types/data/sauce-type';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import getIngredient from '@/lib/menu/get-ingredient';
+import isInconsistent from '@/lib/menu/is-inconsistent';
 
 export default function generateSauce(
   data: Menu,
@@ -28,7 +29,7 @@ export default function generateSauce(
     ingredients,
     TypeAliment.SAUCE,
     false,
-    typeSauce.compatibleIngredientTypes,
+    isInconsistent(inconsistentLevel) ? [] : typeSauce.compatibleIngredientTypes,
   );
   if (!ingredientSauce) {
     return '';
@@ -37,13 +38,17 @@ export default function generateSauce(
   if (typeSuite !== '' && !typeSuite.endsWith('\'')) {
     typeSuite = typeSuite + ' ';
   }
-  const adjectifSauce: Adjectif = getAdjectifBasedOnIngredient(
+  const adjectifSauce: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSauce,
     inconsistentLevel,
   );
 
-  return preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + ingredientSauce.nom + ' ' + adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre];
+  let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + ingredientSauce.nom;
+  if (adjectifSauce) {
+    sauce += ` ${adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre]}`;
+  }
+  return sauce;
 }
 
 function getPreSauce(data: Menu): PreSauce {

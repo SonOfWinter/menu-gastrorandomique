@@ -7,7 +7,6 @@ import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
 
-
 export default function generateMenu(
   count: number = 1,
   inconsistentLevel: number = 0,

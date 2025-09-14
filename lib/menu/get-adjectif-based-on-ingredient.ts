@@ -12,7 +12,7 @@ const getAdjectifBasedOnIngredient = (
   adjectifs: Adjectif[],
   ingredient: Ingredient,
   inconsistentLevel: number,
-): Adjectif => {
+): Adjectif | null => {
   const filteredAdjectifs = isInconsistent(inconsistentLevel)
     ? adjectifs.filter((item: Adjectif) =>
       intersection(
@@ -22,7 +22,13 @@ const getAdjectifBasedOnIngredient = (
       && !getAdjectifsAlreadyUsed().includes(item.id),
     )
     : adjectifs;
+  if (filteredAdjectifs.length === 0) {
+    return null;
+  }
   const selected = getRandom(filteredAdjectifs);
+  if (!selected) {
+    return null;
+  }
   addAdjectifsAlreadyUsed(selected.id);
   return selected;
 };

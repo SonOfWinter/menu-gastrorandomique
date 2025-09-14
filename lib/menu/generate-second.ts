@@ -22,7 +22,7 @@ const generateSecond = (
     return '';
   }
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
-  const adjectifSecondaire: Adjectif = getAdjectifBasedOnIngredient(
+  const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSecondaire,
     inconsistentLevel,
@@ -31,7 +31,10 @@ const generateSecond = (
   if (!preIngredient.endsWith('\'')) {
     second += ' ';
   }
-  second += `${ingredientSecondaire.nom} ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;
+  second += `${ingredientSecondaire.nom}`;
+  if (adjectifSecondaire) {
+    second += ` ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;
+  }
 
   if (hasRandomPart()) {
     const postSecondaire: Post = getRandom(data.posts);

@@ -22,7 +22,7 @@ const generateMain = (
   if (!ingredientPrincipal) {
     return '';
   }
-  const adjectifPrincipal: Adjectif = getAdjectifBasedOnIngredient(
+  const adjectifPrincipal: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientPrincipal,
     inconsistentLevel,
@@ -35,7 +35,10 @@ const generateMain = (
   if (!ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL].endsWith('\'')) {
     main += ' ';
   }
-  main += `${ingredientPrincipal.nom} ${adjectifPrincipal.noms[ingredientPrincipal.genre][ingredientPrincipal.nombre]}`;
+  main += `${ingredientPrincipal.nom}`
+  if (adjectifPrincipal) {
+    main += ` ${adjectifPrincipal?.noms[ingredientPrincipal.genre][ingredientPrincipal.nombre]}`;
+  }
 
   if (hasRandomPart()) {
     const postPrincipal: Post = getRandom(data.posts);

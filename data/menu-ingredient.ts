@@ -19,7 +19,7 @@ const herbes: Ingredient[] = [
     },
   },
   {
-    id: 'f6bd29ce-1276-44d1-9fc6-72e7895908d9',
+    id: '0069fd84-8e5b-4f52-acb7-b748cf83d455',
     nom: 'oignon blanc',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
@@ -32,7 +32,7 @@ const herbes: Ingredient[] = [
     },
   },
   {
-    id: 'cfe62bf2-7119-4ddd-8274-86eb66553440',
+    id: '07bdc6e6-5a8f-4898-b3dd-b350d49cc6be',
     nom: 'thym',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
@@ -58,7 +58,7 @@ const herbes: Ingredient[] = [
     },
   },
   {
-    id: 'cfe62bf2-7119-4ddd-8274-86eb66553440',
+    id: '59fd9840-bb12-4582-b1a5-8bac3c34476b',
     nom: 'romarin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
@@ -595,7 +595,7 @@ const fruits: Ingredient[] = [
     },
   },
   {
-    id: '6aaf5251-11f6-4dac-9943-ed1185a0e788',
+    id: '4d4673bf-1d69-4ac2-a1d6-0869ea9be33d',
     nom: 'fraises des bois',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
