@@ -7,6 +7,7 @@ export enum TypeAliment {
   FRUIT = 'fruit',
   FRUIT_A_COQUE = 'fruit a coque',
   FRUIT_DE_MER = 'fruit de mer',
+  HERBE = 'herbe',
   LEGUME = 'legume',
   LIQUIDE = 'liquide',
   POISSON = 'poisson',
