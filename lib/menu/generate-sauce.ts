@@ -24,7 +24,12 @@ export default function generateSauce(
   if (preSuite !== '' && !preSuite.endsWith('\'')) {
     preSuite = preSuite + ' ';
   }
-  const ingredientSauce: Ingredient | null = getIngredient(ingredients, TypeAliment.SAUCE, false);
+  const ingredientSauce: Ingredient | null = getIngredient(
+    ingredients,
+    TypeAliment.SAUCE,
+    false,
+    typeSauce.compatibleIngredientTypes,
+  );
   if (!ingredientSauce) {
     return '';
   }

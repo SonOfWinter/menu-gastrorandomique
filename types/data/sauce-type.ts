@@ -2,6 +2,7 @@ import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
+import { TypeAliment } from '@/types/enums/type-aliment';
 
 export type SauceType = {
   id: string;
@@ -11,4 +12,6 @@ export type SauceType = {
   types: TypePlat[];
   determinants: Record<TypeDeterminant, string>;
   suite: TypeDeterminant;
+  compatibleIngredientTypes: TypeAliment[] | null;
+
 }

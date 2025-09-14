@@ -3,6 +3,7 @@ import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
+import { TypeAliment } from '@/types/enums/type-aliment';
 
 const sauceTypes: SauceType[] = [
   {
@@ -17,10 +18,25 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
-
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.ALCOOL,
+      TypeAliment.BASE,
+      TypeAliment.CEREALE,
+      TypeAliment.CHAMPIGNON,
+      TypeAliment.FROMAGE,
+      TypeAliment.FRUIT,
+      TypeAliment.FRUIT_A_COQUE,
+      TypeAliment.FRUIT_DE_MER,
+      TypeAliment.HERBE,
+      TypeAliment.LEGUME,
+      TypeAliment.LIQUIDE,
+      TypeAliment.POISSON,
+      TypeAliment.SALADE,
+      TypeAliment.SUCRE,
+      TypeAliment.VIANDE_BLANCHE,
+    ],
   },
-
   {
     id: 'cc0a0d1e-bbd7-4508-ba0d-7225fef80450',
     nom: 'coulis',
@@ -33,9 +49,12 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FRUIT,
+      TypeAliment.LEGUME,
+    ],
   },
-
   {
     id: '8faebfb9-f926-45b8-8423-11ea9ec8a026',
     nom: 'filet',
@@ -48,9 +67,25 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.ALCOOL,
+      TypeAliment.BASE,
+      TypeAliment.CEREALE,
+      TypeAliment.CHAMPIGNON,
+      TypeAliment.FROMAGE,
+      TypeAliment.FRUIT,
+      TypeAliment.FRUIT_A_COQUE,
+      TypeAliment.FRUIT_DE_MER,
+      TypeAliment.HERBE,
+      TypeAliment.LEGUME,
+      TypeAliment.LIQUIDE,
+      TypeAliment.POISSON,
+      TypeAliment.SALADE,
+      TypeAliment.SUCRE,
+      TypeAliment.VIANDE_BLANCHE,
+    ],
   },
-
   {
     id: 'c8ccff59-63dd-4658-9a80-35c5719adedc',
     nom: 'jus',
@@ -63,9 +98,15 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FRUIT,
+      TypeAliment.LEGUME,
+      TypeAliment.VIANDE_ROUGE,
+      TypeAliment.VIANDE_BLANCHE,
+      TypeAliment.POISSON,
+    ],
   },
-
   {
     id: '0a21acc6-5aaa-4ad0-aa99-d2213613146d',
     nom: 'émulsion',
@@ -78,9 +119,14 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.LEGUME,
+      TypeAliment.FROMAGE,
+      TypeAliment.POISSON,
+      TypeAliment.VIANDE_BLANCHE,
+    ],
   },
-
   {
     id: 'af2d5ff6-18e3-48ac-a407-763f8b481002',
     nom: 'sirop',
@@ -93,9 +139,15 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.SUCRE,
+      TypeAliment.FRUIT,
+      TypeAliment.ALCOOL,
+      TypeAliment.SOFT,
+      TypeAliment.LIQUIDE
+    ],
   },
-
   {
     id: '5c338b1f-09d0-4997-9195-808561ccdbeb',
     nom: 'crème',
@@ -108,9 +160,18 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FROMAGE,
+      TypeAliment.LEGUME,
+      TypeAliment.CHAMPIGNON,
+      TypeAliment.FRUIT,
+      TypeAliment.SUCRE,
+      TypeAliment.POISSON,
+      TypeAliment.FRUIT_A_COQUE,
+      TypeAliment.ALCOOL
+    ],
   },
-
   {
     id: '928628cf-31e0-493c-8371-49d7bf6cd8cb',
     nom: 'chutney',
@@ -123,9 +184,13 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FRUIT,
+      TypeAliment.LEGUME,
+      TypeAliment.SUCRE,
+    ],
   },
-
   {
     id: '13359cc0-503e-4653-85d4-03733fac078a',
     nom: 'compotée',
@@ -138,9 +203,12 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FRUIT,
+      TypeAliment.LEGUME,
+    ],
   },
-
   {
     id: '09b17f69-d798-4e24-9f30-9dd4eb08165d',
     nom: 'confit',
@@ -153,9 +221,14 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FRUIT,
+      TypeAliment.LEGUME,
+      TypeAliment.VIANDE_BLANCHE,
+      TypeAliment.VIANDE_ROUGE,
+    ],
   },
-
   {
     id: '4ba6c0de-dc81-41e0-af0c-eb0835d4f3ca',
     nom: 'réduction',
@@ -168,9 +241,15 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.VIANDE_ROUGE,
+      TypeAliment.VIANDE_BLANCHE,
+      TypeAliment.POISSON,
+      TypeAliment.ALCOOL,
+      TypeAliment.FRUIT,
+    ],
   },
-
   {
     id: '383de825-cf6b-4ebb-a91c-f93d8dccf9f2',
     nom: 'espuma',
@@ -183,9 +262,14 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.LEGUME,
+      TypeAliment.FRUIT,
+      TypeAliment.FROMAGE,
+      TypeAliment.SUCRE,
+    ],
   },
-
   {
     id: '0a6684d2-4e9b-4ae7-9aaa-e0b2422fa651',
     nom: 'velouté',
@@ -198,9 +282,14 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.LEGUME,
+      TypeAliment.CHAMPIGNON,
+      TypeAliment.POISSON,
+      TypeAliment.SALADE,
+    ],
   },
-
   {
     id: '65ed7dfe-f71d-404a-93e1-9bb1193d81aa',
     nom: 'dip',
@@ -213,9 +302,15 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.LEGUME,
+      TypeAliment.FROMAGE,
+      TypeAliment.SAUCE,
+      TypeAliment.SALADE,
+      TypeAliment.POISSON
+    ],
   },
-
   {
     id: 'bc5fbd73-06fb-478e-8874-8a68637fa527',
     nom: 'marinade',
@@ -228,9 +323,16 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.VIANDE_BLANCHE,
+      TypeAliment.VIANDE_ROUGE,
+      TypeAliment.POISSON,
+      TypeAliment.FRUIT_DE_MER,
+      TypeAliment.ALCOOL,
+      TypeAliment.SAUCE,
+    ],
   },
-
   {
     id: '6a715077-3dc0-4970-a1d9-e39dcad513f8',
     nom: 'gremolata',
@@ -243,9 +345,13 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.HERBE,
+      TypeAliment.SALADE,
+      TypeAliment.LEGUME,
+    ],
   },
-
   {
     id: '3848751f-69d1-4ab7-bd5a-7bddc229c5d5',
     nom: 'persillade',
@@ -258,9 +364,13 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.HERBE,
+      TypeAliment.SALADE,
+      TypeAliment.LEGUME
+    ],
   },
-
   {
     id: '7aa9b03a-41d2-44e3-a3a3-043d45a005be',
     nom: 'tapenade',
@@ -273,9 +383,13 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'une',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.FRUIT_A_COQUE,
+      TypeAliment.LEGUME,
+      TypeAliment.SALADE
+    ],
   },
-
   {
     id: '0330e920-d083-4f49-95e0-7feaa4f43b3c',
     nom: 'pesto',
@@ -288,7 +402,32 @@ const sauceTypes: SauceType[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
     types: [TypePlat.ENTREE, TypePlat.PLAT],
-    suite: TypeDeterminant.PRINCIPAL
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.HERBE,
+      TypeAliment.FRUIT_A_COQUE,
+      TypeAliment.FROMAGE,
+    ],
+  },
+  {
+    id: '0330e920-d083-4f49-95e0-7feaa4f43b3c',
+    nom: 'bouillon',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    suite: TypeDeterminant.PRINCIPAL,
+    compatibleIngredientTypes: [
+      TypeAliment.VIANDE_BLANCHE,
+      TypeAliment.VIANDE_ROUGE,
+      TypeAliment.POISSON,
+      TypeAliment.LEGUME,
+    ],
   },
 ];
 
