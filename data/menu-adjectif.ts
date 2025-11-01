@@ -2216,6 +2216,34 @@ const adjectifs: Adjectif[] = [
     },
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME],
   },
+  {
+    id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'alambiqué',
+        [Nombre.PLURIEL]: 'alambiqués',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'alambiquée',
+        [Nombre.PLURIEL]: 'alambiquées',
+      },
+    },
+    types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON],
+  },
+  {
+    id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'parfait',
+        [Nombre.PLURIEL]: 'parfaits',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'parfaite',
+        [Nombre.PLURIEL]: 'parfaites',
+      },
+    },
+    types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT ],
+  },
 ];
 
 export default adjectifs;

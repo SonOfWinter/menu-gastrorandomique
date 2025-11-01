@@ -245,5 +245,179 @@ const complements: Complement[] = [
     id: '71c46ec1-21e1-4255-8397-179b88368f6e',
     nom: 'À partager en famille',
   },
+
+
+  {
+    id: '55ce80ca-e27a-4af6-bc34-02d2465bc2ea',
+    nom: 'À savourer avant que quelqu’un ne change d’avis',
+  },
+  {
+    id: '02b39319-6ced-4c04-9c4b-2897ebae50fc',
+    nom: 'À consommer avant que ça disparaisse du menu',
+  },
+  {
+    id: '33d7343e-6ad4-4755-b839-d29a6d20dc43',
+    nom: 'À éviter si vous êtes au régime',
+  },
+  {
+    id: 'd3bf5141-8053-4a34-9452-f331d1efad11',
+    nom: 'Approuvé par notre équipe de testeurs affamés',
+  },
+  {
+    id: 'f39caac2-8007-4f51-90e6-0d3a7d129217',
+    nom: 'Certifié 0% light, 100% bonheur',
+  },
+  {
+    id: '01b40251-f3aa-44e4-bc30-9e7c196dc1a1',
+    nom: 'Déconseillé aux petits appétits',
+  },
+  {
+    id: '83767c88-edfb-4dcb-9649-0bf4c24d6568',
+    nom: 'Disponible jusqu’à ce qu’il n’y en ait plus',
+  },
+  {
+    id: '52286568-7334-4bdb-8e29-ab16f8fe52ae',
+    nom: 'En accord parfait avec votre humeur du jour',
+  },
+  {
+    id: '296c6fc4-5057-402b-bcee-f72a48bc6e2e',
+    nom: 'Fait avec des ingrédients qu’on peut prononcer',
+  },
+  {
+    id: 'ba122087-6fcd-4eb2-9c59-d5af92a51df6',
+    nom: 'Idéal pour oublier vos bonnes résolutions',
+  },
+  {
+    id: '5748233b-812e-4e4e-8dc4-562528aff860',
+    nom: 'Impossible à partager, même avec votre moitié',
+  },
+  {
+    id: 'd4c2af12-5618-4774-9f4b-e855a3360a7d',
+    nom: 'Inspiré d’une histoire vraie',
+  },
+  {
+    id: 'dad1dfdb-a39f-47b2-8b42-e8ccbdc15314',
+    nom: 'Le genre de plat qu’on ne regrette jamais',
+  },
+  {
+    id: '986577b9-b353-491a-8b83-9d1492cade69',
+    nom: 'Mieux qu’au resto étoilé',
+  },
+  {
+    id: '95b20352-1fed-4f26-a620-2129bbf8741a',
+    nom: 'Né d’une erreur du chef',
+  },
+  {
+    id: '5de79285-4161-466a-b0df-437d856e5ab5',
+    nom: 'Non contractuel.',
+  },
+  {
+    id: '82925168-87b9-4db6-8cdd-1b27ce5ad8d2',
+    nom: 'Peut provoquer une légère dépendance gustative',
+  },
+  {
+    id: '7e222a00-8984-4b02-9420-b68943826281',
+    nom: 'Préparé sans IA',
+  },
+  {
+    id: 'c7417fc7-7a6c-4f2f-b43d-42287899e4ac',
+    nom: 'Réchauffe le cœur et le ventre',
+  },
+  {
+    id: '46b13c76-55a1-4e88-9971-89b586a162c2',
+    nom: 'Réservé aux curieux du goût',
+  },
+  {
+    id: '1c8bba1b-b57d-47f9-b825-4462b283e7e6',
+    nom: 'Sans gluten, sans regrets',
+  },
+  {
+    id: '59910c61-d9a3-4166-9c4d-acf4b07f66ad',
+    nom: 'Trop bon pour être laissé aux autres',
+  },
+  {
+    id: '0cad59f0-d059-45b7-b7ea-891a177595d1',
+    nom: 'Un classique revisité à notre façon',
+  },
+  {
+    id: 'f2373eaa-aee3-4145-8c77-d6b9828aa21f',
+    nom: 'Un coup de foudre culinaire assuré',
+  },
+  {
+    id: 'fd52c793-5179-49b2-a258-087c38bd518c',
+    nom: 'Une pause gourmande bien méritée',
+  },
+  {
+    id: '9103d864-1d1b-4916-8c76-ad20534f6a8a',
+    nom: 'Une recette tenue secrète depuis 1865',
+  },
+  {
+    id: '1ee03909-c101-4dc6-b13d-a415cb5834a6',
+    nom: 'Votre estomac nous remerciera plus tard',
+  },
+  {
+    id: 'f5e45cfa-0733-44f3-bd11-8a639fcd37a4',
+    nom: 'Une œuvre 100% originale',
+  },
+  {
+    id: '217ca965-995c-4efc-b27a-27246d5e8e83',
+    nom: 'Résultat d’années de recherche',
+  },
+  {
+    id: '34dc95b6-5724-4f24-81de-251e13e90dc8',
+    nom: 'Élaboré dans un environnement contrôlé',
+  },
+  {
+    id: 'ca60fd03-ee0f-4bd5-a468-e00b4b1ab886',
+    nom: 'Testé en conditions réelles',
+  },
+  {
+    id: '3aff3042-5fc4-4afd-976a-2039d1eaca95',
+    nom: 'Contient peut-être la réponse à toutes vos questions',
+  },
+  {
+    id: '6324a7a2-398b-4393-9081-b603d514436a',
+    nom: 'Certifié comestible',
+  },
+  {
+    id: '5d7bfea9-8548-47ab-a8ad-55797090a2e3',
+    nom: 'Premier volet d’une trilogie culinaire',
+  },
+  {
+    id: '65011d6d-32c9-4a9e-9d34-188be61313d7',
+    nom: 'Exclusivité mondiale',
+  },
+  {
+    id: '41b1bf67-d4ce-4192-bfda-bc2af0f884b9',
+    nom: 'Le menu que Platon aurait adoré',
+  },
+  {
+    id: 'd619802a-009a-4911-8562-3d97d0b6c356',
+    nom: 'Probablement meilleur que dans vos souvenirs',
+  },
+  {
+    id: '4711924a-6576-4b84-8032-c02a18278583',
+    nom: 'Parce qu’on ne vit qu’une faim',
+  },
+  {
+    id: 'c6301e2a-da7d-4b54-acbc-434c1760b359',
+    nom: 'Rien n’a de sens, sauf ce plat',
+  },
+  {
+    id: 'bb5b0719-7f16-4dda-ba3e-5eefa0a7a599',
+    nom: 'Ce menu vous observe pendant que vous lisez',
+  },
+  {
+    id: '425d53a2-e273-4756-bb43-a4ad152062aa',
+    nom: 'L’univers a conspiré pour que vous le choisissiez',
+  },
+  {
+    id: 'aa038a9b-36e0-40ab-b949-3d23ff3e5ca5',
+    nom: 'Écrit dans les étoiles',
+  },
+  {
+    id: '2cfe1f59-e06b-4339-be66-bb32fc2c200e',
+    nom: 'Si vous comprenez ce menu, vous avez déjà faim',
+  },
 ];
 export default complements;

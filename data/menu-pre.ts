@@ -746,5 +746,75 @@ const pres: Pre[] = [
     },
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
+  {
+    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le féerique',
+        [Nombre.PLURIEL]: 'les féeriques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la féerique',
+        [Nombre.PLURIEL]: 'les féeriques',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+  },
+  {
+    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le mirifique',
+        [Nombre.PLURIEL]: 'les mirifiques',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la mirifique',
+        [Nombre.PLURIEL]: 'les mirifiques',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+  },
+  {
+    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le merveilleux',
+        [Nombre.PLURIEL]: 'les merveilleux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la merveilleuse',
+        [Nombre.PLURIEL]: 'les merveilleuses',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+  },
+  {
+    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'le perfectible',
+        [Nombre.PLURIEL]: 'les perfectibles',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'la perfectible',
+        [Nombre.PLURIEL]: 'les perfectibles',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+  },
+  {
+    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'l\'alambiqué',
+        [Nombre.PLURIEL]: 'les alambiqués',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'l\'alambiquée',
+        [Nombre.PLURIEL]: 'les alambiquées',
+      },
+    },
+    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+  },
 ];
 export default pres;
