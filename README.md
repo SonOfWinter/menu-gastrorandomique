@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Thanks / credits
+
+Background : Designed by Freepik
+https://www.freepik.com/free-vector/paper-style-white-monochrome-background_15441858.htm
+
+Dice icon :
+https://www.shadcn.io/icon/fa-solid-dice-d20
+
 ## Getting Started
 
 First, run the development server:

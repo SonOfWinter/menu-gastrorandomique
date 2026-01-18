@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Générateur de menus gastronomiques aléatoires',
     start_url: '/',
     display: 'standalone',
-    background_color: '#edeae0',
-    theme_color: '#edeae0',
+    background_color: '#EF4147',
+    theme_color: '#EF4147',
     icons: [
       {
         'src': '/favicon-32x32.png',
@@ -16,15 +16,35 @@ export default function manifest(): MetadataRoute.Manifest {
         'type': 'image/png',
       },
       {
-        'src': '/icon3.png',
-        'sizes': '192x192',
-        'type': 'image/png',
+        "src": "\/android-icon-36x36.png",
+        "sizes": "36x36",
+        "type": "image\/png",
       },
       {
-        'src': '/icon4.png',
-        'sizes': '512x512',
-        'type': 'image/png'
+        "src": "\/android-icon-48x48.png",
+        "sizes": "48x48",
+        "type": "image\/png",
       },
+      {
+        "src": "\/android-icon-72x72.png",
+        "sizes": "72x72",
+        "type": "image\/png",
+      },
+      {
+        "src": "\/android-icon-96x96.png",
+        "sizes": "96x96",
+        "type": "image\/png",
+      },
+      {
+        "src": "\/android-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image\/png",
+      },
+      {
+        "src": "\/android-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image\/png",
+      }
     ]
     ,
   };

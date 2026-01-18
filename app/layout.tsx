@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Toaster } from "@/ui/sonner"
+import { Geist, Geist_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
+
+import backgroundImage from '@/public/background.png';
+const publicSans = Public_Sans({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={publicSans.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <Toaster />
+        <main
+          style={{ backgroundImage: `url(${backgroundImage.src})` }}
+          className="relative block w-screen h-screen bg-bottom bg-cover bg-no-repeat overflow-hidden"
+        >
+            <div className="relative flex items-center justify-center w-full h-full overflow-auto">
+              {children}
+            </div>
+        </main>
       </body>
     </html>
   );

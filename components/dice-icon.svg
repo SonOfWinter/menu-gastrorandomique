@@ -1,0 +1,18 @@
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 24 24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs></defs>
+        <clipPath id="ArtboardFrame">
+<rect height="24" width="24" x="0" y="0" class="svg-elem-1"></rect>
+</clipPath>
+        <g clip-path="url(#ArtboardFrame)" id="Sans-titre" vectornator:layername="Sans titre">
+<path d="M15.3438 0.5625C15.0067 0.369844 14.6403 0.731562 14.8438 1.0625L18.5938 7.78125L22.4062 5.5C22.5248 5.42875 22.522 5.26344 22.4062 5.1875L15.3438 0.5625Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-2"></path>
+                <path d="M7.28125 9.75L12 18L16.7188 9.75L12 9.75L7.28125 9.75Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-3"></path>
+                <path d="M22.9688 6.90625L19.375 9.0625L22.9062 14.7812C23.0052 14.9425 23.25 14.8769 23.25 14.6875L23.25 7.0625C23.25 6.91672 23.0939 6.83125 22.9688 6.90625Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-4"></path>
+                <path d="M5.75 10.0938L0.8125 17.375C0.668125 17.6094 0.820469 17.9387 1.09375 17.9688L10.8438 19L5.75 10.0938Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-5"></path>
+                <path d="M1.03125 6.90625C0.906094 6.83125 0.75 6.91672 0.75 7.0625L0.75 14.6875C0.75 14.8764 0.994375 14.9425 1.09375 14.7812L4.625 9.0625L1.03125 6.90625Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-6"></path>
+                <path d="M22.2812 19.5L12.75 20.5312L12.75 23.625C12.75 23.8988 13.0328 24.0836 13.2812 23.9688L22.4062 19.8438C22.5952 19.7514 22.4898 19.4766 22.2812 19.5Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-7"></path>
+                <path d="M12 0C11.7539 0 11.5217 0.105625 11.375 0.34375L6.875 8.25L12 8.25L17.125 8.25L12.625 0.34375C12.4783 0.105625 12.2461 0 12 0Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-8"></path>
+                <path d="M18.25 10.0938L13.1562 19L22.9062 17.9688C23.1795 17.9383 23.3319 17.6094 23.1875 17.375L18.25 10.0938Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-9"></path>
+                <path d="M8.65625 0.5625L1.59375 5.1875C1.47797 5.26344 1.47562 5.42875 1.59375 5.5L5.40625 7.78125L9.15625 1.0625C9.35969 0.731562 8.99328 0.369844 8.65625 0.5625Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-10"></path>
+                <path d="M1.71875 19.5C1.51016 19.4766 1.40484 19.7509 1.59375 19.8438L10.7188 23.9688C10.9672 24.0836 11.25 23.8983 11.25 23.625L11.25 20.5312L1.71875 19.5Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layername="Courbe" class="svg-elem-11"></path>
+</g>
+</svg>
