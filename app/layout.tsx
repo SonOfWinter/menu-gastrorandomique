@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
 
-import backgroundImage from '@/public/background.png';
 const publicSans = Public_Sans({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
@@ -31,8 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main
-          style={{ backgroundImage: `url(${backgroundImage.src})` }}
-          className="relative block w-screen h-screen bg-bottom bg-cover bg-no-repeat overflow-hidden"
+          className="relative block w-screen h-screen overflow-hidden bg-white"
         >
             <div className="relative flex items-center justify-center w-full h-full overflow-auto">
               {children}

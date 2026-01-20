@@ -61,29 +61,29 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.58 0.22 27);
+  --primary: oklch(0.2837 0.053 168.66);
   --primary-foreground: oklch(0.971 0.013 17.38);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.73 0.1556 47.01);
+  --secondary-foreground: oklch(0.145 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.58 0.22 27);
+  --accent: oklch(0.2837 0.053 168.66);
   --accent-foreground: oklch(0.971 0.013 17.38);
-  --destructive: oklch(0.58 0.22 27); /* TODO Change */
+  --destructive: oklch(0.64 0.21 25);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.71 0.17 22);
-  --chart-2: oklch(0.64 0.21 25);
-  --chart-3: oklch(0.58 0.22 27);
-  --chart-4: oklch(0.51 0.19 28);
-  --chart-5: oklch(0.44 0.16 27);
+  --chart-1: oklch(0.32 0.053 168.66);
+  --chart-2: oklch(0.3 0.053 168.66);
+  --chart-3: oklch(0.2837 0.053 168.66);
+  --chart-4: oklch(0.2 0.053 168.66);
+  --chart-5: oklch(0.16 0.053 168.66);
   --radius: 0.875rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.58 0.22 27);
+  --sidebar-primary: oklch(0.2837 0.053 168.66);
   --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
-  --sidebar-accent: oklch(0.58 0.22 27);
+  --sidebar-accent: oklch(0.2837 0.053 168.66);
   --sidebar-accent-foreground: oklch(0.971 0.013 17.38);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
@@ -110,7 +110,7 @@
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.808 0.114 19.571);
   --chart-2: oklch(0.637 0.237 25.331);
-  --chart-3: oklch(0.58 0.22 27);
+  --chart-3: oklch(0.2837 0.053 168.66);
   --chart-4: oklch(0.505 0.213 27.518);
   --chart-5: oklch(0.444 0.177 26.899);
   --sidebar: oklch(0.205 0 0);
@@ -154,55 +154,6 @@
     animation: shake 300ms ease-in-out;
     transform-origin: center;
     transform-box: fill-box; /* utile pour les SVG */
-  }
-  .glass {
-    border-radius: var(--glass-radius);
-    height: 270px;
-    width: 270px;
-    padding: var(--glass-padding);
-    position: relative;
-    transition: width var(--transition), height var(--transition),
-    padding var(--transition);
-    z-index: 10;
-    &.is-expanded {
-      height: 700px;
-      width: 550px;
-    }
-  }
-  .glass-bend {
-    backdrop-filter: blur(3px);
-    border-radius: var(--glass-radius);
-    filter: url(#glass-blur);
-    inset: 0;
-    position: absolute;
-    z-index: 0;
-  }
-  .glass-face {
-    border-radius: var(--glass-radius);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15), 0 0 12px rgba(0, 0, 0, 0.08);
-    inset: 0;
-    position: absolute;
-    z-index: 1;
-  }
-  .glass-edge {
-    border-radius: var(--glass-radius);
-    box-shadow: inset 3px 3px 3px 0 rgba(255, 255, 255, 0.45),
-    inset -3px -3px 3px 0 rgba(255, 255, 255, 0.45);
-    inset: 0;
-    position: absolute;
-    z-index: 2;
-  }
-  .glass-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow: auto;
-    position: relative;
-    gap: var(--menu-gap);
-    transition: gap var(--transition);
-    z-index: 11;
-    width: 100%;
-    height: 100%;
   }
 }
 

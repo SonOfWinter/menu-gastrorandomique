@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import logo from '@/public/RandomiqueDice.png';
 import { Button } from '@/components/ui/button';
-import DiceIcon from '@/components/dice-icon';
+import AnimatedDiceIcon from '@/components/animated-dice-icon';
 import GlassPaper from '@/components/glass-paper';
 import Link from 'next/link';
 
@@ -24,7 +24,7 @@ export default function Landing() {
           className="rumble-hover"
           size="lg"
         >
-          <DiceIcon />
+          <AnimatedDiceIcon />
           Générer un menu
         </Button>
       </Link>
@@ -33,7 +33,7 @@ export default function Landing() {
         size="lg"
         variant="outline"
       >
-        <DiceIcon color="#FFFFFF" />
+        <AnimatedDiceIcon color="#FFFFFF" />
         Composer mon menu
       </Button>
     </GlassPaper>
