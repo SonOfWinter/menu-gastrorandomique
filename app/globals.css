@@ -126,7 +126,6 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    color: black;
   }
   body {
     @apply bg-background text-foreground;

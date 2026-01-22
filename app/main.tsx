@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect } from 'react';
-import Menu from '@/components/menu';
+import Navigation from '@/components/navigation';
+import DiceButton from '@/components/dice-button';
+import MenuContainer from '@/components/menu-container';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
@@ -28,7 +30,10 @@ export default function Main() {
     }
   }, [transition])
 
-  return (
-    <Menu variant={position} setTransition={setTransition} setPosition={setPosition}/>
+  return (<>
+    <Navigation variant={position} setTransition={setTransition} setPosition={setPosition}/>
+    <DiceButton setTransition={setTransition} variant={position} />
+    <MenuContainer variant={position} />
+  </>
   );
 }
