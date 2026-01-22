@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Ref } from 'react';
 import {
   cva,
   type VariantProps,
@@ -7,7 +7,7 @@ import { Position } from '@/app/main';
 import { cn } from '@/lib/utils';
 
 const menuContainerVariants = cva(
-  'absolute block opacity-0 bg-red transition-all duration-500 ease-in-out',
+  'absolute top-0 left-0 overflow-y-auto p-15 h-[calc(100vh-60px)] md:h-full block opacity-0 transition-all duration-500 ease-in-out',
   {
     variants: {
       variant: {
@@ -26,18 +26,31 @@ const menuContainerVariants = cva(
 export default function MenuContainer({
   className,
   variant = 'main',
+  text,
+  random,
+  ref,
   ...props
 }: React.ComponentProps<'section'>
   & VariantProps<typeof menuContainerVariants>
-  & { variant: Position }
+  & { variant: Position, text: string, random:string, ref: Ref<HTMLDivElement> }
   & {}) {
 
   return (
     <section
+      ref={ref}
       className={cn(menuContainerVariants({ variant }), className)}
       {...props}
     >
-      Menu
+      <div className="flex flex-col justify-center m-auto w-full gap-4 md:w-3/5 lg:3/4">
+        Menu
+        <p>{random}</p>
+        <p>{text}</p>
+        <p>{text}</p>
+        <p>{text}</p>
+        <p>{text}</p>
+        <p>{text}</p>
+        <p>{text}</p>
+      </div>
     </section>
   );
 }

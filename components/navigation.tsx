@@ -18,14 +18,14 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Cancel01Icon } from '@hugeicons/core-free-icons';
 
 const navigationVariants = cva(
-  'relative flex justify-between px-2.5 py-4 flex flex-col bg-primary h-full top-0 ' +
+  'relative flex justify-between py-2.5 px-4 md:px-2.5 md:py-4 flex flex-col bg-primary h-full top-0 ' +
   'transition-all duration-500 ease-in-out',
   {
     variants: {
       variant: {
         'main': 'w-1/2',
         'info': 'w-1/2',
-        'right': 'items-end w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:-translate-x-[calc(100%-60px)]',
+        'right': 'items-start md:items-end w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:-translate-x-[calc(100%-60px)]',
         'left': 'items-start w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:translate-x-[calc(100%-60px)]',
         'pending': 'w-full items-center',
       },
