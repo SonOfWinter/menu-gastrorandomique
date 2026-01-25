@@ -1,6 +1,7 @@
 import React, {
   Dispatch,
   SetStateAction,
+  useEffect,
 } from 'react';
 import {
   cva,
@@ -18,16 +19,16 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Cancel01Icon } from '@hugeicons/core-free-icons';
 
 const navigationVariants = cva(
-  'relative flex justify-between py-2.5 px-4 md:px-2.5 md:py-4 flex flex-col bg-primary h-full top-0 ' +
+  'relative flex justify-between py-2.5 px-4 md:px-2.5 md:py-4 flex flex-col h-full top-0 ' +
   'transition-all duration-500 ease-in-out',
   {
     variants: {
       variant: {
-        'main': 'w-1/2',
-        'info': 'w-1/2',
-        'right': 'items-start md:items-end w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:-translate-x-[calc(100%-60px)]',
-        'left': 'items-start w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:translate-x-[calc(100%-60px)]',
-        'pending': 'w-full items-center',
+        'main': 'bg-white md:bg-primary w-full md:w-1/2',
+        'info': 'bg-primary w-1/2',
+        'right': 'bg-primary items-start md:items-end w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:-translate-x-[calc(100%-60px)]',
+        'left': 'bg-primary items-start w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:translate-x-[calc(100%-60px)]',
+        'pending': 'bg-primary w-full items-center',
       },
     },
     defaultVariants: {
@@ -39,17 +40,27 @@ const navigationVariants = cva(
 export default function Navigation({
   className,
   variant = 'main',
-  setTransition,
   setPosition,
   ...props
 }: React.ComponentProps<'section'>
   & VariantProps<typeof navigationVariants>
   & {
   variant: Position,
-  setTransition: Dispatch<SetStateAction<Transition>>;
   setPosition: Dispatch<SetStateAction<Position>>;
 }
   & {}) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() === 'm') {
+        setPosition('main');
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [setPosition]);
+
   return (
     <section
       className={cn(navigationVariants({ variant }), className)}

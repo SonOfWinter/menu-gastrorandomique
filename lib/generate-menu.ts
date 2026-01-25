@@ -12,16 +12,25 @@ export default function generateMenu(
   inconsistentLevel: number = 0,
 ): DisplayMenu {
   const data: Menu = getMenuData();
+  const entree = Array.from(
+    { length: count },
+    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel),
+  );
+  const plat = Array.from(
+    { length: count },
+    () => generateDish(data, TypePlat.PLAT, inconsistentLevel),
+  );
+  const dessert = Array.from(
+    { length: count },
+    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel),
+  );
   return {
     price: round(random(30.0, 250.0, true), 2),
     title: getRandom(data.titles).nom,
     complement: getRandom(data.complements).nom,
-    entree: Array.from({ length: count }, () => generateDish(data, TypePlat.ENTREE, inconsistentLevel)),
-    plat: Array.from({ length: count }, () => generateDish(data, TypePlat.PLAT, inconsistentLevel)),
-    dessert: Array.from(
-      { length: count },
-      () => generateDish(data, TypePlat.DESSERT, inconsistentLevel),
-    ),
+    entree,
+    plat,
+    dessert,
   };
 }
 

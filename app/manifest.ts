@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Générateur de menus gastronomiques aléatoires',
     start_url: '/',
     display: 'standalone',
-    background_color: '#EF4147',
-    theme_color: '#EF4147',
+    background_color: '#053225',
+    theme_color: '#053225',
     icons: [
       {
         'src': '/favicon-32x32.png',

@@ -133,19 +133,19 @@
     display: block;
   }
   h1 {
-    @apply font-normal text-[50px] leading-[50px] text-center
+    @apply font-normal text-[55px] leading-12.5 text-center
   }
 
   h2 {
-    @apply font-normal text-[30px] leading-[32px]
+    @apply font-normal text-[30px] leading-8 text-center
   }
 
   h3 {
-    @apply font-normal text-[25px] leading-[27px] text-center tracking-[0.16em]
+    @apply font-normal text-[36px] leading-8 text-center tracking-[0.16em]
   }
 
   h4 {
-    @apply font-normal text-[20px] leading-[22px] text-center tracking-[0.16em]
+    @apply font-normal text-[20px] leading-4.5 text-left tracking-[0.16em]
   }
 }
 @layer utilities {
