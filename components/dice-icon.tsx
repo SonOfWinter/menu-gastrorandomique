@@ -3,6 +3,7 @@ import React from 'react';
 export default function DiceIcon({ color, className }: { color?: string, className: string }) {
   return (
     <svg
+      aria-hidden="true"
       width="100%"
       height="100%"
       strokeMiterlimit="10"

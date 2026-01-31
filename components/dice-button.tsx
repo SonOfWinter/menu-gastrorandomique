@@ -17,7 +17,7 @@ import {
 } from '@/app/main';
 
 const diceButtonVariants = cva(
-  'absolute block bg-primary hover:bg-primary scale-300 transition-all duration-500 ease-in-out cursor-pointer',
+  'z-90 absolute block bg-primary hover:bg-primary scale-300 transition-all duration-500 ease-in-out cursor-pointer',
   {
     variants: {
       variant: {
