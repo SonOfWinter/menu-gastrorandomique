@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Menu Gastrorandomique 🎲
+
+Menu Gastrorandomique is a small web application that generates **random and intentionally absurd gastronomic menus**.  
+It mixes culinary vocabulary with randomness to create humorous dishes.
+
+The project focuses on:
+- procedural text generation
+- clean, minimal UI
+- modern React / Next.js tooling
+
+---
+
+## Features
+
+- Random menu name generation
+- Each main course is composed of:
+    - a main element
+    - a secondary element
+    - a sauce
+- Random price generation within a defined range
+- One-click copy to clipboard
+- Toast notifications (Sonner)
+
+
+## URL
+
+A deployed version is available here :
+
+https://menu-gastrorandomique.vercel.app/
+
+---
+
+## Tech Stack
+
+- **Next.js** `16.1.1`
+- **React** `19.2.3`
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui**
+- **Sonner** (toast notifications)
+- **next/font**
+
+---
+
+## Design Notes
+
+- Minimalist layout
+- Primary color: `#053225`
+- Secondary color: `#F58549`
+- Dice (D20) icon used as a visual metaphor for randomness
+- Typography focused on readability, with subtle stylistic contrast for humor
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js ≥ 18
+- npm / pnpm / yarn
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/menu-gastrorandomique.git
+cd menu-gastrorandomique
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
+Open http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
+MIT
 
-To learn more about Next.js, take a look at the following resources:
+## Thanks / credits / References
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dice icon :
+https://www.shadcn.io/icon/fa-solid-dice-d20
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Colors :
+https://coolors.co/053225-f58549-772f1a-eec170-f2a65a
 
-## Deploy on Vercel
+## Disclaimer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project does not attempt to represent real gastronomy.
+Any resemblance to existing dishes is purely coincidental.
