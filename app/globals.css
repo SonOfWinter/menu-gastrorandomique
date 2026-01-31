@@ -141,11 +141,11 @@
   }
 
   h3 {
-    @apply font-normal text-[36px] leading-8 text-center tracking-[0.16em]
+    @apply font-normal text-[36px] leading-8 text-center tracking-[0.03em]
   }
 
   h4 {
-    @apply font-normal text-[20px] leading-4.5 text-left tracking-[0.16em]
+    @apply font-normal text-[20px] leading-4.5 text-left
   }
 }
 @layer utilities {

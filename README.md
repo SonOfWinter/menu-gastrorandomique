@@ -8,6 +8,9 @@ https://www.freepik.com/free-vector/paper-style-white-monochrome-background_1544
 Dice icon :
 https://www.shadcn.io/icon/fa-solid-dice-d20
 
+Colors :
+https://coolors.co/053225-f58549-772f1a-eec170-f2a65a
+
 ## Getting Started
 
 First, run the development server:
