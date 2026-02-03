@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main
-          className="relative block w-screen h-screen overflow-hidden bg-white"
+          className="h-dvh relative block w-screen overflow-hidden bg-white"
         >
             <div className="relative flex items-center justify-center w-full h-full overflow-hidden">
               {children}

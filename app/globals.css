@@ -127,10 +127,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    height: 100dvh;
+  }
   body {
     @apply bg-background text-foreground;
     position: relative;
     display: block;
+    height: 100dvh;
   }
   h1 {
     @apply font-normal text-[55px] leading-12.5 text-center
