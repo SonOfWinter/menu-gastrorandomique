@@ -42,7 +42,7 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
       className={cn(menuContainerVariants({ variant }), className)}
       {...props}
     >
-      <div className="flex flex-col justify-start m-auto w-full md:max-w-1/2 gap-4 md:w-3/5 lg:3/4">
+      <div className="flex flex-col justify-start m-auto w-full md:max-w-[50%] gap-4 md:w-3/5 lg:w-3/4">
         {menu !== null
           ? <>
         <div className="flex flex-col flex-nowrap gap-4">

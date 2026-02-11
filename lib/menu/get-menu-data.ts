@@ -12,15 +12,15 @@ import sauceTypes from '@/data/menu-sauce-type';
 
 export default function getMenuData(): Menu {
   return {
-    adjectifs: adjectifs,
-    complements: complements,
-    ingredients: ingredients,
-    liens: liens,
-    titles: titles,
-    plats: plats,
-    posts: posts,
-    pres: pres,
-    preSauces: preSauces,
-    sauceTypes: sauceTypes,
+    adjectifs,
+    complements,
+    ingredients,
+    liens,
+    titles,
+    plats,
+    posts,
+    pres,
+    preSauces,
+    sauceTypes,
   };
 }
