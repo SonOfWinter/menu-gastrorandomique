@@ -37,23 +37,28 @@ export default function DiceButton({
   className,
   variant = 'main',
   setTransition,
+  isLoading = false,
   ...props
 }: React.ComponentProps<'button'>
   & VariantProps<typeof diceButtonVariants>
   & {
   variant: Position,
   setTransition: Dispatch<SetStateAction<Transition>>;
+  isLoading?: boolean;
 }
   & {}) {
 
   const changeTransition = useCallback(() => {
+    if (variant === 'pending' || isLoading) {
+      return;
+    }
     if (variant === 'left') {
       setTransition('left-to-right');
     }
     if (variant === 'right' || variant === 'main') {
       setTransition('right-to-left');
     }
-  }, [setTransition, variant]);
+  }, [isLoading, setTransition, variant]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -72,6 +77,7 @@ export default function DiceButton({
       size="icon-lg"
       variant="default"
       type="button"
+      disabled={variant === 'pending' || isLoading}
       className={cn(diceButtonVariants({ variant }), className)}
       onClick={changeTransition}
       {...props}
