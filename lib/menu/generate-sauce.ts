@@ -11,12 +11,13 @@ import { SauceType } from '@/types/data/sauce-type';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import getIngredient from '@/lib/menu/get-ingredient';
 import isInconsistent from '@/lib/menu/is-inconsistent';
+import { InconsistentLevel } from '@/types/inconsistent-level';
 
 export default function generateSauce(
   data: Menu,
   platPrincipal: Plat,
   typePlat: TypePlat,
-  inconsistentLevel: number,
+  inconsistentLevel: InconsistentLevel,
 ): string {
   const preSauce = getPreSauce(data);
   const typeSauce = getSauceType(data, typePlat);

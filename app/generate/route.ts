@@ -1,11 +1,11 @@
 import generateMenu from '@/lib/generate-menu';
 import { DisplayMenu } from '@/types/display-menu';
-
-export type MenuResponse = {menu: DisplayMenu};
+import { MenuResponse } from '@/types/menu-response';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET():Promise<Response> {
   const menu:DisplayMenu = generateMenu(3, 0);
-  return Response.json({ menu: menu });
+  const response: MenuResponse = { menu: menu };
+  return Response.json(response);
 }

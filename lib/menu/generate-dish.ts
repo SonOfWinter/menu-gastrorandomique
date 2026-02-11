@@ -11,8 +11,13 @@ import generateMain from '@/lib/menu/generate-main';
 import generateSecond from '@/lib/menu/generate-second';
 import hasRandomPart from '@/lib/menu/has-random-part';
 import generateSauce from '@/lib/menu/generate-sauce';
+import { InconsistentLevel } from '@/types/inconsistent-level';
 
-export const generateDish = (data: Menu, mainType: TypePlat, inconsistentLevel: number): Dish => {
+export const generateDish = (
+  data: Menu,
+  mainType: TypePlat,
+  inconsistentLevel: InconsistentLevel,
+): Dish => {
   const platPrincipal: Plat = getPlatByType(data.plats, mainType);
   const typeAliments: TypeAliment[] = isInconsistent(inconsistentLevel)
     ? [...platPrincipal.typeAliments[mainType]]

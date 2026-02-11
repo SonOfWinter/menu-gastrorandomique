@@ -3,13 +3,14 @@ import random from '@/lib/utils/random';
 import round from '@/lib/utils/round';
 import { TypePlat } from '@/types/enums/type-plat';
 import { DisplayMenu } from '@/types/display-menu';
+import { InconsistentLevel } from '@/types/inconsistent-level';
 import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
 
 export default function generateMenu(
   count: number = 1,
-  inconsistentLevel: number = 0,
+  inconsistentLevel: InconsistentLevel = 0,
 ): DisplayMenu {
   const data: Menu = getMenuData();
   const requiredLists: Record<string, unknown[]> = {
@@ -50,7 +51,6 @@ export default function generateMenu(
     dessert,
   };
 }
-
 
 
 

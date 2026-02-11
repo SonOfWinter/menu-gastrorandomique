@@ -8,12 +8,13 @@ import { Adjectif } from '@/types/data/adjectif';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import hasRandomPart from '@/lib/menu/has-random-part';
 import { Post } from '@/types/data/post';
+import { InconsistentLevel } from '@/types/inconsistent-level';
 
 const generateSecond = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
-  inconsistentLevel: number,
+  inconsistentLevel: InconsistentLevel,
 ): string => {
   let second: string = '';
   const lienSecondaire: Lien = getRandom(data.liens);

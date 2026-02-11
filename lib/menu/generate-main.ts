@@ -10,12 +10,13 @@ import getRandom from '@/lib/menu/get-random';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { Post } from '@/types/data/post';
 import capitalize from '@/lib/utils/capitalize';
+import { InconsistentLevel } from '@/types/inconsistent-level';
 
 const generateMain = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
-  inconsistentLevel: number,
+  inconsistentLevel: InconsistentLevel,
 ): string => {
   let main: string = '';
   const ingredientPrincipal: Ingredient | null = getIngredient(ingredients);
