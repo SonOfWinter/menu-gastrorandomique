@@ -1,4 +1,4 @@
-import React, { Ref } from 'react';
+import React from 'react';
 import {
   cva,
   type VariantProps,
@@ -27,16 +27,15 @@ const menuContainerVariants = cva(
   },
 );
 
-export default function MenuContainer({
+const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'section'>
+  & VariantProps<typeof menuContainerVariants>
+  & { variant: Position, menu: DisplayMenu | null }
+  & {}>(function MenuContainer({
   className,
   variant = 'main',
   menu,
-  ref,
   ...props
-}: React.ComponentProps<'section'>
-  & VariantProps<typeof menuContainerVariants>
-  & { variant: Position, menu: DisplayMenu | null, ref: Ref<HTMLDivElement> }
-  & {}) {
+}, ref) {
   return (
     <section
       ref={ref}
@@ -70,4 +69,8 @@ export default function MenuContainer({
       </div>
     </section>
   );
-}
+});
+
+MenuContainer.displayName = 'MenuContainer';
+
+export default MenuContainer;
