@@ -1,3 +1,5 @@
+import { InconsistentLevel } from '@/types/inconsistent-level';
+
 export type MenuPriceRange = {
   min: number;
   max: number;
@@ -5,7 +7,7 @@ export type MenuPriceRange = {
 
 export type MenuGenerationConfig = {
   dishCount: number;
-  inconsistentLevel: number;
+  inconsistentLevel: InconsistentLevel;
   priceRange: MenuPriceRange;
 };
 
