@@ -2217,7 +2217,7 @@ const adjectifs: Adjectif[] = [
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME],
   },
   {
-    id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
+    id: '9f0ef2ac-0f2c-4a29-a3b2-8ab0d2e1d9ef',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'alambiqué',
@@ -2231,7 +2231,7 @@ const adjectifs: Adjectif[] = [
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON],
   },
   {
-    id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
+    id: '3b4c1b4f-1e2b-4e08-84e5-4e1c2a3c92e1',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'parfait',

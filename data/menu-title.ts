@@ -1,7 +1,7 @@
 import { Title } from '@/types/data/title';
 
 const titles: Title[] = [
-  { id: '6d840960-3410-4d69-834d-7568418349a2', nom: 'Lunch menu' },
+  { id: '6d840960-3410-4d69-834d-7568418349a2', nom: 'Menu déjeuner' },
   { id: '74b86f3f-a0da-4ab6-8728-fe3c0595a38a', nom: 'Menu' },
   {
     id: '9a04dac2-b567-44d0-9262-1233d945826d',
@@ -28,8 +28,8 @@ const titles: Title[] = [
   { id: '74a758e8-c39e-4ba2-9802-104b8e844ec9', nom: 'Menu d’antan' },
   { id: '4caa84d5-d890-4049-af3f-f1a9d7cb0f0c', nom: 'Menu de fête' },
   { id: 'af84c92c-144e-4592-baf4-57c10b6170aa', nom: 'Menu de l’Aventurier' },
-  { id: 'd0dcbd4b-84be-49fe-a9e8-e65460d3c21e', nom: 'Menu de l\'Est\'' },
-  { id: '9fe4b492-2c6f-41cd-8eca-ab38fb46f351', nom: 'Menu de l\'Ouest\'' },
+  { id: 'd0dcbd4b-84be-49fe-a9e8-e65460d3c21e', nom: 'Menu de l\'Est' },
+  { id: '9fe4b492-2c6f-41cd-8eca-ab38fb46f351', nom: 'Menu de l\'Ouest' },
   { id: '0330a9eb-69e2-41d5-aa24-cd479809116f', nom: 'Menu de la ferme' },
   { id: 'd665d7de-b425-4b26-95b2-9e6e7f2e3a54', nom: 'Menu de la Grosse Dalle' },
   { id: 'f85ebcb3-5b39-45ca-9432-59c59a5414a7', nom: 'Menu de la mer' },
@@ -58,7 +58,7 @@ const titles: Title[] = [
   { id: '961e1a70-d140-4a41-8891-fd54d0f400d1', nom: 'Menu du soir' },
   { id: '8d1d8b70-1756-48fc-b454-543571b1aba8', nom: 'Menu du soleil' },
   { id: '02b7cdc3-df86-4f3f-9194-d80d6e0745f3', nom: 'Menu du Sud' },
-  { id: '33bde39e-9806-4531-9711-a8869a91f81e', nom: 'Menu du terroire' },
+  { id: '33bde39e-9806-4531-9711-a8869a91f81e', nom: 'Menu du terroir' },
   { id: '8dffcff6-51f8-4679-bdd4-36366a334d45', nom: 'Menu Eldorado' },
   { id: 'f8a1cef4-729c-4e2e-8cf8-9dc1b2f3724f', nom: 'Menu enchanté' },
   { id: '05397602-14d5-4c34-9179-1411bc62deca', nom: 'Menu enfant' },
@@ -112,7 +112,7 @@ const titles: Title[] = [
   { id: '45dc4b86-7157-40db-afa2-e02c793177e5', nom: 'Menu Tapis Rouge' },
   { id: '349faca5-6783-464f-aaac-8092deca10a9', nom: 'Menu tendresse' },
   { id: '8646170a-461c-43d1-9728-1993b5a65474', nom: 'Menu Titanic (on coule sous la bouffe)' },
-  { id: '2c1c0746-d548-4a83-bdfa-c42363dfe24d', nom: 'Menu Tout et N\'importe Quoi\'' },
+  { id: '2c1c0746-d548-4a83-bdfa-c42363dfe24d', nom: 'Menu Tout et N\'importe Quoi' },
   { id: '80aa3fb4-d07d-4597-82cd-24dca74af226', nom: 'Menu tradition' },
   { id: '9c3debf7-db37-492b-88d5-8d903506fb92', nom: 'Menu XXL (Ventre rempli garanti)' },
   { id: '7c6bf2f7-8dec-4061-a91b-c6d398ab93dc', nom: 'Un menu comme les autres' },

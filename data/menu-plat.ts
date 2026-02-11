@@ -295,7 +295,7 @@ const plats: Plat[] = [
   },
   {
     id: '05a7b833-87e6-4729-8867-47bc9a8b8d41',
-    nom: 'cannellonies',
+    nom: 'cannellonis',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
@@ -1639,7 +1639,7 @@ const plats: Plat[] = [
   },
   {
     id: 'd56cfe91-09a3-46a3-ad5e-c3ff1882d9ba',
-    nom: TypeAliment.SALADE,
+    nom: 'salade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
@@ -1663,7 +1663,7 @@ const plats: Plat[] = [
   },
   {
     id: '281813ba-6732-4382-b7cf-dd9e1c897bd7',
-    nom: TypeAliment.SAUCE,
+    nom: 'sauce',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],

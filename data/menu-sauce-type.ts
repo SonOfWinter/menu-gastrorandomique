@@ -410,7 +410,7 @@ const sauceTypes: SauceType[] = [
     ],
   },
   {
-    id: '0330e920-d083-4f49-95e0-7feaa4f43b3c',
+    id: '2e0a9b1a-91e5-45fb-9f1f-0d7f918c9f2f',
     nom: 'bouillon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
