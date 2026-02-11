@@ -22,8 +22,8 @@ export const generateDish = (
 ): Dish => {
   const platPrincipal: Plat = getPlatByType(data.plats, mainType, rng);
   const typeAliments: TypeAliment[] = isInconsistent(inconsistentLevel, rng)
-    ? [...platPrincipal.typeAliments[mainType]]
-    : Object.values(TypeAliment);
+    ? Object.values(TypeAliment)
+    : [...platPrincipal.typeAliments[mainType]];
   const ingredients: Ingredient[] = typeAliments && Array.isArray(typeAliments)
     ? [...data.ingredients].filter((item: Ingredient) =>
       intersection(

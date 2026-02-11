@@ -17,14 +17,14 @@ const getAdjectifBasedOnIngredient = (
   rng?: RandomGenerator,
 ): Adjectif | null => {
   const filteredAdjectifs = isInconsistent(inconsistentLevel, rng)
-    ? adjectifs.filter((item: Adjectif) =>
+    ? adjectifs
+    : adjectifs.filter((item: Adjectif) =>
       intersection(
         [...item.types],
         [...ingredient.types],
       ).length > 0
       && !getAdjectifsAlreadyUsed().includes(item.id),
-    )
-    : adjectifs;
+    );
   if (filteredAdjectifs.length === 0) {
     return null;
   }
