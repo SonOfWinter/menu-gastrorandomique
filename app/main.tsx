@@ -9,6 +9,7 @@ import DiceButton from '@/components/dice-button';
 import MenuContainer from '@/components/menu-container';
 import { MenuResponse } from '@/app/generate/route';
 import { DisplayMenu } from '@/types/display-menu';
+import { toast } from 'sonner';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
@@ -28,17 +29,26 @@ export default function Main() {
     setPosition('pending');
     // wait end of animation
     await sleep(500);
-    const res: Response = await fetch('/generate');
-    const newMenu: MenuResponse = await res.json();
-    if (transition === 'left-to-right') {
-      setPosition('right');
+    try {
+      const res: Response = await fetch('/generate');
+      if (!res.ok) {
+        throw new Error('Menu request failed');
+      }
+      const newMenu: MenuResponse = await res.json();
+      if (transition === 'left-to-right') {
+        setPosition('right');
+      }
+      if (transition === 'right-to-left') {
+        setPosition('left');
+      }
+      setTransition('none');
+      menuRef?.current?.scrollTo(0, 0);
+      setMenu(newMenu.menu);
+    } catch (error) {
+      setTransition('none');
+      setPosition('main');
+      toast.error('Erreur lors de la generation du menu');
     }
-    if (transition === 'right-to-left') {
-      setPosition('left');
-    }
-    setTransition('none');
-    menuRef?.current?.scrollTo(0, 0);
-    setMenu(newMenu.menu);
   }, [transition, setMenu]);
 
   useEffect(() => {
