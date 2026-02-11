@@ -1,9 +1,10 @@
-import { Menu } from '@/types/menu';
-import random from '@/lib/utils/random';
-import round from '@/lib/utils/round';
-import { TypePlat } from '@/types/enums/type-plat';
 import { DisplayMenu } from '@/types/display-menu';
 import { InconsistentLevel } from '@/types/inconsistent-level';
+import { Menu } from '@/types/menu';
+import { TypePlat } from '@/types/enums/type-plat';
+import { createSeededRandom } from '@/lib/utils/seeded-rng';
+import random from '@/lib/utils/random';
+import round from '@/lib/utils/round';
 import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
@@ -11,7 +12,6 @@ import {
   defaultMenuConfig,
   MenuPriceRange,
 } from '@/lib/menu/menu-config';
-import { createSeededRandom } from '@/lib/utils/seeded-rng';
 
 export default function generateMenu(
   count: number = defaultMenuConfig.dishCount,
