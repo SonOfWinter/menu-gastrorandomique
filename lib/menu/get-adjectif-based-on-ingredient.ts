@@ -7,11 +7,12 @@ import {
   addAdjectifsAlreadyUsed,
   getAdjectifsAlreadyUsed,
 } from '@/lib/ssr-cache';
+import { InconsistentLevel } from '@/types/inconsistent-level';
 
 const getAdjectifBasedOnIngredient = (
   adjectifs: Adjectif[],
   ingredient: Ingredient,
-  inconsistentLevel: number,
+  inconsistentLevel: InconsistentLevel,
 ): Adjectif | null => {
   const filteredAdjectifs = isInconsistent(inconsistentLevel)
     ? adjectifs.filter((item: Adjectif) =>
