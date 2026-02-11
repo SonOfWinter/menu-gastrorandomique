@@ -12,6 +12,23 @@ export default function generateMenu(
   inconsistentLevel: number = 0,
 ): DisplayMenu {
   const data: Menu = getMenuData();
+  const requiredLists: Record<string, unknown[]> = {
+    titles: data.titles,
+    complements: data.complements,
+    plats: data.plats,
+    ingredients: data.ingredients,
+    adjectifs: data.adjectifs,
+    liens: data.liens,
+    posts: data.posts,
+    pres: data.pres,
+    preSauces: data.preSauces,
+    sauceTypes: data.sauceTypes,
+  };
+  for (const [key, list] of Object.entries(requiredLists)) {
+    if (!Array.isArray(list) || list.length === 0) {
+      throw new Error(`Menu data list is empty: ${key}`);
+    }
+  }
   const entree = Array.from(
     { length: count },
     () => generateDish(data, TypePlat.ENTREE, inconsistentLevel),
@@ -33,7 +50,6 @@ export default function generateMenu(
     dessert,
   };
 }
-
 
 
 
