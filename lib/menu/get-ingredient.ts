@@ -5,12 +5,14 @@ import {
   addIngredientsAlreadyUsed,
   getIngredientsAlreadyUsed,
 } from '@/lib/ssr-cache';
+import { RandomGenerator } from '@/lib/utils/seeded-rng';
 
 const getIngredient = (
   ingredients: Ingredient[],
   typeFilter?: TypeAliment,
   excludeAlreadyUsed: boolean = true,
   additionalTypes?: TypeAliment[] | null,
+  rng?: RandomGenerator,
 ): Ingredient | null => {
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {
     const alreadyUsed = getIngredientsAlreadyUsed().includes(item.id);
@@ -26,7 +28,7 @@ const getIngredient = (
       && matchesAdditionalTypes;
   });
   if (filteredIngredients.length > 0) {
-    const selected = getRandom(filteredIngredients);
+    const selected = getRandom(filteredIngredients, rng);
     addIngredientsAlreadyUsed(selected.id);
     return selected;
   }

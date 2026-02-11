@@ -2,7 +2,6 @@ import React, {
   Dispatch,
   SetStateAction,
   useCallback,
-  useEffect,
 } from 'react';
 import {
   cva,
@@ -11,13 +10,14 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import DiceIcon from '@/components/dice-icon';
+import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
 import {
   Position,
   Transition,
 } from '@/app/main';
 
 const diceButtonVariants = cva(
-  'z-90 absolute block bg-primary hover:bg-primary scale-300 transition-all duration-500 ease-in-out cursor-pointer',
+  'z-90 absolute block bg-primary hover:bg-primary scale-300 transition-all duration-500 ease-in-out cursor-pointer disabled:opacity-100 disabled:bg-primary disabled:hover:bg-primary',
   {
     variants: {
       variant: {
@@ -37,41 +37,39 @@ export default function DiceButton({
   className,
   variant = 'main',
   setTransition,
+  isLoading = false,
   ...props
 }: React.ComponentProps<'button'>
   & VariantProps<typeof diceButtonVariants>
   & {
   variant: Position,
   setTransition: Dispatch<SetStateAction<Transition>>;
+  isLoading?: boolean;
 }
   & {}) {
 
   const changeTransition = useCallback(() => {
+    if (variant === 'pending' || isLoading) {
+      return;
+    }
     if (variant === 'left') {
       setTransition('left-to-right');
     }
     if (variant === 'right' || variant === 'main') {
       setTransition('right-to-left');
     }
-  }, [setTransition, variant]);
+  }, [isLoading, setTransition, variant]);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'r') {
-        changeTransition();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [changeTransition]);
+  useKeyboardShortcut('r', changeTransition, {
+    enabled: !(variant === 'pending' || isLoading),
+  });
 
   return (
     <Button
       size="icon-lg"
       variant="default"
       type="button"
+      disabled={variant === 'pending' || isLoading}
       className={cn(diceButtonVariants({ variant }), className)}
       onClick={changeTransition}
       {...props}

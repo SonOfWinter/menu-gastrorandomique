@@ -9,16 +9,18 @@ import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingre
 import hasRandomPart from '@/lib/menu/has-random-part';
 import { Post } from '@/types/data/post';
 import { InconsistentLevel } from '@/types/inconsistent-level';
+import { RandomGenerator } from '@/lib/utils/seeded-rng';
 
 const generateSecond = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
   inconsistentLevel: InconsistentLevel,
+  rng?: RandomGenerator,
 ): string => {
   let second: string = '';
-  const lienSecondaire: Lien = getRandom(data.liens);
-  const ingredientSecondaire: Ingredient | null = getIngredient(ingredients);
+  const lienSecondaire: Lien = getRandom(data.liens, rng);
+  const ingredientSecondaire: Ingredient | null = getIngredient(ingredients, undefined, true, null, rng);
   if (!ingredientSecondaire) {
     return '';
   }
@@ -27,6 +29,7 @@ const generateSecond = (
     data.adjectifs,
     ingredientSecondaire,
     inconsistentLevel,
+    rng,
   );
   second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}`;
   if (!preIngredient.endsWith('\'')) {
@@ -37,8 +40,8 @@ const generateSecond = (
     second += ` ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;
   }
 
-  if (hasRandomPart()) {
-    const postSecondaire: Post = getRandom(data.posts);
+  if (hasRandomPart(3, rng)) {
+    const postSecondaire: Post = getRandom(data.posts, rng);
     second += ` ${postSecondaire.nom}`;
   }
   return second;

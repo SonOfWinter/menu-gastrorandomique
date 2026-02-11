@@ -23,9 +23,14 @@ export default function Main() {
   const [position, setPosition] = React.useState<Position>('main');
   const [transition, setTransition] = React.useState<Transition>('none');
   const [menu, setMenu] = React.useState<DisplayMenu | null>(null);
+  const [isLoading, setIsLoading] = React.useState(false);
   const menuRef = useRef<HTMLElement>(null);
 
   const getMenu = useCallback(async () => {
+    if (isLoading) {
+      return;
+    }
+    setIsLoading(true);
     setPosition('pending');
     // wait end of animation
     await sleep(500);
@@ -48,8 +53,10 @@ export default function Main() {
       setTransition('none');
       setPosition('main');
       toast.error('Erreur lors de la generation du menu');
+    } finally {
+      setIsLoading(false);
     }
-  }, [transition, setMenu]);
+  }, [isLoading, transition, setMenu]);
 
   useEffect(() => {
     if (transition !== 'none') {
@@ -70,6 +77,7 @@ export default function Main() {
       <DiceButton
         setTransition={setTransition}
         variant={position}
+        isLoading={isLoading}
       />
     </>
   );

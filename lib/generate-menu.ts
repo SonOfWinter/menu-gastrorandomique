@@ -7,11 +7,19 @@ import { InconsistentLevel } from '@/types/inconsistent-level';
 import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
+import {
+  defaultMenuConfig,
+  MenuPriceRange,
+} from '@/lib/menu/menu-config';
+import { createSeededRandom } from '@/lib/utils/seeded-rng';
 
 export default function generateMenu(
-  count: number = 1,
-  inconsistentLevel: InconsistentLevel = 0,
+  count: number = defaultMenuConfig.dishCount,
+  inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
+  priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
+  seed?: number,
 ): DisplayMenu {
+  const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
   const requiredLists: Record<string, unknown[]> = {
     titles: data.titles,
@@ -32,26 +40,22 @@ export default function generateMenu(
   }
   const entree = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel),
+    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel, rng),
   );
   const plat = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.PLAT, inconsistentLevel),
+    () => generateDish(data, TypePlat.PLAT, inconsistentLevel, rng),
   );
   const dessert = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel),
+    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel, rng),
   );
   return {
-    price: round(random(30.0, 250.0, true), 2),
-    title: getRandom(data.titles).nom,
-    complement: getRandom(data.complements).nom,
+    price: round(random(priceRange.min, priceRange.max, true, rng), 2),
+    title: getRandom(data.titles, rng).nom,
+    complement: getRandom(data.complements, rng).nom,
     entree,
     plat,
     dessert,
   };
 }
-
-
-
-
