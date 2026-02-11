@@ -22,7 +22,7 @@ export default function Main() {
   const [position, setPosition] = React.useState<Position>('main');
   const [transition, setTransition] = React.useState<Transition>('none');
   const [menu, setMenu] = React.useState<DisplayMenu | null>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
 
   const getMenu = useCallback(async () => {
     setPosition('pending');
