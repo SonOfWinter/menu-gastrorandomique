@@ -29,6 +29,8 @@ const sauceTypes: SauceType[] = [
       TypeAliment.FRUIT_A_COQUE,
       TypeAliment.FRUIT_DE_MER,
       TypeAliment.HERBE,
+      TypeAliment.EPICE,
+      TypeAliment.LAITIER,
       TypeAliment.LEGUME,
       TypeAliment.LIQUIDE,
       TypeAliment.POISSON,
@@ -78,6 +80,8 @@ const sauceTypes: SauceType[] = [
       TypeAliment.FRUIT_A_COQUE,
       TypeAliment.FRUIT_DE_MER,
       TypeAliment.HERBE,
+      TypeAliment.EPICE,
+      TypeAliment.LAITIER,
       TypeAliment.LEGUME,
       TypeAliment.LIQUIDE,
       TypeAliment.POISSON,
@@ -102,6 +106,7 @@ const sauceTypes: SauceType[] = [
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
       TypeAliment.LEGUME,
+      TypeAliment.EPICE,
       TypeAliment.VIANDE_ROUGE,
       TypeAliment.VIANDE_BLANCHE,
       TypeAliment.POISSON,
@@ -124,6 +129,8 @@ const sauceTypes: SauceType[] = [
       TypeAliment.LEGUME,
       TypeAliment.FROMAGE,
       TypeAliment.POISSON,
+      TypeAliment.LAITIER,
+      TypeAliment.EPICE,
       TypeAliment.VIANDE_BLANCHE,
     ],
   },
@@ -168,6 +175,7 @@ const sauceTypes: SauceType[] = [
       TypeAliment.FRUIT,
       TypeAliment.SUCRE,
       TypeAliment.POISSON,
+      TypeAliment.LAITIER,
       TypeAliment.FRUIT_A_COQUE,
       TypeAliment.ALCOOL
     ],
@@ -226,7 +234,7 @@ const sauceTypes: SauceType[] = [
       TypeAliment.FRUIT,
       TypeAliment.LEGUME,
       TypeAliment.VIANDE_BLANCHE,
-      TypeAliment.VIANDE_ROUGE,
+      TypeAliment.VIANDE_ROUGE
     ],
   },
   {
@@ -331,6 +339,7 @@ const sauceTypes: SauceType[] = [
       TypeAliment.FRUIT_DE_MER,
       TypeAliment.ALCOOL,
       TypeAliment.SAUCE,
+      TypeAliment.EPICE,
     ],
   },
   {
@@ -350,6 +359,7 @@ const sauceTypes: SauceType[] = [
       TypeAliment.HERBE,
       TypeAliment.SALADE,
       TypeAliment.LEGUME,
+      TypeAliment.EPICE,
     ],
   },
   {
@@ -427,6 +437,7 @@ const sauceTypes: SauceType[] = [
       TypeAliment.VIANDE_ROUGE,
       TypeAliment.POISSON,
       TypeAliment.LEGUME,
+      TypeAliment.EPICE,
     ],
   },
 ];

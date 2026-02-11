@@ -153,12 +153,79 @@ const herbes: Ingredient[] = [
     nom: 'poivre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SAUCE, TypeAliment.HERBE],
+    types: [TypeAliment.SAUCE, TypeAliment.HERBE, TypeAliment.EPICE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
       [TypeDeterminant.POSSESSIF]: 'son',
       [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+];
+const epices: Ingredient[] = [
+  {
+    id: '3b58b8f0-2a7f-4f1e-8c1c-7e2c1d6a1c72',
+    nom: 'cumin',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: 'f3a16d45-1a4b-45c8-8c92-7a7d20c4fb10',
+    nom: 'paprika',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: 'be10af2e-7f6c-4bb4-89b9-2a1f4b2c1f4d',
+    nom: 'piment',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: 'f5a4c2d7-8b59-4db1-9a79-5f6f3e3f0c5a',
+    nom: 'curry',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: '8c6db163-9ff1-4a34-8f8d-2f1c2f2b2c0d',
+    nom: 'muscade',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
     },
   },
 ];
@@ -246,7 +313,7 @@ const fromages: Ingredient[] = [
     nom: 'fromage frais',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE],
+    types: [TypeAliment.FROMAGE, TypeAliment.LAITIER],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -306,12 +373,40 @@ const fromages: Ingredient[] = [
       [TypeDeterminant.INDEFINI]: 'd\'un',
     },
   },
+];
+const laitages: Ingredient[] = [
+  {
+    id: '9a3c5f18-4a23-4a0e-9b9a-2fbf6c2e9c2a',
+    nom: 'lait',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.LAITIER, TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: 'b10f8751-45f3-4b4f-9f7a-7e6d1f2a5c3b',
+    nom: 'crème fraîche',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.LAITIER, TypeAliment.SAUCE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd\'une',
+    },
+  },
   {
     id: 'f0b30116-4a14-4d82-9c14-e07c42b4bec3',
     nom: 'yaourt',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE],
+    types: [TypeAliment.LAITIER, TypeAliment.SAUCE],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2820,6 +2915,86 @@ const poissons: Ingredient[] = [
     },
   },
 ];
+const charcuteries: Ingredient[] = [
+  {
+    id: '8a1e2b3c-4d5e-4f60-9a1b-2c3d4e5f6a7b',
+    nom: 'jambon',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.CHARCUTERIE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: '8a1e2b3c-4d5e-4f60-9a1b-2c3d4e5f6a7b',
+    nom: 'jambon blanc',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.CHARCUTERIE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: '8a1e2b3c-4d5e-4f60-9a1b-2c3d4e5f6a7b',
+    nom: 'jambon cru',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.CHARCUTERIE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: 'c3b2a1d4-5e6f-4a70-8b1c-9d0e1f2a3b4c',
+    nom: 'lard fumé',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.CHARCUTERIE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: '5b4c3d2e-1f0a-4b6c-8d7e-9f8a7b6c5d4e',
+    nom: 'saucisson',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.CHARCUTERIE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+  {
+    id: '1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d',
+    nom: 'chorizo',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.CHARCUTERIE, TypeAliment.EPICE],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd\'un',
+    },
+  },
+];
 const cerales: Ingredient[] = [
   {
     id: 'e8fa1b8a-0f9f-43fd-b8d3-a1f3a669ca32',
@@ -2946,7 +3121,7 @@ const liquides: Ingredient[] = [
     nom: 'babeurre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SAUCE, TypeAliment.LIQUIDE],
+    types: [TypeAliment.SAUCE, TypeAliment.LIQUIDE, TypeAliment.LAITIER],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -3093,7 +3268,7 @@ const bases: Ingredient[] = [
     nom: 'beurre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE],
+    types: [TypeAliment.BASE, TypeAliment.LAITIER],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -3130,12 +3305,15 @@ const bases: Ingredient[] = [
 ];
 const ingredients: Ingredient[] = [
   ...herbes,
+  ...epices,
   ...fromages,
+  ...laitages,
   ...fruits,
   ...fruitsACoque,
   ...legumes,
   ...champigons,
   ...fruitsDeMer,
+  ...charcuteries,
   ...viandesRouges,
   ...viandesBlanches,
   ...salades,
