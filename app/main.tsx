@@ -7,8 +7,8 @@ import React, {
 import Navigation from '@/components/navigation';
 import DiceButton from '@/components/dice-button';
 import MenuContainer from '@/components/menu-container';
-import { MenuResponse } from '@/app/generate/route';
 import { DisplayMenu } from '@/types/display-menu';
+import { MenuResponse } from '@/types/menu-response';
 import { toast } from 'sonner';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
