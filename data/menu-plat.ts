@@ -24,8 +24,8 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
     },
   },
@@ -36,9 +36,9 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.LAITIER],
     },
   },
   {
@@ -48,7 +48,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
@@ -96,9 +96,9 @@ const plats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
-      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.LAITIER],
     },
   },
   {
@@ -144,7 +144,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
     },
@@ -216,7 +216,7 @@ const plats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
     },
@@ -228,7 +228,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [],
+      [TypePlat.ENTREE]: [TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
@@ -240,7 +240,7 @@ const plats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT],
     },
@@ -252,7 +252,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
     },
@@ -264,7 +264,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE],
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.DESSERT]: [],
     },
@@ -276,7 +276,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
     },
@@ -295,12 +295,12 @@ const plats: Plat[] = [
   },
   {
     id: '05a7b833-87e6-4729-8867-47bc9a8b8d41',
-    nom: 'cannellonies',
+    nom: 'cannellonis',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
     },
@@ -384,7 +384,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [],
     },
@@ -396,7 +396,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
     },
@@ -492,7 +492,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [],
     },
@@ -576,7 +576,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.DESSERT]: [],
     },
@@ -588,7 +588,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
+      [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
     },
@@ -660,7 +660,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
     },
@@ -672,14 +672,14 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
     },
   },
   {
     id: 'b7d69e93-9849-4ddc-9ff9-b64d4acd92f8',
-    nom: TypePlat.DESSERT,
+    nom: 'dessert',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.DESSERT],
@@ -696,7 +696,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
     },
@@ -756,7 +756,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [],
     },
@@ -804,7 +804,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT],
     },
@@ -876,7 +876,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
     },
@@ -996,7 +996,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.ALCOOL],
     },
@@ -1416,7 +1416,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [],
     },
@@ -1440,9 +1440,9 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [],
-      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.LAITIER],
     },
   },
   {
@@ -1452,7 +1452,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [],
     },
@@ -1464,7 +1464,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
     },
@@ -1512,7 +1512,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
     },
@@ -1536,7 +1536,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [],
     },
@@ -1639,12 +1639,12 @@ const plats: Plat[] = [
   },
   {
     id: 'd56cfe91-09a3-46a3-ad5e-c3ff1882d9ba',
-    nom: TypeAliment.SALADE,
+    nom: 'salade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
     },
@@ -1656,20 +1656,20 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [],
     },
   },
   {
     id: '281813ba-6732-4382-b7cf-dd9e1c897bd7',
-    nom: TypeAliment.SAUCE,
+    nom: 'sauce',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
-      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
+      [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [],
     },
   },
@@ -1692,7 +1692,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
     },
@@ -1704,7 +1704,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
     },
@@ -1776,7 +1776,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
     },
@@ -1788,7 +1788,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
     },
@@ -1800,8 +1800,8 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
+      [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
     },
   },
@@ -1836,7 +1836,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
     },
@@ -1848,7 +1848,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
+      [TypePlat.ENTREE]: [TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
       [TypePlat.PLAT]: [],
       [TypePlat.DESSERT]: [],
     },
@@ -1898,7 +1898,7 @@ const plats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [],
       [TypePlat.PLAT]: [],
-      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+      [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.LAITIER],
     },
   },
   {
@@ -1920,7 +1920,7 @@ const plats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
@@ -1932,7 +1932,7 @@ const plats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
     typeAliments: {
-      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+      [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
     },

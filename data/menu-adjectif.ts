@@ -58,7 +58,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'alpestres',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.FROMAGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '2d97ee90-454d-43b3-b05d-e59fcd7011d2',
@@ -86,7 +86,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'anglaises',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'ba9d73dd-a011-4905-bfbd-5825305153a0',
@@ -100,7 +100,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'AOP',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '3f4d9398-8139-48f9-a6bc-2a773539d74e',
@@ -142,7 +142,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'atypiques',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'f1c121bc-259f-41b2-8412-d597e2ef99c6',
@@ -170,7 +170,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'authentiques',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '97337652-de08-4b06-80a5-a0ac698664a1',
@@ -212,7 +212,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'belges',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '6f1e6464-6d09-4812-9e9d-3081aa6dc86b',
@@ -338,7 +338,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'campagnardes',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '2f4456de-9707-433a-a76a-ec04b91796d1',
@@ -352,7 +352,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'canailles',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE, TypeAliment.CEREALE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '42207163-6460-4198-8328-3147f33daafc',
@@ -380,7 +380,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'cendrées',
       },
     },
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'eb564d32-0fc5-45c2-b265-ed8e7a4c504a',
@@ -408,7 +408,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'confisées',
       },
     },
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'e79530b4-9ca7-418f-8323-454c363b93db',
@@ -436,7 +436,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'corsées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.CEREALE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '072fbb58-03bc-40e4-8864-49d9fa9054fd',
@@ -450,7 +450,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'coupées au couteau',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '213e726b-d6db-43b1-b57a-19a91954128c',
@@ -478,7 +478,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'crémeuses',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.SOFT, TypeAliment.ALCOOL],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.SOFT, TypeAliment.ALCOOL],
   },
   {
     id: '1bb5beda-cc4c-46a7-92be-db6e2be14a16',
@@ -576,7 +576,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'd\'autrefois',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'b458e149-2ff0-4d59-a1d6-e1389e4313b2',
@@ -604,7 +604,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'de la région',
       },
     },
-    types: [TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '8718c3e3-83d5-4be6-9e4c-7cfbde6979b1',
@@ -646,7 +646,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'du chef',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.FROMAGE, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '8e2d3736-e502-4bd5-b6b7-58ac13844457',
@@ -660,7 +660,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'du soir',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '89590f1a-e88e-4c19-863f-ea73b5f1257a',
@@ -674,7 +674,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'du terroir',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '0c5f76cc-19fe-4cec-a0bf-c2ef90f189c1',
@@ -716,7 +716,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'en croute',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'b3695029-0b02-4714-8810-89fef452dfcd',
@@ -744,7 +744,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'épicées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'b41c653f-ff26-4a82-88c7-19c67bd8396d',
@@ -786,7 +786,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'faisandées',
       },
     },
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'fc79ad72-c222-4dba-a17e-b167d6c78215',
@@ -800,7 +800,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'fermières',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.FROMAGE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '9b64e615-6ec3-4fee-bbdc-ca1a867a6fd2',
@@ -856,7 +856,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'fleur de sel',
       },
     },
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '63f2cad3-a7c5-40a7-a0d2-9ac88c22accd',
@@ -870,7 +870,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'fondantes',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FROMAGE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '240beb66-96e7-4747-846c-4d120e6fd0cb',
@@ -898,7 +898,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'forestières',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '1d4af96e-ab86-4fc7-bc4b-03de43d35a06',
@@ -926,7 +926,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'fraiches',
       },
     },
-    types: [TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'fee74ddc-6116-41d8-96a5-0e407cba1bc8',
@@ -954,7 +954,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'froides',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '68085941-ecc9-4456-82cd-b221782acbe6',
@@ -968,21 +968,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'fumées',
       },
     },
-    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
-  },
-  {
-    id: '46eca7a5-7b31-480f-b02e-db301f095083',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'fumé',
-        [Nombre.PLURIEL]: 'fumés',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'fumée',
-        [Nombre.PLURIEL]: 'fumées',
-      },
-    },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'ec296ef9-c1a4-49bb-bcd0-9b8fbdb2889c',
@@ -1010,7 +996,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'gélifiées',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '7927594b-2961-4c7b-ae5d-0e1093a7ff80',
@@ -1024,7 +1010,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'généreuses',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SOFT, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SOFT, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'eab7dadd-edc4-443d-89c6-d605fb821005',
@@ -1066,7 +1052,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'goutues',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'ddfb50a6-14d7-4820-9f8a-4d2a52c9fa1a',
@@ -1108,7 +1094,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'hachées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'f08f1c18-c4b3-49e9-99e0-00adfe555ae8',
@@ -1122,7 +1108,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'harmonieuses',
       },
     },
-    types: [TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.BASE, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '3446e240-d5cc-47dc-a1a2-b3926ee36e43',
@@ -1164,7 +1150,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'juteuses',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '0cda0a9b-707a-4844-b4a8-5f1e97c3bc8e',
@@ -1206,7 +1192,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'léchées',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+    types: [TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '678c7162-c58d-4da3-9815-b8a8f890f06c',
@@ -1262,7 +1248,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'macérées',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '00f96968-decd-478d-b7bf-14c52654580f',
@@ -1276,7 +1262,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'maigres',
       },
     },
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '5858d434-baa1-41cf-a24c-1df4165edacd',
@@ -1318,7 +1304,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'marmitones',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '1b2fb818-9998-4432-a5cf-36ef848823ea',
@@ -1374,7 +1360,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'mi-cuites',
       },
     },
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '38fb2d20-fa80-4dc9-8a5a-6ccf813ff58e',
@@ -1416,7 +1402,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'moelleuses',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT, TypeAliment.ALCOOL],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'ba4e338c-d41e-4e93-8a24-2dc737f53042',
@@ -1500,7 +1486,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'onctueuses',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+    types: [TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '15e4ec18-3d69-4dc6-8a5f-6e85445a1b71',
@@ -1528,7 +1514,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'parfumées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '3f06039c-5dcd-48ca-ab1e-1b5c108ef5e3',
@@ -1556,7 +1542,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'persillées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'a040d12b-83e9-4a30-9fef-53a8c9a029c7',
@@ -1584,7 +1570,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'pimentées',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '95541993-d763-4fd5-ba07-e33e21f2ebb9',
@@ -1626,7 +1612,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'poivrées',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '15678479-f5a8-441c-ad27-9d3243d9ceac',
@@ -1696,7 +1682,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'réhaussées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '63c54cb6-0f7f-4509-a1da-1150eb63827a',
@@ -1710,7 +1696,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'réinventées',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SOFT],
+    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SOFT, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'e0318e54-f6a9-4368-a09e-8b756a068546',
@@ -1724,7 +1710,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'réveillées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '48e141cf-cdd7-4f29-a023-7669d378952c',
@@ -1738,7 +1724,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'réveillées aux épices',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'b5d412c9-6643-48d1-a15a-6225c2c05d36',
@@ -1752,7 +1738,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'rosées',
       },
     },
-    types: [TypeAliment.VIANDE_ROUGE],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'a277b8b3-4058-40bc-804b-9fc7706928ad',
@@ -1766,7 +1752,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'roties',
       },
     },
-    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
+    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.CHARCUTERIE],
   },
   {
     id: '8f263037-bb5f-45b2-a751-6becbe6ab12a',
@@ -1794,7 +1780,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'roulées',
       },
     },
-    types: [TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME],
+    types: [TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.CHARCUTERIE],
   },
   {
     id: '201bff70-eaeb-45ff-a123-5aa5d6ead083',
@@ -1808,7 +1794,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'rustiques',
       },
     },
-    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    types: [TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '37d29dd6-f6d8-487c-b882-98a11a3260a7',
@@ -1836,7 +1822,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'safranées',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'fb327b74-4049-42f8-8055-ceaaaa54d728',
@@ -1864,7 +1850,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'salées',
       },
     },
-    types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '77dbe19a-b72b-4af3-8a52-8d16cfa19ca1',
@@ -1934,7 +1920,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'snackées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '60d61db1-56b6-4dd3-bdc4-cef536897745',
@@ -1962,7 +1948,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'soyeuses',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'ec73c961-29ce-412c-b47e-af20356827f2',
@@ -1976,7 +1962,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'sublimées',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '8a47693f-dfc8-4e17-b13a-11d80005f542',
@@ -2032,7 +2018,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'tendres',
       },
     },
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE],
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SUCRE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '03dcb67f-286e-48c0-a118-733d6cc73bb8',
@@ -2046,7 +2032,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'tièdes',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '5a112954-ad26-4793-86df-9f5d852e6916',
@@ -2102,7 +2088,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'traditionnelles',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '78ca8897-99e2-4f89-9713-ff31a7981431',
@@ -2116,7 +2102,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'truffées',
       },
     },
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.BASE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'cd6aacb9-8c0b-4e92-b030-ed94f2e8dcd5',
@@ -2130,7 +2116,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'typiques',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
     id: '71f2e7ac-f1ac-4fcb-8214-2273bf9d717c',
@@ -2200,7 +2186,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'vieillies en cave',
       },
     },
-    types: [TypeAliment.ALCOOL, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: [TypeAliment.ALCOOL, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.CHARCUTERIE],
   },
   {
     id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
@@ -2217,7 +2203,7 @@ const adjectifs: Adjectif[] = [
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME],
   },
   {
-    id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
+    id: '9f0ef2ac-0f2c-4a29-a3b2-8ab0d2e1d9ef',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'alambiqué',
@@ -2231,7 +2217,7 @@ const adjectifs: Adjectif[] = [
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON],
   },
   {
-    id: 'f493bf77-9b75-4c77-a224-d642c935c19f',
+    id: '3b4c1b4f-1e2b-4e08-84e5-4e1c2a3c92e1',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'parfait',
@@ -2242,7 +2228,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'parfaites',
       },
     },
-    types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT ],
+    types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.CHARCUTERIE],
   },
 ];
 

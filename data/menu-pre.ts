@@ -747,7 +747,7 @@ const pres: Pre[] = [
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
-    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    id: '0b4c51c8-1b1f-44cc-8f4d-1b62a6b22f0e',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'le féerique',
@@ -761,7 +761,7 @@ const pres: Pre[] = [
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
-    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    id: '4b0f5a7a-4fb2-4d8e-8d1f-82a2d0c14c72',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'le mirifique',
@@ -775,7 +775,7 @@ const pres: Pre[] = [
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
-    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    id: '6f47c3c2-0a7e-4b07-b1e1-6d6e9b1cf3d8',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'le merveilleux',
@@ -789,7 +789,7 @@ const pres: Pre[] = [
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
-    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    id: '2c1f8a5b-6b7e-4b07-b5bb-3ab2e2b2ef4b',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'le perfectible',
@@ -803,7 +803,7 @@ const pres: Pre[] = [
     types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
-    id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
+    id: '8b2e15c2-6b2d-4a0e-9f3a-94b9f6e4c5a4',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'l\'alambiqué',
