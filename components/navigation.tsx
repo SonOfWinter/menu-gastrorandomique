@@ -1,7 +1,6 @@
 import React, {
   Dispatch,
   SetStateAction,
-  useEffect,
 } from 'react';
 import {
   cva,
@@ -11,6 +10,7 @@ import {
   Button,
 } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
 import {
   Position,
   Transition,
@@ -49,17 +49,7 @@ export default function Navigation({
   setPosition: Dispatch<SetStateAction<Position>>;
 }
   & {}) {
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'm') {
-        setPosition('main');
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [setPosition]);
+  useKeyboardShortcut('m', () => setPosition('main'));
 
   return (
     <section

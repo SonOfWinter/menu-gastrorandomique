@@ -2,7 +2,6 @@ import React, {
   Dispatch,
   SetStateAction,
   useCallback,
-  useEffect,
 } from 'react';
 import {
   cva,
@@ -11,6 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import DiceIcon from '@/components/dice-icon';
+import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
 import {
   Position,
   Transition,
@@ -60,17 +60,9 @@ export default function DiceButton({
     }
   }, [isLoading, setTransition, variant]);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'r') {
-        changeTransition();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [changeTransition]);
+  useKeyboardShortcut('r', changeTransition, {
+    enabled: !(variant === 'pending' || isLoading),
+  });
 
   return (
     <Button
