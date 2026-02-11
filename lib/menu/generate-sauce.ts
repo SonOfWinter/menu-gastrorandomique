@@ -12,15 +12,17 @@ import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingre
 import getIngredient from '@/lib/menu/get-ingredient';
 import isInconsistent from '@/lib/menu/is-inconsistent';
 import { InconsistentLevel } from '@/types/inconsistent-level';
+import { RandomGenerator } from '@/lib/utils/seeded-rng';
 
 export default function generateSauce(
   data: Menu,
   platPrincipal: Plat,
   typePlat: TypePlat,
   inconsistentLevel: InconsistentLevel,
+  rng?: RandomGenerator,
 ): string {
-  const preSauce = getPreSauce(data);
-  const typeSauce = getSauceType(data, typePlat);
+  const preSauce = getPreSauce(data, rng);
+  const typeSauce = getSauceType(data, typePlat, rng);
 
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   if (preSuite !== '' && !preSuite.endsWith('\'')) {
@@ -30,7 +32,8 @@ export default function generateSauce(
     ingredients,
     TypeAliment.SAUCE,
     false,
-    isInconsistent(inconsistentLevel) ? [] : typeSauce.compatibleIngredientTypes,
+    isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
+    rng,
   );
   if (!ingredientSauce) {
     return '';
@@ -43,6 +46,7 @@ export default function generateSauce(
     data.adjectifs,
     ingredientSauce,
     inconsistentLevel,
+    rng,
   );
 
   let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + ingredientSauce.nom;
@@ -52,14 +56,18 @@ export default function generateSauce(
   return sauce;
 }
 
-function getPreSauce(data: Menu): PreSauce {
+function getPreSauce(data: Menu, rng?: RandomGenerator): PreSauce {
   const availablePreSauces = [...data.preSauces];
-  return getRandom(availablePreSauces);
+  return getRandom(availablePreSauces, rng);
 }
 
-function getSauceType(data: Menu, typePlat: TypePlat): SauceType {
+function getSauceType(
+  data: Menu,
+  typePlat: TypePlat,
+  rng?: RandomGenerator,
+): SauceType {
   const availableSauceTypes = [...data.sauceTypes].filter((item: SauceType) =>
     item.types.includes(typePlat),
   );
-  return getRandom(availableSauceTypes);
+  return getRandom(availableSauceTypes, rng);
 }

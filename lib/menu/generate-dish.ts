@@ -12,14 +12,16 @@ import generateSecond from '@/lib/menu/generate-second';
 import hasRandomPart from '@/lib/menu/has-random-part';
 import generateSauce from '@/lib/menu/generate-sauce';
 import { InconsistentLevel } from '@/types/inconsistent-level';
+import { RandomGenerator } from '@/lib/utils/seeded-rng';
 
 export const generateDish = (
   data: Menu,
   mainType: TypePlat,
   inconsistentLevel: InconsistentLevel,
+  rng?: RandomGenerator,
 ): Dish => {
-  const platPrincipal: Plat = getPlatByType(data.plats, mainType);
-  const typeAliments: TypeAliment[] = isInconsistent(inconsistentLevel)
+  const platPrincipal: Plat = getPlatByType(data.plats, mainType, rng);
+  const typeAliments: TypeAliment[] = isInconsistent(inconsistentLevel, rng)
     ? [...platPrincipal.typeAliments[mainType]]
     : Object.values(TypeAliment);
   const ingredients: Ingredient[] = typeAliments && Array.isArray(typeAliments)
@@ -30,8 +32,10 @@ export const generateDish = (
       ).length > 0,
     ) : [];
   return {
-    main: generateMain(data, platPrincipal, ingredients, inconsistentLevel),
-    second: generateSecond(data, platPrincipal, ingredients, inconsistentLevel),
-    sauce: hasRandomPart() ? generateSauce(data, platPrincipal, mainType, inconsistentLevel) : null,
+    main: generateMain(data, platPrincipal, ingredients, inconsistentLevel, rng),
+    second: generateSecond(data, platPrincipal, ingredients, inconsistentLevel, rng),
+    sauce: hasRandomPart(3, rng)
+      ? generateSauce(data, platPrincipal, mainType, inconsistentLevel, rng)
+      : null,
   };
 };
