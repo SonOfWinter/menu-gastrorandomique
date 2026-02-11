@@ -7,10 +7,15 @@ import { InconsistentLevel } from '@/types/inconsistent-level';
 import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
+import {
+  defaultMenuConfig,
+  MenuPriceRange,
+} from '@/lib/menu/menu-config';
 
 export default function generateMenu(
-  count: number = 1,
-  inconsistentLevel: InconsistentLevel = 0,
+  count: number = defaultMenuConfig.dishCount,
+  inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
+  priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
 ): DisplayMenu {
   const data: Menu = getMenuData();
   const requiredLists: Record<string, unknown[]> = {
@@ -43,7 +48,7 @@ export default function generateMenu(
     () => generateDish(data, TypePlat.DESSERT, inconsistentLevel),
   );
   return {
-    price: round(random(30.0, 250.0, true), 2),
+    price: round(random(priceRange.min, priceRange.max, true), 2),
     title: getRandom(data.titles).nom,
     complement: getRandom(data.complements).nom,
     entree,
@@ -51,6 +56,7 @@ export default function generateMenu(
     dessert,
   };
 }
+
 
 
 
