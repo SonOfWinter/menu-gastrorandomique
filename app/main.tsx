@@ -64,9 +64,14 @@ export default function Main() {
       }
       return createSeed();
     })();
-    updateSeedUrl(nextSeed);
     try {
       const res: Response = await fetch(`/generate?seed=${nextSeed}`);
+      if (res.status === 429) {
+        toast.error('Vous êtes trop gourmand ! veuillez reessayer plus tard');
+        setTransition('none');
+        setPosition('main');
+        return;
+      }
       if (!res.ok) {
         throw new Error('Menu request failed');
       }
@@ -80,6 +85,7 @@ export default function Main() {
       setTransition('none');
       menuRef?.current?.scrollTo(0, 0);
       setMenu(newMenu.menu);
+      updateSeedUrl(nextSeed);
     } catch (error) {
       setTransition('none');
       setPosition('main');
