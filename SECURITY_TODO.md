@@ -4,6 +4,6 @@
 - Dependency update automation is configured (Dependabot).
 - SAST and secret scanning are configured (CodeQL and gitleaks).
 - CSP/security headers are enforced in Next.js config.
-- No monitoring/logging for security-relevant events or errors.
+- Security-relevant events are logged (rate limiting).
 - No environment variable validation or secrets management guidance.
 - No automated test coverage for security-related behaviors (rate limits, input validation).

@@ -3,6 +3,7 @@ import generateMenu from '@/lib/generate-menu';
 import { DisplayMenu } from '@/types/display-menu';
 import { MenuResponse } from '@/types/menu-response';
 import { defaultMenuConfig } from '@/lib/menu/menu-config';
+import { logSecurityEvent } from '@/lib/security/audit-log';
 
 export const dynamic = 'force-dynamic';
 
@@ -78,6 +79,11 @@ export async function GET(request: NextRequest):Promise<Response> {
   const clientId = getClientId(request);
   const limit = isRateLimited(clientId, now);
   if (limit.limited) {
+    logSecurityEvent({
+      action: 'rate_limit',
+      detail: 'generate',
+      clientId,
+    });
     return Response.json(
       { error: 'rate_limit' },
       {
