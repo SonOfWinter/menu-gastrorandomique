@@ -71,6 +71,19 @@ export default function Navigation({
           className="m-auto w-8 h-8"
         />
       </Button>
+      <Button
+        size="icon"
+        variant="outline-secondary"
+        type="button"
+        className={cn(
+          'absolute bottom-4 left-1/2 -translate-x-1/2',
+          { hidden: variant !== 'main' },
+        )}
+        onClick={() => setPosition('info')}
+        aria-label="Informations"
+      >
+        i
+      </Button>
     </section>
   );
 }
