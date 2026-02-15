@@ -20,7 +20,11 @@ const getClientId = (request: NextRequest): string => {
   if (forwarded) {
     return forwarded.split(',')[0].trim();
   }
-  return request.ip ?? 'unknown';
+  const realIp = request.headers.get('x-real-ip');
+  if (realIp) {
+    return realIp.trim();
+  }
+  return 'unknown';
 };
 
 export async function GET(request: NextRequest):Promise<Response> {
