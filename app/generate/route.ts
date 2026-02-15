@@ -4,6 +4,7 @@ import { DisplayMenu } from '@/types/display-menu';
 import { MenuResponse } from '@/types/menu-response';
 import { defaultMenuConfig } from '@/lib/menu/menu-config';
 import { logSecurityEvent } from '@/lib/security/audit-log';
+import { rateLimitConfig } from '@/lib/env';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,9 +22,9 @@ const WINDOW_MS = {
   hour: 3_600_000,
 };
 const LIMITS = {
-  second: 1,
-  minute: 30,
-  hour: 60,
+  second: rateLimitConfig.perSecond,
+  minute: rateLimitConfig.perMinute,
+  hour: rateLimitConfig.perHour,
 };
 
 const getClientId = (request: NextRequest): string => {
