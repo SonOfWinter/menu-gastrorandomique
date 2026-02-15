@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   cva,
@@ -8,6 +9,9 @@ import { cn } from '@/lib/utils';
 import { DisplayMenu } from '@/types/display-menu';
 import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
+import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
+import { copyText } from '@/lib/client/copy-text';
 
 const menuContainerVariants = cva(
   'absolute top-0 left-0 overflow-y-auto w-full py-15 px-4 md:p-15 h-[calc(100vh-60px)] md:h-full block opacity-0 transition-all duration-500 ease-in-out',
@@ -36,6 +40,19 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
   menu,
   ...props
 }, ref) {
+  const copyShareUrl = () => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    copyText(window.location.href)
+      .then(() => {
+        toast.success('Lien copié dans le presse-papiers');
+      })
+      .catch(() => {
+        toast.error('Erreur lors de la copie du lien');
+      });
+  };
+
   return (
     <section
       ref={ref}
@@ -63,6 +80,16 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
             title="Dessert"
             dishes={menu.dessert}
           />
+        </div>
+        <div className="flex justify-center pt-6">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={copyShareUrl}
+            size="lg"
+          >
+            Partager
+          </Button>
         </div>
           </>
           : null}

@@ -17,7 +17,7 @@ import {
 } from '@/app/main';
 
 const diceButtonVariants = cva(
-  'z-90 absolute block bg-primary hover:bg-primary scale-300 transition-all duration-500 ease-in-out cursor-pointer disabled:opacity-100 disabled:bg-primary disabled:hover:bg-primary',
+  'z-90 absolute block bg-primary hover:bg-primary scale-300 transition-all duration-500 ease-in-out cursor-pointer disabled:opacity-100 disabled:bg-primary disabled:hover:bg-primary size-8 md:size-10',
   {
     variants: {
       variant: {
@@ -66,16 +66,19 @@ export default function DiceButton({
 
   return (
     <Button
-      size="icon-lg"
+      size="icon"
       variant="default"
       type="button"
       disabled={variant === 'pending' || isLoading}
-      className={cn(diceButtonVariants({ variant }), className)}
+      className={cn(
+        diceButtonVariants({ variant }),
+        className,
+      )}
       onClick={changeTransition}
       {...props}
     >
       <DiceIcon
-        className="m-auto w-5 h-5"
+        className="m-auto w-4 h-4 md:w-5 md:h-5"
         color="#FFFFFF"
       />
     </Button>

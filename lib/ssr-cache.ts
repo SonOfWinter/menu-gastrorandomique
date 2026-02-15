@@ -22,3 +22,8 @@ export function addAdjectifsAlreadyUsed(adj: string): string[] {
   alreadyUsed.adjectifs.push(adj);
   return alreadyUsed.adjectifs;
 }
+
+export function resetAlreadyUsed(): void {
+  alreadyUsed.ingredients.length = 0;
+  alreadyUsed.adjectifs.length = 0;
+}
