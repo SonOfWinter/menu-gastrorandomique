@@ -5,6 +5,7 @@ import {
   alreadyUsed,
   getAdjectifsAlreadyUsed,
   getIngredientsAlreadyUsed,
+  resetAlreadyUsed,
 } from '@/lib/ssr-cache';
 
 describe('lib/ssr-cache.ts', () => {
@@ -19,5 +20,15 @@ describe('lib/ssr-cache.ts', () => {
 
     expect(getIngredientsAlreadyUsed()).toEqual(['ing-1']);
     expect(getAdjectifsAlreadyUsed()).toEqual(['adj-1']);
+  });
+
+  it('resets the cache', () => {
+    addIngredientsAlreadyUsed('ing-1');
+    addAdjectifsAlreadyUsed('adj-1');
+
+    resetAlreadyUsed();
+
+    expect(getIngredientsAlreadyUsed()).toEqual([]);
+    expect(getAdjectifsAlreadyUsed()).toEqual([]);
   });
 });

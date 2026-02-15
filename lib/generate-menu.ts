@@ -12,6 +12,7 @@ import {
   defaultMenuConfig,
   MenuPriceRange,
 } from '@/lib/menu/menu-config';
+import { resetAlreadyUsed } from '@/lib/ssr-cache';
 
 export default function generateMenu(
   count: number = defaultMenuConfig.dishCount,
@@ -19,6 +20,7 @@ export default function generateMenu(
   priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
   seed?: number,
 ): DisplayMenu {
+  resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
   const requiredLists: Record<string, unknown[]> = {

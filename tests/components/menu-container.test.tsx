@@ -1,10 +1,18 @@
 import { describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import MenuContainer from '@/components/menu-container';
 import { copyText } from '@/lib/client/copy-text';
+import { toast } from 'sonner';
 
 vi.mock('@/lib/client/copy-text', () => ({
-  copyText: vi.fn(),
+  copyText: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('sonner', () => ({
+  toast: {
+    success: vi.fn(),
+    error: vi.fn(),
+  },
 }));
 
 vi.mock('@/components/menu/menu-title', () => ({
@@ -32,7 +40,7 @@ describe('components/menu-container.tsx', () => {
     expect(screen.queryByTestId('menu-section-Entrée')).toBeNull();
   });
 
-  it('renders menu title and sections when menu is provided', () => {
+  it('renders menu title and sections when menu is provided', async () => {
     window.history.replaceState(null, '', '/?seed=123');
     render(
       <MenuContainer
@@ -54,5 +62,8 @@ describe('components/menu-container.tsx', () => {
     expect(screen.getByTestId('menu-section-Dessert')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Partager' }));
     expect(copyText).toHaveBeenCalledWith(window.location.href);
+    await waitFor(() => {
+      expect(toast.success).toHaveBeenCalledWith('Lien copié dans le presse-papiers');
+    });
   });
 });

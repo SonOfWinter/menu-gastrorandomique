@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { DisplayMenu } from '@/types/display-menu';
 import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { copyText } from '@/lib/client/copy-text';
 
@@ -43,7 +44,13 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
     if (typeof window === 'undefined') {
       return;
     }
-    void copyText(window.location.href);
+    copyText(window.location.href)
+      .then(() => {
+        toast.success('Lien copié dans le presse-papiers');
+      })
+      .catch(() => {
+        toast.error('Erreur lors de la copie du lien');
+      });
   };
 
   return (
@@ -77,8 +84,9 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
         <div className="flex justify-center pt-6">
           <Button
             type="button"
-            variant="default"
+            variant="outline"
             onClick={copyShareUrl}
+            size="lg"
           >
             Partager
           </Button>

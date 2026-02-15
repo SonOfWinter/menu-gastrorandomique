@@ -25,9 +25,9 @@ export default function MenuSection(
       <h3 className={cn(cormorant.className, 'block mb-4')}>
         {title}
       </h3>
-      {dishes.map((dish) =>
+      {dishes.map((dish, index) =>
         <MenuDish
-          key={dish.main + dish.second}
+          key={`${dish.main}-${dish.second}-${dish.sauce ?? ''}-${index}`}
           dish={dish}
         />,
       )}
