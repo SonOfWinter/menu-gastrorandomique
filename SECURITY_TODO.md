@@ -2,7 +2,7 @@
 
 - Automated dependency vulnerability scanning is now configured in CI.
 - Dependency update automation is configured (Dependabot).
-- No SAST/secret scanning is configured (e.g., CodeQL, Trivy, gitleaks).
+- SAST and secret scanning are configured (CodeQL and gitleaks).
 - No CSP/security headers are documented or enforced in Next.js config.
 - No monitoring/logging for security-relevant events or errors.
 - No environment variable validation or secrets management guidance.
