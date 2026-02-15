@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import { DisplayMenu } from '@/types/display-menu';
 import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
+import InfoPanel from '@/components/info-panel';
+import { Cormorant } from 'next/font/google';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { copyText } from '@/lib/client/copy-text';
@@ -29,6 +31,11 @@ const menuContainerVariants = cva(
     },
   },
 );
+
+const cormorant = Cormorant({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'section'>
   & VariantProps<typeof menuContainerVariants>
@@ -59,7 +66,17 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
       {...props}
     >
       <div className="flex flex-col justify-start m-auto w-full md:max-w-[50%] gap-4 md:w-3/5 lg:w-3/4">
-        {menu !== null
+        {variant === 'main'
+          ? (
+            <h1 className={cn(cormorant.className, 'text-3xl text-secondary text-center')}>
+              Menu Gastrorandomique
+            </h1>
+          )
+          : null}
+        {variant === 'info'
+          ? <InfoPanel />
+          : null}
+        {menu !== null && variant !== 'info'
           ? <>
         <div className="flex flex-col flex-nowrap gap-4">
           <MenuTitle menu={menu} />
@@ -83,7 +100,7 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
         <div className="flex justify-center pt-6">
           <Button
             type="button"
-            variant="outline"
+            variant="outline-secondary"
             onClick={copyShareUrl}
             size="lg"
           >
