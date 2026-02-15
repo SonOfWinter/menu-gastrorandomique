@@ -15,6 +15,10 @@ vi.mock('sonner', () => ({
   },
 }));
 
+vi.mock('next/font/google', () => ({
+  Bebas_Neue: () => ({ className: 'font-bebas' }),
+}));
+
 vi.mock('@/components/menu/menu-title', () => ({
   default: ({ menu }: { menu: { title: string } }) => (
     <div data-testid="menu-title">{menu.title}</div>

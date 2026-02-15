@@ -9,7 +9,7 @@ import { DisplayMenu } from '@/types/display-menu';
 import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
 import InfoPanel from '@/components/info-panel';
-import { Cormorant } from 'next/font/google';
+import { Bebas_Neue } from 'next/font/google';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { copyText } from '@/lib/client/copy-text';
@@ -32,7 +32,7 @@ const menuContainerVariants = cva(
   },
 );
 
-const cormorant = Cormorant({
+const bebasNeue = Bebas_Neue({
   weight: '400',
   subsets: ['latin'],
 });
@@ -66,15 +66,18 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
       {...props}
     >
       <div className="flex flex-col justify-start m-auto w-full md:max-w-[50%] gap-4 md:w-3/5 lg:w-3/4">
-        {variant === 'main'
+        {variant === 'main' || variant === 'info'
           ? (
             <h1
               className={cn(
-                cormorant.className,
-                'relative z-50 text-[4rem] leading-16 text-primary-foreground text-center',
+                bebasNeue.className,
+                'relative z-50 text-[4rem] leading-16 text-primary-foreground text-center mt-10',
               )}
             >
-              Menu<br/>Gastrorandomique
+              {variant === 'main'
+                ? <>Menu<br/>Gastrorandomique</>
+                : "Informations"
+              }
             </h1>
           )
           : null}

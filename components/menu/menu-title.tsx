@@ -1,9 +1,9 @@
 import React from 'react';
-import { Cormorant, Manrope } from 'next/font/google';
+import { Bebas_Neue, Manrope } from 'next/font/google';
 import { DisplayMenu } from '@/types/display-menu';
 import { cn } from '@/lib/utils';
 
-const cormorant = Cormorant({
+const bebasNeue = Bebas_Neue({
   weight: '400',
   subsets: ['latin'],
 });
@@ -21,7 +21,7 @@ export default function MenuTitle({
 
   return (
     <div className="flex flex-col gap-2 mb-4">
-      <h1 className={cormorant.className}>
+      <h1 className={bebasNeue.className}>
         {menu.title}
       </h1>
       <h2 className={cn("text-base", manrope.className)}>

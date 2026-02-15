@@ -38,14 +38,18 @@ describe('components/navigation.tsx', () => {
 
   it('shows the close button for left and right variants', () => {
     const setPosition = vi.fn();
-    const { getByRole, rerender } = render(
+    const { getAllByRole, rerender } = render(
       <Navigation
         variant="left"
         setPosition={setPosition}
       />,
     );
 
-    expect(getByRole('button')).toHaveClass('block');
+    const closeLeft = getAllByRole('button').find(
+      (button) => !button.getAttribute('aria-label'),
+    );
+    expect(closeLeft).toBeTruthy();
+    expect(closeLeft).toHaveClass('block');
 
     rerender(
       <Navigation
@@ -54,31 +58,43 @@ describe('components/navigation.tsx', () => {
       />,
     );
 
-    expect(getByRole('button')).toHaveClass('block');
+    const closeRight = getAllByRole('button').find(
+      (button) => !button.getAttribute('aria-label'),
+    );
+    expect(closeRight).toBeTruthy();
+    expect(closeRight).toHaveClass('block');
   });
 
   it('hides the close button for main variant', () => {
     const setPosition = vi.fn();
-    const { getByRole } = render(
+    const { getAllByRole } = render(
       <Navigation
         variant="main"
         setPosition={setPosition}
       />,
     );
 
-    expect(getByRole('button')).toHaveClass('hidden');
+    const closeButton = getAllByRole('button').find(
+      (button) => !button.getAttribute('aria-label'),
+    );
+    expect(closeButton).toBeTruthy();
+    expect(closeButton).toHaveClass('hidden');
   });
 
   it('sets position to main when close button is clicked', () => {
     const setPosition = vi.fn();
-    const { getByRole } = render(
+    const { getAllByRole } = render(
       <Navigation
         variant="left"
         setPosition={setPosition}
       />,
     );
 
-    fireEvent.click(getByRole('button'));
+    const closeButton = getAllByRole('button').find(
+      (button) => !button.getAttribute('aria-label'),
+    );
+    expect(closeButton).toBeTruthy();
+    fireEvent.click(closeButton as Element);
     expect(setPosition).toHaveBeenCalledWith('main');
   });
 });
