@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bebas_Neue } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { Kbd } from '@/components/ui/kbd';
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -37,9 +38,7 @@ export default function InfoPanel() {
               key={shortcut.key}
               className="flex items-center gap-2"
             >
-              <span className="inline-flex min-w-8 justify-center rounded-full border border-secondary px-2 py-0.5 text-sm">
-                {shortcut.key}
-              </span>
+              <Kbd>{shortcut.key}</Kbd>
               <span>{shortcut.description}</span>
             </li>
           ))}

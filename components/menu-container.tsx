@@ -71,7 +71,7 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
             <h1
               className={cn(
                 bebasNeue.className,
-                'relative z-50 text-[4rem] leading-16 text-primary-foreground text-center mt-10',
+                'relative z-50 text-5xl md:text-[4rem] leading-16 text-primary-foreground text-center mt-10',
               )}
             >
               {variant === 'main'
