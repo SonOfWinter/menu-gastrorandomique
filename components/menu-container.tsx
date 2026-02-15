@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import { DisplayMenu } from '@/types/display-menu';
 import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
+import InfoPanel from '@/components/info-panel';
+import { Bebas_Neue } from 'next/font/google';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { copyText } from '@/lib/client/copy-text';
@@ -17,8 +19,8 @@ const menuContainerVariants = cva(
   {
     variants: {
       variant: {
-        'main': '',
-        'info': '',
+        'main': 'opacity-100',
+        'info': 'opacity-100',
         'right': 'opacity-100',
         'left': 'opacity-100',
         'pending': '',
@@ -29,6 +31,11 @@ const menuContainerVariants = cva(
     },
   },
 );
+
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'section'>
   & VariantProps<typeof menuContainerVariants>
@@ -59,37 +66,55 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
       {...props}
     >
       <div className="flex flex-col justify-start m-auto w-full md:max-w-[50%] gap-4 md:w-3/5 lg:w-3/4">
-        {menu !== null
+        {variant === 'main' || variant === 'info'
+          ? (
+            <h1
+              className={cn(
+                bebasNeue.className,
+                'relative z-50 text-5xl md:text-[4rem] leading-16 text-primary-foreground text-center mt-10',
+              )}
+            >
+              {variant === 'main'
+                ? <>Menu<br/>Gastrorandomique</>
+                : "Informations"
+              }
+            </h1>
+          )
+          : null}
+        {variant === 'info'
+          ? <InfoPanel />
+          : null}
+        {menu !== null && variant !== 'info'
           ? <>
-        <div className="flex flex-col flex-nowrap gap-4">
-          <MenuTitle menu={menu} />
-        </div>
-        <div className="flex flex-col gap-12 items-center">
-          <MenuSection
-            title="Entrée"
-            dishes={menu.entree}
-          />
+            <div className="flex flex-col flex-nowrap gap-4">
+              <MenuTitle menu={menu} />
+            </div>
+            <div className="flex flex-col gap-12 items-center">
+              <MenuSection
+                title="Entrée"
+                dishes={menu.entree}
+              />
 
-          <MenuSection
-            title="Plat"
-            dishes={menu.plat}
-          />
+              <MenuSection
+                title="Plat"
+                dishes={menu.plat}
+              />
 
-          <MenuSection
-            title="Dessert"
-            dishes={menu.dessert}
-          />
-        </div>
-        <div className="flex justify-center pt-6">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={copyShareUrl}
-            size="lg"
-          >
-            Partager
-          </Button>
-        </div>
+              <MenuSection
+                title="Dessert"
+                dishes={menu.dessert}
+              />
+            </div>
+            <div className="flex justify-center pt-6">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={copyShareUrl}
+                size="lg"
+              >
+                Partager
+              </Button>
+            </div>
           </>
           : null}
       </div>

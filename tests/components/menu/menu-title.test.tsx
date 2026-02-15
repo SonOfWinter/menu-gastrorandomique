@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import MenuTitle from '@/components/menu/menu-title';
 
 vi.mock('next/font/google', () => ({
-  Cormorant: () => ({ className: 'font-cormorant' }),
+  Bebas_Neue: () => ({ className: 'font-bebas' }),
   Manrope: () => ({ className: 'font-manrope' }),
 }));
 

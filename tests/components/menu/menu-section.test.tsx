@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import MenuSection from '@/components/menu/menu-section';
 
 vi.mock('next/font/google', () => ({
-  Cormorant: () => ({ className: 'font-cormorant' }),
+  Bebas_Neue: () => ({ className: 'font-bebas' }),
 }));
 
 vi.mock('@/components/menu/menu-dish', () => ({
