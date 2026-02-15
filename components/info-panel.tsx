@@ -14,7 +14,7 @@ const shortcuts = [
 
 export default function InfoPanel() {
   return (
-    <section className="flex flex-col gap-6 text-secondary">
+    <div className="relative z-50 flex flex-col gap-6 text-primary-foreground">
       <h1 className={cn(cormorant.className, 'text-2xl')}>Informations</h1>
       <a
         className="underline underline-offset-4"
@@ -37,6 +37,6 @@ export default function InfoPanel() {
           ))}
         </ul>
       </div>
-    </section>
+    </div>
   );
 }
