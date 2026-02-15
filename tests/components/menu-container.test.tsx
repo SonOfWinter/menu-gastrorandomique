@@ -33,7 +33,7 @@ describe('components/menu-container.tsx', () => {
   });
 
   it('renders menu title and sections when menu is provided', () => {
-    window.history.replaceState(null, '', 'https://example.com?seed=123');
+    window.history.replaceState(null, '', '/?seed=123');
     render(
       <MenuContainer
         variant="right"
@@ -53,6 +53,6 @@ describe('components/menu-container.tsx', () => {
     expect(screen.getByTestId('menu-section-Plat')).toBeInTheDocument();
     expect(screen.getByTestId('menu-section-Dessert')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Partager' }));
-    expect(copyText).toHaveBeenCalledWith('https://example.com?seed=123');
+    expect(copyText).toHaveBeenCalledWith(window.location.href);
   });
 });
