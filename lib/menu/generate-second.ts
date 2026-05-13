@@ -10,11 +10,13 @@ import hasRandomPart from '@/lib/menu/has-random-part';
 import { Post } from '@/types/data/post';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
+import { TypePlat } from '@/types/enums/type-plat';
 
 const generateSecond = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
+  mainType: TypePlat,
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
 ): string => {
@@ -41,7 +43,13 @@ const generateSecond = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postSecondaire: Post = getRandom(data.posts, rng);
+    const availablePosts: Post[] = data.posts.filter((item: Post) =>
+      item.types.includes(mainType),
+    );
+    const postSecondaire: Post = getRandom(
+      availablePosts.length > 0 ? availablePosts : data.posts,
+      rng,
+    );
     second += ` ${postSecondaire.nom}`;
   }
   return second;
