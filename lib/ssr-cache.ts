@@ -1,8 +1,16 @@
-export type AlreadyUsed = { ingredients: string[]; adjectifs: string[]; sauceTypes: string[] };
+export type AlreadyUsed = {
+  ingredients: string[];
+  adjectifs: string[];
+  pres: string[];
+  posts: string[];
+  sauceTypes: string[];
+};
 
 export const alreadyUsed: AlreadyUsed = {
   ingredients: [],
   adjectifs: [],
+  pres: [],
+  posts: [],
   sauceTypes: [],
 };
 
@@ -12,6 +20,14 @@ export function getIngredientsAlreadyUsed(): string[] {
 
 export function getAdjectifsAlreadyUsed(): string[] {
   return alreadyUsed.adjectifs;
+}
+
+export function getPresAlreadyUsed(): string[] {
+  return alreadyUsed.pres;
+}
+
+export function getPostsAlreadyUsed(): string[] {
+  return alreadyUsed.posts;
 }
 
 export function getSauceTypesAlreadyUsed(): string[] {
@@ -28,6 +44,16 @@ export function addAdjectifsAlreadyUsed(adj: string): string[] {
   return alreadyUsed.adjectifs;
 }
 
+export function addPresAlreadyUsed(pre: string): string[] {
+  alreadyUsed.pres.push(pre);
+  return alreadyUsed.pres;
+}
+
+export function addPostsAlreadyUsed(post: string): string[] {
+  alreadyUsed.posts.push(post);
+  return alreadyUsed.posts;
+}
+
 export function addSauceTypesAlreadyUsed(sauceType: string): string[] {
   alreadyUsed.sauceTypes.push(sauceType);
   return alreadyUsed.sauceTypes;
@@ -36,5 +62,7 @@ export function addSauceTypesAlreadyUsed(sauceType: string): string[] {
 export function resetAlreadyUsed(): void {
   alreadyUsed.ingredients.length = 0;
   alreadyUsed.adjectifs.length = 0;
+  alreadyUsed.pres.length = 0;
+  alreadyUsed.posts.length = 0;
   alreadyUsed.sauceTypes.length = 0;
 }

@@ -10,6 +10,8 @@ describe('lib/menu/generate-main.ts', () => {
   beforeEach(() => {
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
+    alreadyUsed.pres.length = 0;
+    alreadyUsed.posts.length = 0;
     alreadyUsed.sauceTypes.length = 0;
   });
 
