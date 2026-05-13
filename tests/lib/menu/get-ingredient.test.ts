@@ -9,6 +9,7 @@ describe('lib/menu/get-ingredient.ts', () => {
   beforeEach(() => {
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
+    alreadyUsed.sauceTypes.length = 0;
   });
 
   it('filters ingredients and respects already used flags', () => {

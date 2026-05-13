@@ -10,6 +10,7 @@ describe('lib/menu/generate-second.ts', () => {
   beforeEach(() => {
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
+    alreadyUsed.sauceTypes.length = 0;
   });
 
   it('generates a secondary dish label', () => {
