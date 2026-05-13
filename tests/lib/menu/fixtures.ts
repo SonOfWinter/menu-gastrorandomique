@@ -81,6 +81,7 @@ export const lien: Lien = {
     [Genre.MASCULIN]: { [Nombre.SINGULIER]: 'au', [Nombre.PLURIEL]: 'aux' },
   },
   suite: TypeDeterminant.SECONDAIRE,
+  compatibleIngredientTypes: [TypeAliment.FRUIT],
 };
 
 export const pre: Pre = {
