@@ -198,7 +198,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'coulant sur',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: 'b6cca5e3-56c4-4901-b299-07d18676dcd1',
@@ -240,7 +240,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'délicatement posées sur',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: '302e6edb-985d-458f-b9c4-34dcb61bc9b5',
@@ -254,7 +254,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'déposées sur',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: 'd377de34-61e6-4307-9cff-f47b222e74d3',
@@ -674,7 +674,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'parfumées avec',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: 'da8adf5c-0b80-4468-8af1-6d2de889fc5c',
@@ -786,7 +786,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'rôtissantes avec',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: '539d49b4-030f-4fa6-8a0f-8ae87975e8a2',
@@ -926,7 +926,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'tendues vers',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: '497f177c-390d-4d9c-852e-26d9a96ea97b',
@@ -968,7 +968,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'unies à',
       },
     },
-    suite: TypeDeterminant.SECONDAIRE,
+    suite: TypeDeterminant.ARTICLE_INDEFINI,
   },
   {
     id: '8139c67e-0986-4fb1-b791-98a2cfd8d5f1',
