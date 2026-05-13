@@ -89,6 +89,7 @@ export default function Main() {
     } catch (error) {
       setTransition('none');
       setPosition('main');
+      console.error('Erreur lors de la generation du menu:', error);
       toast.error('Erreur lors de la generation du menu');
     } finally {
       setIsLoading(false);
