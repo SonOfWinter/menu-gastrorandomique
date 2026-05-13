@@ -93,7 +93,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SUCRE]
   },
   {
     id: '8aacdfeb-4f9d-4fde-936c-6c5e45af7007',
@@ -152,7 +152,7 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'caressées par',
       },
     },
-    suite: TypeDeterminant.ARTICLE_INDEFINI,
+    suite: TypeDeterminant.SECONDAIRE,
     compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
@@ -453,7 +453,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
     id: '2d7a765a-ac66-4316-85a6-542e2c1a0246',
@@ -468,7 +468,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE]
   },
   {
     id: '5f54a9d2-f709-41ef-ae7f-d6d588e73bfe',
@@ -573,7 +573,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE]
   },
   {
     id: '84ed66c5-da03-4023-a27a-352ebc072746',
@@ -603,7 +603,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LEGUME, TypeAliment.SUCRE]
   },
   {
     id: 'fc45e78f-e638-4517-9109-c2a7b8121864',
@@ -618,7 +618,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE]
   },
   {
     id: '9fb61a73-ca5b-4470-a7a8-3230dbfbdb56',
@@ -693,7 +693,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SUCRE]
   },
   {
     id: 'c241a55d-1fe5-4908-a4ca-b27ea7329ead',
@@ -843,7 +843,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
     id: '55e0326a-a02e-47f8-88cb-1296ee1aac18',
@@ -978,7 +978,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
+    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LAITIER, TypeAliment.LIQUIDE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE]
   },
   {
     id: '6285e932-6b96-4692-9f95-14c6102722f1',
@@ -1035,21 +1035,6 @@ const liens: Lien[] = [
       [Genre.FEMININ]: {
         [Nombre.SINGULIER]: 'voilée dans',
         [Nombre.PLURIEL]: 'voilées dans',
-      },
-    },
-    suite: TypeDeterminant.POSSESSIF,
-    compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
-  },
-  {
-    id: 'abab420f-3acd-44ba-812f-f95f2de9e560',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'voilé de',
-        [Nombre.PLURIEL]: 'voilés de',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'voilée de',
-        [Nombre.PLURIEL]: 'voilées de',
       },
     },
     suite: TypeDeterminant.POSSESSIF,
