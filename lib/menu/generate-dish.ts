@@ -32,8 +32,8 @@ export const generateDish = (
       ).length > 0,
     ) : [];
   return {
-    main: generateMain(data, platPrincipal, ingredients, inconsistentLevel, rng),
-    second: generateSecond(data, platPrincipal, ingredients, inconsistentLevel, rng),
+    main: generateMain(data, platPrincipal, ingredients, mainType, inconsistentLevel, rng),
+    second: generateSecond(data, platPrincipal, ingredients, mainType, inconsistentLevel, rng),
     sauce: hasRandomPart(3, rng)
       ? generateSauce(data, platPrincipal, mainType, inconsistentLevel, rng)
       : null,

@@ -7,14 +7,16 @@ import getIngredient from '@/lib/menu/get-ingredient';
 import { Adjectif } from '@/types/data/adjectif';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import hasRandomPart from '@/lib/menu/has-random-part';
-import { Post } from '@/types/data/post';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
+import { TypePlat } from '@/types/enums/type-plat';
+import getPostByType from '@/lib/menu/get-post-by-type';
 
 const generateSecond = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
+  mainType: TypePlat,
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
 ): string => {
@@ -41,7 +43,7 @@ const generateSecond = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postSecondaire: Post = getRandom(data.posts, rng);
+    const postSecondaire = getPostByType(data.posts, mainType, rng);
     second += ` ${postSecondaire.nom}`;
   }
   return second;

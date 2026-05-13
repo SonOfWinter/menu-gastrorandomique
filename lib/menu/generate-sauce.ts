@@ -13,6 +13,10 @@ import getIngredient from '@/lib/menu/get-ingredient';
 import isInconsistent from '@/lib/menu/is-inconsistent';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
+import {
+  addSauceTypesAlreadyUsed,
+  getSauceTypesAlreadyUsed,
+} from '@/lib/ssr-cache';
 
 export default function generateSauce(
   data: Menu,
@@ -69,5 +73,13 @@ function getSauceType(
   const availableSauceTypes = [...data.sauceTypes].filter((item: SauceType) =>
     item.types.includes(typePlat),
   );
-  return getRandom(availableSauceTypes, rng);
+  const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
+    !getSauceTypesAlreadyUsed().includes(item.id),
+  );
+  const selected = getRandom(
+    unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes,
+    rng,
+  );
+  addSauceTypesAlreadyUsed(selected.id);
+  return selected;
 }

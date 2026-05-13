@@ -5,18 +5,19 @@ import getIngredient from '@/lib/menu/get-ingredient';
 import { Adjectif } from '@/types/data/adjectif';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import hasRandomPart from '@/lib/menu/has-random-part';
-import { Pre } from '@/types/data/pre';
-import getRandom from '@/lib/menu/get-random';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
-import { Post } from '@/types/data/post';
 import capitalize from '@/lib/utils/capitalize';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
+import { TypePlat } from '@/types/enums/type-plat';
+import getPostByType from '@/lib/menu/get-post-by-type';
+import getPreByType from '@/lib/menu/get-pre-by-type';
 
 const generateMain = (
   data: Menu,
   platPrincipal: Plat,
   ingredients: Ingredient[],
+  mainType: TypePlat,
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
 ): string => {
@@ -32,7 +33,7 @@ const generateMain = (
     rng,
   );
   if (hasRandomPart(3, rng)) {
-    const prePrincipal: Pre = getRandom(data.pres, rng);
+    const prePrincipal = getPreByType(data.pres, mainType, rng);
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
   main += `${platPrincipal.nom} ${ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL]}`;
@@ -45,7 +46,7 @@ const generateMain = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postPrincipal: Post = getRandom(data.posts, rng);
+    const postPrincipal = getPostByType(data.posts, mainType, rng);
     main += ` ${postPrincipal.nom}`;
   }
   return capitalize(main);
