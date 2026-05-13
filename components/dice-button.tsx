@@ -1,6 +1,4 @@
 import React, {
-  Dispatch,
-  SetStateAction,
   useCallback,
 } from 'react';
 import {
@@ -43,7 +41,7 @@ export default function DiceButton({
   & VariantProps<typeof diceButtonVariants>
   & {
   variant: Position,
-  setTransition: Dispatch<SetStateAction<Transition>>;
+  setTransition: (transition: Transition) => void;
   isLoading?: boolean;
 }
   & {}) {

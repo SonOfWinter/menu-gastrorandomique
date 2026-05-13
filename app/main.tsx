@@ -1,9 +1,9 @@
 'use client';
 import React, {
   useCallback,
-  useEffect,
   useMemo,
   useRef,
+  useEffect,
 } from 'react';
 import Navigation from '@/components/navigation';
 import DiceButton from '@/components/dice-button';
@@ -22,7 +22,6 @@ function sleep(ms: number) {
 export default function Main() {
 
   const [position, setPosition] = React.useState<Position>('main');
-  const [transition, setTransition] = React.useState<Transition>('none');
   const [menu, setMenu] = React.useState<DisplayMenu | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const initialSeedRef = useRef<number | null>(null);
@@ -49,7 +48,10 @@ export default function Main() {
     }
   }, []);
 
-  const getMenu = useCallback(async () => {
+  const getMenu = useCallback(async (transition: Transition) => {
+    if (transition === 'none') {
+      return;
+    }
     if (isLoading) {
       return;
     }
@@ -68,7 +70,6 @@ export default function Main() {
       const res: Response = await fetch(`/generate?seed=${nextSeed}`);
       if (res.status === 429) {
         toast.error('Vous êtes trop gourmand ! veuillez reessayer plus tard');
-        setTransition('none');
         setPosition('main');
         return;
       }
@@ -82,25 +83,17 @@ export default function Main() {
       if (transition === 'right-to-left') {
         setPosition('left');
       }
-      setTransition('none');
       menuRef?.current?.scrollTo(0, 0);
       setMenu(newMenu.menu);
       updateSeedUrl(nextSeed);
     } catch (error) {
-      setTransition('none');
       setPosition('main');
       console.error('Erreur lors de la generation du menu:', error);
       toast.error('Erreur lors de la generation du menu');
     } finally {
       setIsLoading(false);
     }
-  }, [createSeed, isLoading, transition, setMenu, updateSeedUrl]);
-
-  useEffect(() => {
-    if (transition !== 'none') {
-      getMenu();
-    }
-  }, [getMenu, transition]);
+  }, [createSeed, isLoading, updateSeedUrl]);
 
   return (<>
       <MenuContainer
@@ -113,7 +106,7 @@ export default function Main() {
         setPosition={setPosition}
       />
       <DiceButton
-        setTransition={setTransition}
+        setTransition={getMenu}
         variant={position}
         isLoading={isLoading}
       />
