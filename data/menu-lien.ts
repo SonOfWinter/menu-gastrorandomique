@@ -502,8 +502,8 @@ const liens: Lien[] = [
         [Nombre.PLURIEL]: 'fleurant bon',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'fleurant bonne',
-        [Nombre.PLURIEL]: 'fleurant bonnes',
+        [Nombre.SINGULIER]: 'fleurant bon',
+        [Nombre.PLURIEL]: 'fleurant bon',
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
