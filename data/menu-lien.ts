@@ -19,20 +19,6 @@ const liens: Lien[] = [
     suite: TypeDeterminant.PRINCIPAL,
   },
   {
-    id: '1adcf0ff-d7fe-44e9-ab24-956dfbdf47d6',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'accompagné de',
-        [Nombre.PLURIEL]: 'accompagnés de',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'accompagnée de',
-        [Nombre.PLURIEL]: 'accompagnées de',
-      },
-    },
-    suite: TypeDeterminant.POSSESSIF,
-  },
-  {
     id: '854e8224-63be-4304-8fa8-84465150fcfc',
     noms: {
       [Genre.MASCULIN]: {
@@ -918,15 +904,15 @@ const liens: Lien[] = [
     id: 'c77b83c9-75ba-4e50-bf03-cb477c4c7d15',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'tendrement accompagné de',
-        [Nombre.PLURIEL]: 'tendrement accompagnés de',
+        [Nombre.SINGULIER]: 'tendrement accompagné',
+        [Nombre.PLURIEL]: 'tendrement accompagnés',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'tendrement accompagnée de',
-        [Nombre.PLURIEL]: 'tendrement accompagnées de',
+        [Nombre.SINGULIER]: 'tendrement accompagnée',
+        [Nombre.PLURIEL]: 'tendrement accompagnées',
       },
     },
-    suite: TypeDeterminant.POSSESSIF,
+    suite: TypeDeterminant.PRINCIPAL,
   },
   {
     id: 'a1ac43fb-0033-40f1-8125-c6f2127d04ef',
