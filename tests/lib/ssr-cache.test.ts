@@ -2,12 +2,14 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import {
   addAdjectifsAlreadyUsed,
   addIngredientsAlreadyUsed,
+  addPlatsAlreadyUsed,
   addPresAlreadyUsed,
   addPostsAlreadyUsed,
   addSauceTypesAlreadyUsed,
   alreadyUsed,
   getAdjectifsAlreadyUsed,
   getIngredientsAlreadyUsed,
+  getPlatsAlreadyUsed,
   getPresAlreadyUsed,
   getPostsAlreadyUsed,
   getSauceTypesAlreadyUsed,
@@ -16,6 +18,7 @@ import {
 
 describe('lib/ssr-cache.ts', () => {
   beforeEach(() => {
+    alreadyUsed.plats.length = 0;
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
     alreadyUsed.pres.length = 0;
@@ -23,13 +26,15 @@ describe('lib/ssr-cache.ts', () => {
     alreadyUsed.sauceTypes.length = 0;
   });
 
-  it('tracks ingredients, adjectifs, and sauce types', () => {
+  it('tracks plats, ingredients, adjectifs, and sauce types', () => {
+    addPlatsAlreadyUsed('tarte');
     addIngredientsAlreadyUsed('ing-1');
     addAdjectifsAlreadyUsed('adj-1');
     addPresAlreadyUsed('pre-1');
     addPostsAlreadyUsed('post-1');
     addSauceTypesAlreadyUsed('sauce-type-1');
 
+    expect(getPlatsAlreadyUsed()).toEqual(['tarte']);
     expect(getIngredientsAlreadyUsed()).toEqual(['ing-1']);
     expect(getAdjectifsAlreadyUsed()).toEqual(['adj-1']);
     expect(getPresAlreadyUsed()).toEqual(['pre-1']);
@@ -38,6 +43,7 @@ describe('lib/ssr-cache.ts', () => {
   });
 
   it('resets the cache', () => {
+    addPlatsAlreadyUsed('tarte');
     addIngredientsAlreadyUsed('ing-1');
     addAdjectifsAlreadyUsed('adj-1');
     addPresAlreadyUsed('pre-1');
@@ -46,6 +52,7 @@ describe('lib/ssr-cache.ts', () => {
 
     resetAlreadyUsed();
 
+    expect(getPlatsAlreadyUsed()).toEqual([]);
     expect(getIngredientsAlreadyUsed()).toEqual([]);
     expect(getAdjectifsAlreadyUsed()).toEqual([]);
     expect(getPresAlreadyUsed()).toEqual([]);

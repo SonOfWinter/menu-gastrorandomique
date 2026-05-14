@@ -7,6 +7,7 @@ const ingredients = [ingredientOne, ingredientTwo];
 
 describe('lib/menu/get-ingredient.ts', () => {
   beforeEach(() => {
+    alreadyUsed.plats.length = 0;
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
     alreadyUsed.pres.length = 0;

@@ -8,6 +8,7 @@ const ingredients = [ingredientOne];
 
 describe('lib/menu/generate-main.ts', () => {
   beforeEach(() => {
+    alreadyUsed.plats.length = 0;
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
     alreadyUsed.pres.length = 0;
