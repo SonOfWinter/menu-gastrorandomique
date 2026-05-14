@@ -9,6 +9,7 @@ describe('lib/menu/get-plat-by-type.ts', () => {
     alreadyUsed.plats.length = 0;
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
+    alreadyUsed.liens.length = 0;
     alreadyUsed.pres.length = 0;
     alreadyUsed.posts.length = 0;
     alreadyUsed.sauceTypes.length = 0;

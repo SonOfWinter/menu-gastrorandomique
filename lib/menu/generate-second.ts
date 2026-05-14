@@ -12,6 +12,10 @@ import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
 import intersection from '@/lib/utils/intersection';
+import {
+  addLiensAlreadyUsed,
+  getLiensAlreadyUsed,
+} from '@/lib/ssr-cache';
 
 const generateSecond = (
   data: Menu,
@@ -38,10 +42,15 @@ const generateSecond = (
       [...ingredientSecondaire.types],
     ).length > 0,
   );
+  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
+  const unusedLiens = compatibleLiens.filter((lien: Lien) =>
+    !getLiensAlreadyUsed().includes(lien.id),
+  );
   const lienSecondaire: Lien = getRandom(
-    availableLiens.length > 0 ? availableLiens : data.liens,
+    unusedLiens.length > 0 ? unusedLiens : compatibleLiens,
     rng,
   );
+  addLiensAlreadyUsed(lienSecondaire.id);
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
