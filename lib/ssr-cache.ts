@@ -1,18 +1,26 @@
 export type AlreadyUsed = {
+  plats: string[];
   ingredients: string[];
   adjectifs: string[];
+  liens: string[];
   pres: string[];
   posts: string[];
   sauceTypes: string[];
 };
 
 export const alreadyUsed: AlreadyUsed = {
+  plats: [],
   ingredients: [],
   adjectifs: [],
+  liens: [],
   pres: [],
   posts: [],
   sauceTypes: [],
 };
+
+export function getPlatsAlreadyUsed(): string[] {
+  return alreadyUsed.plats;
+}
 
 export function getIngredientsAlreadyUsed(): string[] {
   return alreadyUsed.ingredients;
@@ -20,6 +28,10 @@ export function getIngredientsAlreadyUsed(): string[] {
 
 export function getAdjectifsAlreadyUsed(): string[] {
   return alreadyUsed.adjectifs;
+}
+
+export function getLiensAlreadyUsed(): string[] {
+  return alreadyUsed.liens;
 }
 
 export function getPresAlreadyUsed(): string[] {
@@ -34,6 +46,11 @@ export function getSauceTypesAlreadyUsed(): string[] {
   return alreadyUsed.sauceTypes;
 }
 
+export function addPlatsAlreadyUsed(plat: string): string[] {
+  alreadyUsed.plats.push(plat);
+  return alreadyUsed.plats;
+}
+
 export function addIngredientsAlreadyUsed(ing: string): string[] {
   alreadyUsed.ingredients.push(ing);
   return alreadyUsed.ingredients;
@@ -42,6 +59,11 @@ export function addIngredientsAlreadyUsed(ing: string): string[] {
 export function addAdjectifsAlreadyUsed(adj: string): string[] {
   alreadyUsed.adjectifs.push(adj);
   return alreadyUsed.adjectifs;
+}
+
+export function addLiensAlreadyUsed(lien: string): string[] {
+  alreadyUsed.liens.push(lien);
+  return alreadyUsed.liens;
 }
 
 export function addPresAlreadyUsed(pre: string): string[] {
@@ -60,8 +82,10 @@ export function addSauceTypesAlreadyUsed(sauceType: string): string[] {
 }
 
 export function resetAlreadyUsed(): void {
+  alreadyUsed.plats.length = 0;
   alreadyUsed.ingredients.length = 0;
   alreadyUsed.adjectifs.length = 0;
+  alreadyUsed.liens.length = 0;
   alreadyUsed.pres.length = 0;
   alreadyUsed.posts.length = 0;
   alreadyUsed.sauceTypes.length = 0;

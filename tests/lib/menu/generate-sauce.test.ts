@@ -6,8 +6,10 @@ import { TypePlat } from '@/types/enums/type-plat';
 
 describe('lib/menu/generate-sauce.ts', () => {
   beforeEach(() => {
+    alreadyUsed.plats.length = 0;
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
+    alreadyUsed.liens.length = 0;
     alreadyUsed.pres.length = 0;
     alreadyUsed.posts.length = 0;
     alreadyUsed.sauceTypes.length = 0;

@@ -12,8 +12,10 @@ const ingredients = [ingredientOne];
 
 describe('lib/menu/generate-second.ts', () => {
   beforeEach(() => {
+    alreadyUsed.plats.length = 0;
     alreadyUsed.ingredients.length = 0;
     alreadyUsed.adjectifs.length = 0;
+    alreadyUsed.liens.length = 0;
     alreadyUsed.pres.length = 0;
     alreadyUsed.posts.length = 0;
     alreadyUsed.sauceTypes.length = 0;
@@ -93,6 +95,33 @@ describe('lib/menu/generate-second.ts', () => {
     );
 
     expect(second).toBe('avec un navet');
+  });
+
+  it('avoids selecting an already used secondary link when another one is available', () => {
+    const data = {
+      ...menuData,
+      liens: [
+        {
+          ...menuData.liens[0],
+          id: 'lien-au',
+        },
+        {
+          ...menuData.liens[0],
+          id: 'lien-avec',
+          noms: {
+            [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
+            [Genre.MASCULIN]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
+          },
+          suite: TypeDeterminant.ARTICLE_INDEFINI,
+        },
+      ],
+    };
+
+    const first = generateSecond(data, plat, menuData.ingredients, TypePlat.DESSERT, 0, () => 0);
+    const second = generateSecond(data, plat, menuData.ingredients, TypePlat.DESSERT, 0, () => 0);
+
+    expect(first).toBe('au de la pomme sucree');
+    expect(second).toBe('avec une poire croquante');
   });
 });
 
