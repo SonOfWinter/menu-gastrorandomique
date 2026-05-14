@@ -23,7 +23,8 @@ export const ingredientOne: Ingredient = {
     [TypeDeterminant.PRINCIPAL]: 'de',
     [TypeDeterminant.SECONDAIRE]: 'de la',
     [TypeDeterminant.POSSESSIF]: 'sa',
-    [TypeDeterminant.INDEFINI]: 'une',
+    [TypeDeterminant.INDEFINI]: 'd\'une',
+    [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
   },
 };
 
@@ -37,7 +38,8 @@ export const ingredientTwo: Ingredient = {
     [TypeDeterminant.PRINCIPAL]: 'de',
     [TypeDeterminant.SECONDAIRE]: 'de la',
     [TypeDeterminant.POSSESSIF]: 'sa',
-    [TypeDeterminant.INDEFINI]: 'une',
+    [TypeDeterminant.INDEFINI]: 'd\'une',
+    [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
   },
 };
 
@@ -79,6 +81,7 @@ export const lien: Lien = {
     [Genre.MASCULIN]: { [Nombre.SINGULIER]: 'au', [Nombre.PLURIEL]: 'aux' },
   },
   suite: TypeDeterminant.SECONDAIRE,
+  compatibleIngredientTypes: [TypeAliment.FRUIT],
 };
 
 export const pre: Pre = {
@@ -115,7 +118,8 @@ export const sauceType: SauceType = {
     [TypeDeterminant.PRINCIPAL]: 'de',
     [TypeDeterminant.SECONDAIRE]: 'du',
     [TypeDeterminant.POSSESSIF]: 'son',
-    [TypeDeterminant.INDEFINI]: 'un',
+    [TypeDeterminant.INDEFINI]: 'd\'un',
+    [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
   },
   suite: TypeDeterminant.PRINCIPAL,
   compatibleIngredientTypes: null,

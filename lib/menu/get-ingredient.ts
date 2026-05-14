@@ -11,7 +11,7 @@ const getIngredient = (
   ingredients: Ingredient[],
   typeFilter?: TypeAliment,
   excludeAlreadyUsed: boolean = true,
-  additionalTypes?: TypeAliment[] | null,
+  additionalTypes?: readonly TypeAliment[] | null,
   rng?: RandomGenerator,
 ): Ingredient | null => {
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {

@@ -11,6 +11,7 @@ import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
+import intersection from '@/lib/utils/intersection';
 
 const generateSecond = (
   data: Menu,
@@ -21,11 +22,26 @@ const generateSecond = (
   rng?: RandomGenerator,
 ): string => {
   let second: string = '';
-  const lienSecondaire: Lien = getRandom(data.liens, rng);
-  const ingredientSecondaire: Ingredient | null = getIngredient(ingredients, undefined, true, null, rng);
+  const ingredientSecondaire: Ingredient | null = getIngredient(
+    ingredients,
+    undefined,
+    true,
+    null,
+    rng,
+  );
   if (!ingredientSecondaire) {
     return '';
   }
+  const availableLiens = data.liens.filter((lien: Lien) =>
+    intersection(
+      [...lien.compatibleIngredientTypes],
+      [...ingredientSecondaire.types],
+    ).length > 0,
+  );
+  const lienSecondaire: Lien = getRandom(
+    availableLiens.length > 0 ? availableLiens : data.liens,
+    rng,
+  );
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
