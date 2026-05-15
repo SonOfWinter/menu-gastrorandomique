@@ -83,7 +83,7 @@ describe('lib/menu/generate-second.ts', () => {
         [TypeDeterminant.PRINCIPAL]: 'de',
         [TypeDeterminant.SECONDAIRE]: 'du',
         [TypeDeterminant.POSSESSIF]: 'son',
-        [TypeDeterminant.INDEFINI]: 'd\'un',
+        [TypeDeterminant.INDEFINI]: 'd’un',
         [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
       },
     };

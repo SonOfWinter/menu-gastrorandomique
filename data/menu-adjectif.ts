@@ -568,12 +568,12 @@ const adjectifs: Adjectif[] = [
     id: '315b4edc-0684-442a-a0a8-8ccd53074f08',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'd\'autrefois',
-        [Nombre.PLURIEL]: 'd\'autrefois',
+        [Nombre.SINGULIER]: 'd’autrefois',
+        [Nombre.PLURIEL]: 'd’autrefois',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'd\'autrefois',
-        [Nombre.PLURIEL]: 'd\'autrefois',
+        [Nombre.SINGULIER]: 'd’autrefois',
+        [Nombre.PLURIEL]: 'd’autrefois',
       },
     },
     types: [TypeAliment.ALCOOL, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],

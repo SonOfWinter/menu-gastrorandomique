@@ -8,11 +8,11 @@ const pres: Pre[] = [
     id: '33023faa-abcb-4c56-9e08-a5d35c69ba16',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'aérien',
+        [Nombre.SINGULIER]: 'l’aérien',
         [Nombre.PLURIEL]: 'les aériens',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'aérienne',
+        [Nombre.SINGULIER]: 'l’aérienne',
         [Nombre.PLURIEL]: 'les aériennes',
       },
     },
@@ -22,11 +22,11 @@ const pres: Pre[] = [
     id: 'cbb038c4-e9fe-4c7a-945f-11cb530bbc49',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'alléchant',
+        [Nombre.SINGULIER]: 'l’alléchant',
         [Nombre.PLURIEL]: 'les alléchants',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'alléchante',
+        [Nombre.SINGULIER]: 'l’alléchante',
         [Nombre.PLURIEL]: 'les alléchantes',
       },
     },
@@ -36,11 +36,11 @@ const pres: Pre[] = [
     id: '27e89818-acf2-422d-8230-3e3c79607be4',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'ancestral',
+        [Nombre.SINGULIER]: 'l’ancestral',
         [Nombre.PLURIEL]: 'les ancestraux',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'ancestrale',
+        [Nombre.SINGULIER]: 'l’ancestrale',
         [Nombre.PLURIEL]: 'les ancestrales',
       },
     },
@@ -50,11 +50,11 @@ const pres: Pre[] = [
     id: 'e75143cd-11e1-4d30-a84f-e527185f2871',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'appétissant',
+        [Nombre.SINGULIER]: 'l’appétissant',
         [Nombre.PLURIEL]: 'les appétissants',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'appétissante',
+        [Nombre.SINGULIER]: 'l’appétissante',
         [Nombre.PLURIEL]: 'les appétissantes',
       },
     },
@@ -64,11 +64,11 @@ const pres: Pre[] = [
     id: '2db2867b-80d7-4484-baf6-e3b045153fa2',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'aromatique',
+        [Nombre.SINGULIER]: 'l’aromatique',
         [Nombre.PLURIEL]: 'les aromatiques',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'aromatique',
+        [Nombre.SINGULIER]: 'l’aromatique',
         [Nombre.PLURIEL]: 'les aromatiques',
       },
     },
@@ -78,11 +78,11 @@ const pres: Pre[] = [
     id: '0ee0fb53-150f-4eb4-a649-9eb85e9e92eb',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'audacieux',
+        [Nombre.SINGULIER]: 'l’audacieux',
         [Nombre.PLURIEL]: 'les audacieux',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'audacieuse',
+        [Nombre.SINGULIER]: 'l’audacieuse',
         [Nombre.PLURIEL]: 'les audacieuses',
       },
     },
@@ -92,11 +92,11 @@ const pres: Pre[] = [
     id: '24dab967-4882-41ff-ad97-1f1efa998f5f',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.SINGULIER]: 'l’authentique',
         [Nombre.PLURIEL]: 'les authentiques',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.SINGULIER]: 'l’authentique',
         [Nombre.PLURIEL]: 'les authentiques',
       },
     },
@@ -106,11 +106,11 @@ const pres: Pre[] = [
     id: '402baa14-d6c2-429e-85b7-f0eae75b3795',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.SINGULIER]: 'l’authentique',
         [Nombre.PLURIEL]: 'les authentiques',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'authentique',
+        [Nombre.SINGULIER]: 'l’authentique',
         [Nombre.PLURIEL]: 'les authentiques',
       },
     },
@@ -120,11 +120,11 @@ const pres: Pre[] = [
     id: '3a8cf34d-d80f-4772-be9a-3f336dab79b6',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'avant-gardiste',
+        [Nombre.SINGULIER]: 'l’avant-gardiste',
         [Nombre.PLURIEL]: 'les avant-gardistes',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'avant-gardiste',
+        [Nombre.SINGULIER]: 'l’avant-gardiste',
         [Nombre.PLURIEL]: 'les avant-gardistes',
       },
     },
@@ -134,11 +134,11 @@ const pres: Pre[] = [
     id: 'e55c2b74-7f34-4bb1-9808-d6b5e106f992',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'excellent',
+        [Nombre.SINGULIER]: 'l’excellent',
         [Nombre.PLURIEL]: 'les excellents',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'excellente',
+        [Nombre.SINGULIER]: 'l’excellente',
         [Nombre.PLURIEL]: 'les excellentes',
       },
     },
@@ -148,11 +148,11 @@ const pres: Pre[] = [
     id: '02a753db-1cf4-4baa-9575-9c0516d6987c',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'incomparable',
+        [Nombre.SINGULIER]: 'l’incomparable',
         [Nombre.PLURIEL]: 'les incomparables',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'incomparable',
+        [Nombre.SINGULIER]: 'l’incomparable',
         [Nombre.PLURIEL]: 'les incomparables',
       },
     },
@@ -162,11 +162,11 @@ const pres: Pre[] = [
     id: '91e9cfca-91f9-4b12-9ce8-b67e5993a7fb',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'incontournable',
+        [Nombre.SINGULIER]: 'l’incontournable',
         [Nombre.PLURIEL]: 'les incontournables',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'incontournable',
+        [Nombre.SINGULIER]: 'l’incontournable',
         [Nombre.PLURIEL]: 'les incontournables',
       },
     },
@@ -176,11 +176,11 @@ const pres: Pre[] = [
     id: 'f8cd1543-1c83-4e05-bdd3-a835c43ef32d',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'indémodable',
+        [Nombre.SINGULIER]: 'l’indémodable',
         [Nombre.PLURIEL]: 'les indémodables',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'indémodable',
+        [Nombre.SINGULIER]: 'l’indémodable',
         [Nombre.PLURIEL]: 'les indémodables',
       },
     },
@@ -190,11 +190,11 @@ const pres: Pre[] = [
     id: '354a0d91-d9e9-4d63-b6d0-1f1a21437bb7',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'innovant',
+        [Nombre.SINGULIER]: 'l’innovant',
         [Nombre.PLURIEL]: 'les innovants',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'innovante',
+        [Nombre.SINGULIER]: 'l’innovante',
         [Nombre.PLURIEL]: 'les innovantes',
       },
     },
@@ -204,11 +204,11 @@ const pres: Pre[] = [
     id: 'bd5a9a01-c8a7-47ec-b46e-aedd54a06022',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'inoubliable',
+        [Nombre.SINGULIER]: 'l’inoubliable',
         [Nombre.PLURIEL]: 'les inoubliables',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'inoubliable',
+        [Nombre.SINGULIER]: 'l’inoubliable',
         [Nombre.PLURIEL]: 'les inoubliables',
       },
     },
@@ -218,11 +218,11 @@ const pres: Pre[] = [
     id: '691cd7bc-9e3a-4cd2-9362-657624b6db2f',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'intrigant',
+        [Nombre.SINGULIER]: 'l’intrigant',
         [Nombre.PLURIEL]: 'les intrigants',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'intrigante',
+        [Nombre.SINGULIER]: 'l’intrigante',
         [Nombre.PLURIEL]: 'les intrigantes',
       },
     },
@@ -232,11 +232,11 @@ const pres: Pre[] = [
     id: '2455cdc2-5eab-44f6-ae3d-5452fd761700',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'odoriférant',
+        [Nombre.SINGULIER]: 'l’odoriférant',
         [Nombre.PLURIEL]: 'les odoriférants',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'odoriférante',
+        [Nombre.SINGULIER]: 'l’odoriférante',
         [Nombre.PLURIEL]: 'les odoriférantes',
       },
     },
@@ -806,11 +806,11 @@ const pres: Pre[] = [
     id: '8b2e15c2-6b2d-4a0e-9f3a-94b9f6e4c5a4',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l\'alambiqué',
+        [Nombre.SINGULIER]: 'l’alambiqué',
         [Nombre.PLURIEL]: 'les alambiqués',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l\'alambiquée',
+        [Nombre.SINGULIER]: 'l’alambiquée',
         [Nombre.PLURIEL]: 'les alambiquées',
       },
     },
