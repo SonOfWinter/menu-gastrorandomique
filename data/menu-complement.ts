@@ -7,7 +7,7 @@ const complements: Complement[] = [
   },
   {
     id: '6d3151bc-9d9b-4c80-bc86-378dcd849c20',
-    nom: 'Attention, risque d\'addiction !',
+    nom: 'Attention, risque d’addiction !',
   },
   {
     id: '496a322b-80ce-4868-ba68-5011c62564d6',
@@ -23,7 +23,7 @@ const complements: Complement[] = [
   },
   {
     id: 'a91d98df-f57e-4a9a-a971-b4287cb5eaa9',
-    nom: 'Faites confiance au chef, il sait ce qu\'il fait',
+    nom: 'Faites confiance au chef, il sait ce qu’il fait',
   },
   {
     id: 'b97b42f0-e448-4698-8d5c-2cae3dbd74cb',
@@ -31,7 +31,7 @@ const complements: Complement[] = [
   },
   {
     id: '38f98628-2999-49ec-ad6d-5b7799ca3a7c',
-    nom: 'Il n\'y a que deux choix : aimer ou adorer',
+    nom: 'Il n’y a que deux choix : aimer ou adorer',
   },
   {
     id: '3d2c427a-6660-4d69-bca1-5f4047851af3',
@@ -39,7 +39,7 @@ const complements: Complement[] = [
   },
   {
     id: '2de03c18-4398-4bfd-9e05-b0b58eb4172e',
-    nom: 'Meilleur qu\'un simple sandwich',
+    nom: 'Meilleur qu’un simple sandwich',
   },
   {
     id: '4eb247f8-fbf9-49b3-af0a-1d60ed4e503b',
@@ -51,7 +51,7 @@ const complements: Complement[] = [
   },
   {
     id: 'f933b402-8b6a-4bd6-bbdb-df914ac63971',
-    nom: 'On mange quoi aujourd\'hui ?',
+    nom: 'On mange quoi aujourd’hui ?',
   },
   {
     id: 'b635f05d-4365-4d9b-a664-d96badafcfcd',
@@ -75,7 +75,7 @@ const complements: Complement[] = [
   },
   {
     id: 'e0e3355d-4110-4c77-8c95-f33feebb6890',
-    nom: 'Pour ceux qui n\'ont pas peur du goût',
+    nom: 'Pour ceux qui n’ont pas peur du goût',
   },
   {
     id: '42dbca89-46f5-4f3a-b3ed-360f256401cd',
@@ -99,7 +99,7 @@ const complements: Complement[] = [
   },
   {
     id: 'fd5d233d-f970-4fc6-8afa-77276e2ca0e1',
-    nom: 'Quelque chose d\'authentique',
+    nom: 'Quelque chose d’authentique',
   },
   {
     id: '5f1bef03-165e-4692-be4c-73aa715dde97',

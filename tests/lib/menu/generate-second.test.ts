@@ -26,6 +26,28 @@ describe('lib/menu/generate-second.ts', () => {
     expect(second).toBe('au de la pomme sucree');
   });
 
+  it('does not add a space after a typographic apostrophe determinant', () => {
+    const second = generateSecond(
+      menuData,
+      plat,
+      [
+        {
+          ...ingredientOne,
+          nom: 'orange',
+          determinants: {
+            ...ingredientOne.determinants,
+            [TypeDeterminant.SECONDAIRE]: 'de l’',
+          },
+        },
+      ],
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+    );
+
+    expect(second).toBe('au de l’orange sucree');
+  });
+
   it('filters optional suffixes by dish type', () => {
     const second = generateSecond(
       {
@@ -61,7 +83,7 @@ describe('lib/menu/generate-second.ts', () => {
         [TypeDeterminant.PRINCIPAL]: 'de',
         [TypeDeterminant.SECONDAIRE]: 'du',
         [TypeDeterminant.POSSESSIF]: 'son',
-        [TypeDeterminant.INDEFINI]: 'd\'un',
+        [TypeDeterminant.INDEFINI]: 'd’un',
         [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
       },
     };

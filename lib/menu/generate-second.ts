@@ -16,6 +16,7 @@ import {
   addLiensAlreadyUsed,
   getLiensAlreadyUsed,
 } from '@/lib/ssr-cache';
+import { determinantSeparator } from '@/lib/menu/format-determinant';
 
 const generateSecond = (
   data: Menu,
@@ -58,10 +59,7 @@ const generateSecond = (
     inconsistentLevel,
     rng,
   );
-  second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}`;
-  if (!preIngredient.endsWith('\'')) {
-    second += ' ';
-  }
+  second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}${determinantSeparator(preIngredient)}`;
   second += `${ingredientSecondaire.nom}`;
   if (adjectifSecondaire) {
     second += ` ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;

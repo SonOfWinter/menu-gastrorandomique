@@ -14,7 +14,7 @@ const posts: Post[] = [
   },
   {
     id: 'b36504ed-f511-4594-a255-5e9d18de6503',
-    nom: 'à l\'italienne',
+    nom: 'à l’italienne',
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
   },
   {
@@ -114,7 +114,7 @@ const posts: Post[] = [
   },
   {
     id: 'c2557f3b-b881-4af5-a9bb-dfb2094dddaa',
-    nom: 'd\'autrefois',
+    nom: 'd’autrefois',
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
   },
   {
@@ -309,7 +309,7 @@ const posts: Post[] = [
   },
   {
     id: 'b34314e6-9a77-480e-81fb-3fd2ecc26fc7',
-    nom: 'selon l\'inspiration de notre chef',
+    nom: 'selon l’inspiration de notre chef',
     types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
   },
 
