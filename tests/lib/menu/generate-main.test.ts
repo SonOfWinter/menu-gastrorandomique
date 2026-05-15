@@ -3,6 +3,7 @@ import generateMain from '@/lib/menu/generate-main';
 import { alreadyUsed } from '@/lib/ssr-cache';
 import { menuData, plat, ingredientOne } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
+import { TypeDeterminant } from '@/types/enums/type-determinant';
 
 const ingredients = [ingredientOne];
 
@@ -20,6 +21,28 @@ describe('lib/menu/generate-main.ts', () => {
   it('generates a main dish label', () => {
     const main = generateMain(menuData, plat, ingredients, TypePlat.DESSERT, 0, () => 0);
     expect(main).toBe('Tarte de pomme sucree');
+  });
+
+  it('does not add a space after a typographic apostrophe determinant', () => {
+    const main = generateMain(
+      menuData,
+      plat,
+      [
+        {
+          ...ingredientOne,
+          nom: 'orange',
+          determinants: {
+            ...ingredientOne.determinants,
+            [TypeDeterminant.PRINCIPAL]: 'd’',
+          },
+        },
+      ],
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+    );
+
+    expect(main).toBe('Tarte d’orange sucree');
   });
 
   it('filters optional prefixes and suffixes by dish type', () => {

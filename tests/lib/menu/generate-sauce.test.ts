@@ -3,6 +3,7 @@ import generateSauce from '@/lib/menu/generate-sauce';
 import { alreadyUsed } from '@/lib/ssr-cache';
 import { menuData, plat } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
+import { TypeDeterminant } from '@/types/enums/type-determinant';
 
 describe('lib/menu/generate-sauce.ts', () => {
   beforeEach(() => {
@@ -19,6 +20,29 @@ describe('lib/menu/generate-sauce.ts', () => {
     const sauce = generateSauce(menuData, plat, TypePlat.DESSERT, 0, () => 0);
     expect(sauce).toContain('sauce');
     expect(sauce).toContain('caramel');
+  });
+
+  it('does not add a space after a typographic apostrophe determinant', () => {
+    const sauce = generateSauce(
+      {
+        ...menuData,
+        sauceTypes: [
+          {
+            ...menuData.sauceTypes[0],
+            determinants: {
+              ...menuData.sauceTypes[0].determinants,
+              [TypeDeterminant.PRINCIPAL]: 'd’',
+            },
+          },
+        ],
+      },
+      plat,
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+    );
+
+    expect(sauce).toContain('sauce d’caramel d’oignon');
   });
 
   it('does not reuse a sauce type while unused sauce types are available', () => {

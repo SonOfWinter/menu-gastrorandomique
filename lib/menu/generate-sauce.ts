@@ -17,6 +17,7 @@ import {
   addSauceTypesAlreadyUsed,
   getSauceTypesAlreadyUsed,
 } from '@/lib/ssr-cache';
+import { determinantSeparator } from '@/lib/menu/format-determinant';
 
 export default function generateSauce(
   data: Menu,
@@ -29,9 +30,7 @@ export default function generateSauce(
   const typeSauce = getSauceType(data, typePlat, rng);
 
   let preSuite: string = typeSauce.determinants[preSauce.suite];
-  if (preSuite !== '' && !preSuite.endsWith('\'')) {
-    preSuite = preSuite + ' ';
-  }
+  preSuite = preSuite + determinantSeparator(preSuite);
   const ingredientSauce: Ingredient | null = getIngredient(
     ingredients,
     TypeAliment.SAUCE,
@@ -43,9 +42,7 @@ export default function generateSauce(
     return '';
   }
   let typeSuite: string = ingredientSauce.determinants[typeSauce.suite];
-  if (typeSuite !== '' && !typeSuite.endsWith('\'')) {
-    typeSuite = typeSuite + ' ';
-  }
+  typeSuite = typeSuite + determinantSeparator(typeSuite);
   const adjectifSauce: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientSauce,

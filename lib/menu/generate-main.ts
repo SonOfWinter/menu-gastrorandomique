@@ -12,6 +12,7 @@ import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
 import getPreByType from '@/lib/menu/get-pre-by-type';
+import { determinantSeparator } from '@/lib/menu/format-determinant';
 
 const generateMain = (
   data: Menu,
@@ -36,10 +37,8 @@ const generateMain = (
     const prePrincipal = getPreByType(data.pres, mainType, rng);
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
-  main += `${platPrincipal.nom} ${ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL]}`;
-  if (!ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL].endsWith('\'')) {
-    main += ' ';
-  }
+  const determinantPrincipal = ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL];
+  main += `${platPrincipal.nom} ${determinantPrincipal}${determinantSeparator(determinantPrincipal)}`;
   main += `${ingredientPrincipal.nom}`
   if (adjectifPrincipal) {
     main += ` ${adjectifPrincipal?.noms[ingredientPrincipal.genre][ingredientPrincipal.nombre]}`;
