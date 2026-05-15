@@ -1437,7 +1437,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
-    postAdjectifs: ['cassés', 'chiches'],
+    postAdjectifs: ['', 'cassés', 'chiches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1644,7 +1644,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME],
-    postAdjectifs: ['douces', 'violettes'],
+    postAdjectifs: ['', 'douces', 'violettes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2347,6 +2347,7 @@ const salades: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.SALADE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'nori', 'wakame', 'kombu', 'dulse'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2361,6 +2362,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.SALADE],
+    postAdjectifs: ['', 'violet', 'poivrade', 'camus'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -2390,6 +2392,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'Hass', 'fuerte', 'bacon'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -2418,6 +2421,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.SALADE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'noa', 'long'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2432,7 +2436,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.SALADE],
-    postAdjectifs: ['', 'de fontaine'],
+    postAdjectifs: ['', 'de fontaine', 'alénois'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2447,6 +2451,7 @@ const salades: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.SALADE],
+    postAdjectifs: ['', 'rouges', 'blanches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2476,6 +2481,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.SALADE],
+    postAdjectifs: ['', 'de Bourgogne', 'petits-gris'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2490,6 +2496,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.SALADE],
+    postAdjectifs: ['', 'de canard', 'd’oie'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2500,10 +2507,11 @@ const salades: Ingredient[] = [
   },
   {
     id: '2d601f8d-37a7-4ed3-8ca0-d1dda708bc7f',
-    nom: 'laitue romaine',
+    nom: 'laitue',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.SALADE],
+    postAdjectifs: ['', 'romaine', 'iceberg', 'batavia', 'feuille de chêne'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -2532,6 +2540,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.BASE, TypeAliment.SALADE],
+    postAdjectifs: ['', 'dur', 'mollet', 'poché'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -2542,24 +2551,11 @@ const salades: Ingredient[] = [
   },
   {
     id: '532c705e-b497-49f7-9e45-41d11404c8c8',
-    nom: 'olives noires',
+    nom: 'olives',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.HERBE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'd’',
-      [TypeDeterminant.SECONDAIRE]: 'des',
-      [TypeDeterminant.POSSESSIF]: 'ses',
-      [TypeDeterminant.INDEFINI]: 'des',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'des',
-    },
-  },
-  {
-    id: '2f2c7389-4eeb-4896-abe0-d45165d9d91f',
-    nom: 'olives vertes',
-    genre: Genre.FEMININ,
-    nombre: Nombre.PLURIEL,
-    types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.HERBE],
+    postAdjectifs: ['', 'noires', 'vertes', 'Kalamata', 'niçoises'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2574,6 +2570,7 @@ const salades: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.SALADE],
+    postAdjectifs: ['', 'croquantes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2588,7 +2585,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME, TypeAliment.SALADE],
-    postAdjectifs: ['', 'noir', 'rose', 'daikon'],
+    postAdjectifs: ['', 'noir', 'rose', 'daikon', 'red meat'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2617,7 +2614,7 @@ const salades: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
-    postAdjectifs: ['', 'cerises', 'anciennes', 'vertes', 'Roma', 'cœur de bœuf'],
+    postAdjectifs: ['', 'cerises', 'anciennes', 'vertes', 'Roma', 'cœur de bœuf', 'San Marzano'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
