@@ -18,6 +18,7 @@ import {
   getSauceTypesAlreadyUsed,
 } from '@/lib/ssr-cache';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
+import formatIngredientName from '@/lib/menu/format-ingredient-name';
 
 export default function generateSauce(
   data: Menu,
@@ -50,7 +51,7 @@ export default function generateSauce(
     rng,
   );
 
-  let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + ingredientSauce.nom;
+  let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + formatIngredientName(ingredientSauce, rng);
   if (adjectifSauce) {
     sauce += ` ${adjectifSauce.noms[ingredientSauce.genre][ingredientSauce.nombre]}`;
   }

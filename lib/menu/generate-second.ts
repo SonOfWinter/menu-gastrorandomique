@@ -17,6 +17,7 @@ import {
   getLiensAlreadyUsed,
 } from '@/lib/ssr-cache';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
+import formatIngredientName from '@/lib/menu/format-ingredient-name';
 
 const generateSecond = (
   data: Menu,
@@ -60,7 +61,7 @@ const generateSecond = (
     rng,
   );
   second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}${determinantSeparator(preIngredient)}`;
-  second += `${ingredientSecondaire.nom}`;
+  second += `${formatIngredientName(ingredientSecondaire, rng)}`;
   if (adjectifSecondaire) {
     second += ` ${adjectifSecondaire.noms[ingredientSecondaire.genre][ingredientSecondaire.nombre]}`;
   }

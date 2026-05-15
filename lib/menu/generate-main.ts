@@ -13,6 +13,7 @@ import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
 import getPreByType from '@/lib/menu/get-pre-by-type';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
+import formatIngredientName from '@/lib/menu/format-ingredient-name';
 
 const generateMain = (
   data: Menu,
@@ -39,7 +40,7 @@ const generateMain = (
   }
   const determinantPrincipal = ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL];
   main += `${platPrincipal.nom} ${determinantPrincipal}${determinantSeparator(determinantPrincipal)}`;
-  main += `${ingredientPrincipal.nom}`
+  main += `${formatIngredientName(ingredientPrincipal, rng)}`
   if (adjectifPrincipal) {
     main += ` ${adjectifPrincipal?.noms[ingredientPrincipal.genre][ingredientPrincipal.nombre]}`;
   }

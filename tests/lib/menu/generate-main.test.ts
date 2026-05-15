@@ -45,6 +45,24 @@ describe('lib/menu/generate-main.ts', () => {
     expect(main).toBe('Tarte d’orange sucree');
   });
 
+  it('adds a randomly selected ingredient post adjective', () => {
+    const main = generateMain(
+      menuData,
+      plat,
+      [
+        {
+          ...ingredientOne,
+          postAdjectifs: ['', 'rouge'],
+        },
+      ],
+      TypePlat.DESSERT,
+      0,
+      createSequenceRng([0, 0, 0, 0.99, 0]),
+    );
+
+    expect(main).toBe('Tarte de pomme rouge sucree');
+  });
+
   it('filters optional prefixes and suffixes by dish type', () => {
     const main = generateMain(
       {
