@@ -437,24 +437,11 @@ const laitages: Ingredient[] = [
 const fruits: Ingredient[] = [
   {
     id: '43b82d23-34c7-4891-89db-c71e7288c0b4',
-    nom: 'abricot',
-    genre: Genre.MASCULIN,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'd’',
-      [TypeDeterminant.SECONDAIRE]: 'de l’',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-  },
-  {
-    id: '1c4131ed-a5c9-45c2-a92a-95fdedf30a46',
-    nom: 'abricots secs',
+    nom: 'abricots',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'secs', 'Bergeron', 'rouges du Roussillon', 'Orangered', 'Luizet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -497,6 +484,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT],
+    postAdjectifs: ['', 'rouges', 'noires', 'de sureau', 'de goji', 'd’açaï'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -511,6 +499,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SALADE],
+    postAdjectifs: ['', 'plantain', 'Cavendish', 'frécinette', 'rose'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -525,6 +514,7 @@ const fruits: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'Noir de Bourgogne', 'Black Down', 'Ben Lomond', 'Andega'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -539,7 +529,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
-    postAdjectifs: ['', 'noires'],
+    postAdjectifs: ['', 'noires', 'griottes', 'bigarreaux', 'Burlat', 'Montmorency'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -568,6 +558,7 @@ const fruits: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'jaune', 'vert', 'Meyer', 'caviar', 'de Menton'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -582,6 +573,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT],
+    postAdjectifs: ['', 'corse', 'fine', 'Nules', 'Oroval'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -638,7 +630,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT],
-    postAdjectifs: ['', 'medjool'],
+    postAdjectifs: ['', 'medjool', 'Deglet Nour', 'sukkari', 'mazafati', 'Ajwa'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -649,24 +641,11 @@ const fruits: Ingredient[] = [
   },
   {
     id: '75371cf2-7f54-434e-8947-58ce89d8c5ce',
-    nom: 'figue',
-    genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-  },
-  {
-    id: '7bb71990-cc62-4d4b-9abd-ffc0a74f9190',
-    nom: 'figues sèches',
+    nom: 'figues',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'sèches', 'violettes', 'blanches', 'de Solliès'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -677,24 +656,11 @@ const fruits: Ingredient[] = [
   },
   {
     id: '6aaf5251-11f6-4dac-9943-ed1185a0e788',
-    nom: 'fraise',
-    genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-  },
-  {
-    id: '4d4673bf-1d69-4ac2-a1d6-0869ea9be33d',
-    nom: 'fraises des bois',
+    nom: 'fraises',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'des bois', 'Gariguette', 'Mara des bois', 'Charlotte', 'Ciflorette', 'Cléry'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -705,16 +671,17 @@ const fruits: Ingredient[] = [
   },
   {
     id: '411ae3c4-4bea-44d1-92fc-8a6049d78aea',
-    nom: 'framboise',
+    nom: 'framboises',
     genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
+    nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'Meeker', 'Tulameen', 'Héritage', 'Willamette', 'jaunes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
+      [TypeDeterminant.SECONDAIRE]: 'des',
+      [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'des',
     },
   },
   {
@@ -835,6 +802,7 @@ const fruits: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT],
+    postAdjectifs: ['', 'vert', 'jaune', 'Hayward', 'gold'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -942,25 +910,12 @@ const fruits: Ingredient[] = [
     },
   },
   {
-    id: 'c6c4f288-6273-4d45-acfb-a22cad764758',
-    nom: 'nectarine',
-    genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-  },
-  {
     id: 'f59e6c81-10b2-4462-9674-bbab2fc15c79',
-    nom: 'nectarines blanches',
+    nom: 'nectarines',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT],
+    postAdjectifs: ['', 'blanches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -989,6 +944,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'sanguine', 'amère', 'navel', 'Valencia', 'de Sicile'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -1045,6 +1001,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'jaune', 'blanche', 'de vigne', 'plate'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1073,6 +1030,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'Williams', 'Conférence', 'Comice', 'Guyot', 'Beurré Hardy', 'Passe-Crassane'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1101,6 +1059,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'rouge', 'Reinette du Canada', 'Antarès', 'Choupette', 'Elstar', 'Jazz', 'Ariane', 'Granny Smith', 'Gala', 'Fuji', 'Liberty', 'Golden Delicious', 'Gravenstein', 'Pink Lady'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1115,6 +1074,7 @@ const fruits: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.FRUIT],
+    postAdjectifs: ['', 'Reine-Claude', 'Sainte-Catherine', 'Stanley', 'd’ente'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1143,7 +1103,7 @@ const fruits: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT],
-    postAdjectifs: ['', 'blancs', 'secs'],
+    postAdjectifs: ['', 'blancs', 'noirs', 'secs'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
