@@ -1313,25 +1313,12 @@ const fruitsACoque: Ingredient[] = [
 ];
 const legumes: Ingredient[] = [
   {
-    id: 'fe46e489-604f-412a-b02c-ac1a15546a26',
-    nom: 'asperge sauvage',
-    genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'd’',
-      [TypeDeterminant.SECONDAIRE]: 'de l’',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-  },
-  {
     id: '62e65c70-4672-44d1-ab2b-f824d6df97b2',
     nom: 'aubergine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'violette', 'blanche', 'graffiti', 'japonaise'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -1346,6 +1333,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'Romanesco', 'violet', 'à jets'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1360,6 +1348,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'à carde', 'arc-en-ciel'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1374,6 +1363,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'rouge', 'chioggia', 'jaune', 'crapaudine'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1398,24 +1388,11 @@ const legumes: Ingredient[] = [
   },
   {
     id: '05cb8e4d-3655-4d35-8ef1-2cdcc9c35340',
-    nom: 'carotte',
-    genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-  },
-  {
-    id: '7c160a2c-3bf2-40a0-be23-4d08ab53db35',
     nom: 'carottes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'nouvelles', 'fanes', 'violettes', 'jaunes', 'de Créances'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1430,6 +1407,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'branche', 'rave'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1444,6 +1422,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'primeur', 'baguette'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1454,44 +1433,17 @@ const legumes: Ingredient[] = [
   },
   {
     id: 'd8aaee70-856f-4e0f-ba53-d159020f74b4',
-    nom: 'pois cassés',
+    nom: 'pois',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    postAdjectifs: ['cassés', 'chiches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
       [TypeDeterminant.POSSESSIF]: 'ses',
       [TypeDeterminant.INDEFINI]: 'des',
       [TypeDeterminant.ARTICLE_INDEFINI]: 'des',
-    },
-  },
-  {
-    id: 'e4817a5f-c33e-4e90-856c-db291f7d5bdf',
-    nom: 'pois chiches',
-    genre: Genre.MASCULIN,
-    nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'des',
-      [TypeDeterminant.POSSESSIF]: 'ses',
-      [TypeDeterminant.INDEFINI]: 'des',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'des',
-    },
-  },
-  {
-    id: '0811736c-f98c-4f08-80ae-d8cff7f803b1',
-    nom: 'céleri-rave',
-    genre: Genre.MASCULIN,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
     },
   },
   {
@@ -1500,6 +1452,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'verte', 'blanche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1510,24 +1463,11 @@ const legumes: Ingredient[] = [
   },
   {
     id: 'ff18e49e-3203-489a-a563-18f4f56db215',
-    nom: 'chou rouge',
-    genre: Genre.MASCULIN,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-  },
-  {
-    id: '95356b0e-3645-49ff-b6c3-e4413c7dc837',
     nom: 'choux',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    postAdjectifs: ['', 'rouges', 'verts', 'de Bruxelles', 'fleurs', 'romanesco'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1542,6 +1482,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'spaghetti', 'musquées', 'butternut', 'Jack be Little'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1556,7 +1497,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
-    postAdjectifs: ['', 'jaune'],
+    postAdjectifs: ['', 'jaune', 'ronde', 'verte', 'trompette'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1586,6 +1527,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'vert', 'rouge'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1600,7 +1542,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME],
-    postAdjectifs: ['', 'mungo', 'beurre', 'rouges'],
+    postAdjectifs: ['', 'mungo', 'beurre', 'rouges', 'verts', 'blancs', 'noirs', 'tarbais', 'coco'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1629,6 +1571,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'frisé', 'lacinato', 'rouge'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1671,6 +1614,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'boule d’or', 'long', 'violet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1685,6 +1629,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'rond', 'long'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1695,24 +1640,11 @@ const legumes: Ingredient[] = [
   },
   {
     id: '84946af5-1f5a-4336-b179-2110a60799bc',
-    nom: 'patate violette',
-    genre: Genre.FEMININ,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-  },
-  {
-    id: '15dcd887-2eb1-429a-bdfb-1a0412bae5cd',
-    nom: 'patates douce',
+    nom: 'patates',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['douces', 'violettes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1737,24 +1669,11 @@ const legumes: Ingredient[] = [
   },
   {
     id: '718976c4-2a57-4a84-8510-d5d9511a695b',
-    nom: 'poivron',
-    genre: Genre.MASCULIN,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-  },
-  {
-    id: '9d0b619b-4134-4959-9349-776e6306235a',
-    nom: 'poivrons jaunes',
+    nom: 'poivrons',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'jaunes', 'rouges', 'verts', 'orange', 'doux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1769,6 +1688,7 @@ const legumes: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    postAdjectifs: ['', 'grenaille', 'nouvelles', 'Ratte', 'Charlotte', 'Bintje', 'vitelotte'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1783,6 +1703,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'vert', 'Hokkaido'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1825,6 +1746,7 @@ const legumes: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME],
+    postAdjectifs: ['', 'rose', 'blanc'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2453,7 +2375,7 @@ const salades: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.SALADE, TypeAliment.LEGUME],
-    postAdjectifs: ['', 'vertes'],
+    postAdjectifs: ['', 'vertes', 'blanches', 'sauvages'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2539,6 +2461,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    postAdjectifs: ['', 'frais', 'jeunes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2665,6 +2588,7 @@ const salades: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    postAdjectifs: ['', 'noir', 'rose', 'daikon'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2693,6 +2617,7 @@ const salades: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'cerises', 'anciennes', 'vertes', 'Roma', 'cœur de bœuf'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2923,6 +2848,7 @@ const cerales: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.CEREALE, TypeAliment.LEGUME],
+    postAdjectifs: ['', 'vertes', 'corail', 'beluga', 'du Puy'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
