@@ -2248,6 +2248,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.VIANDE_ROUGE],
+    postAdjectifs: ['', 'de veau', 'd’agneau', 'de bœuf'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2262,6 +2263,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'de lait', 'pré-salé', 'fermier', 'confit'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -2276,6 +2278,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'charolais', 'angus', 'wagyu', 'maturé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2290,6 +2293,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'sauvage', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2304,6 +2308,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE],
+    postAdjectifs: ['', 'de veau', 'd’agneau'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -2318,20 +2323,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE],
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-  },
-  {
-    id: '566577fc-366e-4140-b6ae-bf9d8a6046bc',
-    nom: 'cochon',
-    genre: Genre.MASCULIN,
-    nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE],
+    postAdjectifs: ['', 'fumé', 'haché'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2346,6 +2338,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'à plume', 'à poil', 'sauvage'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2375,6 +2368,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE],
+    postAdjectifs: ['', 'fumé', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2389,6 +2383,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'confit', 'épicé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2403,6 +2398,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'fermier', 'ibérique', 'noir de Bigorre', 'confit'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2417,6 +2413,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'mariné', 'sauvage', 'confit'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2431,6 +2428,7 @@ const viandesRouges: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'de lait', 'fermier', 'rosé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2439,14 +2437,28 @@ const viandesRouges: Ingredient[] = [
       [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
     },
   },
-];
-const viandesBlanches: Ingredient[] = [
+  {
+    id: '9409bc84-de8e-4033-b51f-b63c52cd11f2',
+    nom: 'chevreuil',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'sauvage', 'mariné'],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd’un',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
+    },
+  },
   {
     id: '7c560a26-7174-4668-a4e1-334b918782eb',
     nom: 'autruche',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.VIANDE_ROUGE],
+    postAdjectifs: ['', 'fumée', 'marinée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -2455,12 +2467,15 @@ const viandesBlanches: Ingredient[] = [
       [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
     },
   },
+];
+const viandesBlanches: Ingredient[] = [
   {
     id: '5f1bb3a4-fc4e-4514-8c09-074315468219',
     nom: 'canard',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_BLANCHE],
+    postAdjectifs: ['', 'fermier', 'confit', 'fumé', 'laqué'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2475,6 +2490,7 @@ const viandesBlanches: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.VIANDE_BLANCHE],
+    postAdjectifs: ['', 'fermier', 'farci'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2489,6 +2505,7 @@ const viandesBlanches: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.VIANDE_BLANCHE],
+    postAdjectifs: ['', 'confits', 'de canard', 'de volaille'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2503,6 +2520,7 @@ const viandesBlanches: Ingredient[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
     types: [TypeAliment.VIANDE_BLANCHE],
+    postAdjectifs: ['', 'fraîches', 'en persillade'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2512,11 +2530,42 @@ const viandesBlanches: Ingredient[] = [
     },
   },
   {
-    id: 'a017c29b-78d4-4369-8668-81d96bbef169',
-    nom: 'volaille',
+    id: '472a5e16-869b-4b5c-8692-bd5236a22532',
+    nom: 'volailles',
+    genre: Genre.FEMININ,
+    nombre: Nombre.PLURIEL,
+    types: [TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    postAdjectifs: ['', 'fermières', 'rôties', 'confites'],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'des',
+      [TypeDeterminant.POSSESSIF]: 'ses',
+      [TypeDeterminant.INDEFINI]: 'des',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'des',
+    },
+  },
+  {
+    id: '7db72325-eb21-42a6-8b76-cc50f1c9abf9',
+    nom: 'poulet',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'fermier', 'rôti', 'jaune', 'boucané'],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd’un',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
+    },
+  },
+  {
+    id: 'ad9325a2-6777-4544-b723-4aadbefe6c6a',
+    nom: 'dinde',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'fermière', 'fumée', 'rôtie'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -2526,17 +2575,63 @@ const viandesBlanches: Ingredient[] = [
     },
   },
   {
-    id: '472a5e16-869b-4b5c-8692-bd5236a22532',
-    nom: 'volailles',
-    genre: Genre.FEMININ,
-    nombre: Nombre.PLURIEL,
-    types: [TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
+    id: '3dc055e7-3358-4ac4-aa0d-0016b66513a4',
+    nom: 'lapin',
+    genre: Genre.MASCULIN,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'fermier', 'confit', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'des',
-      [TypeDeterminant.POSSESSIF]: 'ses',
-      [TypeDeterminant.INDEFINI]: 'des',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'des',
+      [TypeDeterminant.SECONDAIRE]: 'du',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd’un',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
+    },
+  },
+  {
+    id: '5ad7922d-5d8c-4ca7-9f67-5ea6104d86c0',
+    nom: 'pintade',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'fermière', 'rôtie', 'farcie'],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd’une',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
+    },
+  },
+  {
+    id: '88092bdc-beb9-430d-9553-5fda2ad6bb92',
+    nom: 'caille',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.VIANDE_BLANCHE],
+    postAdjectifs: ['', 'farcie', 'rôtie', 'fumée'],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'de',
+      [TypeDeterminant.SECONDAIRE]: 'de la',
+      [TypeDeterminant.POSSESSIF]: 'sa',
+      [TypeDeterminant.INDEFINI]: 'd’une',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
+    },
+  },
+  {
+    id: 'ad4ce04a-0cba-4436-9860-28973470d4a7',
+    nom: 'oie',
+    genre: Genre.FEMININ,
+    nombre: Nombre.SINGULIER,
+    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    postAdjectifs: ['', 'confite', 'fumée', 'rôtie'],
+    determinants: {
+      [TypeDeterminant.PRINCIPAL]: 'd’',
+      [TypeDeterminant.SECONDAIRE]: 'de l’',
+      [TypeDeterminant.POSSESSIF]: 'son',
+      [TypeDeterminant.INDEFINI]: 'd’une',
+      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
     },
   },
 ];
