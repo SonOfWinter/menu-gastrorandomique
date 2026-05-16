@@ -3,10 +3,7 @@ import { Title } from '@/types/data/title';
 const titles: Title[] = [
   { id: '6d840960-3410-4d69-834d-7568418349a2', nom: 'Menu déjeuner' },
   { id: '74b86f3f-a0da-4ab6-8728-fe3c0595a38a', nom: 'Menu' },
-  {
-    id: '9a04dac2-b567-44d0-9262-1233d945826d',
-    nom: 'Menu « J’ai les yeux plus gros que le ventre »',
-  },
+  { id: '9a04dac2-b567-44d0-9262-1233d945826d', nom: 'Menu « J’ai les yeux plus gros que le ventre »' },
   { id: 'f321914a-ed84-4e31-9d4a-9e503e2fcb38', nom: 'Menu « Juste pour voir »' },
   { id: 'b182f7a6-4aa1-4780-b233-eefc71b91fe2', nom: 'Menu « On va se régaler ! »' },
   { id: 'd6be2115-8dcb-41c5-903a-87d9086c6edf', nom: 'Menu « T’as pas encore fini ? »' },
@@ -47,10 +44,7 @@ const titles: Title[] = [
   { id: '44bf5260-7b44-4e58-8586-1d7db70b2ca3', nom: 'Menu du Chef en roue libre' },
   { id: '5fdd1cb8-0559-47ee-ac91-b85333b20d5c', nom: 'Menu du Chef Inspiré' },
   { id: 'f092d5c3-5ecf-4a85-b679-81d5d7f35ae0', nom: 'Menu du dimanche' },
-  {
-    id: 'b5808655-a80a-43cd-8fa9-af4fa357eac9',
-    nom: 'Menu du Fainéant (zéro effort, 100% plaisir)',
-  },
+  { id: 'b5808655-a80a-43cd-8fa9-af4fa357eac9', nom: 'Menu du Fainéant (zéro effort, 100% plaisir)' },
   { id: 'fd2dbc54-c0cd-480a-bbb6-660e0d11a88a', nom: 'Menu du jour' },
   { id: 'fd59ade0-1b45-4339-b5d6-297e5a958199', nom: 'Menu du marché' },
   { id: '6e1e5d63-a340-4826-ad5f-1e54a6acdfe3', nom: 'Menu du midi' },
@@ -76,10 +70,7 @@ const titles: Title[] = [
   { id: '7d6c4289-c12c-4d31-bd60-83e566a6bf34', nom: 'Menu gourmandise' },
   { id: '929bc380-3562-42ab-a881-c844cde66d62', nom: 'Menu grand soir' },
   { id: '127e1556-83df-4496-a2dd-ad0a6ff2dcea', nom: 'Menu Grand-mère Approved' },
-  {
-    id: '49f89a6d-98f8-419e-864b-4d52cccecaee',
-    nom: 'Menu Haute Gastronomie pour les Petits Appétits',
-  },
+  { id: '49f89a6d-98f8-419e-864b-4d52cccecaee', nom: 'Menu Haute Gastronomie pour les Petits Appétits' },
   { id: '9ef101b1-846c-41a0-a98a-25572b90da78', nom: 'Menu hivernal' },
   { id: 'be8a764c-bc70-4dd5-9101-52f84d5776a2', nom: 'Menu Incognito' },
   { id: '1a127b3d-54cb-42e6-b239-900f9fa03566', nom: 'Menu intense' },
@@ -152,10 +143,7 @@ const titles: Title[] = [
   { id: '20b10e22-6ebb-466b-b860-7a485c826ea2', nom: 'Menu Haute Faim' },
   { id: 'a5607527-a774-4a10-a6b3-8da7b45ab8cb', nom: 'Menu Express Gourmet' },
   { id: 'e5188637-424c-4a0c-8763-736ae9337acf', nom: 'Menu Raclette & Champagne' },
-  {
-    id: 'a4a09230-c9ca-4c45-a000-50b38762ab26',
-    nom: 'Menu Roulette Russe (choix totalement aléatoire)',
-  },
+  { id: 'a4a09230-c9ca-4c45-a000-50b38762ab26', nom: 'Menu Roulette Russe (choix totalement aléatoire)' },
   { id: 'c0e5ef6e-00bc-4ac7-ae2c-7bb9f21ba50d', nom: 'Menu Inconnu au bataillon' },
   { id: '1be711c6-3be7-4149-8f07-c9c434b8ddfa', nom: 'Menu Caméléon (change à chaque fois)' },
   { id: 'c693402b-e34e-4ee8-8e26-cce3d234de87', nom: 'Menu 404 – Saveur Not Found' },
@@ -187,10 +175,7 @@ const titles: Title[] = [
   { id: '07b07396-c750-4baa-8530-27c9ec930da8', nom: 'Menu « Goûte avant de juger »' },
   { id: 'c176c055-d0d6-4b69-89e8-e8c7eabc5bec', nom: 'Menu « À consommer sans modération »' },
   { id: 'a9b081b0-0bab-46dd-98a2-7c0ec9721ea6', nom: 'Menu « Le gras, c’est la vie »' },
-  {
-    id: 'cd886002-1a12-4a3c-8569-2338f8b6bb8d',
-    nom: 'Menu « Lâche la fourchette pas la cuillère »',
-  },
+  { id: 'cd886002-1a12-4a3c-8569-2338f8b6bb8d', nom: 'Menu « Lâche la fourchette pas la cuillère »' },
   { id: 'eb8aa6c2-9ae2-4eb5-9c82-db1da55b6fa7', nom: 'Menu Fraîcheur du Verger' },
   { id: 'fd26c2ea-32b8-4f49-95b2-025fc9bf6b97', nom: 'Menu Cueillette Gourmande' },
   { id: 'f821bebc-d0b2-4e2f-a847-5b92be606d48', nom: 'Menu Sous le Soleil' },
@@ -214,6 +199,10 @@ const titles: Title[] = [
   { id: '9b394d90-ff6a-424d-be98-8ba83e23e981', nom: 'Menu Saveur Cachée' },
   { id: 'a435a119-1528-455c-8485-e5a2fbf8c5c8', nom: 'Menu Beta-Test' },
   { id: 'ccb05298-cd9f-4183-8268-08054fb09214', nom: 'Menu Easter Egg' },
+  { id: 'f76d43aa-beb9-4ccf-afe6-76da96fb91c4', nom: 'Menu fin de journée' },
+  { id: '088499bc-9dff-4df0-8d75-9f6c3c688eab', nom: 'Menu horizon' },
+  { id: '0da7b4e2-5194-4c3b-9514-f75f838403ab', nom: 'Menu Terre plate' },
+  { id: 'f7453fd4-a751-4e29-9872-c2a816e47cd0', nom: 'Non-Menu' },
 ];
 
 
