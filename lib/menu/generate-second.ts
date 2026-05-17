@@ -12,6 +12,7 @@ import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
 import intersection from '@/lib/utils/intersection';
+import getIndexedItemsByTypes from '@/lib/menu/get-indexed-items-by-types';
 import {
   addLiensAlreadyUsed,
   getLiensAlreadyUsed,
@@ -38,12 +39,14 @@ const generateSecond = (
   if (!ingredientSecondaire) {
     return '';
   }
-  const availableLiens = data.liens.filter((lien: Lien) =>
-    intersection(
-      [...lien.compatibleIngredientTypes],
-      [...ingredientSecondaire.types],
-    ).length > 0,
-  );
+  const availableLiens = data.indexes
+    ? getIndexedItemsByTypes(data.indexes.liensByType, ingredientSecondaire.types)
+    : data.liens.filter((lien: Lien) =>
+      intersection(
+        [...lien.compatibleIngredientTypes],
+        [...ingredientSecondaire.types],
+      ).length > 0,
+    );
   const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id),
@@ -59,6 +62,7 @@ const generateSecond = (
     ingredientSecondaire,
     inconsistentLevel,
     rng,
+    data.indexes,
   );
   second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}${determinantSeparator(preIngredient)}`;
   second += `${formatIngredientName(ingredientSecondaire, rng)}`;
@@ -67,7 +71,7 @@ const generateSecond = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postSecondaire = getPostByType(data.posts, mainType, rng);
+    const postSecondaire = getPostByType(data.posts, mainType, rng, data.indexes?.postsByType);
     second += ` ${postSecondaire.nom}`;
   }
   return second;

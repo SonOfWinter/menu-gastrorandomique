@@ -8,6 +8,7 @@ import { Title } from '@/types/data/title';
 import { Complement } from '@/types/data/complement';
 import { PreSauce } from '@/types/data/pre-sauce';
 import { SauceType } from '@/types/data/sauce-type';
+import { MenuIndexes } from '@/types/menu-indexes';
 
 export interface Menu {
   ingredients: Ingredient[];
@@ -20,4 +21,5 @@ export interface Menu {
   complements: Complement[];
   preSauces: PreSauce[];
   sauceTypes: SauceType[];
+  indexes?: MenuIndexes;
 }

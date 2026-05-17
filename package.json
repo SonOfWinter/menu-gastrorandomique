@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate:data": "tsx scripts/generate-menu-data.ts",
+    "dev": "npm run generate:data && next dev",
+    "build": "npm run generate:data && next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "npm run generate:data && vitest run"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
@@ -37,6 +38,7 @@
     "eslint-config-next": "^16.2.6",
     "jsdom": "^29.1.1",
     "tailwindcss": "^4.3.0",
+    "tsx": "^4.22.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.6"
   }

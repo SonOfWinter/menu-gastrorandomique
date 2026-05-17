@@ -33,7 +33,7 @@ export default function generateSauce(
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   preSuite = preSuite + determinantSeparator(preSuite);
   const ingredientSauce: Ingredient | null = getIngredient(
-    ingredients,
+    data.indexes?.ingredientsByType[TypeAliment.SAUCE] ?? ingredients,
     TypeAliment.SAUCE,
     false,
     isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
@@ -49,6 +49,7 @@ export default function generateSauce(
     ingredientSauce,
     inconsistentLevel,
     rng,
+    data.indexes,
   );
 
   let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + formatIngredientName(ingredientSauce, rng);
@@ -68,7 +69,7 @@ function getSauceType(
   typePlat: TypePlat,
   rng?: RandomGenerator,
 ): SauceType {
-  const availableSauceTypes = [...data.sauceTypes].filter((item: SauceType) =>
+  const availableSauceTypes = data.indexes?.sauceTypesByType[typePlat] ?? [...data.sauceTypes].filter((item: SauceType) =>
     item.types.includes(typePlat),
   );
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>

@@ -11,8 +11,9 @@ const getPlatByType = (
   plats: Plat[],
   mainType: TypePlat,
   rng?: RandomGenerator,
+  platsByType?: Record<TypePlat, Plat[]>,
 ): Plat => {
-  const filterredPlats: Plat[] = plats.filter((item: Plat) =>
+  const filterredPlats: Plat[] = platsByType?.[mainType] ?? plats.filter((item: Plat) =>
     item.types?.includes(mainType),
   );
   const unusedPlats = filterredPlats.filter((item: Plat) =>
