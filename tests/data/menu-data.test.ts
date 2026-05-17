@@ -14,6 +14,7 @@ import { Nombre } from '@/types/enums/nombre';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
+import { EntityId } from '@/types/entity-id';
 
 const genres = Object.values(Genre);
 const nombres = Object.values(Nombre);
@@ -26,7 +27,7 @@ function expectNonEmptyString(value: unknown, label: string) {
   expect((value as string).trim().length, label).toBeGreaterThan(0);
 }
 
-function expectUniqueValues(values: string[], label: string) {
+function expectUniqueValues(values: readonly EntityId[], label: string) {
   const duplicates = values.filter((value, index) => values.indexOf(value) !== index);
   expect([...new Set(duplicates)], label).toEqual([]);
 }
@@ -65,11 +66,11 @@ function expectDeterminants(
 }
 
 function expectCollectionIds(
-  collection: readonly { id: string }[],
+  collection: readonly { id: EntityId }[],
   label: string,
 ) {
   expect(collection.length, label).toBeGreaterThan(0);
-  collection.forEach((item, index) => expectNonEmptyString(item.id, `${label}[${index}].id`));
+  collection.forEach((item, index) => expectNonEmptyString(String(item.id), `${label}[${index}].id`));
   expectUniqueValues(collection.map((item) => item.id), `${label}.ids`);
 }
 

@@ -1,20 +1,21 @@
-function getIndexedItemsByTypes<TItem extends { id: string }, TType extends string>(
-  index: Record<TType, TItem[]>,
+function getIndexedItemsByTypes<TItem, TType extends string>(
+  items: readonly TItem[],
+  index: Record<TType, number[]>,
   types: readonly TType[],
 ): TItem[] {
-  const seen = new Set<string>();
-  const items: TItem[] = [];
+  const seen = new Set<number>();
+  const indexedItems: TItem[] = [];
 
   for (const type of types) {
-    for (const item of index[type] ?? []) {
-      if (!seen.has(item.id)) {
-        seen.add(item.id);
-        items.push(item);
+    for (const id of index[type] ?? []) {
+      if (!seen.has(id) && items[id] !== undefined) {
+        seen.add(id);
+        indexedItems.push(items[id]);
       }
     }
   }
 
-  return items;
+  return indexedItems;
 }
 
 export default getIndexedItemsByTypes;

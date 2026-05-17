@@ -53,12 +53,12 @@ describe('lib/menu/generate-second.ts', () => {
       createMenuData({
         posts: [
           {
-            ...menuData.indexes.postsByType[TypePlat.DESSERT][0],
+            ...menuData.posts[menuData.indexes.postIdsByType[TypePlat.DESSERT][0]],
             id: 'post-entree',
             nom: 'hors-sujet',
             types: [TypePlat.ENTREE],
           },
-          menuData.indexes.postsByType[TypePlat.DESSERT][0],
+          menuData.posts[menuData.indexes.postIdsByType[TypePlat.DESSERT][0]],
         ],
       }),
       plat,
@@ -91,12 +91,12 @@ describe('lib/menu/generate-second.ts', () => {
       createMenuData({
         liens: [
           {
-            ...menuData.indexes.liens[0],
+            ...menuData.liens[menuData.indexes.lienIds[0]],
             id: 'lien-fruit',
             compatibleIngredientTypes: [TypeAliment.FRUIT],
           },
           {
-            ...menuData.indexes.liens[0],
+            ...menuData.liens[menuData.indexes.lienIds[0]],
             id: 'lien-legume',
             noms: {
               [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
@@ -121,11 +121,11 @@ describe('lib/menu/generate-second.ts', () => {
     const data = createMenuData({
       liens: [
         {
-          ...menuData.indexes.liens[0],
+          ...menuData.liens[menuData.indexes.lienIds[0]],
           id: 'lien-au',
         },
         {
-          ...menuData.indexes.liens[0],
+          ...menuData.liens[menuData.indexes.lienIds[0]],
           id: 'lien-avec',
           noms: {
             [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
@@ -136,8 +136,9 @@ describe('lib/menu/generate-second.ts', () => {
       ],
     });
 
-    const first = generateSecond(data, plat, menuData.indexes.ingredientsByType[TypeAliment.FRUIT], TypePlat.DESSERT, 0, () => 0);
-    const second = generateSecond(data, plat, menuData.indexes.ingredientsByType[TypeAliment.FRUIT], TypePlat.DESSERT, 0, () => 0);
+    const fruitIngredients = menuData.indexes.ingredientIdsByType[TypeAliment.FRUIT].map((id) => menuData.ingredients[id]);
+    const first = generateSecond(data, plat, fruitIngredients, TypePlat.DESSERT, 0, () => 0);
+    const second = generateSecond(data, plat, fruitIngredients, TypePlat.DESSERT, 0, () => 0);
 
     expect(first).toBe('au de la pomme sucree');
     expect(second).toBe('avec une poire croquante');

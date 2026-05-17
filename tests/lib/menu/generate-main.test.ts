@@ -68,27 +68,27 @@ describe('lib/menu/generate-main.ts', () => {
       createMenuData({
         pres: [
           {
-            ...menuData.indexes.presByType[TypePlat.DESSERT][0],
+            ...menuData.pres[menuData.indexes.preIdsByType[TypePlat.DESSERT][0]],
             id: 'pre-entree',
             noms: {
-              ...menuData.indexes.presByType[TypePlat.DESSERT][0].noms,
+              ...menuData.pres[menuData.indexes.preIdsByType[TypePlat.DESSERT][0]].noms,
               [plat.genre]: {
-                ...menuData.indexes.presByType[TypePlat.DESSERT][0].noms[plat.genre],
+                ...menuData.pres[menuData.indexes.preIdsByType[TypePlat.DESSERT][0]].noms[plat.genre],
                 [plat.nombre]: 'hors-sujet',
               },
             },
             types: [TypePlat.ENTREE],
           },
-          menuData.indexes.presByType[TypePlat.DESSERT][0],
+          menuData.pres[menuData.indexes.preIdsByType[TypePlat.DESSERT][0]],
         ],
         posts: [
           {
-            ...menuData.indexes.postsByType[TypePlat.DESSERT][0],
+            ...menuData.posts[menuData.indexes.postIdsByType[TypePlat.DESSERT][0]],
             id: 'post-entree',
             nom: 'hors-sujet',
             types: [TypePlat.ENTREE],
           },
-          menuData.indexes.postsByType[TypePlat.DESSERT][0],
+          menuData.posts[menuData.indexes.postIdsByType[TypePlat.DESSERT][0]],
         ],
       }),
       plat,

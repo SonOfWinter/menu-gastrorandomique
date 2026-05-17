@@ -18,6 +18,7 @@ import {
 } from '@/lib/ssr-cache';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
+import getItemsByIds from '@/lib/menu/get-items-by-ids';
 
 export default function generateSauce(
   data: Menu,
@@ -32,7 +33,7 @@ export default function generateSauce(
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   preSuite = preSuite + determinantSeparator(preSuite);
   const ingredientSauce: Ingredient | null = getIngredient(
-    data.indexes.ingredientsByType[TypeAliment.SAUCE],
+    getItemsByIds(data.ingredients, data.indexes.ingredientIdsByType[TypeAliment.SAUCE]),
     TypeAliment.SAUCE,
     false,
     isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
@@ -44,7 +45,7 @@ export default function generateSauce(
   let typeSuite: string = ingredientSauce.determinants[typeSauce.suite];
   typeSuite = typeSuite + determinantSeparator(typeSuite);
   const adjectifSauce: Adjectif | null = getAdjectifBasedOnIngredient(
-    data.indexes.adjectifs,
+    data.adjectifs,
     ingredientSauce,
     inconsistentLevel,
     rng,
@@ -68,7 +69,7 @@ function getSauceType(
   typePlat: TypePlat,
   rng?: RandomGenerator,
 ): SauceType {
-  const availableSauceTypes = data.indexes.sauceTypesByType[typePlat];
+  const availableSauceTypes = getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]);
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
     !getSauceTypesAlreadyUsed().includes(item.id),
   );

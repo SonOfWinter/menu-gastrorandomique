@@ -11,9 +11,8 @@ const getPreByType = (
   pres: Pre[],
   mainType: TypePlat,
   rng?: RandomGenerator,
-  presByType?: Record<TypePlat, Pre[]>,
 ): Pre => {
-  const typedPres = presByType?.[mainType] ?? pres.filter((item: Pre) =>
+  const typedPres = pres.filter((item: Pre) =>
     item.types.includes(mainType),
   );
   const availablePres = typedPres.length > 0 ? typedPres : pres;

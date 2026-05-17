@@ -22,7 +22,7 @@ const getAdjectifBasedOnIngredient = (
   const filteredAdjectifs = isInconsistent(inconsistentLevel, rng)
     ? adjectifs
     : indexes
-      ? getIndexedItemsByTypes(indexes.adjectifsByType, ingredient.types)
+      ? getIndexedItemsByTypes(adjectifs, indexes.adjectifIdsByType, ingredient.types)
         .filter((item: Adjectif) => !getAdjectifsAlreadyUsed().includes(item.id))
       : adjectifs.filter((item: Adjectif) =>
         intersection(

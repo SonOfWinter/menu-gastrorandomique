@@ -173,26 +173,28 @@ function buildIndex<TItem, TType extends string>(
   items: TItem[],
   types: TType[],
   getTypes: (item: TItem) => readonly TType[] | null,
-): Record<TType, TItem[]> {
+): Record<TType, number[]> {
   return Object.fromEntries(
     types.map((type) => [
       type,
-      items.filter((item) => getTypes(item)?.includes(type)),
+      items
+        .map((item, index) => getTypes(item)?.includes(type) ? index : -1)
+        .filter((index) => index !== -1),
     ]),
-  ) as Record<TType, TItem[]>;
+  ) as Record<TType, number[]>;
 }
 
 function buildMenuIndexes(source: MenuDataSource): MenuIndexes {
   return {
-    adjectifs: source.adjectifs,
-    liens: source.liens,
-    ingredientsByType: buildIndex(source.ingredients, Object.values(TypeAliment), (item) => item.types),
-    adjectifsByType: buildIndex(source.adjectifs, Object.values(TypeAliment), (item) => item.types),
-    liensByType: buildIndex(source.liens, Object.values(TypeAliment), (item) => item.compatibleIngredientTypes),
-    platsByType: buildIndex(source.plats, Object.values(TypePlat), (item) => item.types),
-    postsByType: buildIndex(source.posts, Object.values(TypePlat), (item) => item.types),
-    presByType: buildIndex(source.pres, Object.values(TypePlat), (item) => item.types),
-    sauceTypesByType: buildIndex(source.sauceTypes, Object.values(TypePlat), (item) => item.types),
+    adjectifIds: source.adjectifs.map((_, index) => index),
+    lienIds: source.liens.map((_, index) => index),
+    ingredientIdsByType: buildIndex(source.ingredients, Object.values(TypeAliment), (item) => item.types),
+    adjectifIdsByType: buildIndex(source.adjectifs, Object.values(TypeAliment), (item) => item.types),
+    lienIdsByType: buildIndex(source.liens, Object.values(TypeAliment), (item) => item.compatibleIngredientTypes),
+    platIdsByType: buildIndex(source.plats, Object.values(TypePlat), (item) => item.types),
+    postIdsByType: buildIndex(source.posts, Object.values(TypePlat), (item) => item.types),
+    preIdsByType: buildIndex(source.pres, Object.values(TypePlat), (item) => item.types),
+    sauceTypeIdsByType: buildIndex(source.sauceTypes, Object.values(TypePlat), (item) => item.types),
   };
 }
 
@@ -203,9 +205,16 @@ export function createMenuData(overrides: Partial<MenuDataSource> = {}): Menu {
   };
 
   return {
+    adjectifs: source.adjectifs,
     complements: source.complements,
-    titles: source.titles,
+    ingredients: source.ingredients,
+    liens: source.liens,
+    plats: source.plats,
+    posts: source.posts,
+    pres: source.pres,
     preSauces: source.preSauces,
+    sauceTypes: source.sauceTypes,
+    titles: source.titles,
     indexes: buildMenuIndexes(source),
   };
 }

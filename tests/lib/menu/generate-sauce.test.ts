@@ -27,9 +27,9 @@ describe('lib/menu/generate-sauce.ts', () => {
       createMenuData({
         sauceTypes: [
           {
-            ...menuData.indexes.sauceTypesByType[TypePlat.DESSERT][0],
+            ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]],
             determinants: {
-              ...menuData.indexes.sauceTypesByType[TypePlat.DESSERT][0].determinants,
+              ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]].determinants,
               [TypeDeterminant.PRINCIPAL]: 'd’',
             },
           },
@@ -47,12 +47,12 @@ describe('lib/menu/generate-sauce.ts', () => {
   it('does not reuse a sauce type while unused sauce types are available', () => {
     const sauceTypes = [
       {
-        ...menuData.indexes.sauceTypesByType[TypePlat.DESSERT][0],
+        ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]],
         id: 'sauce-type-1',
         nom: 'pesto',
       },
       {
-        ...menuData.indexes.sauceTypesByType[TypePlat.DESSERT][0],
+        ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]],
         id: 'sauce-type-2',
         nom: 'jus',
       },

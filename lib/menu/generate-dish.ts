@@ -13,6 +13,7 @@ import generateSauce from '@/lib/menu/generate-sauce';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import getIndexedItemsByTypes from '@/lib/menu/get-indexed-items-by-types';
+import getItemsByIds from '@/lib/menu/get-items-by-ids';
 
 export const generateDish = (
   data: Menu,
@@ -20,12 +21,16 @@ export const generateDish = (
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
 ): Dish => {
-  const platPrincipal: Plat = getPlatByType(data.indexes.platsByType[mainType], mainType, rng, data.indexes.platsByType);
+  const platPrincipal: Plat = getPlatByType(
+    getItemsByIds(data.plats, data.indexes.platIdsByType[mainType]),
+    mainType,
+    rng,
+  );
   const typeAliments: TypeAliment[] = isInconsistent(inconsistentLevel, rng)
     ? Object.values(TypeAliment)
     : [...platPrincipal.typeAliments[mainType]];
   const ingredients: Ingredient[] = typeAliments && Array.isArray(typeAliments)
-    ? getIndexedItemsByTypes(data.indexes.ingredientsByType, typeAliments)
+    ? getIndexedItemsByTypes(data.ingredients, data.indexes.ingredientIdsByType, typeAliments)
     : [];
   return {
     main: generateMain(data, platPrincipal, ingredients, mainType, inconsistentLevel, rng),

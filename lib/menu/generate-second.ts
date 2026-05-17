@@ -18,6 +18,7 @@ import {
 } from '@/lib/ssr-cache';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
+import getItemsByIds from '@/lib/menu/get-items-by-ids';
 
 const generateSecond = (
   data: Menu,
@@ -38,8 +39,8 @@ const generateSecond = (
   if (!ingredientSecondaire) {
     return '';
   }
-  const availableLiens = getIndexedItemsByTypes(data.indexes.liensByType, ingredientSecondaire.types);
-  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.indexes.liens;
+  const availableLiens = getIndexedItemsByTypes(data.liens, data.indexes.lienIdsByType, ingredientSecondaire.types);
+  const compatibleLiens = availableLiens.length > 0 ? availableLiens : getItemsByIds(data.liens, data.indexes.lienIds);
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id),
   );
@@ -50,7 +51,7 @@ const generateSecond = (
   addLiensAlreadyUsed(lienSecondaire.id);
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
-    data.indexes.adjectifs,
+    data.adjectifs,
     ingredientSecondaire,
     inconsistentLevel,
     rng,
@@ -63,7 +64,11 @@ const generateSecond = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postSecondaire = getPostByType(data.indexes.postsByType[mainType], mainType, rng, data.indexes.postsByType);
+    const postSecondaire = getPostByType(
+      getItemsByIds(data.posts, data.indexes.postIdsByType[mainType]),
+      mainType,
+      rng,
+    );
     second += ` ${postSecondaire.nom}`;
   }
   return second;

@@ -11,9 +11,8 @@ const getPostByType = (
   posts: Post[],
   mainType: TypePlat,
   rng?: RandomGenerator,
-  postsByType?: Record<TypePlat, Post[]>,
 ): Post => {
-  const typedPosts = postsByType?.[mainType] ?? posts.filter((item: Post) =>
+  const typedPosts = posts.filter((item: Post) =>
     item.types.includes(mainType),
   );
   const availablePosts = typedPosts.length > 0 ? typedPosts : posts;
