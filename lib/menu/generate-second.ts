@@ -63,7 +63,7 @@ const generateSecond = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postSecondaire = getPostByType(data.indexes.posts, mainType, rng, data.indexes.postsByType);
+    const postSecondaire = getPostByType(data.indexes.postsByType[mainType], mainType, rng, data.indexes.postsByType);
     second += ` ${postSecondaire.nom}`;
   }
   return second;

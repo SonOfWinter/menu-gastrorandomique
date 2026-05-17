@@ -7,8 +7,8 @@ import plats from '../data/menu-plat';
 import posts from '../data/menu-post';
 import pres from '../data/menu-pre';
 import sauceTypes from '../data/menu-sauce-type';
-import { TypeAliment } from '../types/enums/type-aliment';
-import { TypePlat } from '../types/enums/type-plat';
+import { TypeAliment } from '@/types/enums/type-aliment';
+import { TypePlat } from '@/types/enums/type-plat';
 
 function buildIndex<TItem, TType extends string>(
   items: readonly TItem[],
@@ -72,13 +72,8 @@ import { Menu } from '@/types/menu';
 import { MenuIndexes } from '@/types/menu-indexes';
 
 export const indexes: MenuIndexes = {
-  ingredients,
   adjectifs,
   liens,
-  plats,
-  posts,
-  pres,
-  sauceTypes,
   ingredientsByType: ${formatIndex('ingredients', 'TypeAliment', typeAlimentEntries, ingredientsByType)},
   adjectifsByType: ${formatIndex('adjectifs', 'TypeAliment', typeAlimentEntries, adjectifsByType)},
   liensByType: ${formatIndex('liens', 'TypeAliment', typeAlimentEntries, liensByType)},

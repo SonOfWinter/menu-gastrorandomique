@@ -53,12 +53,12 @@ describe('lib/menu/generate-second.ts', () => {
       createMenuData({
         posts: [
           {
-            ...menuData.indexes.posts[0],
+            ...menuData.indexes.postsByType[TypePlat.DESSERT][0],
             id: 'post-entree',
             nom: 'hors-sujet',
             types: [TypePlat.ENTREE],
           },
-          menuData.indexes.posts[0],
+          menuData.indexes.postsByType[TypePlat.DESSERT][0],
         ],
       }),
       plat,
@@ -136,8 +136,8 @@ describe('lib/menu/generate-second.ts', () => {
       ],
     });
 
-    const first = generateSecond(data, plat, menuData.indexes.ingredients, TypePlat.DESSERT, 0, () => 0);
-    const second = generateSecond(data, plat, menuData.indexes.ingredients, TypePlat.DESSERT, 0, () => 0);
+    const first = generateSecond(data, plat, menuData.indexes.ingredientsByType[TypeAliment.FRUIT], TypePlat.DESSERT, 0, () => 0);
+    const second = generateSecond(data, plat, menuData.indexes.ingredientsByType[TypeAliment.FRUIT], TypePlat.DESSERT, 0, () => 0);
 
     expect(first).toBe('au de la pomme sucree');
     expect(second).toBe('avec une poire croquante');

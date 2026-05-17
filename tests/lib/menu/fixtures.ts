@@ -184,13 +184,8 @@ function buildIndex<TItem, TType extends string>(
 
 function buildMenuIndexes(source: MenuDataSource): MenuIndexes {
   return {
-    ingredients: source.ingredients,
     adjectifs: source.adjectifs,
     liens: source.liens,
-    plats: source.plats,
-    posts: source.posts,
-    pres: source.pres,
-    sauceTypes: source.sauceTypes,
     ingredientsByType: buildIndex(source.ingredients, Object.values(TypeAliment), (item) => item.types),
     adjectifsByType: buildIndex(source.adjectifs, Object.values(TypeAliment), (item) => item.types),
     liensByType: buildIndex(source.liens, Object.values(TypeAliment), (item) => item.compatibleIngredientTypes),

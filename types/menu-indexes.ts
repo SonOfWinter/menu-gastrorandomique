@@ -9,13 +9,8 @@ import { TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
 
 export type MenuIndexes = {
-  ingredients: Ingredient[];
   adjectifs: Adjectif[];
   liens: Lien[];
-  plats: Plat[];
-  posts: Post[];
-  pres: Pre[];
-  sauceTypes: SauceType[];
   ingredientsByType: Record<TypeAliment, Ingredient[]>;
   adjectifsByType: Record<TypeAliment, Adjectif[]>;
   liensByType: Record<TypeAliment, Lien[]>;

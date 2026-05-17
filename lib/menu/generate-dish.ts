@@ -20,7 +20,7 @@ export const generateDish = (
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
 ): Dish => {
-  const platPrincipal: Plat = getPlatByType(data.indexes.plats, mainType, rng, data.indexes.platsByType);
+  const platPrincipal: Plat = getPlatByType(data.indexes.platsByType[mainType], mainType, rng, data.indexes.platsByType);
   const typeAliments: TypeAliment[] = isInconsistent(inconsistentLevel, rng)
     ? Object.values(TypeAliment)
     : [...platPrincipal.typeAliments[mainType]];
