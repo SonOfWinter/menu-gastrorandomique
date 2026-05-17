@@ -4,6 +4,43 @@ import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { Ingredient } from '@/types/data/ingredient';
 
+const ingredientTypePresets = {
+  fruit: [TypeAliment.FRUIT],
+  vegetable: [TypeAliment.LEGUME],
+  seafood: [TypeAliment.FRUIT_DE_MER],
+  fish: [TypeAliment.POISSON],
+  charcuterie: [TypeAliment.CHARCUTERIE],
+  sugar: [TypeAliment.SUCRE],
+  base: [TypeAliment.BASE],
+  mushroom: [TypeAliment.CHAMPIGNON],
+  cheese: [TypeAliment.FROMAGE],
+  cereal: [TypeAliment.CEREALE],
+  nut: [TypeAliment.FRUIT_A_COQUE],
+  salad: [TypeAliment.SALADE],
+  whiteMeat: [TypeAliment.VIANDE_BLANCHE],
+  redMeat: [TypeAliment.VIANDE_ROUGE],
+  herbSauce: [TypeAliment.HERBE, TypeAliment.SAUCE],
+  fruitSauce: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+  alcoholSauce: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+  cheeseSauce: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+  spiceSauce: [TypeAliment.EPICE, TypeAliment.SAUCE],
+  redMeatSauce: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+  baseCereal: [TypeAliment.BASE, TypeAliment.CEREALE],
+  liquidSauce: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+  mushroomSauce: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+  vegetableSauce: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+  sugarSauce: [TypeAliment.SUCRE, TypeAliment.SAUCE],
+  whiteMeatSauce: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+  spiceSauceSugar: [TypeAliment.EPICE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+  fruitSaladSauce: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+  vegetableSalad: [TypeAliment.LEGUME, TypeAliment.SALADE],
+  fishSauce: [TypeAliment.POISSON, TypeAliment.SAUCE],
+  alcoholLiquidSauce: [TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+  nutSauce: [TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE],
+  seafoodSauce: [TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE],
+} satisfies Record<string, TypeAliment[]>;
+
+
 const herbes: Ingredient[] = [
   {
     id: 'f6bd29ce-1276-44d1-9fc6-72e7895908d9',
@@ -25,7 +62,7 @@ const herbes: Ingredient[] = [
     nom: 'thym',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'citron', 'frais', 'serpolet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -40,7 +77,7 @@ const herbes: Ingredient[] = [
     nom: 'persil',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'plat', 'frisé', 'frais'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -55,7 +92,7 @@ const herbes: Ingredient[] = [
     nom: 'romarin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'frais', 'séché', 'sauvage'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -70,7 +107,7 @@ const herbes: Ingredient[] = [
     nom: 'coriandre',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'fraîche', 'thaïe', 'en graines'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -85,7 +122,7 @@ const herbes: Ingredient[] = [
     nom: 'ciboulette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'fraîche', 'chinoise'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -100,7 +137,7 @@ const herbes: Ingredient[] = [
     nom: 'estragon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'français', 'frais'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -115,7 +152,7 @@ const herbes: Ingredient[] = [
     nom: 'cerfeuil',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'frais'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -130,7 +167,7 @@ const herbes: Ingredient[] = [
     nom: 'basilic',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'grand vert', 'thaï', 'pourpre'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -145,7 +182,7 @@ const herbes: Ingredient[] = [
     nom: 'échalote',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'grise', 'cuisse de poulet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -175,7 +212,7 @@ const herbes: Ingredient[] = [
     nom: 'menthe',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'poivrée', 'verte', 'marocaine'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -190,7 +227,7 @@ const herbes: Ingredient[] = [
     nom: 'sauge',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'officinale', 'fraîche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -205,7 +242,7 @@ const herbes: Ingredient[] = [
     nom: 'laurier',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'sauce', 'frais'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -220,7 +257,7 @@ const herbes: Ingredient[] = [
     nom: 'aneth',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'frais'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -235,7 +272,7 @@ const herbes: Ingredient[] = [
     nom: 'origan',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'grec', 'séché'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -250,7 +287,7 @@ const herbes: Ingredient[] = [
     nom: 'marjolaine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'fraîche', 'séchée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -265,7 +302,7 @@ const herbes: Ingredient[] = [
     nom: 'sarriette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'des montagnes', 'fraîche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -280,7 +317,7 @@ const herbes: Ingredient[] = [
     nom: 'citronnelle',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.HERBE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.herbSauce,
     postAdjectifs: ['', 'fraîche', 'thaïe'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -297,7 +334,7 @@ const epices: Ingredient[] = [
     nom: 'cumin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'grillé', 'en graines', 'moulu'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -312,7 +349,7 @@ const epices: Ingredient[] = [
     nom: 'paprika',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'doux', 'fumé', 'fort'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -342,7 +379,7 @@ const epices: Ingredient[] = [
     nom: 'curry',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'jaune', 'rouge', 'vert', 'madras'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -357,7 +394,7 @@ const epices: Ingredient[] = [
     nom: 'muscade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'râpée', 'entière'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -372,7 +409,7 @@ const epices: Ingredient[] = [
     nom: 'cannelle',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+    types: ingredientTypePresets.spiceSauceSugar,
     postAdjectifs: ['', 'de Ceylan', 'cassia', 'en bâton'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -387,7 +424,7 @@ const epices: Ingredient[] = [
     nom: 'gingembre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'frais', 'confit', 'moulu'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -402,7 +439,7 @@ const epices: Ingredient[] = [
     nom: 'curcuma',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'frais', 'moulu'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -417,7 +454,7 @@ const epices: Ingredient[] = [
     nom: 'safran',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'en pistils', 'd’Iran', 'du Quercy'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -432,7 +469,7 @@ const epices: Ingredient[] = [
     nom: 'cardamome',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+    types: ingredientTypePresets.spiceSauceSugar,
     postAdjectifs: ['', 'verte', 'noire'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -447,7 +484,7 @@ const epices: Ingredient[] = [
     nom: 'clou de girofle',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+    types: ingredientTypePresets.spiceSauceSugar,
     postAdjectifs: ['', 'entier', 'moulu'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -462,7 +499,7 @@ const epices: Ingredient[] = [
     nom: 'badiane',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE, TypeAliment.SUCRE],
+    types: ingredientTypePresets.spiceSauceSugar,
     postAdjectifs: ['', 'entière', 'moulue'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -477,7 +514,7 @@ const epices: Ingredient[] = [
     nom: 'sumac',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'moulu'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -492,7 +529,7 @@ const epices: Ingredient[] = [
     nom: 'fenugrec',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.EPICE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.spiceSauce,
     postAdjectifs: ['', 'en graines', 'moulu'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -509,7 +546,7 @@ const fromages: Ingredient[] = [
     nom: 'bleu',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'd’Auvergne', 'des Causses', 'de Gex'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -524,7 +561,7 @@ const fromages: Ingredient[] = [
     nom: 'brie',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'de Meaux', 'de Melun', 'truffé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -539,7 +576,7 @@ const fromages: Ingredient[] = [
     nom: 'camembert',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE],
+    types: ingredientTypePresets.cheese,
     postAdjectifs: ['', 'de Normandie', 'au lait cru', 'rôti'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -554,7 +591,7 @@ const fromages: Ingredient[] = [
     nom: 'cantal',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'jeune', 'entre-deux', 'vieux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -569,7 +606,7 @@ const fromages: Ingredient[] = [
     nom: 'chèvre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'frais', 'cendré', 'crottin', 'bûche', 'Sainte-Maure'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -599,7 +636,7 @@ const fromages: Ingredient[] = [
     nom: 'gorgonzola',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE],
+    types: ingredientTypePresets.cheese,
     postAdjectifs: ['', 'doux', 'piccante'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -614,7 +651,7 @@ const fromages: Ingredient[] = [
     nom: 'parmesan',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE],
+    types: ingredientTypePresets.cheese,
     postAdjectifs: ['', 'Reggiano', 'affiné', 'vieux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -629,7 +666,7 @@ const fromages: Ingredient[] = [
     nom: 'roquefort',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'vieux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -644,7 +681,7 @@ const fromages: Ingredient[] = [
     nom: 'saint-nectaire',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'fermier', 'laitier', 'affiné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -659,7 +696,7 @@ const fromages: Ingredient[] = [
     nom: 'comté',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'jeune', 'fruité', 'vieux', '24 mois'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -674,7 +711,7 @@ const fromages: Ingredient[] = [
     nom: 'emmental',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'français', 'suisse', 'râpé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -689,7 +726,7 @@ const fromages: Ingredient[] = [
     nom: 'gruyère',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'suisse', 'râpé', 'affiné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -734,7 +771,7 @@ const fromages: Ingredient[] = [
     nom: 'raclette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'fumée', 'au lait cru', 'aux herbes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -749,7 +786,7 @@ const fromages: Ingredient[] = [
     nom: 'reblochon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'fermier', 'fruitier'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -764,7 +801,7 @@ const fromages: Ingredient[] = [
     nom: 'munster',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.cheeseSauce,
     postAdjectifs: ['', 'fermier', 'au cumin'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -779,7 +816,7 @@ const fromages: Ingredient[] = [
     nom: 'mimolette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FROMAGE],
+    types: ingredientTypePresets.cheese,
     postAdjectifs: ['', 'jeune', 'vieille', 'extra-vieille'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -978,7 +1015,7 @@ const fruits: Ingredient[] = [
     nom: 'abricots',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'secs', 'Bergeron', 'rouges du Roussillon', 'Orangered', 'Luizet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -993,7 +1030,7 @@ const fruits: Ingredient[] = [
     nom: 'ananas',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -1007,7 +1044,7 @@ const fruits: Ingredient[] = [
     nom: 'argousier',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'de l’',
@@ -1021,7 +1058,7 @@ const fruits: Ingredient[] = [
     nom: 'baies',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'rouges', 'noires', 'de sureau', 'de goji', 'd’açaï'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1051,7 +1088,7 @@ const fruits: Ingredient[] = [
     nom: 'cassis',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'Noir de Bourgogne', 'Black Down', 'Ben Lomond', 'Andega'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1066,7 +1103,7 @@ const fruits: Ingredient[] = [
     nom: 'cerises',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'noires', 'griottes', 'bigarreaux', 'Burlat', 'Montmorency'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1081,7 +1118,7 @@ const fruits: Ingredient[] = [
     nom: 'châtaignes d’eau',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1095,7 +1132,7 @@ const fruits: Ingredient[] = [
     nom: 'citron',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'jaune', 'vert', 'Meyer', 'caviar', 'de Menton'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1110,7 +1147,7 @@ const fruits: Ingredient[] = [
     nom: 'clémentine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'corse', 'fine', 'Nules', 'Oroval'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1125,7 +1162,7 @@ const fruits: Ingredient[] = [
     nom: 'coco frais',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1139,7 +1176,7 @@ const fruits: Ingredient[] = [
     nom: 'coing',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1153,7 +1190,7 @@ const fruits: Ingredient[] = [
     nom: 'combava',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1167,7 +1204,7 @@ const fruits: Ingredient[] = [
     nom: 'dattes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'medjool', 'Deglet Nour', 'sukkari', 'mazafati', 'Ajwa'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1182,7 +1219,7 @@ const fruits: Ingredient[] = [
     nom: 'figues',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'sèches', 'violettes', 'blanches', 'de Solliès'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1197,7 +1234,7 @@ const fruits: Ingredient[] = [
     nom: 'fraises',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'des bois', 'Gariguette', 'Mara des bois', 'Charlotte', 'Ciflorette', 'Cléry'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1212,7 +1249,7 @@ const fruits: Ingredient[] = [
     nom: 'framboises',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'Meeker', 'Tulameen', 'Héritage', 'Willamette', 'jaunes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1227,7 +1264,7 @@ const fruits: Ingredient[] = [
     nom: 'fruit de la passion',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1241,7 +1278,7 @@ const fruits: Ingredient[] = [
     nom: 'fruits',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1255,7 +1292,7 @@ const fruits: Ingredient[] = [
     nom: 'goji',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1269,7 +1306,7 @@ const fruits: Ingredient[] = [
     nom: 'goyave',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1283,7 +1320,7 @@ const fruits: Ingredient[] = [
     nom: 'grenade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1297,7 +1334,7 @@ const fruits: Ingredient[] = [
     nom: 'groseilles',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1311,7 +1348,7 @@ const fruits: Ingredient[] = [
     nom: 'kaki',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1325,7 +1362,7 @@ const fruits: Ingredient[] = [
     nom: 'kiwano',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1339,7 +1376,7 @@ const fruits: Ingredient[] = [
     nom: 'kiwi',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'vert', 'jaune', 'Hayward', 'gold'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1354,7 +1391,7 @@ const fruits: Ingredient[] = [
     nom: 'kumquat',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1368,7 +1405,7 @@ const fruits: Ingredient[] = [
     nom: 'litchi',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1382,7 +1419,7 @@ const fruits: Ingredient[] = [
     nom: 'longane',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1396,7 +1433,7 @@ const fruits: Ingredient[] = [
     nom: 'mangue',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1410,7 +1447,7 @@ const fruits: Ingredient[] = [
     nom: 'maracuja',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1438,7 +1475,7 @@ const fruits: Ingredient[] = [
     nom: 'mûres',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1452,7 +1489,7 @@ const fruits: Ingredient[] = [
     nom: 'nectarines',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'blanches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1467,7 +1504,7 @@ const fruits: Ingredient[] = [
     nom: 'noix de coco',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1481,7 +1518,7 @@ const fruits: Ingredient[] = [
     nom: 'orange',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'sanguine', 'amère', 'navel', 'Valencia', 'de Sicile'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -1496,7 +1533,7 @@ const fruits: Ingredient[] = [
     nom: 'pamplemousse',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSaladSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1510,7 +1547,7 @@ const fruits: Ingredient[] = [
     nom: 'papaye',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1524,7 +1561,7 @@ const fruits: Ingredient[] = [
     nom: 'pastèque',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1538,7 +1575,7 @@ const fruits: Ingredient[] = [
     nom: 'pêche',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'jaune', 'blanche', 'de vigne', 'plate'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1553,7 +1590,7 @@ const fruits: Ingredient[] = [
     nom: 'persimmon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1567,7 +1604,7 @@ const fruits: Ingredient[] = [
     nom: 'poire',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     postAdjectifs: ['', 'Williams', 'Conférence', 'Comice', 'Guyot', 'Beurré Hardy', 'Passe-Crassane'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1582,7 +1619,7 @@ const fruits: Ingredient[] = [
     nom: 'pomelo',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1596,7 +1633,7 @@ const fruits: Ingredient[] = [
     nom: 'pomme',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSaladSauce,
     postAdjectifs: ['', 'rouge', 'Reinette du Canada', 'Antarès', 'Choupette', 'Elstar', 'Jazz', 'Ariane', 'Granny Smith', 'Gala', 'Fuji', 'Liberty', 'Golden Delicious', 'Gravenstein', 'Pink Lady'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1611,7 +1648,7 @@ const fruits: Ingredient[] = [
     nom: 'prune',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'Reine-Claude', 'Sainte-Catherine', 'Stanley', 'd’ente'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1626,7 +1663,7 @@ const fruits: Ingredient[] = [
     nom: 'pruneau',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1640,7 +1677,7 @@ const fruits: Ingredient[] = [
     nom: 'raisins',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     postAdjectifs: ['', 'blancs', 'noirs', 'secs'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1655,7 +1692,7 @@ const fruits: Ingredient[] = [
     nom: 'rhubarbe',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1669,7 +1706,7 @@ const fruits: Ingredient[] = [
     nom: 'tamarin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT],
+    types: ingredientTypePresets.fruit,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1683,7 +1720,7 @@ const fruits: Ingredient[] = [
     nom: 'yautia',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1697,7 +1734,7 @@ const fruits: Ingredient[] = [
     nom: 'yuzu',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1713,7 +1750,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'amandes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: ingredientTypePresets.nut,
     postAdjectifs: ['', 'effilées', 'mondées'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -1728,7 +1765,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'cacahuètes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: ingredientTypePresets.nut,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1742,7 +1779,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'châtaigne',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: ingredientTypePresets.nut,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -1756,7 +1793,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'noisettes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: ingredientTypePresets.nut,
     postAdjectifs: ['', 'du Piémont'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1771,7 +1808,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'noix',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: ingredientTypePresets.nut,
     postAdjectifs: ['', 'de cajou', 'de macadamia', 'de pecan', 'du Brésil'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1786,7 +1823,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'pistache',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.nutSauce,
     postAdjectifs: ['', 'verte', 'de Bronte'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1801,7 +1838,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'graines',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_A_COQUE],
+    types: ingredientTypePresets.nut,
     postAdjectifs: ['', 'de courge', 'de tournesol', 'de sésame', 'de chia', 'de pavot'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1816,7 +1853,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'pignons de pin',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.nutSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -1830,7 +1867,7 @@ const fruitsACoque: Ingredient[] = [
     nom: 'tahini',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.nutSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1846,7 +1883,7 @@ const legumes: Ingredient[] = [
     nom: 'aubergine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     postAdjectifs: ['', 'violette', 'blanche', 'graffiti', 'japonaise'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -1861,7 +1898,7 @@ const legumes: Ingredient[] = [
     nom: 'brocoli',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'Romanesco', 'violet', 'à jets'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1876,7 +1913,7 @@ const legumes: Ingredient[] = [
     nom: 'bette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'à carde', 'arc-en-ciel'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1891,7 +1928,7 @@ const legumes: Ingredient[] = [
     nom: 'betterave',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'rouge', 'chioggia', 'jaune', 'crapaudine'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1906,7 +1943,7 @@ const legumes: Ingredient[] = [
     nom: 'butternut',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -1920,7 +1957,7 @@ const legumes: Ingredient[] = [
     nom: 'carottes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'nouvelles', 'fanes', 'violettes', 'jaunes', 'de Créances'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1935,7 +1972,7 @@ const legumes: Ingredient[] = [
     nom: 'céleri',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     postAdjectifs: ['', 'branche', 'rave'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1950,7 +1987,7 @@ const legumes: Ingredient[] = [
     nom: 'poireau',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     postAdjectifs: ['', 'primeur', 'baguette'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1965,7 +2002,7 @@ const legumes: Ingredient[] = [
     nom: 'pois',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     postAdjectifs: ['', 'cassés', 'chiches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1980,7 +2017,7 @@ const legumes: Ingredient[] = [
     nom: 'chayotte',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'verte', 'blanche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -1995,7 +2032,7 @@ const legumes: Ingredient[] = [
     nom: 'choux',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    types: ingredientTypePresets.vegetableSalad,
     postAdjectifs: ['', 'rouges', 'verts', 'de Bruxelles', 'fleurs', 'romanesco'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2010,7 +2047,7 @@ const legumes: Ingredient[] = [
     nom: 'courges',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'spaghetti', 'musquées', 'butternut', 'Jack be Little'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2025,7 +2062,7 @@ const legumes: Ingredient[] = [
     nom: 'courgette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'jaune', 'ronde', 'verte', 'trompette'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2040,7 +2077,7 @@ const legumes: Ingredient[] = [
     nom: 'fenouil',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     postAdjectifs: ['', 'bulbe'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2055,7 +2092,7 @@ const legumes: Ingredient[] = [
     nom: 'gombo',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'vert', 'rouge'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2070,7 +2107,7 @@ const legumes: Ingredient[] = [
     nom: 'haricots',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'mungo', 'beurre', 'rouges', 'verts', 'blancs', 'noirs', 'tarbais', 'coco'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2085,7 +2122,7 @@ const legumes: Ingredient[] = [
     nom: 'jicama',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2099,7 +2136,7 @@ const legumes: Ingredient[] = [
     nom: 'kale',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'frisé', 'lacinato', 'rouge'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2114,7 +2151,7 @@ const legumes: Ingredient[] = [
     nom: 'légumes',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2142,7 +2179,7 @@ const legumes: Ingredient[] = [
     nom: 'navet',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'boule d’or', 'long', 'violet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2157,7 +2194,7 @@ const legumes: Ingredient[] = [
     nom: 'panais',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'rond', 'long'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2172,7 +2209,7 @@ const legumes: Ingredient[] = [
     nom: 'patates',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'douces', 'violettes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2187,7 +2224,7 @@ const legumes: Ingredient[] = [
     nom: 'petits pois',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2201,7 +2238,7 @@ const legumes: Ingredient[] = [
     nom: 'poivrons',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SAUCE],
+    types: ingredientTypePresets.vegetableSauce,
     postAdjectifs: ['', 'jaunes', 'rouges', 'verts', 'orange', 'doux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2216,7 +2253,7 @@ const legumes: Ingredient[] = [
     nom: 'pommes de terre',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    types: ingredientTypePresets.vegetableSalad,
     postAdjectifs: ['', 'grenaille', 'nouvelles', 'Ratte', 'Charlotte', 'Bintje', 'vitelotte'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2231,7 +2268,7 @@ const legumes: Ingredient[] = [
     nom: 'potimarron',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'vert', 'Hokkaido'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2246,7 +2283,7 @@ const legumes: Ingredient[] = [
     nom: 'raifort',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -2260,7 +2297,7 @@ const legumes: Ingredient[] = [
     nom: 'salsifis',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2274,7 +2311,7 @@ const legumes: Ingredient[] = [
     nom: 'topinambour',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME],
+    types: ingredientTypePresets.vegetable,
     postAdjectifs: ['', 'rose', 'blanc'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2291,7 +2328,7 @@ const champignons: Ingredient[] = [
     nom: 'cèpes',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     postAdjectifs: ['', 'de Bordeaux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2306,7 +2343,7 @@ const champignons: Ingredient[] = [
     nom: 'champignons',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON],
+    types: ingredientTypePresets.mushroom,
     postAdjectifs: ['', 'de Paris', 'bruns', 'blonds'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2321,7 +2358,7 @@ const champignons: Ingredient[] = [
     nom: 'girolles',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     postAdjectifs: ['', 'jaunes', 'grises', 'fraîches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2336,7 +2373,7 @@ const champignons: Ingredient[] = [
     nom: 'lactaires',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON],
+    types: ingredientTypePresets.mushroom,
     postAdjectifs: ['', 'sanguins'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2351,7 +2388,7 @@ const champignons: Ingredient[] = [
     nom: 'morilles',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2365,7 +2402,7 @@ const champignons: Ingredient[] = [
     nom: 'mousserons',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON],
+    types: ingredientTypePresets.mushroom,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2379,7 +2416,7 @@ const champignons: Ingredient[] = [
     nom: 'pleurotes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     postAdjectifs: ['', 'grises', 'jaunes', 'du panicaut'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2394,7 +2431,7 @@ const champignons: Ingredient[] = [
     nom: 'shiitakés',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2408,7 +2445,7 @@ const champignons: Ingredient[] = [
     nom: 'trompettes de la mort',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2422,7 +2459,7 @@ const champignons: Ingredient[] = [
     nom: 'truffe',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHAMPIGNON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.mushroomSauce,
     postAdjectifs: ['', 'noire', 'blanche', 'd’été', 'du Périgord', 'd’Alba'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2437,7 +2474,7 @@ const champignons: Ingredient[] = [
     nom: 'oronges',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHAMPIGNON],
+    types: ingredientTypePresets.mushroom,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
       [TypeDeterminant.SECONDAIRE]: 'des',
@@ -2453,7 +2490,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'calamar',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'grillé', 'frit', 'farci'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2468,7 +2505,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'crabe',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'tourteau', 'araignée', 'royal', 'des neiges'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2483,7 +2520,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'crustacés',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE],
+    types: ingredientTypePresets.seafoodSauce,
     postAdjectifs: ['', 'roses', 'grillés', 'décortiqués'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2498,7 +2535,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'écrevisse',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'de rivière', 'à pattes rouges'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -2513,7 +2550,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'fruits de mer',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE],
+    types: ingredientTypePresets.seafoodSauce,
     postAdjectifs: ['', 'grillés', 'marinés', 'en persillade'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2528,7 +2565,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'gambas',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'tigrées', 'royales', 'grillées'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2543,7 +2580,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'homard',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'bleu', 'breton', 'canadien'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2558,7 +2595,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'huîtres',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'creuses', 'plates', 'de Cancale', 'Gillardeau'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -2573,7 +2610,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'langoustines',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'bretonnes', 'vivantes', 'glacées'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2588,7 +2625,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'moules',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'de bouchot', 'd’Espagne', 'marinières'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2603,7 +2640,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'noix de Saint Jacques',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'fraîches', 'snackées', 'corail'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2618,7 +2655,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'poulpe',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'grillé', 'mariné', 'à la galicienne'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2633,7 +2670,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'seiche',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'grillée', 'à l’encre'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2648,7 +2685,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'encornets',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'farcis', 'grillés', 'à l’encre'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -2663,7 +2700,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'crevettes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE],
+    types: ingredientTypePresets.seafoodSauce,
     postAdjectifs: ['', 'roses', 'grises', 'bouquet', 'tigrées'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2678,7 +2715,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'palourdes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'grises', 'roses', 'farcies'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2693,7 +2730,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'coques',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'fraîches', 'au naturel'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2708,7 +2745,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'praires',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'farcies', 'crues'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2723,7 +2760,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'bulots',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'cuits', 'épicés'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2738,7 +2775,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'bigorneaux',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'cuits', 'au naturel'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2753,7 +2790,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'couteaux',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'grillés', 'en persillade'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2768,7 +2805,7 @@ const fruitsDeMer: Ingredient[] = [
     nom: 'oursins',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT_DE_MER],
+    types: ingredientTypePresets.seafood,
     postAdjectifs: ['', 'violets', 'de Méditerranée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -2785,7 +2822,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'abats',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.VIANDE_ROUGE],
+    types: ingredientTypePresets.redMeat,
     postAdjectifs: ['', 'de veau', 'd’agneau', 'de bœuf'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -2800,7 +2837,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'agneau',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'de lait', 'pré-salé', 'fermier', 'confit'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -2815,7 +2852,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'bœuf',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'charolais', 'angus', 'wagyu', 'maturé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2830,7 +2867,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'cerf',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'sauvage', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2845,7 +2882,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'cervelle',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE],
+    types: ingredientTypePresets.redMeat,
     postAdjectifs: ['', 'de veau', 'd’agneau'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2860,7 +2897,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'cheval',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE],
+    types: ingredientTypePresets.redMeat,
     postAdjectifs: ['', 'fumé', 'haché'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2875,7 +2912,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'gibier',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'à plume', 'à poil', 'sauvage'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2905,7 +2942,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'kangourou',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE],
+    types: ingredientTypePresets.redMeat,
     postAdjectifs: ['', 'fumé', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2920,7 +2957,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'mouton',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'confit', 'épicé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2935,7 +2972,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'porc',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'fermier', 'ibérique', 'noir de Bigorre', 'confit'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2950,7 +2987,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'sanglier',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'mariné', 'sauvage', 'confit'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2965,7 +3002,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'veau',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'de lait', 'fermier', 'rosé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2980,7 +3017,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'chevreuil',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.redMeatSauce,
     postAdjectifs: ['', 'sauvage', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -2995,7 +3032,7 @@ const viandesRouges: Ingredient[] = [
     nom: 'autruche',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_ROUGE],
+    types: ingredientTypePresets.redMeat,
     postAdjectifs: ['', 'fumée', 'marinée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3012,7 +3049,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'canard',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: ingredientTypePresets.whiteMeat,
     postAdjectifs: ['', 'fermier', 'confit', 'fumé', 'laqué'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3027,7 +3064,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'chapon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: ingredientTypePresets.whiteMeat,
     postAdjectifs: ['', 'fermier', 'farci'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3042,7 +3079,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'gésiers',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: ingredientTypePresets.whiteMeat,
     postAdjectifs: ['', 'confits', 'de canard', 'de volaille'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3057,7 +3094,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'grenouilles',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: ingredientTypePresets.whiteMeat,
     postAdjectifs: ['', 'fraîches', 'en persillade'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3087,7 +3124,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'poulet',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.whiteMeatSauce,
     postAdjectifs: ['', 'fermier', 'rôti', 'jaune', 'boucané'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3102,7 +3139,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'dinde',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.whiteMeatSauce,
     postAdjectifs: ['', 'fermière', 'fumée', 'rôtie'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3117,7 +3154,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'lapin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.whiteMeatSauce,
     postAdjectifs: ['', 'fermier', 'confit', 'mariné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3132,7 +3169,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'pintade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.whiteMeatSauce,
     postAdjectifs: ['', 'fermière', 'rôtie', 'farcie'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3147,7 +3184,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'caille',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE],
+    types: ingredientTypePresets.whiteMeat,
     postAdjectifs: ['', 'farcie', 'rôtie', 'fumée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3162,7 +3199,7 @@ const viandesBlanches: Ingredient[] = [
     nom: 'oie',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.VIANDE_BLANCHE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.whiteMeatSauce,
     postAdjectifs: ['', 'confite', 'fumée', 'rôtie'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3194,7 +3231,7 @@ const salades: Ingredient[] = [
     nom: 'artichaut',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'violet', 'poivrade', 'camus'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3224,7 +3261,7 @@ const salades: Ingredient[] = [
     nom: 'avocat',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSaladSauce,
     postAdjectifs: ['', 'Hass', 'fuerte', 'bacon'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3268,7 +3305,7 @@ const salades: Ingredient[] = [
     nom: 'cresson',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'de fontaine', 'alénois'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3283,7 +3320,7 @@ const salades: Ingredient[] = [
     nom: 'endives',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'rouges', 'blanches'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3298,7 +3335,7 @@ const salades: Ingredient[] = [
     nom: 'épinards',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    types: ingredientTypePresets.vegetableSalad,
     postAdjectifs: ['', 'frais', 'jeunes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3313,7 +3350,7 @@ const salades: Ingredient[] = [
     nom: 'escargots',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'de Bourgogne', 'petits-gris'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3328,7 +3365,7 @@ const salades: Ingredient[] = [
     nom: 'foie gras',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'de canard', 'd’oie'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3343,7 +3380,7 @@ const salades: Ingredient[] = [
     nom: 'laitue',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'romaine', 'iceberg', 'batavia', 'feuille de chêne'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3388,7 +3425,7 @@ const salades: Ingredient[] = [
     nom: 'pousses de bambou',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     postAdjectifs: ['', 'croquantes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3403,7 +3440,7 @@ const salades: Ingredient[] = [
     nom: 'radis',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LEGUME, TypeAliment.SALADE],
+    types: ingredientTypePresets.vegetableSalad,
     postAdjectifs: ['', 'noir', 'rose', 'daikon', 'red meat'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3418,7 +3455,7 @@ const salades: Ingredient[] = [
     nom: 'roquette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SALADE],
+    types: ingredientTypePresets.salad,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -3432,7 +3469,7 @@ const salades: Ingredient[] = [
     nom: 'tomates',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.FRUIT, TypeAliment.SALADE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fruitSaladSauce,
     postAdjectifs: ['', 'cerises', 'anciennes', 'vertes', 'Roma', 'cœur de bœuf', 'San Marzano'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3449,7 +3486,7 @@ const poissons: Ingredient[] = [
     nom: 'bar',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'de ligne', 'sauvage', 'd’élevage'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3464,7 +3501,7 @@ const poissons: Ingredient[] = [
     nom: 'hareng',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'fumé', 'mariné', 'saur'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3479,7 +3516,7 @@ const poissons: Ingredient[] = [
     nom: 'lotte',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'de mer', 'fraîche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3494,7 +3531,7 @@ const poissons: Ingredient[] = [
     nom: 'sardines',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.POISSON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fishSauce,
     postAdjectifs: ['', 'fraîches', 'grillées', 'à l’huile', 'fumées'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3509,7 +3546,7 @@ const poissons: Ingredient[] = [
     nom: 'saumon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'fumé', 'frais', 'sauvage', 'd’Écosse', 'gravlax'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3524,7 +3561,7 @@ const poissons: Ingredient[] = [
     nom: 'thon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'rouge', 'blanc', 'albacore', 'germon', 'fumé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3539,7 +3576,7 @@ const poissons: Ingredient[] = [
     nom: 'tilapia',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'frais', 'grillé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3554,7 +3591,7 @@ const poissons: Ingredient[] = [
     nom: 'truite',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fishSauce,
     postAdjectifs: ['', 'fumée', 'arc-en-ciel', 'fario', 'saumonée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3569,7 +3606,7 @@ const poissons: Ingredient[] = [
     nom: 'cabillaud',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'frais', 'demi-sel'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3584,7 +3621,7 @@ const poissons: Ingredient[] = [
     nom: 'morue',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'salée', 'dessalée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3599,7 +3636,7 @@ const poissons: Ingredient[] = [
     nom: 'dorade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'royale', 'grise', 'rose'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3614,7 +3651,7 @@ const poissons: Ingredient[] = [
     nom: 'maquereau',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fishSauce,
     postAdjectifs: ['', 'fumé', 'mariné', 'grillé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3629,7 +3666,7 @@ const poissons: Ingredient[] = [
     nom: 'sole',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'meunière', 'de ligne'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3644,7 +3681,7 @@ const poissons: Ingredient[] = [
     nom: 'merlu',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'blanc', 'de ligne'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3659,7 +3696,7 @@ const poissons: Ingredient[] = [
     nom: 'anchois',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.POISSON, TypeAliment.SAUCE],
+    types: ingredientTypePresets.fishSauce,
     postAdjectifs: ['', 'marinés', 'salés', 'à l’huile'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3674,7 +3711,7 @@ const poissons: Ingredient[] = [
     nom: 'lieu',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'noir', 'jaune'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3689,7 +3726,7 @@ const poissons: Ingredient[] = [
     nom: 'turbot',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'sauvage', 'd’élevage'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3704,7 +3741,7 @@ const poissons: Ingredient[] = [
     nom: 'rouget',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'barbet', 'grondin'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3719,7 +3756,7 @@ const poissons: Ingredient[] = [
     nom: 'espadon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'grillé', 'fumé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3734,7 +3771,7 @@ const poissons: Ingredient[] = [
     nom: 'anguille',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.POISSON],
+    types: ingredientTypePresets.fish,
     postAdjectifs: ['', 'fumée', 'de rivière'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3751,7 +3788,7 @@ const charcuteries: Ingredient[] = [
     nom: 'lard',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'fumé', 'salé', 'paysan'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3766,7 +3803,7 @@ const charcuteries: Ingredient[] = [
     nom: 'saucisson',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'sec', 'à l’ail', 'brioché', 'de Lyon'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3796,7 +3833,7 @@ const charcuteries: Ingredient[] = [
     nom: 'bacon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'fumé', 'grillé', 'anglais'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3811,7 +3848,7 @@ const charcuteries: Ingredient[] = [
     nom: 'pancetta',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'roulée', 'fumée', 'poivrée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3826,7 +3863,7 @@ const charcuteries: Ingredient[] = [
     nom: 'coppa',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'corse', 'italienne', 'affinée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3841,7 +3878,7 @@ const charcuteries: Ingredient[] = [
     nom: 'mortadelle',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'de Bologne', 'à la pistache', 'truffée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3856,7 +3893,7 @@ const charcuteries: Ingredient[] = [
     nom: 'andouille',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'de Guémené', 'de Vire', 'fumée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -3871,7 +3908,7 @@ const charcuteries: Ingredient[] = [
     nom: 'rosette',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'de Lyon', 'sèche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3886,7 +3923,7 @@ const charcuteries: Ingredient[] = [
     nom: 'pastrami',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'fumé', 'épicé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3901,7 +3938,7 @@ const charcuteries: Ingredient[] = [
     nom: 'speck',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'fumé', 'du Tyrol'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3916,7 +3953,7 @@ const charcuteries: Ingredient[] = [
     nom: 'guanciale',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'poivré', 'affiné'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3931,7 +3968,7 @@ const charcuteries: Ingredient[] = [
     nom: 'rillettes',
     genre: Genre.FEMININ,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.CHARCUTERIE],
+    types: ingredientTypePresets.charcuterie,
     postAdjectifs: ['', 'de porc', 'de canard', 'du Mans', 'de Tours'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3948,7 +3985,7 @@ const cerales: Ingredient[] = [
     nom: 'blé',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'dur', 'tendre', 'complet', 'ancien'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -3978,7 +4015,7 @@ const cerales: Ingredient[] = [
     nom: 'fève de tonka',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CEREALE],
+    types: ingredientTypePresets.cereal,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -4007,7 +4044,7 @@ const cerales: Ingredient[] = [
     nom: 'orge',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CEREALE],
+    types: ingredientTypePresets.cereal,
     postAdjectifs: ['', 'perlée', 'mondée', 'torréfiée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -4052,7 +4089,7 @@ const cerales: Ingredient[] = [
     nom: 'soja',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.CEREALE],
+    types: ingredientTypePresets.cereal,
     postAdjectifs: ['', 'jaune', 'noir', 'vert'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4097,7 +4134,7 @@ const cerales: Ingredient[] = [
     nom: 'avoine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'complète', 'mondée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -4112,7 +4149,7 @@ const cerales: Ingredient[] = [
     nom: 'épeautre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'complet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -4127,7 +4164,7 @@ const cerales: Ingredient[] = [
     nom: 'sarrasin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'grillé', 'décortiqué', 'complet'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4142,7 +4179,7 @@ const cerales: Ingredient[] = [
     nom: 'millet',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -4171,7 +4208,7 @@ const cerales: Ingredient[] = [
     nom: 'semoule',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'fine', 'complète', 'de blé dur'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4186,7 +4223,7 @@ const cerales: Ingredient[] = [
     nom: 'polenta',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'fine', 'crémeuse', 'grillée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4203,7 +4240,7 @@ const alcools: Ingredient[] = [
     nom: 'rhum',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'ambré', 'blanc', 'vieux', 'agricole', 'épicé'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4218,7 +4255,7 @@ const alcools: Ingredient[] = [
     nom: 'vin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholLiquidSauce,
     postAdjectifs: ['', 'rouge', 'blanc', 'rosé', 'jaune', 'moelleux', 'sec'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4233,7 +4270,7 @@ const alcools: Ingredient[] = [
     nom: 'bière',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholLiquidSauce,
     postAdjectifs: ['', 'blonde', 'brune', 'ambrée', 'blanche', 'stout', 'sour', 'IPA', 'triple'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4248,7 +4285,7 @@ const alcools: Ingredient[] = [
     nom: 'cidre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholLiquidSauce,
     postAdjectifs: ['', 'brut', 'doux', 'fermier', 'bouché'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4263,7 +4300,7 @@ const alcools: Ingredient[] = [
     nom: 'whisky',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'tourbé', 'bourbon', 'single malt', 'de seigle'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4278,7 +4315,7 @@ const alcools: Ingredient[] = [
     nom: 'cognac',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'VSOP', 'XO', 'jeune'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4293,7 +4330,7 @@ const alcools: Ingredient[] = [
     nom: 'armagnac',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'blanc', 'vieux', 'hors d’âge'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -4308,7 +4345,7 @@ const alcools: Ingredient[] = [
     nom: 'calvados',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'jeune', 'vieux', 'fermier'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4323,7 +4360,7 @@ const alcools: Ingredient[] = [
     nom: 'porto',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'rouge', 'blanc', 'tawny', 'ruby'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4338,7 +4375,7 @@ const alcools: Ingredient[] = [
     nom: 'marsala',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'sec', 'doux', 'ambré'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4353,7 +4390,7 @@ const alcools: Ingredient[] = [
     nom: 'saké',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'junmai', 'ginjo', 'doux'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4368,7 +4405,7 @@ const alcools: Ingredient[] = [
     nom: 'vodka',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'nature', 'à l’herbe de bison', 'infusée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4383,7 +4420,7 @@ const alcools: Ingredient[] = [
     nom: 'gin',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'dry', 'aux agrumes', 'aux herbes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4398,7 +4435,7 @@ const alcools: Ingredient[] = [
     nom: 'pastis',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'marseillais', 'artisanal'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4413,7 +4450,7 @@ const alcools: Ingredient[] = [
     nom: 'chartreuse',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'verte', 'jaune'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4428,7 +4465,7 @@ const alcools: Ingredient[] = [
     nom: 'kirsch',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'd’Alsace', 'de Fougerolles'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4443,7 +4480,7 @@ const alcools: Ingredient[] = [
     nom: 'liqueur',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.ALCOOL, TypeAliment.SAUCE],
+    types: ingredientTypePresets.alcoholSauce,
     postAdjectifs: ['', 'd’orange', 'de café', 'de poire', 'de menthe'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4475,7 +4512,7 @@ const liquides: Ingredient[] = [
     nom: 'thé',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['', 'vert', 'noir', 'fumé', 'jasmin', 'matcha'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4505,7 +4542,7 @@ const liquides: Ingredient[] = [
     nom: 'bouillon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['', 'de légumes', 'de volaille', 'de bœuf', 'de champignons', 'dashi'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4520,7 +4557,7 @@ const liquides: Ingredient[] = [
     nom: 'fond',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['brun', 'blanc', 'de veau', 'de volaille', 'de légumes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4535,7 +4572,7 @@ const liquides: Ingredient[] = [
     nom: 'fumet',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['de poisson', 'de crustacés', 'de champignons'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4550,7 +4587,7 @@ const liquides: Ingredient[] = [
     nom: 'vinaigre',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['', 'balsamique', 'de cidre', 'de vin', 'de riz', 'de xérès'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4565,7 +4602,7 @@ const liquides: Ingredient[] = [
     nom: 'saumure',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['', 'vinaigrée', 'épicée', 'aux herbes'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4594,7 +4631,7 @@ const liquides: Ingredient[] = [
     nom: 'sauce soja',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['', 'claire', 'foncée', 'sucrée', 'tamari'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4609,7 +4646,7 @@ const liquides: Ingredient[] = [
     nom: 'nuoc-mâm',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.LIQUIDE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.liquidSauce,
     postAdjectifs: ['', 'pur', 'dilué'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4626,7 +4663,7 @@ const sucres: Ingredient[] = [
     nom: 'cacao',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'en poudre', 'du Venezuela', 'de Madagascar'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4641,7 +4678,7 @@ const sucres: Ingredient[] = [
     nom: 'caramel',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.sugarSauce,
     postAdjectifs: ['', 'au beurre salé', 'blond', 'brun', 'mou'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4656,7 +4693,7 @@ const sucres: Ingredient[] = [
     nom: 'biscuit',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'sablé', 'breton', 'à la cuillère', 'amaretti'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4671,7 +4708,7 @@ const sucres: Ingredient[] = [
     nom: 'financier',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -4685,7 +4722,7 @@ const sucres: Ingredient[] = [
     nom: 'chocolat',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.sugarSauce,
     postAdjectifs: ['', 'au lait', 'blanc', 'noir', 'praliné', 'gianduja'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4700,7 +4737,7 @@ const sucres: Ingredient[] = [
     nom: 'confiture',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.sugarSauce,
     postAdjectifs: ['', 'de fraise', 'd’abricot', 'de figue', 'de framboise', 'd’orange'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4730,7 +4767,7 @@ const sucres: Ingredient[] = [
     nom: 'crème de marrons',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -4744,7 +4781,7 @@ const sucres: Ingredient[] = [
     nom: 'gelée',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.sugarSauce,
     postAdjectifs: ['', 'de groseille', 'de coing', 'de pomme', 'de cassis'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4759,7 +4796,7 @@ const sucres: Ingredient[] = [
     nom: 'marrons',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'glacés', 'confits'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4774,7 +4811,7 @@ const sucres: Ingredient[] = [
     nom: 'miel',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE, TypeAliment.SAUCE],
+    types: ingredientTypePresets.sugarSauce,
     postAdjectifs: ['', 'd’acacia', 'de châtaignier', 'de lavande', 'de fleurs', 'de sapin'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4789,7 +4826,7 @@ const sucres: Ingredient[] = [
     nom: 'pâte à tartiner',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'pistache', 'noisette', 'chocolatée', 'pralinée'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4804,7 +4841,7 @@ const sucres: Ingredient[] = [
     nom: 'pâte de fruits',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'de la',
@@ -4818,7 +4855,7 @@ const sucres: Ingredient[] = [
     nom: 'praliné',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'amande', 'noisette', 'pécan', 'pistache'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4833,7 +4870,7 @@ const sucres: Ingredient[] = [
     nom: 'spéculoos',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
       [TypeDeterminant.SECONDAIRE]: 'du',
@@ -4847,7 +4884,7 @@ const sucres: Ingredient[] = [
     nom: 'nougat',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'blanc', 'noir', 'de Montélimar', 'tendre'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4862,7 +4899,7 @@ const sucres: Ingredient[] = [
     nom: 'pain d’épices',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.SUCRE],
+    types: ingredientTypePresets.sugar,
     postAdjectifs: ['', 'moelleux', 'de Dijon', 'aux agrumes', 'au miel'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4894,7 +4931,7 @@ const bases: Ingredient[] = [
     nom: 'pain',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE],
+    types: ingredientTypePresets.base,
     postAdjectifs: ['', 'de campagne', 'au levain', 'complet', 'de seigle', 'brioché'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4909,7 +4946,7 @@ const bases: Ingredient[] = [
     nom: 'huile',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE],
+    types: ingredientTypePresets.base,
     postAdjectifs: ['', 'd’olive', 'de noix', 'de noisette', 'de sésame', 'neutre'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'd’',
@@ -4924,7 +4961,7 @@ const bases: Ingredient[] = [
     nom: 'farine',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE, TypeAliment.CEREALE],
+    types: ingredientTypePresets.baseCereal,
     postAdjectifs: ['', 'de blé', 'de seigle', 'de sarrasin', 'complète', 'de pois chiche'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4939,7 +4976,7 @@ const bases: Ingredient[] = [
     nom: 'pâte',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE],
+    types: ingredientTypePresets.base,
     postAdjectifs: ['', 'brisée', 'feuilletée', 'sablée', 'à pizza', 'filo'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',
@@ -4954,7 +4991,7 @@ const bases: Ingredient[] = [
     nom: 'levain',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    types: [TypeAliment.BASE],
+    types: ingredientTypePresets.base,
     postAdjectifs: ['', 'naturel', 'liquide', 'dur'],
     determinants: {
       [TypeDeterminant.PRINCIPAL]: 'de',

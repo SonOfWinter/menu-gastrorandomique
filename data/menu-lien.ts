@@ -1416,7 +1416,7 @@ const liens: Lien[] = [
     compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
-    id: 'cb34194c-b3bd-4b22-912a-b8a60a404f5f',
+    id: '56531020-2e2c-4b69-aa66-122ff89fb934',
     noms: {
       [Genre.MASCULIN]: {
         [Nombre.SINGULIER]: 'couronné d’un souffle',
