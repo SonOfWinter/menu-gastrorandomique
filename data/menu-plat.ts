@@ -3,38 +3,8 @@ import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypePlat } from '@/types/enums/type-plat';
 import { Plat } from '@/types/data/plat';
-
-const platTypePresets = {
-  entry: [TypePlat.ENTREE],
-  main: [TypePlat.PLAT],
-  dessert: [TypePlat.DESSERT],
-  entryAndMain: [TypePlat.ENTREE, TypePlat.PLAT],
-  entryAndDessert: [TypePlat.ENTREE, TypePlat.DESSERT],
-  allCourses: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
-} satisfies Record<string, TypePlat[]>;
-
-const platAlimentPresets = {
-  none: [],
-  fruit: [TypeAliment.FRUIT],
-  vegetable: [TypeAliment.LEGUME],
-  redMeat: [TypeAliment.VIANDE_ROUGE],
-  whiteMeat: [TypeAliment.VIANDE_BLANCHE],
-  redAndWhiteMeat: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-  fishAndSeafood: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-  fruitAndNut: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
-  fruitSugarNut: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
-  fruitNutSugar: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
-  fruitNutSugarCereal: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
-  fruitNutSugarCheese: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
-  fruitSugarNutCheese: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
-  savoryCore: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-  savoryCoreWithCheese: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-  friedSavoryCore: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-  savoryCoreWithCheeseBeforeWhiteMeat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-  fullSavoryComposition: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-  savoryCoreWithSaladAndWhiteMeat: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-} satisfies Record<string, TypeAliment[]>;
-
+import { alimentTypePresets } from '@/data-presets/type-aliment-presets';
+import { platTypePresets } from '@/data-presets/type-plat-presets';
 
 const dessertAndPastryPlats: Plat[] = [
   {
@@ -44,8 +14,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.ALCOOL],
     },
   },
@@ -57,8 +27,8 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNutCheese,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNutCheese,
     },
   },
   {
@@ -69,7 +39,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.dessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
   },
@@ -80,8 +50,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -92,9 +62,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
   {
@@ -104,9 +74,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
   {
@@ -116,9 +86,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
   {
@@ -128,8 +98,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -152,9 +122,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNut,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNut,
     },
   },
   {
@@ -164,8 +134,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE],
     },
   },
@@ -177,7 +147,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
     },
   },
@@ -188,8 +158,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE],
     },
   },
@@ -201,7 +171,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
     },
   },
@@ -212,9 +182,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugar,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugar,
     },
   },
   {
@@ -224,8 +194,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -236,9 +206,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCereal,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCereal,
     },
   },
   {
@@ -249,7 +219,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE],
     },
   },
@@ -261,7 +231,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.BASE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
     },
   },
@@ -272,9 +242,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugar,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugar,
     },
   },
   {
@@ -284,9 +254,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNut,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNut,
     },
   },
   {
@@ -296,9 +266,9 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNut,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNut,
     },
   },
   {
@@ -308,8 +278,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -321,7 +291,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.CHAMPIGNON, TypeAliment.LEGUME],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.ALCOOL],
     },
   },
@@ -333,7 +303,7 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.CEREALE, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.LEGUME],
     },
   },
@@ -345,8 +315,8 @@ const dessertAndPastryPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCereal,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCereal,
     },
   },
   {
@@ -368,8 +338,8 @@ const dessertAndPastryPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.LAITIER],
     },
   },
@@ -383,9 +353,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.whiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.whiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.whiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.whiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -395,9 +365,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.whiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.whiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.whiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.whiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -407,9 +377,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -421,7 +391,7 @@ const meatPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -433,7 +403,7 @@ const meatPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
   {
@@ -443,9 +413,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -455,9 +425,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redAndWhiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redAndWhiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redAndWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redAndWhiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -467,9 +437,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -481,7 +451,7 @@ const meatPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -493,7 +463,7 @@ const meatPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -503,9 +473,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.savoryCore,
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitAndNut,
+      [TypePlat.ENTREE]: alimentTypePresets.savoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitAndNut,
     },
   },
   {
@@ -517,7 +487,7 @@ const meatPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitAndNut,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitAndNut,
     },
   },
   {
@@ -527,9 +497,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -539,9 +509,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.whiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.whiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.whiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.whiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -551,9 +521,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -563,9 +533,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -575,9 +545,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -587,9 +557,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -599,9 +569,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -611,9 +581,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entry,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redAndWhiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redAndWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -623,9 +593,9 @@ const meatPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
 ];
@@ -638,8 +608,8 @@ const friedPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.friedSavoryCore,
-      [TypePlat.PLAT]: platAlimentPresets.friedSavoryCore,
+      [TypePlat.ENTREE]: alimentTypePresets.friedSavoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.friedSavoryCore,
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
   },
@@ -650,8 +620,8 @@ const friedPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.friedSavoryCore,
-      [TypePlat.PLAT]: platAlimentPresets.friedSavoryCore,
+      [TypePlat.ENTREE]: alimentTypePresets.friedSavoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.friedSavoryCore,
       [TypePlat.DESSERT]: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
   },
@@ -663,8 +633,8 @@ const friedPlats: Plat[] = [
     types: platTypePresets.entry,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -674,9 +644,9 @@ const friedPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entryAndDessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
   {
@@ -687,7 +657,7 @@ const friedPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -710,9 +680,9 @@ const friedPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.vegetable,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.vegetable,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -722,9 +692,9 @@ const friedPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.whiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.whiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.whiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.whiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
 ];
@@ -738,8 +708,8 @@ const stuffedAndRolledPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNutCheese,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNutCheese,
     },
   },
   {
@@ -750,7 +720,7 @@ const stuffedAndRolledPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.CEREALE],
     },
   },
@@ -762,7 +732,7 @@ const stuffedAndRolledPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheeseBeforeWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheeseBeforeWhiteMeat,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE],
     },
   },
@@ -775,7 +745,7 @@ const stuffedAndRolledPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -787,7 +757,7 @@ const stuffedAndRolledPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -810,7 +780,7 @@ const stuffedAndRolledPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
     },
   },
@@ -822,7 +792,7 @@ const stuffedAndRolledPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
     },
   },
@@ -847,7 +817,7 @@ const stuffedAndRolledPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.FROMAGE],
       [TypePlat.PLAT]: [TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -859,7 +829,7 @@ const stuffedAndRolledPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -871,7 +841,7 @@ const stuffedAndRolledPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE],
       [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
 ];
@@ -884,9 +854,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.redAndWhiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.redAndWhiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -896,9 +866,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.fishAndSeafood,
-      [TypePlat.PLAT]: platAlimentPresets.fishAndSeafood,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.fishAndSeafood,
+      [TypePlat.PLAT]: alimentTypePresets.fishAndSeafood,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -908,9 +878,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.fishAndSeafood,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.fishAndSeafood,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -920,9 +890,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -944,9 +914,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -956,9 +926,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.CHAMPIGNON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -970,7 +940,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -980,9 +950,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -992,9 +962,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redAndWhiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redAndWhiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redAndWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redAndWhiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1004,9 +974,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1016,9 +986,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1030,7 +1000,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1042,7 +1012,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1054,7 +1024,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHAMPIGNON],
       [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.BASE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1064,9 +1034,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1078,7 +1048,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1088,9 +1058,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1102,7 +1072,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE, TypeAliment.CHAMPIGNON, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1112,9 +1082,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1125,8 +1095,8 @@ const stewedAndSaucyPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCereal,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCereal,
     },
   },
   {
@@ -1137,8 +1107,8 @@ const stewedAndSaucyPlats: Plat[] = [
     types: platTypePresets.entryAndMain,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1148,9 +1118,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1160,9 +1130,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.vegetable,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.vegetable,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1184,9 +1154,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.savoryCore,
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.savoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1196,9 +1166,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.LEGUME],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1210,7 +1180,7 @@ const stewedAndSaucyPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1220,9 +1190,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1232,9 +1202,9 @@ const stewedAndSaucyPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.vegetable,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.vegetable,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
 ];
@@ -1248,8 +1218,8 @@ const rawAndColdPlats: Plat[] = [
     types: platTypePresets.entry,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.POISSON],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1260,8 +1230,8 @@ const rawAndColdPlats: Plat[] = [
     types: platTypePresets.entry,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1272,8 +1242,8 @@ const rawAndColdPlats: Plat[] = [
     types: platTypePresets.entry,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.FRUIT],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1296,7 +1266,7 @@ const rawAndColdPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -1308,7 +1278,7 @@ const rawAndColdPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.LEGUME, TypeAliment.FRUIT],
     },
   },
@@ -1320,8 +1290,8 @@ const rawAndColdPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitAndNut,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitAndNut,
     },
   },
   {
@@ -1331,9 +1301,9 @@ const rawAndColdPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.redMeat,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.redMeat,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
 ];
@@ -1346,9 +1316,9 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     nombre: Nombre.PLURIEL,
     types: platTypePresets.entry,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.fishAndSeafood,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.fishAndSeafood,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1360,7 +1330,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugar,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugar,
     },
   },
   {
@@ -1372,7 +1342,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1383,7 +1353,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
     },
   },
@@ -1395,8 +1365,8 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     types: platTypePresets.entryAndMain,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheese,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1407,7 +1377,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheese,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheese,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
     },
   },
@@ -1420,7 +1390,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1432,7 +1402,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FROMAGE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1443,8 +1413,8 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     types: platTypePresets.entryAndMain,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.SALADE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheeseBeforeWhiteMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheeseBeforeWhiteMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1456,7 +1426,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1468,7 +1438,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCheese,
     },
   },
   {
@@ -1479,8 +1449,8 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     types: platTypePresets.entry,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
 ];
@@ -1529,9 +1499,9 @@ const sauceAndTexturePlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.vegetable,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.vegetable,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1543,7 +1513,7 @@ const sauceAndTexturePlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.SAUCE, TypeAliment.BASE],
       [TypePlat.PLAT]: [TypeAliment.BASE, TypeAliment.SAUCE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1566,7 +1536,7 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -1577,8 +1547,8 @@ const sauceAndTexturePlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.savoryCoreWithSaladAndWhiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
+      [TypePlat.ENTREE]: alimentTypePresets.savoryCoreWithSaladAndWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.LEGUME],
     },
   },
@@ -1590,8 +1560,8 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
   {
@@ -1602,8 +1572,8 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNutCheese,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNutCheese,
     },
   },
   {
@@ -1613,9 +1583,9 @@ const sauceAndTexturePlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.whiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCereal,
+      [TypePlat.ENTREE]: alimentTypePresets.whiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCereal,
     },
   },
   {
@@ -1626,7 +1596,7 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.CHAMPIGNON],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -1638,7 +1608,7 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SUCRE],
     },
   },
@@ -1649,8 +1619,8 @@ const sauceAndTexturePlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.savoryCoreWithSaladAndWhiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.savoryCoreWithSaladAndWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.CEREALE],
     },
   },
@@ -1662,8 +1632,8 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndMain,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.vegetable,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.vegetable,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1673,8 +1643,8 @@ const sauceAndTexturePlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE],
     },
   },
@@ -1687,7 +1657,7 @@ const sauceAndTexturePlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CEREALE],
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.EPICE, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SAUCE, TypeAliment.FROMAGE, TypeAliment.LAITIER, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1698,8 +1668,8 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitAndNut,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitAndNut,
     },
   },
   {
@@ -1710,8 +1680,8 @@ const sauceAndTexturePlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNut,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNut,
     },
   },
   {
@@ -1721,9 +1691,9 @@ const sauceAndTexturePlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.vegetable,
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruit,
+      [TypePlat.ENTREE]: alimentTypePresets.vegetable,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruit,
     },
   },
 ];
@@ -1749,7 +1719,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.LAITIER],
     },
   },
@@ -1761,8 +1731,8 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitAndNut,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitAndNut,
     },
   },
   {
@@ -1773,7 +1743,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FRUIT_DE_MER],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -1785,7 +1755,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.ALCOOL, TypeAliment.FRUIT_A_COQUE, TypeAliment.BASE, TypeAliment.SAUCE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheeseBeforeWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheeseBeforeWhiteMeat,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
   },
@@ -1820,9 +1790,9 @@ const otherPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.fullSavoryComposition,
+      [TypePlat.ENTREE]: alimentTypePresets.fullSavoryComposition,
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCheese,
     },
   },
   {
@@ -1833,8 +1803,8 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entry,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1845,7 +1815,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE, TypeAliment.SALADE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheese,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheese,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.ALCOOL],
     },
   },
@@ -1857,7 +1827,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCoreWithCheese,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheese,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.ALCOOL],
     },
   },
@@ -1868,8 +1838,8 @@ const otherPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.savoryCoreWithSaladAndWhiteMeat,
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
+      [TypePlat.ENTREE]: alimentTypePresets.savoryCoreWithSaladAndWhiteMeat,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.CEREALE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FROMAGE],
     },
   },
@@ -1882,7 +1852,7 @@ const otherPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNutCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNutCheese,
     },
   },
   {
@@ -1892,9 +1862,9 @@ const otherPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.none,
-      [TypePlat.PLAT]: platAlimentPresets.redMeat,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.ENTREE]: alimentTypePresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.redMeat,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1905,7 +1875,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE],
     },
   },
@@ -1917,7 +1887,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.none,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.LAITIER],
     },
   },
@@ -1929,8 +1899,8 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entryAndMain,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
-      [TypePlat.DESSERT]: platAlimentPresets.none,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
+      [TypePlat.DESSERT]: alimentTypePresets.none,
     },
   },
   {
@@ -1952,9 +1922,9 @@ const otherPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.fullSavoryComposition,
+      [TypePlat.ENTREE]: alimentTypePresets.fullSavoryComposition,
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCheese,
     },
   },
   {
@@ -1965,7 +1935,7 @@ const otherPlats: Plat[] = [
     types: platTypePresets.allCourses,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
-      [TypePlat.PLAT]: platAlimentPresets.savoryCore,
+      [TypePlat.PLAT]: alimentTypePresets.savoryCore,
       [TypePlat.DESSERT]: [TypeAliment.FRUIT, TypeAliment.SUCRE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CEREALE],
     },
   },
@@ -2002,7 +1972,7 @@ const otherPlats: Plat[] = [
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitSugarNutCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitSugarNutCheese,
     },
   },
   {
@@ -2012,9 +1982,9 @@ const otherPlats: Plat[] = [
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
     typeAliments: {
-      [TypePlat.ENTREE]: platAlimentPresets.fullSavoryComposition,
+      [TypePlat.ENTREE]: alimentTypePresets.fullSavoryComposition,
       [TypePlat.PLAT]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugarCheese,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugarCheese,
     },
   },
   {
@@ -2025,8 +1995,8 @@ const otherPlats: Plat[] = [
     types: platTypePresets.entryAndDessert,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
-      [TypePlat.PLAT]: platAlimentPresets.none,
-      [TypePlat.DESSERT]: platAlimentPresets.fruitNutSugar,
+      [TypePlat.PLAT]: alimentTypePresets.none,
+      [TypePlat.DESSERT]: alimentTypePresets.fruitNutSugar,
     },
   },
 ];

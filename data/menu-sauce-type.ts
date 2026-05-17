@@ -2,8 +2,9 @@ import { SauceType } from '@/types/data/sauce-type';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
-import { TypePlat } from '@/types/enums/type-plat';
+import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { TypeAliment } from '@/types/enums/type-aliment';
+import { determinantPresets } from '@/data-presets/determinant-presets';
 
 const sauceTypes: SauceType[] = [
   {
@@ -11,14 +12,8 @@ const sauceTypes: SauceType[] = [
     nom: 'sauce',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.ALCOOL,
@@ -45,14 +40,8 @@ const sauceTypes: SauceType[] = [
     nom: 'coulis',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.DESSERT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.dessert,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
@@ -64,14 +53,8 @@ const sauceTypes: SauceType[] = [
     nom: 'filet',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.ALCOOL,
@@ -98,14 +81,8 @@ const sauceTypes: SauceType[] = [
     nom: 'jus',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
@@ -121,14 +98,8 @@ const sauceTypes: SauceType[] = [
     nom: 'émulsion',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'd’',
-      [TypeDeterminant.SECONDAIRE]: 'de l’',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineVowel,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.LEGUME,
@@ -144,14 +115,8 @@ const sauceTypes: SauceType[] = [
     nom: 'sirop',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.DESSERT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.dessert,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.SUCRE,
@@ -166,14 +131,8 @@ const sauceTypes: SauceType[] = [
     nom: 'crème',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FROMAGE,
@@ -192,14 +151,8 @@ const sauceTypes: SauceType[] = [
     nom: 'chutney',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
@@ -212,14 +165,8 @@ const sauceTypes: SauceType[] = [
     nom: 'compotée',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.DESSERT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.dessert,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
@@ -231,14 +178,8 @@ const sauceTypes: SauceType[] = [
     nom: 'confit',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
@@ -252,14 +193,8 @@ const sauceTypes: SauceType[] = [
     nom: 'réduction',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.VIANDE_ROUGE,
@@ -274,14 +209,8 @@ const sauceTypes: SauceType[] = [
     nom: 'espuma',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'd’',
-      [TypeDeterminant.SECONDAIRE]: 'de l’',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT, TypePlat.DESSERT],
+    determinants: determinantPresets.masculineVowel,
+    types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.LEGUME,
@@ -295,14 +224,8 @@ const sauceTypes: SauceType[] = [
     nom: 'velouté',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.LEGUME,
@@ -316,14 +239,8 @@ const sauceTypes: SauceType[] = [
     nom: 'dip',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.LEGUME,
@@ -338,14 +255,8 @@ const sauceTypes: SauceType[] = [
     nom: 'marinade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.VIANDE_BLANCHE,
@@ -362,14 +273,8 @@ const sauceTypes: SauceType[] = [
     nom: 'gremolata',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.HERBE,
@@ -383,14 +288,8 @@ const sauceTypes: SauceType[] = [
     nom: 'persillade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.HERBE,
@@ -403,14 +302,8 @@ const sauceTypes: SauceType[] = [
     nom: 'tapenade',
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'de la',
-      [TypeDeterminant.POSSESSIF]: 'sa',
-      [TypeDeterminant.INDEFINI]: 'd’une',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'une',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.feminineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT_A_COQUE,
@@ -423,14 +316,8 @@ const sauceTypes: SauceType[] = [
     nom: 'pesto',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.HERBE,
@@ -443,14 +330,8 @@ const sauceTypes: SauceType[] = [
     nom: 'bouillon',
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
-    determinants: {
-      [TypeDeterminant.PRINCIPAL]: 'de',
-      [TypeDeterminant.SECONDAIRE]: 'du',
-      [TypeDeterminant.POSSESSIF]: 'son',
-      [TypeDeterminant.INDEFINI]: 'd’un',
-      [TypeDeterminant.ARTICLE_INDEFINI]: 'un',
-    },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    determinants: determinantPresets.masculineConsonant,
+    types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
     compatibleIngredientTypes: [
       TypeAliment.VIANDE_BLANCHE,
