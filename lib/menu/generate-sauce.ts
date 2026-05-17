@@ -2,7 +2,6 @@ import { Menu } from '@/types/menu';
 import { Plat } from '@/types/data/plat';
 import { TypePlat } from '@/types/enums/type-plat';
 import { Ingredient } from '@/types/data/ingredient';
-import ingredients from '@/data/menu-ingredient';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { Adjectif } from '@/types/data/adjectif';
 import { PreSauce } from '@/types/data/pre-sauce';
@@ -33,7 +32,7 @@ export default function generateSauce(
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   preSuite = preSuite + determinantSeparator(preSuite);
   const ingredientSauce: Ingredient | null = getIngredient(
-    data.indexes?.ingredientsByType[TypeAliment.SAUCE] ?? ingredients,
+    data.indexes.ingredientsByType[TypeAliment.SAUCE],
     TypeAliment.SAUCE,
     false,
     isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
@@ -45,7 +44,7 @@ export default function generateSauce(
   let typeSuite: string = ingredientSauce.determinants[typeSauce.suite];
   typeSuite = typeSuite + determinantSeparator(typeSuite);
   const adjectifSauce: Adjectif | null = getAdjectifBasedOnIngredient(
-    data.adjectifs,
+    data.indexes.adjectifs,
     ingredientSauce,
     inconsistentLevel,
     rng,
@@ -69,9 +68,7 @@ function getSauceType(
   typePlat: TypePlat,
   rng?: RandomGenerator,
 ): SauceType {
-  const availableSauceTypes = data.indexes?.sauceTypesByType[typePlat] ?? [...data.sauceTypes].filter((item: SauceType) =>
-    item.types.includes(typePlat),
-  );
+  const availableSauceTypes = data.indexes.sauceTypesByType[typePlat];
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
     !getSauceTypesAlreadyUsed().includes(item.id),
   );

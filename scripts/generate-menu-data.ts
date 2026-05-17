@@ -72,6 +72,13 @@ import { Menu } from '@/types/menu';
 import { MenuIndexes } from '@/types/menu-indexes';
 
 export const indexes: MenuIndexes = {
+  ingredients,
+  adjectifs,
+  liens,
+  plats,
+  posts,
+  pres,
+  sauceTypes,
   ingredientsByType: ${formatIndex('ingredients', 'TypeAliment', typeAlimentEntries, ingredientsByType)},
   adjectifsByType: ${formatIndex('adjectifs', 'TypeAliment', typeAlimentEntries, adjectifsByType)},
   liensByType: ${formatIndex('liens', 'TypeAliment', typeAlimentEntries, liensByType)},
@@ -82,16 +89,9 @@ export const indexes: MenuIndexes = {
 };
 
 const menuData: Menu = {
-  adjectifs,
   complements,
-  ingredients,
-  liens,
   titles,
-  plats,
-  posts,
-  pres,
   preSauces,
-  sauceTypes,
   indexes,
 };
 

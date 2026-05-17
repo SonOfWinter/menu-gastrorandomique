@@ -26,14 +26,14 @@ export default function generateMenu(
   const requiredLists: Record<string, unknown[]> = {
     titles: data.titles,
     complements: data.complements,
-    plats: data.plats,
-    ingredients: data.ingredients,
-    adjectifs: data.adjectifs,
-    liens: data.liens,
-    posts: data.posts,
-    pres: data.pres,
     preSauces: data.preSauces,
-    sauceTypes: data.sauceTypes,
+    plats: data.indexes.plats,
+    ingredients: data.indexes.ingredients,
+    adjectifs: data.indexes.adjectifs,
+    liens: data.indexes.liens,
+    posts: data.indexes.posts,
+    pres: data.indexes.pres,
+    sauceTypes: data.indexes.sauceTypes,
   };
   for (const [key, list] of Object.entries(requiredLists)) {
     if (!Array.isArray(list) || list.length === 0) {

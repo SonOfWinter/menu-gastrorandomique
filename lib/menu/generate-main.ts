@@ -29,14 +29,14 @@ const generateMain = (
     return '';
   }
   const adjectifPrincipal: Adjectif | null = getAdjectifBasedOnIngredient(
-    data.adjectifs,
+    data.indexes.adjectifs,
     ingredientPrincipal,
     inconsistentLevel,
     rng,
     data.indexes,
   );
   if (hasRandomPart(3, rng)) {
-    const prePrincipal = getPreByType(data.pres, mainType, rng, data.indexes?.presByType);
+    const prePrincipal = getPreByType(data.indexes.pres, mainType, rng, data.indexes.presByType);
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
   const determinantPrincipal = ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL];
@@ -47,7 +47,7 @@ const generateMain = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postPrincipal = getPostByType(data.posts, mainType, rng, data.indexes?.postsByType);
+    const postPrincipal = getPostByType(data.indexes.posts, mainType, rng, data.indexes.postsByType);
     main += ` ${postPrincipal.nom}`;
   }
   return capitalize(main);

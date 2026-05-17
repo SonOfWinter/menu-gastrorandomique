@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import generateSecond from '@/lib/menu/generate-second';
 import { alreadyUsed } from '@/lib/ssr-cache';
-import { ingredientOne, menuData, plat } from './fixtures';
+import { createMenuData, ingredientOne, menuData, plat } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { Genre } from '@/types/enums/genre';
@@ -50,18 +50,17 @@ describe('lib/menu/generate-second.ts', () => {
 
   it('filters optional suffixes by dish type', () => {
     const second = generateSecond(
-      {
-        ...menuData,
+      createMenuData({
         posts: [
           {
-            ...menuData.posts[0],
+            ...menuData.indexes.posts[0],
             id: 'post-entree',
             nom: 'hors-sujet',
             types: [TypePlat.ENTREE],
           },
-          menuData.posts[0],
+          menuData.indexes.posts[0],
         ],
-      },
+      }),
       plat,
       ingredients,
       TypePlat.DESSERT,
@@ -89,16 +88,15 @@ describe('lib/menu/generate-second.ts', () => {
     };
 
     const second = generateSecond(
-      {
-        ...menuData,
+      createMenuData({
         liens: [
           {
-            ...menuData.liens[0],
+            ...menuData.indexes.liens[0],
             id: 'lien-fruit',
             compatibleIngredientTypes: [TypeAliment.FRUIT],
           },
           {
-            ...menuData.liens[0],
+            ...menuData.indexes.liens[0],
             id: 'lien-legume',
             noms: {
               [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
@@ -108,7 +106,7 @@ describe('lib/menu/generate-second.ts', () => {
             compatibleIngredientTypes: [TypeAliment.LEGUME],
           },
         ],
-      },
+      }),
       plat,
       [vegetable, ingredientOne],
       TypePlat.DESSERT,
@@ -120,15 +118,14 @@ describe('lib/menu/generate-second.ts', () => {
   });
 
   it('avoids selecting an already used secondary link when another one is available', () => {
-    const data = {
-      ...menuData,
+    const data = createMenuData({
       liens: [
         {
-          ...menuData.liens[0],
+          ...menuData.indexes.liens[0],
           id: 'lien-au',
         },
         {
-          ...menuData.liens[0],
+          ...menuData.indexes.liens[0],
           id: 'lien-avec',
           noms: {
             [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
@@ -137,10 +134,10 @@ describe('lib/menu/generate-second.ts', () => {
           suite: TypeDeterminant.ARTICLE_INDEFINI,
         },
       ],
-    };
+    });
 
-    const first = generateSecond(data, plat, menuData.ingredients, TypePlat.DESSERT, 0, () => 0);
-    const second = generateSecond(data, plat, menuData.ingredients, TypePlat.DESSERT, 0, () => 0);
+    const first = generateSecond(data, plat, menuData.indexes.ingredients, TypePlat.DESSERT, 0, () => 0);
+    const second = generateSecond(data, plat, menuData.indexes.ingredients, TypePlat.DESSERT, 0, () => 0);
 
     expect(first).toBe('au de la pomme sucree');
     expect(second).toBe('avec une poire croquante');

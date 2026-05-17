@@ -11,7 +11,6 @@ import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
-import intersection from '@/lib/utils/intersection';
 import getIndexedItemsByTypes from '@/lib/menu/get-indexed-items-by-types';
 import {
   addLiensAlreadyUsed,
@@ -39,15 +38,8 @@ const generateSecond = (
   if (!ingredientSecondaire) {
     return '';
   }
-  const availableLiens = data.indexes
-    ? getIndexedItemsByTypes(data.indexes.liensByType, ingredientSecondaire.types)
-    : data.liens.filter((lien: Lien) =>
-      intersection(
-        [...lien.compatibleIngredientTypes],
-        [...ingredientSecondaire.types],
-      ).length > 0,
-    );
-  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
+  const availableLiens = getIndexedItemsByTypes(data.indexes.liensByType, ingredientSecondaire.types);
+  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.indexes.liens;
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id),
   );
@@ -58,7 +50,7 @@ const generateSecond = (
   addLiensAlreadyUsed(lienSecondaire.id);
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
-    data.adjectifs,
+    data.indexes.adjectifs,
     ingredientSecondaire,
     inconsistentLevel,
     rng,
@@ -71,7 +63,7 @@ const generateSecond = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postSecondaire = getPostByType(data.posts, mainType, rng, data.indexes?.postsByType);
+    const postSecondaire = getPostByType(data.indexes.posts, mainType, rng, data.indexes.postsByType);
     second += ` ${postSecondaire.nom}`;
   }
   return second;

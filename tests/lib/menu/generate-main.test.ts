@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import generateMain from '@/lib/menu/generate-main';
 import { alreadyUsed } from '@/lib/ssr-cache';
-import { menuData, plat, ingredientOne } from './fixtures';
+import { createMenuData, menuData, plat, ingredientOne } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 
@@ -65,33 +65,32 @@ describe('lib/menu/generate-main.ts', () => {
 
   it('filters optional prefixes and suffixes by dish type', () => {
     const main = generateMain(
-      {
-        ...menuData,
+      createMenuData({
         pres: [
           {
-            ...menuData.pres[0],
+            ...menuData.indexes.pres[0],
             id: 'pre-entree',
             noms: {
-              ...menuData.pres[0].noms,
+              ...menuData.indexes.pres[0].noms,
               [plat.genre]: {
-                ...menuData.pres[0].noms[plat.genre],
+                ...menuData.indexes.pres[0].noms[plat.genre],
                 [plat.nombre]: 'hors-sujet',
               },
             },
             types: [TypePlat.ENTREE],
           },
-          menuData.pres[0],
+          menuData.indexes.pres[0],
         ],
         posts: [
           {
-            ...menuData.posts[0],
+            ...menuData.indexes.posts[0],
             id: 'post-entree',
             nom: 'hors-sujet',
             types: [TypePlat.ENTREE],
           },
-          menuData.posts[0],
+          menuData.indexes.posts[0],
         ],
-      },
+      }),
       plat,
       ingredients,
       TypePlat.DESSERT,
