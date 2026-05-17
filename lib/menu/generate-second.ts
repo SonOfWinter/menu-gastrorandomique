@@ -40,7 +40,7 @@ const generateSecond = (
     return '';
   }
   const availableLiens = getIndexedItemsByTypes(data.liens, data.indexes.lienIdsByType, ingredientSecondaire.types);
-  const compatibleLiens = availableLiens.length > 0 ? availableLiens : getItemsByIds(data.liens, data.indexes.lienIds);
+  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id),
   );

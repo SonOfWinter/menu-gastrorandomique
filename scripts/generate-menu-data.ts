@@ -117,8 +117,6 @@ ${formatData('sauceTypes', 'SauceType[]', normalizedSauceTypes)}
 ${formatData('titles', 'Title[]', normalizedTitles)}
 
 export const indexes: MenuIndexes = {
-  adjectifIds: ${formatIndexedArray(normalizedAdjectifs.map((item) => item.id))},
-  lienIds: ${formatIndexedArray(normalizedLiens.map((item) => item.id))},
   ingredientIdsByType: ${formatIndex('TypeAliment', typeAlimentEntries, ingredientsByType)},
   adjectifIdsByType: ${formatIndex('TypeAliment', typeAlimentEntries, adjectifsByType)},
   lienIdsByType: ${formatIndex('TypeAliment', typeAlimentEntries, liensByType)},

@@ -91,12 +91,12 @@ describe('lib/menu/generate-second.ts', () => {
       createMenuData({
         liens: [
           {
-            ...menuData.liens[menuData.indexes.lienIds[0]],
+            ...menuData.liens[0],
             id: 'lien-fruit',
             compatibleIngredientTypes: [TypeAliment.FRUIT],
           },
           {
-            ...menuData.liens[menuData.indexes.lienIds[0]],
+            ...menuData.liens[0],
             id: 'lien-legume',
             noms: {
               [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
@@ -121,11 +121,11 @@ describe('lib/menu/generate-second.ts', () => {
     const data = createMenuData({
       liens: [
         {
-          ...menuData.liens[menuData.indexes.lienIds[0]],
+          ...menuData.liens[0],
           id: 'lien-au',
         },
         {
-          ...menuData.liens[menuData.indexes.lienIds[0]],
+          ...menuData.liens[0],
           id: 'lien-avec',
           noms: {
             [Genre.FEMININ]: { [Nombre.SINGULIER]: 'avec', [Nombre.PLURIEL]: 'avec' },
