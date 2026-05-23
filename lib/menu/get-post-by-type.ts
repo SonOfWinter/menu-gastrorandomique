@@ -17,13 +17,13 @@ const getPostByType = (
   );
   const availablePosts = typedPosts.length > 0 ? typedPosts : posts;
   const unusedPosts = availablePosts.filter((item: Post) =>
-    !getPostsAlreadyUsed().includes(item.id),
+    !getPostsAlreadyUsed().includes(item.id as number),
   );
   const selected = getRandom(
     unusedPosts.length > 0 ? unusedPosts : availablePosts,
     rng,
   );
-  addPostsAlreadyUsed(selected.id);
+  addPostsAlreadyUsed(selected.id as number);
   return selected;
 };
 

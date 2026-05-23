@@ -42,13 +42,13 @@ const generateSecond = (
   const availableLiens = getIndexedItemsByTypes(data.liens, data.indexes.lienIdsByType, ingredientSecondaire.types);
   const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
-    !getLiensAlreadyUsed().includes(lien.id),
+    !getLiensAlreadyUsed().includes(lien.id as number),
   );
   const lienSecondaire: Lien = getRandom(
     unusedLiens.length > 0 ? unusedLiens : compatibleLiens,
     rng,
   );
-  addLiensAlreadyUsed(lienSecondaire.id);
+  addLiensAlreadyUsed(lienSecondaire.id as number);
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,

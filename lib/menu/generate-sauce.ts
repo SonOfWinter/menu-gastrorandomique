@@ -71,12 +71,12 @@ function getSauceType(
 ): SauceType {
   const availableSauceTypes = getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]);
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
-    !getSauceTypesAlreadyUsed().includes(item.id),
+    !getSauceTypesAlreadyUsed().includes(item.id as number),
   );
   const selected = getRandom(
     unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes,
     rng,
   );
-  addSauceTypesAlreadyUsed(selected.id);
+  addSauceTypesAlreadyUsed(selected.id as number);
   return selected;
 }

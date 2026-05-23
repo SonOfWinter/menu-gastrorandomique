@@ -23,13 +23,13 @@ const getAdjectifBasedOnIngredient = (
     ? adjectifs
     : indexes
       ? getIndexedItemsByTypes(adjectifs, indexes.adjectifIdsByType, ingredient.types)
-        .filter((item: Adjectif) => !getAdjectifsAlreadyUsed().includes(item.id))
+        .filter((item: Adjectif) => !getAdjectifsAlreadyUsed().includes(item.id as number))
       : adjectifs.filter((item: Adjectif) =>
         intersection(
           [...item.types],
           [...ingredient.types],
         ).length > 0
-        && !getAdjectifsAlreadyUsed().includes(item.id),
+        && !getAdjectifsAlreadyUsed().includes(item.id as number),
       );
   if (filteredAdjectifs.length === 0) {
     return null;
@@ -38,7 +38,7 @@ const getAdjectifBasedOnIngredient = (
   if (!selected) {
     return null;
   }
-  addAdjectifsAlreadyUsed(selected.id);
+  addAdjectifsAlreadyUsed(selected.id as number);
   return selected;
 };
 export default getAdjectifBasedOnIngredient;

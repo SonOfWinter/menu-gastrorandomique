@@ -15,7 +15,7 @@ const getIngredient = (
   rng?: RandomGenerator,
 ): Ingredient | null => {
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {
-    const alreadyUsed = getIngredientsAlreadyUsed().includes(item.id);
+    const alreadyUsed = getIngredientsAlreadyUsed().includes(item.id as number);
     const matchesType = typeFilter ? item.types.includes(typeFilter) : true;
     let matchesAdditionalTypes = true;
     if (additionalTypes && additionalTypes.length > 0) {
@@ -29,7 +29,7 @@ const getIngredient = (
   });
   if (filteredIngredients.length > 0) {
     const selected = getRandom(filteredIngredients, rng);
-    addIngredientsAlreadyUsed(selected.id);
+    addIngredientsAlreadyUsed(selected.id as number);
     return selected;
   }
   return null;

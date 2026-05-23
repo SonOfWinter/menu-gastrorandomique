@@ -17,13 +17,13 @@ const getPreByType = (
   );
   const availablePres = typedPres.length > 0 ? typedPres : pres;
   const unusedPres = availablePres.filter((item: Pre) =>
-    !getPresAlreadyUsed().includes(item.id),
+    !getPresAlreadyUsed().includes(item.id as number),
   );
   const selected = getRandom(
     unusedPres.length > 0 ? unusedPres : availablePres,
     rng,
   );
-  addPresAlreadyUsed(selected.id);
+  addPresAlreadyUsed(selected.id as number);
   return selected;
 };
 
