@@ -14,8 +14,8 @@ describe('lib/generate-menu.ts', () => {
 
   it('returns menu data lists', () => {
     const data = getMenuData();
-    expect(data.ingredients.length).toBeGreaterThan(0);
-    expect(data.plats.length).toBeGreaterThan(0);
+    expect(data.indexes.ingredientIdsByType.fruit.length).toBeGreaterThan(0);
+    expect(data.indexes.platIdsByType.dessert.length).toBeGreaterThan(0);
     expect(data.titles.length).toBeGreaterThan(0);
   });
 

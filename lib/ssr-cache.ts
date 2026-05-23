@@ -1,11 +1,11 @@
 export type AlreadyUsed = {
-  plats: string[];
-  ingredients: string[];
-  adjectifs: string[];
-  liens: string[];
-  pres: string[];
-  posts: string[];
-  sauceTypes: string[];
+  plats: number[];
+  ingredients: number[];
+  adjectifs: number[];
+  liens: number[];
+  pres: number[];
+  posts: number[];
+  sauceTypes: number[];
 };
 
 export const alreadyUsed: AlreadyUsed = {
@@ -18,65 +18,65 @@ export const alreadyUsed: AlreadyUsed = {
   sauceTypes: [],
 };
 
-export function getPlatsAlreadyUsed(): string[] {
+export function getPlatsAlreadyUsed(): number[] {
   return alreadyUsed.plats;
 }
 
-export function getIngredientsAlreadyUsed(): string[] {
+export function getIngredientsAlreadyUsed(): number[] {
   return alreadyUsed.ingredients;
 }
 
-export function getAdjectifsAlreadyUsed(): string[] {
+export function getAdjectifsAlreadyUsed(): number[] {
   return alreadyUsed.adjectifs;
 }
 
-export function getLiensAlreadyUsed(): string[] {
+export function getLiensAlreadyUsed(): number[] {
   return alreadyUsed.liens;
 }
 
-export function getPresAlreadyUsed(): string[] {
+export function getPresAlreadyUsed(): number[] {
   return alreadyUsed.pres;
 }
 
-export function getPostsAlreadyUsed(): string[] {
+export function getPostsAlreadyUsed(): number[] {
   return alreadyUsed.posts;
 }
 
-export function getSauceTypesAlreadyUsed(): string[] {
+export function getSauceTypesAlreadyUsed(): number[] {
   return alreadyUsed.sauceTypes;
 }
 
-export function addPlatsAlreadyUsed(plat: string): string[] {
+export function addPlatsAlreadyUsed(plat: number): number[] {
   alreadyUsed.plats.push(plat);
   return alreadyUsed.plats;
 }
 
-export function addIngredientsAlreadyUsed(ing: string): string[] {
+export function addIngredientsAlreadyUsed(ing: number): number[] {
   alreadyUsed.ingredients.push(ing);
   return alreadyUsed.ingredients;
 }
 
-export function addAdjectifsAlreadyUsed(adj: string): string[] {
+export function addAdjectifsAlreadyUsed(adj: number): number[] {
   alreadyUsed.adjectifs.push(adj);
   return alreadyUsed.adjectifs;
 }
 
-export function addLiensAlreadyUsed(lien: string): string[] {
+export function addLiensAlreadyUsed(lien: number): number[] {
   alreadyUsed.liens.push(lien);
   return alreadyUsed.liens;
 }
 
-export function addPresAlreadyUsed(pre: string): string[] {
+export function addPresAlreadyUsed(pre: number): number[] {
   alreadyUsed.pres.push(pre);
   return alreadyUsed.pres;
 }
 
-export function addPostsAlreadyUsed(post: string): string[] {
+export function addPostsAlreadyUsed(post: number): number[] {
   alreadyUsed.posts.push(post);
   return alreadyUsed.posts;
 }
 
-export function addSauceTypesAlreadyUsed(sauceType: string): string[] {
+export function addSauceTypesAlreadyUsed(sauceType: number): number[] {
   alreadyUsed.sauceTypes.push(sauceType);
   return alreadyUsed.sauceTypes;
 }

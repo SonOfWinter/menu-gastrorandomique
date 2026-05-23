@@ -1,3 +1,4 @@
+import { EntityId } from '@/types/entity-id';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
@@ -5,7 +6,8 @@ import { TypePlat } from '@/types/enums/type-plat';
 import { TypeAliment } from '@/types/enums/type-aliment';
 
 export type SauceType = {
-  id: string;
+  id: EntityId;
+  sourceId?: string;
   nom: string;
   genre: Genre,
   nombre: Nombre,

@@ -968,7 +968,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'fumées',
       },
     },
-    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.CHARCUTERIE, TypeAliment.POISSON, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
   {
     id: 'ec296ef9-c1a4-49bb-bcd0-9b8fbdb2889c',

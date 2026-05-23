@@ -2,7 +2,6 @@ import { Menu } from '@/types/menu';
 import { Plat } from '@/types/data/plat';
 import { TypePlat } from '@/types/enums/type-plat';
 import { Ingredient } from '@/types/data/ingredient';
-import ingredients from '@/data/menu-ingredient';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { Adjectif } from '@/types/data/adjectif';
 import { PreSauce } from '@/types/data/pre-sauce';
@@ -19,6 +18,7 @@ import {
 } from '@/lib/ssr-cache';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
+import getItemsByIds from '@/lib/menu/get-items-by-ids';
 
 export default function generateSauce(
   data: Menu,
@@ -33,7 +33,7 @@ export default function generateSauce(
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   preSuite = preSuite + determinantSeparator(preSuite);
   const ingredientSauce: Ingredient | null = getIngredient(
-    ingredients,
+    getItemsByIds(data.ingredients, data.indexes.ingredientIdsByType[TypeAliment.SAUCE]),
     TypeAliment.SAUCE,
     false,
     isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
@@ -49,6 +49,7 @@ export default function generateSauce(
     ingredientSauce,
     inconsistentLevel,
     rng,
+    data.indexes,
   );
 
   let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + formatIngredientName(ingredientSauce, rng);
@@ -68,16 +69,14 @@ function getSauceType(
   typePlat: TypePlat,
   rng?: RandomGenerator,
 ): SauceType {
-  const availableSauceTypes = [...data.sauceTypes].filter((item: SauceType) =>
-    item.types.includes(typePlat),
-  );
+  const availableSauceTypes = getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]);
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
-    !getSauceTypesAlreadyUsed().includes(item.id),
+    !getSauceTypesAlreadyUsed().includes(item.id as number),
   );
   const selected = getRandom(
     unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes,
     rng,
   );
-  addSauceTypesAlreadyUsed(selected.id);
+  addSauceTypesAlreadyUsed(selected.id as number);
   return selected;
 }

@@ -14,6 +14,7 @@ import getPostByType from '@/lib/menu/get-post-by-type';
 import getPreByType from '@/lib/menu/get-pre-by-type';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
+import getItemsByIds from '@/lib/menu/get-items-by-ids';
 
 const generateMain = (
   data: Menu,
@@ -33,9 +34,14 @@ const generateMain = (
     ingredientPrincipal,
     inconsistentLevel,
     rng,
+    data.indexes,
   );
   if (hasRandomPart(3, rng)) {
-    const prePrincipal = getPreByType(data.pres, mainType, rng);
+    const prePrincipal = getPreByType(
+      getItemsByIds(data.pres, data.indexes.preIdsByType[mainType]),
+      mainType,
+      rng,
+    );
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
   const determinantPrincipal = ingredientPrincipal.determinants[TypeDeterminant.PRINCIPAL];
@@ -46,7 +52,11 @@ const generateMain = (
   }
 
   if (hasRandomPart(3, rng)) {
-    const postPrincipal = getPostByType(data.posts, mainType, rng);
+    const postPrincipal = getPostByType(
+      getItemsByIds(data.posts, data.indexes.postIdsByType[mainType]),
+      mainType,
+      rng,
+    );
     main += ` ${postPrincipal.nom}`;
   }
   return capitalize(main);

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import generateSauce from '@/lib/menu/generate-sauce';
 import { alreadyUsed } from '@/lib/ssr-cache';
-import { menuData, plat } from './fixtures';
+import { createMenuData, menuData, plat } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 
@@ -24,18 +24,17 @@ describe('lib/menu/generate-sauce.ts', () => {
 
   it('does not add a space after a typographic apostrophe determinant', () => {
     const sauce = generateSauce(
-      {
-        ...menuData,
+      createMenuData({
         sauceTypes: [
           {
-            ...menuData.sauceTypes[0],
+            ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]],
             determinants: {
-              ...menuData.sauceTypes[0].determinants,
+              ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]].determinants,
               [TypeDeterminant.PRINCIPAL]: 'd’',
             },
           },
         ],
-      },
+      }),
       plat,
       TypePlat.DESSERT,
       0,
@@ -48,20 +47,19 @@ describe('lib/menu/generate-sauce.ts', () => {
   it('does not reuse a sauce type while unused sauce types are available', () => {
     const sauceTypes = [
       {
-        ...menuData.sauceTypes[0],
+        ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]],
         id: 'sauce-type-1',
         nom: 'pesto',
       },
       {
-        ...menuData.sauceTypes[0],
+        ...menuData.sauceTypes[menuData.indexes.sauceTypeIdsByType[TypePlat.DESSERT][0]],
         id: 'sauce-type-2',
         nom: 'jus',
       },
     ];
-    const data = {
-      ...menuData,
+    const data = createMenuData({
       sauceTypes,
-    };
+    });
 
     const firstSauce = generateSauce(data, plat, TypePlat.DESSERT, 0, () => 0);
     const secondSauce = generateSauce(data, plat, TypePlat.DESSERT, 0, () => 0);

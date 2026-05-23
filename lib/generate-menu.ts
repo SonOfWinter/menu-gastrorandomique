@@ -23,20 +23,26 @@ export default function generateMenu(
   resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
-  const requiredLists: Record<string, unknown[]> = {
+  const requiredLists: Record<string, unknown[] | Record<string, unknown[]>> = {
     titles: data.titles,
     complements: data.complements,
-    plats: data.plats,
-    ingredients: data.ingredients,
-    adjectifs: data.adjectifs,
-    liens: data.liens,
-    posts: data.posts,
-    pres: data.pres,
     preSauces: data.preSauces,
-    sauceTypes: data.sauceTypes,
+    liens: data.liens,
+    adjectifs: data.adjectifs,
+    entreePlats: data.indexes.platIdsByType[TypePlat.ENTREE],
+    mainPlats: data.indexes.platIdsByType[TypePlat.PLAT],
+    dessertPlats: data.indexes.platIdsByType[TypePlat.DESSERT],
+    ingredients: data.indexes.ingredientIdsByType,
+    posts: data.indexes.postIdsByType,
+    pres: data.indexes.preIdsByType,
+    sauceTypes: data.indexes.sauceTypeIdsByType,
   };
   for (const [key, list] of Object.entries(requiredLists)) {
-    if (!Array.isArray(list) || list.length === 0) {
+    if (
+      Array.isArray(list)
+        ? list.length === 0
+        : Object.values(list).every((items) => items.length === 0)
+    ) {
       throw new Error(`Menu data list is empty: ${key}`);
     }
   }

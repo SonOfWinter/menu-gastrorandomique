@@ -1,6 +1,7 @@
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypePlat } from '@/types/enums/type-plat';
+import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { Pre } from '@/types/data/pre';
 
 const pres: Pre[] = [
@@ -16,7 +17,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les aériennes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'cbb038c4-e9fe-4c7a-945f-11cb530bbc49',
@@ -30,7 +31,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les alléchantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '27e89818-acf2-422d-8230-3e3c79607be4',
@@ -44,7 +45,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les ancestrales',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'e75143cd-11e1-4d30-a84f-e527185f2871',
@@ -58,7 +59,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les appétissantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '2db2867b-80d7-4484-baf6-e3b045153fa2',
@@ -86,7 +87,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les audacieuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '24dab967-4882-41ff-ad97-1f1efa998f5f',
@@ -114,7 +115,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les authentiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.PLAT],
+    types: platTypePresets.entryAndMain,
   },
   {
     id: '3a8cf34d-d80f-4772-be9a-3f336dab79b6',
@@ -128,7 +129,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les avant-gardistes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'e55c2b74-7f34-4bb1-9808-d6b5e106f992',
@@ -142,7 +143,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les excellentes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '02a753db-1cf4-4baa-9575-9c0516d6987c',
@@ -156,7 +157,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les incomparables',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '91e9cfca-91f9-4b12-9ce8-b67e5993a7fb',
@@ -170,7 +171,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les incontournables',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'f8cd1543-1c83-4e05-bdd3-a835c43ef32d',
@@ -198,7 +199,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les innovantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'bd5a9a01-c8a7-47ec-b46e-aedd54a06022',
@@ -212,7 +213,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les inoubliables',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '691cd7bc-9e3a-4cd2-9362-657624b6db2f',
@@ -226,7 +227,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les intrigantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '2455cdc2-5eab-44f6-ae3d-5452fd761700',
@@ -240,7 +241,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les odoriférantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '17219316-681d-44c6-88a9-760006799c1c',
@@ -254,7 +255,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les captivantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '355d8032-e464-4faf-855c-5f6e21ab2219',
@@ -268,7 +269,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les célèbres',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '2ae5c08e-63e6-4561-ae54-4e98423c2b3f',
@@ -282,7 +283,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les charmantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'c1d238e0-b7e4-4dfb-8583-9bb933b8aaf8',
@@ -296,7 +297,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les classiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '1dc5c87a-cd8f-4627-8bf1-fbf53f0cbd17',
@@ -310,7 +311,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les cultissimes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'b9939ac9-c3ce-42b2-900e-8f3d705811a9',
@@ -324,7 +325,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les délicieuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '6262778f-785b-4e03-8d2d-cd2ff9443c0b',
@@ -338,7 +339,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les divines',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'd35b2b94-eefb-4526-b993-ea6010057fa7',
@@ -352,7 +353,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les douces',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'cb1c6eaf-03cf-450f-8db0-ec9a82e36890',
@@ -366,7 +367,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les élégantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '526f7eb6-23a6-4e82-b118-1fac712b93a3',
@@ -380,7 +381,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les fabuleuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'd95c3fdc-ef8c-45f6-9782-64a3a79a64e1',
@@ -394,7 +395,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les fameuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'bf103d82-7467-482c-b450-e0f068f91379',
@@ -408,7 +409,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les formidables',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '606a3430-00dc-4747-80e3-1514d5e9c930',
@@ -422,7 +423,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les généreuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '54d41b14-94ca-4cb8-8c36-bc33a83d0dff',
@@ -436,7 +437,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les gourmandes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '7033f0e9-7aee-4c75-96bd-3c47f95f3387',
@@ -450,7 +451,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les goûteuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'a206cc32-63c3-4578-ab62-b726974ec580',
@@ -464,7 +465,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les légendaires',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '7803cdf6-be36-4ac9-b38f-2442beba17af',
@@ -478,7 +479,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les magnifiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '44118d11-3444-465c-884a-038efde50f15',
@@ -492,7 +493,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les majestueuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '3f10297f-2474-4842-8fd0-abad18e091ca',
@@ -506,7 +507,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les mirifiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '3385bab0-5ed4-472e-b734-67557d13ee64',
@@ -520,7 +521,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les mythiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'a7309c35-6401-4daa-8697-e10190764065',
@@ -534,7 +535,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les nobles',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'fb8c441a-c08d-49dc-ac1b-fd3597da69f5',
@@ -548,7 +549,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les parfaites',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'f086ec2d-c766-41bc-906d-a6229508ae99',
@@ -562,7 +563,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les poétiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'ba3a3ed9-2b66-48bb-bad1-8ce6eaee65cb',
@@ -576,7 +577,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les prodigieuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'd24f63b6-0e3c-46b1-9282-7a6c174f3466',
@@ -590,7 +591,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les raffinées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '0ae6e7d5-a992-4f9c-a4e0-89055ebf2fd5',
@@ -604,7 +605,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les réconfortantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'c9dabc3e-d398-4877-b0c3-86e48ef13f1b',
@@ -618,7 +619,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les réinventées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '1a7d8082-4d5e-46b3-8c76-2ae839fde6bb',
@@ -632,7 +633,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les rustiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'd40886ef-1e98-4260-9ec3-19687f1bf72d',
@@ -646,7 +647,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les savoureuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '04b68152-50c5-4911-be46-5f87a824aa25',
@@ -660,7 +661,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les sensationnelles',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '25e06564-6ef9-4fab-9ecb-ff651e7b67fa',
@@ -674,7 +675,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les sophistiquées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'e7c8bced-857e-4f19-8eaa-f5c5e4415c9d',
@@ -688,7 +689,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les subtiles',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: 'eea2e206-0546-432c-9cca-cbf4b98b4f38',
@@ -702,7 +703,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les succulentes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '630118c2-d8b7-42f3-83f9-4a4c226ed38c',
@@ -716,7 +717,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les surprenantes',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '25f25a19-7c82-4ea1-a962-cc143e8e146b',
@@ -730,7 +731,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les tendres',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '8e894b7e-9c5f-488b-b86d-07bb12aa99fe',
@@ -744,7 +745,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les traditionnelles',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '0b4c51c8-1b1f-44cc-8f4d-1b62a6b22f0e',
@@ -758,7 +759,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les féeriques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '4b0f5a7a-4fb2-4d8e-8d1f-82a2d0c14c72',
@@ -772,7 +773,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les mirifiques',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '6f47c3c2-0a7e-4b07-b1e1-6d6e9b1cf3d8',
@@ -786,7 +787,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les merveilleuses',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '2c1f8a5b-6b7e-4b07-b5bb-3ab2e2b2ef4b',
@@ -800,7 +801,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les perfectibles',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
   {
     id: '8b2e15c2-6b2d-4a0e-9f3a-94b9f6e4c5a4',
@@ -814,7 +815,7 @@ const pres: Pre[] = [
         [Nombre.PLURIEL]: 'les alambiquées',
       },
     },
-    types: [TypePlat.ENTREE, TypePlat.DESSERT, TypePlat.PLAT],
+    types: platTypePresets.allCoursesEntryDessertMain,
   },
 ];
 export default pres;
