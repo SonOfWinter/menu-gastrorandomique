@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import generateMenu from '@/lib/generate-menu';
+import generateMenu, { validateMenuData } from '@/lib/generate-menu';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { defaultMenuConfig } from '@/lib/menu/menu-config';
+import { TypeAliment } from '@/types/enums/type-aliment';
+import { TypePlat } from '@/types/enums/type-plat';
 
 describe('lib/generate-menu.ts', () => {
   it('exposes a default menu config', () => {
@@ -28,5 +30,49 @@ describe('lib/generate-menu.ts', () => {
     expect(menu.price).toBeLessThanOrEqual(defaultMenuConfig.priceRange.max);
     expect(menu.title.length).toBeGreaterThan(0);
     expect(menu.complement.length).toBeGreaterThan(0);
+  });
+
+  it('rejects partially empty typed indexes before generation', () => {
+    const data = getMenuData();
+    const invalidData = {
+      ...data,
+      indexes: {
+        ...data.indexes,
+        preIdsByType: {
+          ...data.indexes.preIdsByType,
+          [TypePlat.DESSERT]: [],
+        },
+      },
+    };
+
+    expect(() => validateMenuData(invalidData)).toThrow(
+      'Menu data list is empty: preIdsByType.dessert',
+    );
+  });
+
+  it('rejects partially empty required TypeAliment indexes before generation', () => {
+    const data = getMenuData();
+    const indexNames = [
+      'ingredientIdsByType',
+      'adjectifIdsByType',
+      'lienIdsByType',
+    ] as const;
+
+    for (const indexName of indexNames) {
+      const invalidData = {
+        ...data,
+        indexes: {
+          ...data.indexes,
+          [indexName]: {
+            ...data.indexes[indexName],
+            [TypeAliment.FRUIT]: [],
+          },
+        },
+      };
+
+      expect(() => validateMenuData(invalidData)).toThrow(
+        `Menu data list is empty: ${indexName}.fruit`,
+      );
+    }
   });
 });
