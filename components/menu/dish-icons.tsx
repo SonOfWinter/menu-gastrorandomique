@@ -24,36 +24,44 @@ const iconConfig = {
   vegetarian: {
     icon: NaturalFoodIcon,
     label: 'Plat végétarien',
+    animationClass: 'dish-icon-vegetarian',
   },
   spicy: {
     icon: Fire02Icon,
     label: 'Plat épicé',
+    animationClass: 'dish-icon-spicy',
   },
   alcohol: {
     icon: DrinkIcon,
     label: 'Plat alcoolisé',
+    animationClass: 'dish-icon-alcohol',
   },
   meat: {
     icon: SteakIcon,
     label: 'Contient de la viande',
+    animationClass: 'dish-icon-meat',
   },
   fish: {
     icon: Fish,
     label: 'Contient du poisson',
+    animationClass: 'dish-icon-fish',
   },
   frozen: {
     icon: SnowIcon,
     label: 'Ingrédients surgelés',
+    animationClass: 'dish-icon-frozen',
   },
   shareable: {
     icon: UserGroupIcon,
     label: 'À partager',
+    animationClass: 'dish-icon-shareable',
   },
   chefRecommendation: {
     icon: ChefHatIcon,
     label: 'Recommandation du chef',
+    animationClass: 'dish-icon-chef',
   },
-} satisfies Record<DishIcon, { icon: IconSvgElement; label: string }>;
+} satisfies Record<DishIcon, { icon: IconSvgElement; label: string; animationClass: string }>;
 
 export default function DishIcons({
   icons,
@@ -78,7 +86,14 @@ export default function DishIcons({
         return (
           <Tooltip key={icon}>
             <TooltipTrigger asChild>
-              <span className="inline-flex size-5 items-center justify-center rounded-full border border-primary/25 bg-primary/5">
+              <span
+                className={cn(
+                  'dish-icon-badge inline-flex size-5 items-center justify-center rounded-full border border-primary/25 bg-primary/5',
+                  config.animationClass,
+                )}
+                tabIndex={0}
+                aria-label={config.label}
+              >
                 <HugeiconsIcon
                   icon={config.icon}
                   strokeWidth={2}
