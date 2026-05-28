@@ -3,4 +3,7 @@ export type DishIcon =
   | 'spicy'
   | 'alcohol'
   | 'meat'
-  | 'fish';
+  | 'fish'
+  | 'frozen'
+  | 'shareable'
+  | 'chefRecommendation';

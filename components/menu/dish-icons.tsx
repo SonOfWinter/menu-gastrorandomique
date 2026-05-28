@@ -3,11 +3,14 @@
 import { HugeiconsIcon } from '@hugeicons/react';
 import type { IconSvgElement } from '@hugeicons/react';
 import {
+  ChefHatIcon,
   DrinkIcon,
   Fire02Icon,
   Fish,
-  LeafyGreenIcon,
+  NaturalFoodIcon,
+  SnowIcon,
   SteakIcon,
+  UserGroupIcon,
 } from '@hugeicons/core-free-icons';
 import { DishIcon } from '@/types/dish-icon';
 import { cn } from '@/lib/utils';
@@ -19,7 +22,7 @@ import {
 
 const iconConfig = {
   vegetarian: {
-    icon: LeafyGreenIcon,
+    icon: NaturalFoodIcon,
     label: 'Plat végétarien',
   },
   spicy: {
@@ -37,6 +40,18 @@ const iconConfig = {
   fish: {
     icon: Fish,
     label: 'Contient du poisson',
+  },
+  frozen: {
+    icon: SnowIcon,
+    label: 'Ingrédients surgelés',
+  },
+  shareable: {
+    icon: UserGroupIcon,
+    label: 'À partager',
+  },
+  chefRecommendation: {
+    icon: ChefHatIcon,
+    label: 'Recommandation du chef',
   },
 } satisfies Record<DishIcon, { icon: IconSvgElement; label: string }>;
 

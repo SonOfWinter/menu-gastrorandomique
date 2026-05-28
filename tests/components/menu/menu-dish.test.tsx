@@ -34,13 +34,13 @@ describe('components/menu/menu-dish.tsx', () => {
   });
 
   it('renders dish text and sauce', () => {
-    const { getByText, getByTestId, getByLabelText } = render(
+    const { getByText, getByTestId, getAllByTestId, getByLabelText } = render(
       <MenuDish
         dish={{
           main: 'Tarte',
           second: 'aux pommes',
           sauce: 'caramel',
-          icons: ['vegetarian'],
+          icons: ['vegetarian', 'frozen', 'shareable', 'chefRecommendation'],
         }}
       />,
     );
@@ -49,8 +49,8 @@ describe('components/menu/menu-dish.tsx', () => {
     expect(getByText('aux pommes')).toBeInTheDocument();
     expect(getByText('caramel')).toBeInTheDocument();
     expect(getByTestId('dice-icon')).toBeInTheDocument();
-    expect(getByTestId('dish-icon-svg')).toBeInTheDocument();
-    expect(getByLabelText('Plat végétarien')).toBeInTheDocument();
+    expect(getAllByTestId('dish-icon-svg')).toHaveLength(4);
+    expect(getByLabelText('Plat végétarien, Ingrédients surgelés, À partager, Recommandation du chef')).toBeInTheDocument();
   });
 
   it('omits sauce block when no sauce provided', () => {
