@@ -11,10 +11,29 @@ const vegetarianExcludedTypes = new Set<TypeAliment>([
   TypeAliment.VIANDE_ROUGE,
 ]);
 
+const meatTypes = new Set<TypeAliment>([
+  TypeAliment.CHARCUTERIE,
+  TypeAliment.VIANDE_BLANCHE,
+  TypeAliment.VIANDE_ROUGE,
+]);
+
+const fishTypes = new Set<TypeAliment>([
+  TypeAliment.FRUIT_DE_MER,
+  TypeAliment.POISSON,
+]);
+
 function hasType(ingredients: readonly Ingredient[], types: readonly TypeAliment[]): boolean {
   return ingredients.some((ingredient) =>
     ingredient.types.some((type) => types.includes(type)),
   );
+}
+
+function hasOnlyTypes(ingredients: readonly Ingredient[], types: ReadonlySet<TypeAliment>): boolean {
+  return ingredients.length > 0
+    && ingredients.every((ingredient) =>
+      ingredient.types.length > 0
+      && ingredient.types.every((type) => types.has(type)),
+    );
 }
 
 export default function getDishIcons(
@@ -36,15 +55,11 @@ export default function getDishIcons(
     icons.push('alcohol');
   }
 
-  if (canShowDietaryIcons && hasType(ingredients, [
-    TypeAliment.CHARCUTERIE,
-    TypeAliment.VIANDE_BLANCHE,
-    TypeAliment.VIANDE_ROUGE,
-  ])) {
+  if (canShowDietaryIcons && hasOnlyTypes(ingredients, meatTypes)) {
     icons.push('meat');
   }
 
-  if (canShowDietaryIcons && hasType(ingredients, [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON])) {
+  if (canShowDietaryIcons && hasOnlyTypes(ingredients, fishTypes)) {
     icons.push('fish');
   }
 

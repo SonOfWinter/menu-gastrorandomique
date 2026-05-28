@@ -21,13 +21,37 @@ describe('lib/menu/get-dish-icons.ts', () => {
     ], TypePlat.PLAT)).toContain('vegetarian');
   });
 
-  it('keeps all matching icons', () => {
+  it('keeps non-exclusive matching icons', () => {
     expect(getDishIcons([
       ingredient([TypeAliment.VIANDE_ROUGE]),
       ingredient([TypeAliment.POISSON]),
       ingredient([TypeAliment.ALCOOL]),
       ingredient([TypeAliment.EPICE], true),
-    ], TypePlat.PLAT)).toEqual(['spicy', 'alcohol', 'meat', 'fish']);
+    ], TypePlat.PLAT)).toEqual(['spicy', 'alcohol']);
+  });
+
+  it('marks meat only when every selected ingredient is meat-based', () => {
+    expect(getDishIcons([
+      ingredient([TypeAliment.VIANDE_ROUGE]),
+      ingredient([TypeAliment.CHARCUTERIE]),
+    ], TypePlat.PLAT)).toEqual(['meat']);
+
+    expect(getDishIcons([
+      ingredient([TypeAliment.VIANDE_ROUGE]),
+      ingredient([TypeAliment.LEGUME]),
+    ], TypePlat.PLAT)).not.toContain('meat');
+  });
+
+  it('marks fish only when every selected ingredient is fish-based', () => {
+    expect(getDishIcons([
+      ingredient([TypeAliment.POISSON]),
+      ingredient([TypeAliment.FRUIT_DE_MER]),
+    ], TypePlat.PLAT)).toEqual(['fish']);
+
+    expect(getDishIcons([
+      ingredient([TypeAliment.POISSON]),
+      ingredient([TypeAliment.LEGUME]),
+    ], TypePlat.PLAT)).not.toContain('fish');
   });
 
   it('does not show vegetarian, meat, or fish icons for desserts', () => {
