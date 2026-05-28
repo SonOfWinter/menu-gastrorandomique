@@ -20,5 +20,6 @@ describe('lib/menu/generate-dish.ts', () => {
     expect(dish.main).toBe('Tarte de pomme sucree');
     expect(dish.second).toBe('au de la poire croquante');
     expect(dish.sauce).toBeNull();
+    expect(dish.icons).toEqual(['chefRecommendation']);
   });
 });

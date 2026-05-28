@@ -158,6 +158,82 @@
     transform-origin: center;
     transform-box: fill-box; /* utile pour les SVG */
   }
+
+  .dish-icon-badge {
+    @apply transition-colors duration-150 focus-visible:ring-ring/50 focus-visible:ring-[3px] focus-visible:outline-none;
+  }
+
+  .dish-icon-badge svg {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .dish-icon-badge:hover,
+  .dish-icon-badge:focus-visible {
+    @apply bg-primary/10;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dish-icon-vegetarian:hover svg,
+  .dish-icon-vegetarian:focus-visible svg {
+    animation: dish-icon-sway 520ms ease-out;
+  }
+
+  .dish-icon-spicy:hover svg,
+  .dish-icon-spicy:focus-visible svg {
+    animation: dish-icon-flare 420ms ease-out;
+  }
+
+  .dish-icon-alcohol:hover svg,
+  .dish-icon-alcohol:focus-visible svg {
+    animation: dish-icon-toast 460ms ease-out;
+  }
+
+  .dish-icon-meat:hover svg,
+  .dish-icon-meat:focus-visible svg {
+    animation: dish-icon-bounce 380ms ease-out;
+  }
+
+  .dish-icon-fish:hover svg,
+  .dish-icon-fish:focus-visible svg {
+    animation: dish-icon-swim 520ms ease-out;
+  }
+
+  .dish-icon-frozen:hover svg,
+  .dish-icon-frozen:focus-visible svg {
+    animation: dish-icon-chill 600ms ease-out;
+  }
+
+  .dish-icon-shareable:hover svg,
+  .dish-icon-shareable:focus-visible svg {
+    animation: dish-icon-invite 560ms ease-out;
+  }
+
+  .dish-icon-chef:hover svg,
+  .dish-icon-chef:focus-visible svg {
+    animation: dish-icon-stamp 420ms ease-out;
+  }
+
+  .dish-icon-signature:hover svg,
+  .dish-icon-signature:focus-visible svg {
+    animation: dish-icon-crown 480ms ease-out;
+  }
+
+  .dish-icon-limited:hover svg,
+  .dish-icon-limited:focus-visible svg {
+    animation: dish-icon-tag 620ms ease-out;
+  }
+
+  .dish-icon-child:hover svg,
+  .dish-icon-child:focus-visible svg {
+    animation: dish-icon-scurry 320ms ease-out;
+  }
+
+  .dish-icon-historical:hover svg,
+  .dish-icon-historical:focus-visible svg {
+    animation: dish-icon-zoom 460ms ease-out;
+  }
 }
 
 @keyframes shake {
@@ -166,6 +242,80 @@
   40% { transform: translateX(2px) rotate(6deg); }
   60% { transform: translateX(-2px) rotate(-4deg); }
   80% { transform: translateX(2px) rotate(4deg); }
+}
+
+@keyframes dish-icon-sway {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-7deg) translateY(-1px); }
+  65% { transform: rotate(5deg); }
+}
+
+@keyframes dish-icon-flare {
+  0%, 100% { transform: translateY(0) scale(1); }
+  45% { transform: translateY(-1px) scale(1.12); }
+}
+
+@keyframes dish-icon-toast {
+  0%, 100% { transform: rotate(0deg); }
+  35% { transform: rotate(-8deg) translateX(-1px); }
+  70% { transform: rotate(6deg) translateX(1px); }
+}
+
+@keyframes dish-icon-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  45% { transform: translateY(-2px) scale(1.06); }
+}
+
+@keyframes dish-icon-swim {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(1.5px) rotate(3deg); }
+  65% { transform: translateX(-1px) rotate(-3deg); }
+}
+
+@keyframes dish-icon-chill {
+  0%, 100% { transform: rotate(0deg) scale(1); opacity: 1; }
+  35% { transform: rotate(10deg) scale(1.04); opacity: 0.8; }
+  70% { transform: rotate(-8deg) scale(1.02); opacity: 1; }
+}
+
+@keyframes dish-icon-invite {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  58% { transform: scale(0.98); }
+  82% { transform: scale(1.06); }
+}
+
+@keyframes dish-icon-stamp {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  40% { transform: scale(1.13) rotate(-4deg); }
+  72% { transform: scale(0.98) rotate(2deg); }
+}
+
+@keyframes dish-icon-crown {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  38% { transform: translateY(-1.5px) rotate(-5deg); }
+  70% { transform: translateY(0) rotate(3deg); }
+}
+
+@keyframes dish-icon-tag {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  18% { transform: rotate(-12deg) scale(1.14); }
+  38% { transform: rotate(10deg) scale(1.1); }
+  58% { transform: rotate(-7deg) scale(1.08); }
+  78% { transform: rotate(4deg) scale(1.03); }
+}
+
+@keyframes dish-icon-scurry {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(2px) rotate(8deg); }
+  50% { transform: translateX(-2px) rotate(-8deg); }
+  75% { transform: translateX(1px) rotate(5deg); }
+}
+
+@keyframes dish-icon-zoom {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.18); }
+  72% { transform: scale(0.98); }
 }
 
 /***************************************************
@@ -242,4 +392,3 @@
   -webkit-animation: animate-svg-fill 1s cubic-bezier(0.47, 0, 0.745, 0.715) -0.4s infinite both;
   animation: animate-svg-fill 1s cubic-bezier(0.47, 0, 0.745, 0.715) -0.4s infinite both;
 }
-

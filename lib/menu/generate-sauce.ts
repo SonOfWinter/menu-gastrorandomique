@@ -26,6 +26,7 @@ export default function generateSauce(
   typePlat: TypePlat,
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
+  selectedIngredients?: Ingredient[],
 ): string {
   const preSauce = getPreSauce(data, rng);
   const typeSauce = getSauceType(data, typePlat, rng);
@@ -42,6 +43,7 @@ export default function generateSauce(
   if (!ingredientSauce) {
     return '';
   }
+  selectedIngredients?.push(ingredientSauce);
   let typeSuite: string = ingredientSauce.determinants[typeSauce.suite];
   typeSuite = typeSuite + determinantSeparator(typeSuite);
   const adjectifSauce: Adjectif | null = getAdjectifBasedOnIngredient(

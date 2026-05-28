@@ -23,6 +23,10 @@ vi.mock('@/components/dice-icon', () => ({
   default: () => <svg data-testid="dice-icon" />,
 }));
 
+vi.mock('@hugeicons/react', () => ({
+  HugeiconsIcon: () => <svg data-testid="dish-icon-svg" />,
+}));
+
 describe('components/menu/menu-dish.tsx', () => {
   afterEach(() => {
     cleanup();
@@ -30,12 +34,13 @@ describe('components/menu/menu-dish.tsx', () => {
   });
 
   it('renders dish text and sauce', () => {
-    const { getByText, getByTestId } = render(
+    const { getByText, getByTestId, getAllByTestId, getByLabelText } = render(
       <MenuDish
         dish={{
           main: 'Tarte',
           second: 'aux pommes',
           sauce: 'caramel',
+          icons: ['vegetarian', 'frozen', 'shareable', 'chefRecommendation'],
         }}
       />,
     );
@@ -44,6 +49,8 @@ describe('components/menu/menu-dish.tsx', () => {
     expect(getByText('aux pommes')).toBeInTheDocument();
     expect(getByText('caramel')).toBeInTheDocument();
     expect(getByTestId('dice-icon')).toBeInTheDocument();
+    expect(getAllByTestId('dish-icon-svg')).toHaveLength(4);
+    expect(getByLabelText('Plat végétarien, Ingrédients surgelés, À partager, Recommandation du chef')).toBeInTheDocument();
   });
 
   it('omits sauce block when no sauce provided', () => {
@@ -53,6 +60,7 @@ describe('components/menu/menu-dish.tsx', () => {
           main: 'Soupe',
           second: 'du jour',
           sauce: null,
+          icons: [],
         }}
       />,
     );
@@ -71,6 +79,7 @@ describe('components/menu/menu-dish.tsx', () => {
           main: 'Tarte',
           second: 'aux pommes',
           sauce: 'caramel',
+          icons: ['spicy'],
         }}
       />,
     );
@@ -92,6 +101,7 @@ describe('components/menu/menu-dish.tsx', () => {
           main: 'Tarte',
           second: 'aux pommes',
           sauce: null,
+          icons: ['vegetarian'],
         }}
       />,
     );

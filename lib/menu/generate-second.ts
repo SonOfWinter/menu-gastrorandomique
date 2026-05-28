@@ -27,6 +27,7 @@ const generateSecond = (
   mainType: TypePlat,
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
+  selectedIngredients?: Ingredient[],
 ): string => {
   let second: string = '';
   const ingredientSecondaire: Ingredient | null = getIngredient(
@@ -39,6 +40,7 @@ const generateSecond = (
   if (!ingredientSecondaire) {
     return '';
   }
+  selectedIngredients?.push(ingredientSecondaire);
   const availableLiens = getIndexedItemsByTypes(data.liens, data.indexes.lienIdsByType, ingredientSecondaire.types);
   const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>

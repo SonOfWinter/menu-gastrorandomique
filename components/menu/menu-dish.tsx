@@ -6,6 +6,7 @@ import { Manrope } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import DiceIcon from '@/components/dice-icon';
 import { copyText } from '@/lib/client/copy-text';
+import DishIcons from '@/components/menu/dish-icons';
 
 const manrope = Manrope({
   weight: '500',
@@ -34,7 +35,11 @@ export default function MenuDish({ dish }: {
       onClick={copyToClipboard}
     >
       <h4>
-        {dish.main}
+        <span>{dish.main}</span>
+        <DishIcons
+          icons={dish.icons}
+          className="ml-2 align-middle"
+        />
       </h4>
       <p className={cn(manrope.className, 'font-normal text-l text-left leading-7')}>
         {dish.second}

@@ -115,6 +115,10 @@ describe('data consistency', () => {
           expect(typeof postAdjectif, `${label}.postAdjectifs[${postAdjectifIndex}]`).toBe('string');
         });
       }
+
+      if (ingredient.isSpicy !== undefined) {
+        expect(typeof ingredient.isSpicy, `${label}.isSpicy`).toBe('boolean');
+      }
     });
   });
 
