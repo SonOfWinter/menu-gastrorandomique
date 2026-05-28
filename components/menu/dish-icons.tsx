@@ -3,10 +3,14 @@
 import { HugeiconsIcon } from '@hugeicons/react';
 import type { IconSvgElement } from '@hugeicons/react';
 import {
+  Castle01Icon,
   ChefHatIcon,
+  CrownIcon,
   DrinkIcon,
+  ExclamationMarkBigIcon,
   Fire02Icon,
   Fish,
+  KidIcon,
   NaturalFoodIcon,
   SnowIcon,
   SteakIcon,
@@ -60,6 +64,26 @@ const iconConfig = {
     icon: ChefHatIcon,
     label: 'Recommandation du chef',
     animationClass: 'dish-icon-chef',
+  },
+  signature: {
+    icon: CrownIcon,
+    label: 'Plat signature',
+    animationClass: 'dish-icon-signature',
+  },
+  limitedEdition: {
+    icon: ExclamationMarkBigIcon,
+    label: 'Édition limitée',
+    animationClass: 'dish-icon-limited',
+  },
+  kidsDish: {
+    icon: KidIcon,
+    label: 'Plat enfant',
+    animationClass: 'dish-icon-child',
+  },
+  historicalRecipe: {
+    icon: Castle01Icon,
+    label: 'Recette historique',
+    animationClass: 'dish-icon-historical',
   },
 } satisfies Record<DishIcon, { icon: IconSvgElement; label: string; animationClass: string }>;
 

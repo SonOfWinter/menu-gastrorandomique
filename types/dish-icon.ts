@@ -6,4 +6,8 @@ export type DishIcon =
   | 'fish'
   | 'frozen'
   | 'shareable'
-  | 'chefRecommendation';
+  | 'chefRecommendation'
+  | 'signature'
+  | 'limitedEdition'
+  | 'kidsDish'
+  | 'historicalRecipe';

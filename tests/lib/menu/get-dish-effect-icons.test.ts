@@ -21,4 +21,24 @@ describe('lib/menu/get-dish-effect-icons.ts', () => {
     expect(getDishEffectIcons(TypePlat.PLAT, 'main-130', 'second', null))
       .toContain('chefRecommendation');
   });
+
+  it('can mark any dish as a signature dish', () => {
+    expect(getDishEffectIcons(TypePlat.PLAT, 'main-12', 'second', null))
+      .toContain('signature');
+  });
+
+  it('can mark any dish as limited edition', () => {
+    expect(getDishEffectIcons(TypePlat.PLAT, 'main-1', 'second', null))
+      .toContain('limitedEdition');
+  });
+
+  it('can mark any dish as a kids dish', () => {
+    expect(getDishEffectIcons(TypePlat.PLAT, 'main-80', 'second', null))
+      .toContain('kidsDish');
+  });
+
+  it('can mark any dish as a historical recipe', () => {
+    expect(getDishEffectIcons(TypePlat.PLAT, 'main-5', 'second', null))
+      .toContain('historicalRecipe');
+  });
 });

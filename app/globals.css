@@ -214,6 +214,26 @@
   .dish-icon-chef:focus-visible svg {
     animation: dish-icon-stamp 420ms ease-out;
   }
+
+  .dish-icon-signature:hover svg,
+  .dish-icon-signature:focus-visible svg {
+    animation: dish-icon-crown 480ms ease-out;
+  }
+
+  .dish-icon-limited:hover svg,
+  .dish-icon-limited:focus-visible svg {
+    animation: dish-icon-tag 620ms ease-out;
+  }
+
+  .dish-icon-child:hover svg,
+  .dish-icon-child:focus-visible svg {
+    animation: dish-icon-scurry 320ms ease-out;
+  }
+
+  .dish-icon-historical:hover svg,
+  .dish-icon-historical:focus-visible svg {
+    animation: dish-icon-zoom 460ms ease-out;
+  }
 }
 
 @keyframes shake {
@@ -269,6 +289,33 @@
   0%, 100% { transform: scale(1) rotate(0deg); }
   40% { transform: scale(1.13) rotate(-4deg); }
   72% { transform: scale(0.98) rotate(2deg); }
+}
+
+@keyframes dish-icon-crown {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  38% { transform: translateY(-1.5px) rotate(-5deg); }
+  70% { transform: translateY(0) rotate(3deg); }
+}
+
+@keyframes dish-icon-tag {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  18% { transform: rotate(-12deg) scale(1.14); }
+  38% { transform: rotate(10deg) scale(1.1); }
+  58% { transform: rotate(-7deg) scale(1.08); }
+  78% { transform: rotate(4deg) scale(1.03); }
+}
+
+@keyframes dish-icon-scurry {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(2px) rotate(8deg); }
+  50% { transform: translateX(-2px) rotate(-8deg); }
+  75% { transform: translateX(1px) rotate(5deg); }
+}
+
+@keyframes dish-icon-zoom {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.18); }
+  72% { transform: scale(0.98); }
 }
 
 /***************************************************

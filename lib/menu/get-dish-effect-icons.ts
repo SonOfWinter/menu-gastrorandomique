@@ -38,5 +38,21 @@ export default function getDishEffectIcons(
     icons.push('chefRecommendation');
   }
 
+  if (hasEffect(`signature|${dishText}`)) {
+    icons.push('signature');
+  }
+
+  if (hasEffect(`limitedEdition|${dishText}`)) {
+    icons.push('limitedEdition');
+  }
+
+  if (hasEffect(`kidsDish|${dishText}`)) {
+    icons.push('kidsDish');
+  }
+
+  if (hasEffect(`historicalRecipe|${dishText}`)) {
+    icons.push('historicalRecipe');
+  }
+
   return icons;
 }
