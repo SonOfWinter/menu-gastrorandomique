@@ -203,6 +203,7 @@ const epices: Ingredient[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: [TypeAliment.EPICE, TypeAliment.SAUCE, TypeAliment.LEGUME, TypeAliment.SALADE],
+    isSpicy: true,
     postAdjectifs: ['', 'rouge', 'vert', 'd’Espelette', 'oiseau', 'jalapeño', 'habanero'],
     determinants: determinantPresets.masculineConsonant,
   },

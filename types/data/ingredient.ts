@@ -12,6 +12,7 @@ export type Ingredient = DeepReadonly<{
   genre: Genre,
   nombre: Nombre,
   types: TypeAliment[],
+  isSpicy?: boolean,
   postAdjectifs?: string[],
   determinants: Record<TypeDeterminant, string>
 }>

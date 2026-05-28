@@ -23,12 +23,14 @@ const generateMain = (
   mainType: TypePlat,
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
+  selectedIngredients?: Ingredient[],
 ): string => {
   let main: string = '';
   const ingredientPrincipal: Ingredient | null = getIngredient(ingredients, undefined, true, null, rng);
   if (!ingredientPrincipal) {
     return '';
   }
+  selectedIngredients?.push(ingredientPrincipal);
   const adjectifPrincipal: Adjectif | null = getAdjectifBasedOnIngredient(
     data.adjectifs,
     ingredientPrincipal,
