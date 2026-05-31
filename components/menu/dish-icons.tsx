@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import { HugeiconsIcon } from '@hugeicons/react';
 import type { IconSvgElement } from '@hugeicons/react';
 import {
@@ -94,29 +95,66 @@ export default function DishIcons({
   icons: readonly DishIcon[];
   className?: string;
 }) {
+  const [activeIcon, setActiveIcon] = React.useState<DishIcon | null>(null);
+  const tooltipTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  React.useEffect(() => () => {
+    if (tooltipTimeoutRef.current) {
+      clearTimeout(tooltipTimeoutRef.current);
+    }
+  }, []);
+
   if (icons.length === 0) {
     return null;
   }
 
+  const clearTooltipTimeout = () => {
+    if (tooltipTimeoutRef.current) {
+      clearTimeout(tooltipTimeoutRef.current);
+      tooltipTimeoutRef.current = null;
+    }
+  };
+
+  const showTooltip = (icon: DishIcon) => {
+    clearTooltipTimeout();
+    setActiveIcon(icon);
+    tooltipTimeoutRef.current = setTimeout(() => {
+      setActiveIcon((currentIcon) => currentIcon === icon ? null : currentIcon);
+      tooltipTimeoutRef.current = null;
+    }, 2500);
+  };
+
   return (
     <span
       className={cn('inline-flex items-center gap-1 text-primary', className)}
-      role="img"
+      role="group"
       aria-label={icons.map((icon) => iconConfig[icon].label).join(', ')}
     >
       {icons.map((icon) => {
         const config = iconConfig[icon];
 
         return (
-          <Tooltip key={icon}>
+          <Tooltip
+            key={icon}
+            open={activeIcon === icon}
+            onOpenChange={(open) => {
+              clearTooltipTimeout();
+              setActiveIcon(open ? icon : null);
+            }}
+          >
             <TooltipTrigger asChild>
-              <span
+              <button
+                type="button"
                 className={cn(
-                  'dish-icon-badge inline-flex size-5 items-center justify-center rounded-full border border-primary/25 bg-primary/5',
+                  'dish-icon-badge inline-flex size-5 items-center justify-center rounded-full border border-primary/25 bg-primary/5 p-0 text-current',
                   config.animationClass,
                 )}
-                tabIndex={0}
                 aria-label={config.label}
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  showTooltip(icon);
+                }}
               >
                 <HugeiconsIcon
                   icon={config.icon}
@@ -124,7 +162,7 @@ export default function DishIcons({
                   className="size-3.5"
                   aria-hidden="true"
                 />
-              </span>
+              </button>
             </TooltipTrigger>
             <TooltipContent>
               {config.label}

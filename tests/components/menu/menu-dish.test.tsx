@@ -92,6 +92,24 @@ describe('components/menu/menu-dish.tsx', () => {
     });
   });
 
+  it('shows an icon tooltip without copying the dish text', () => {
+    const { getAllByText, getByRole } = render(
+      <MenuDish
+        dish={{
+          main: 'Tarte',
+          second: 'aux pommes',
+          sauce: 'caramel',
+          icons: ['spicy'],
+        }}
+      />,
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Plat épicé' }));
+
+    expect(copyText).not.toHaveBeenCalled();
+    expect(getAllByText('Plat épicé').length).toBeGreaterThan(0);
+  });
+
   it('shows error toast when copy fails', async () => {
     vi.mocked(copyText).mockRejectedValueOnce(new Error('fail'));
 
