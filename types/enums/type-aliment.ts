@@ -21,3 +21,27 @@ export enum TypeAliment {
   VIANDE_BLANCHE = 'viande blanche',
   VIANDE_ROUGE = 'viande rouge'
 }
+
+export const TYPE_ALIMENT_BITS: Record<TypeAliment, number> = {
+  [TypeAliment.ALCOOL]: 1 << 0,
+  [TypeAliment.BASE]: 1 << 1,
+  [TypeAliment.CEREALE]: 1 << 2,
+  [TypeAliment.CHAMPIGNON]: 1 << 3,
+  [TypeAliment.FROMAGE]: 1 << 4,
+  [TypeAliment.FRUIT]: 1 << 5,
+  [TypeAliment.FRUIT_A_COQUE]: 1 << 6,
+  [TypeAliment.FRUIT_DE_MER]: 1 << 7,
+  [TypeAliment.HERBE]: 1 << 8,
+  [TypeAliment.EPICE]: 1 << 9,
+  [TypeAliment.CHARCUTERIE]: 1 << 10,
+  [TypeAliment.LAITIER]: 1 << 11,
+  [TypeAliment.LEGUME]: 1 << 12,
+  [TypeAliment.LIQUIDE]: 1 << 13,
+  [TypeAliment.POISSON]: 1 << 14,
+  [TypeAliment.SALADE]: 1 << 15,
+  [TypeAliment.SAUCE]: 1 << 16,
+  [TypeAliment.SOFT]: 1 << 17,
+  [TypeAliment.SUCRE]: 1 << 18,
+  [TypeAliment.VIANDE_BLANCHE]: 1 << 19,
+  [TypeAliment.VIANDE_ROUGE]: 1 << 20,
+};

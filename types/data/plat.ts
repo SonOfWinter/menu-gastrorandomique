@@ -12,5 +12,7 @@ export type Plat = DeepReadonly<{
   genre: Genre;
   nombre: Nombre;
   types: TypePlat[];
+  compatibilityMask?: number;
   typeAliments: Record<TypePlat, TypeAliment[]>
+  typeAlimentMasks?: Record<TypePlat, number>
 }>

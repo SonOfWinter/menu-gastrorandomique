@@ -8,4 +8,5 @@ export type Adjectif = DeepReadonly<{
   sourceId?: string;
   noms: NomForms;
   types: TypeAliment[];
+  compatibilityMask?: number;
 }>

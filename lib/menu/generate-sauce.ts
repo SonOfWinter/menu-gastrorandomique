@@ -5,7 +5,6 @@ import { Ingredient } from '@/types/data/ingredient';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { Adjectif } from '@/types/data/adjectif';
 import { PreSauce } from '@/types/data/pre-sauce';
-import getRandom from '@/lib/menu/get-random';
 import { SauceType } from '@/types/data/sauce-type';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import getIngredient from '@/lib/menu/get-ingredient';
@@ -19,6 +18,12 @@ import {
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
 import getItemsByIds from '@/lib/menu/get-items-by-ids';
+import getThemedRandom from '@/lib/menu/get-themed-random';
+import {
+  getCollectionWeight,
+  getTypePlatWeight,
+  ThemeContext,
+} from '@/lib/menu/theme';
 
 export default function generateSauce(
   data: Menu,
@@ -27,9 +32,10 @@ export default function generateSauce(
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
   selectedIngredients?: Ingredient[],
+  themeContext: ThemeContext = {},
 ): string {
-  const preSauce = getPreSauce(data, rng);
-  const typeSauce = getSauceType(data, typePlat, rng);
+  const preSauce = getPreSauce(data, rng, themeContext);
+  const typeSauce = getSauceType(data, typePlat, rng, themeContext);
 
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   preSuite = preSuite + determinantSeparator(preSuite);
@@ -39,6 +45,7 @@ export default function generateSauce(
     false,
     isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
     rng,
+    themeContext,
   );
   if (!ingredientSauce) {
     return '';
@@ -52,6 +59,7 @@ export default function generateSauce(
     inconsistentLevel,
     rng,
     data.indexes,
+    themeContext,
   );
 
   let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + formatIngredientName(ingredientSauce, rng);
@@ -61,22 +69,30 @@ export default function generateSauce(
   return sauce;
 }
 
-function getPreSauce(data: Menu, rng?: RandomGenerator): PreSauce {
+function getPreSauce(data: Menu, rng?: RandomGenerator, themeContext: ThemeContext = {}): PreSauce {
   const availablePreSauces = [...data.preSauces];
-  return getRandom(availablePreSauces, rng);
+  return getThemedRandom(
+    availablePreSauces,
+    (item) => getCollectionWeight(themeContext.theme, 'preSauces', item.id as number),
+    rng,
+  );
 }
 
 function getSauceType(
   data: Menu,
   typePlat: TypePlat,
   rng?: RandomGenerator,
+  themeContext: ThemeContext = {},
 ): SauceType {
   const availableSauceTypes = getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]);
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
     !getSauceTypesAlreadyUsed().includes(item.id as number),
   );
-  const selected = getRandom(
-    unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes,
+  const selectableSauceTypes = unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes;
+  const selected = getThemedRandom(
+    selectableSauceTypes,
+    (item) => getCollectionWeight(themeContext.theme, 'sauceTypes', item.id as number)
+      * getTypePlatWeight(themeContext.theme, item.compatibilityMask),
     rng,
   );
   addSauceTypesAlreadyUsed(selected.id as number);

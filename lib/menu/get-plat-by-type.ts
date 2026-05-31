@@ -1,25 +1,36 @@
 import { Plat } from '@/types/data/plat';
-import { TypePlat } from '@/types/enums/type-plat';
-import getRandom from '@/lib/menu/get-random';
+import { TYPE_PLAT_BITS, TypePlat } from '@/types/enums/type-plat';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import {
   addPlatsAlreadyUsed,
   getPlatsAlreadyUsed,
 } from '@/lib/ssr-cache';
+import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
+import getThemedRandom from '@/lib/menu/get-themed-random';
+import {
+  getCollectionWeight,
+  getTypePlatWeight,
+  ThemeContext,
+} from '@/lib/menu/theme';
 
 const getPlatByType = (
   plats: Plat[],
   mainType: TypePlat,
   rng?: RandomGenerator,
+  themeContext: ThemeContext = {},
 ): Plat => {
+  const requiredMask = TYPE_PLAT_BITS[mainType];
   const filterredPlats: Plat[] = plats.filter((item: Plat) =>
-    item.types?.includes(mainType),
+    hasCompatibleMask(item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_PLAT_BITS), requiredMask),
   );
   const unusedPlats = filterredPlats.filter((item: Plat) =>
     !getPlatsAlreadyUsed().includes(item.id as number),
   );
-  const selected = getRandom(
-    unusedPlats.length > 0 ? unusedPlats : filterredPlats,
+  const availablePlats = unusedPlats.length > 0 ? unusedPlats : filterredPlats;
+  const selected = getThemedRandom(
+    availablePlats,
+    (item) => getCollectionWeight(themeContext.theme, 'plats', item.id as number)
+      * getTypePlatWeight(themeContext.theme, item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_PLAT_BITS)),
     rng,
   );
   addPlatsAlreadyUsed(selected.id as number);

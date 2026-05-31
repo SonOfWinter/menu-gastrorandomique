@@ -10,4 +10,5 @@ export type Lien = DeepReadonly<{
   noms: NomForms;
   suite: TypeDeterminant;
   compatibleIngredientTypes: TypeAliment[];
+  acceptedCompatibilityMask?: number;
 }>

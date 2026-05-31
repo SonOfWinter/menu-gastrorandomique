@@ -6,7 +6,6 @@ import { TypePlat } from '@/types/enums/type-plat';
 import { createSeededRandom } from '@/lib/utils/seeded-rng';
 import random from '@/lib/utils/random';
 import round from '@/lib/utils/round';
-import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
 import {
@@ -14,6 +13,13 @@ import {
   MenuPriceRange,
 } from '@/lib/menu/menu-config';
 import { resetAlreadyUsed } from '@/lib/ssr-cache';
+import { getThemeById, ThemeContext } from '@/lib/menu/theme';
+import getThemedRandom from '@/lib/menu/get-themed-random';
+import { getCollectionWeight } from '@/lib/menu/theme';
+
+export type GenerateMenuOptions = {
+  themeId?: string;
+};
 
 function assertNonEmptyList(label: string, list: readonly unknown[]): void {
   if (list.length === 0) {
@@ -83,27 +89,39 @@ export default function generateMenu(
   inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
   priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
   seed?: number,
+  options: GenerateMenuOptions = {},
 ): DisplayMenu {
   resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
   validateMenuData(data);
+  const themeContext: ThemeContext = {
+    theme: getThemeById(data.themes, options.themeId),
+  };
   const entree = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel, rng),
+    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel, rng, themeContext),
   );
   const plat = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.PLAT, inconsistentLevel, rng),
+    () => generateDish(data, TypePlat.PLAT, inconsistentLevel, rng, themeContext),
   );
   const dessert = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel, rng),
+    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel, rng, themeContext),
   );
   return {
     price: round(random(priceRange.min, priceRange.max, true, rng), 2),
-    title: getRandom(data.titles, rng).nom,
-    complement: getRandom(data.complements, rng).nom,
+    title: getThemedRandom(
+      data.titles,
+      (item) => getCollectionWeight(themeContext.theme, 'titles', item.id as number),
+      rng,
+    ).nom,
+    complement: getThemedRandom(
+      data.complements,
+      (item) => getCollectionWeight(themeContext.theme, 'complements', item.id as number),
+      rng,
+    ).nom,
     entree,
     plat,
     dessert,

@@ -8,4 +8,5 @@ export type Pre = DeepReadonly<{
   sourceId?: string;
   noms: NomForms;
   types: TypePlat[];
+  compatibilityMask?: number;
 }>

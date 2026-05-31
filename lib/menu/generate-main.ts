@@ -15,6 +15,7 @@ import getPreByType from '@/lib/menu/get-pre-by-type';
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
 import getItemsByIds from '@/lib/menu/get-items-by-ids';
+import { ThemeContext } from '@/lib/menu/theme';
 
 const generateMain = (
   data: Menu,
@@ -24,9 +25,10 @@ const generateMain = (
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
   selectedIngredients?: Ingredient[],
+  themeContext: ThemeContext = {},
 ): string => {
   let main: string = '';
-  const ingredientPrincipal: Ingredient | null = getIngredient(ingredients, undefined, true, null, rng);
+  const ingredientPrincipal: Ingredient | null = getIngredient(ingredients, undefined, true, null, rng, themeContext);
   if (!ingredientPrincipal) {
     return '';
   }
@@ -37,12 +39,14 @@ const generateMain = (
     inconsistentLevel,
     rng,
     data.indexes,
+    themeContext,
   );
   if (hasRandomPart(3, rng)) {
     const prePrincipal = getPreByType(
       getItemsByIds(data.pres, data.indexes.preIdsByType[mainType]),
       mainType,
       rng,
+      themeContext,
     );
     main += `${prePrincipal.noms[platPrincipal.genre][platPrincipal.nombre]} `;
   }
@@ -58,6 +62,7 @@ const generateMain = (
       getItemsByIds(data.posts, data.indexes.postIdsByType[mainType]),
       mainType,
       rng,
+      themeContext,
     );
     main += ` ${postPrincipal.nom}`;
   }

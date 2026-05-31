@@ -7,4 +7,5 @@ export type Post = DeepReadonly<{
   sourceId?: string;
   nom: string;
   types: TypePlat[];
+  compatibilityMask?: number;
 }>

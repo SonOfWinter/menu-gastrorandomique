@@ -12,8 +12,10 @@ export type SauceType = {
   genre: Genre,
   nombre: Nombre,
   types: TypePlat[];
+  compatibilityMask?: number;
   determinants: Record<TypeDeterminant, string>;
   suite: TypeDeterminant;
   compatibleIngredientTypes: TypeAliment[] | null;
+  acceptedCompatibilityMask?: number;
 
 }

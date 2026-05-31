@@ -9,6 +9,7 @@ import { PreSauce } from '@/types/data/pre-sauce';
 import { SauceType } from '@/types/data/sauce-type';
 import { Title } from '@/types/data/title';
 import { MenuIndexes } from '@/types/menu-indexes';
+import { CompiledTheme } from '@/types/data/theme';
 
 export interface Menu {
   adjectifs: Adjectif[];
@@ -21,5 +22,6 @@ export interface Menu {
   pres: Pre[];
   preSauces: PreSauce[];
   sauceTypes: SauceType[];
+  themes: CompiledTheme[];
   indexes: MenuIndexes;
 }

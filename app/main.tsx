@@ -11,9 +11,19 @@ import MenuContainer from '@/components/menu-container';
 import { DisplayMenu } from '@/types/display-menu';
 import { MenuResponse } from '@/types/menu-response';
 import { toast } from 'sonner';
+import themes from '@/data/menu-theme';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
+
+const noThemeValue = 'aucun';
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -24,6 +34,16 @@ export default function Main() {
   const [position, setPosition] = React.useState<Position>('main');
   const [menu, setMenu] = React.useState<DisplayMenu | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [themeId, setThemeId] = React.useState<string>(() => {
+    if (typeof window === 'undefined') {
+      return noThemeValue;
+    }
+
+    const themeParam = new URLSearchParams(window.location.search).get('theme');
+    return themeParam && themes.some((theme) => theme.id === themeParam)
+      ? themeParam
+      : noThemeValue;
+  });
   const initialSeedRef = useRef<number | null>(null);
   const initialSeedUsedRef = useRef(false);
   const menuRef = useRef<HTMLElement>(null);
@@ -33,9 +53,14 @@ export default function Main() {
     [],
   );
 
-  const updateSeedUrl = useCallback((nextSeed: number) => {
+  const updateSeedUrl = useCallback((nextSeed: number, nextThemeId: string) => {
     const url = new URL(window.location.href);
     url.searchParams.set('seed', String(nextSeed));
+    if (nextThemeId === noThemeValue) {
+      url.searchParams.delete('theme');
+    } else {
+      url.searchParams.set('theme', nextThemeId);
+    }
     window.history.replaceState(null, '', url.toString());
   }, []);
 
@@ -67,7 +92,11 @@ export default function Main() {
       return createSeed();
     })();
     try {
-      const res: Response = await fetch(`/generate?seed=${nextSeed}`);
+      const params = new URLSearchParams({ seed: String(nextSeed) });
+      if (themeId !== noThemeValue) {
+        params.set('theme', themeId);
+      }
+      const res: Response = await fetch(`/generate?${params.toString()}`);
       if (res.status === 429) {
         toast.error('Vous êtes trop gourmand ! veuillez reessayer plus tard');
         setPosition('main');
@@ -85,7 +114,7 @@ export default function Main() {
       }
       menuRef?.current?.scrollTo(0, 0);
       setMenu(newMenu.menu);
-      updateSeedUrl(nextSeed);
+      updateSeedUrl(nextSeed, themeId);
     } catch (error) {
       setPosition('main');
       console.error('Erreur lors de la generation du menu:', error);
@@ -93,7 +122,7 @@ export default function Main() {
     } finally {
       setIsLoading(false);
     }
-  }, [createSeed, isLoading, updateSeedUrl]);
+  }, [createSeed, isLoading, themeId, updateSeedUrl]);
 
   return (<>
       <MenuContainer
@@ -101,6 +130,25 @@ export default function Main() {
         variant={position}
         menu={menu}
       />
+      <div className="fixed top-4 left-4 z-50">
+        <Select
+          value={themeId}
+          onValueChange={setThemeId}
+          disabled={isLoading}
+        >
+          <SelectTrigger aria-label="Thème du menu">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={noThemeValue}>Sans thème</SelectItem>
+            {themes.map((theme) => (
+              <SelectItem key={theme.id} value={theme.id}>
+                {theme.nom}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
       <Navigation
         variant={position}
         setPosition={setPosition}

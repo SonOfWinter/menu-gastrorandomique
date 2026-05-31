@@ -1,11 +1,17 @@
 import { Ingredient } from '@/types/data/ingredient';
-import { TypeAliment } from '@/types/enums/type-aliment';
-import getRandom from '@/lib/menu/get-random';
+import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import {
   addIngredientsAlreadyUsed,
   getIngredientsAlreadyUsed,
 } from '@/lib/ssr-cache';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
+import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
+import getThemedRandom from '@/lib/menu/get-themed-random';
+import { ThemeContext } from '@/lib/menu/theme';
+import {
+  getCollectionWeight,
+  getTypeAlimentWeight,
+} from '@/lib/menu/theme';
 
 const getIngredient = (
   ingredients: Ingredient[],
@@ -13,22 +19,29 @@ const getIngredient = (
   excludeAlreadyUsed: boolean = true,
   additionalTypes?: readonly TypeAliment[] | null,
   rng?: RandomGenerator,
+  themeContext: ThemeContext = {},
 ): Ingredient | null => {
+  const typeFilterMask = typeFilter ? TYPE_ALIMENT_BITS[typeFilter] : 0;
+  const additionalTypesMask = getCompatibilityMask(additionalTypes, TYPE_ALIMENT_BITS);
   const filteredIngredients: Ingredient[] = ingredients.filter((item: Ingredient) => {
     const alreadyUsed = getIngredientsAlreadyUsed().includes(item.id as number);
-    const matchesType = typeFilter ? item.types.includes(typeFilter) : true;
-    let matchesAdditionalTypes = true;
-    if (additionalTypes && additionalTypes.length > 0) {
-      matchesAdditionalTypes = additionalTypes.some((type: TypeAliment): boolean =>
-        item.types.includes(type),
-      );
-    }
+    const itemMask = item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_ALIMENT_BITS);
+    const matchesType = hasCompatibleMask(itemMask, typeFilterMask);
+    const matchesAdditionalTypes = hasCompatibleMask(itemMask, additionalTypesMask);
     return !(excludeAlreadyUsed && alreadyUsed)
       && matchesType
       && matchesAdditionalTypes;
   });
   if (filteredIngredients.length > 0) {
-    const selected = getRandom(filteredIngredients, rng);
+    const selected = getThemedRandom(
+      filteredIngredients,
+      (item) => getCollectionWeight(themeContext.theme, 'ingredients', item.id as number)
+        * getTypeAlimentWeight(
+          themeContext.theme,
+          item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_ALIMENT_BITS),
+        ),
+      rng,
+    );
     addIngredientsAlreadyUsed(selected.id as number);
     return selected;
   }
