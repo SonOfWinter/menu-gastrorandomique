@@ -32,6 +32,31 @@ describe('lib/generate-menu.ts', () => {
     expect(menu.complement.length).toBeGreaterThan(0);
   });
 
+  it('generates a menu with a valid theme', () => {
+    const menu = generateMenu(undefined, undefined, undefined, 123, { themeId: 'hiver' });
+
+    expect(menu.entree).toHaveLength(defaultMenuConfig.dishCount);
+    expect(menu.plat).toHaveLength(defaultMenuConfig.dishCount);
+    expect(menu.dessert).toHaveLength(defaultMenuConfig.dishCount);
+  });
+
+  it('falls back when the theme is unknown', () => {
+    const fallbackMenu = generateMenu(undefined, undefined, undefined, 123, { themeId: 'theme-inconnu' });
+    const defaultMenu = generateMenu(undefined, undefined, undefined, 123);
+
+    expect(fallbackMenu).toEqual(defaultMenu);
+  });
+
+  it('keeps the display menu format with and without theme', () => {
+    const defaultMenu = generateMenu(undefined, undefined, undefined, 123);
+    const themedMenu = generateMenu(undefined, undefined, undefined, 123, { themeId: 'ete' });
+
+    expect(Object.keys(themedMenu).sort()).toEqual(Object.keys(defaultMenu).sort());
+    expect(Array.isArray(themedMenu.entree)).toBe(true);
+    expect(Array.isArray(themedMenu.plat)).toBe(true);
+    expect(Array.isArray(themedMenu.dessert)).toBe(true);
+  });
+
   it('rejects partially empty typed indexes before generation', () => {
     const data = getMenuData();
     const invalidData = {

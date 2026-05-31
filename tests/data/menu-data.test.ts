@@ -8,6 +8,7 @@ import posts from '@/data/menu-post';
 import pres from '@/data/menu-pre';
 import preSauces from '@/data/menu-pre-sauce';
 import sauceTypes from '@/data/menu-sauce-type';
+import themes from '@/data/menu-theme';
 import titles from '@/data/menu-title';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
@@ -223,5 +224,22 @@ describe('data consistency', () => {
   it('keeps menu-title entries structurally valid', () => {
     expectCollectionIds(titles, 'titles');
     titles.forEach((title, index) => expectNonEmptyString(title.nom, `titles[${index}].nom`));
+  });
+
+  it('keeps menu-theme entries structurally valid', () => {
+    expect(themes.length).toBeGreaterThan(0);
+    expectUniqueValues(themes.map((theme) => theme.id), 'themes.ids');
+    themes.forEach((theme, index) => {
+      expectNonEmptyString(theme.id, `themes[${index}].id`);
+      expectNonEmptyString(theme.nom, `themes[${index}].nom`);
+
+      for (const typeAliment of Object.keys(theme.weights.typeAliments ?? {})) {
+        expect(typeAliments.includes(typeAliment as TypeAliment), `themes[${index}].typeAliments`).toBe(true);
+      }
+
+      for (const typePlat of Object.keys(theme.weights.typePlats ?? {})) {
+        expect(typePlats.includes(typePlat as TypePlat), `themes[${index}].typePlats`).toBe(true);
+      }
+    });
   });
 });

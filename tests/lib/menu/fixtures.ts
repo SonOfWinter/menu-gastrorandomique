@@ -15,6 +15,8 @@ import { SauceType } from '@/types/data/sauce-type';
 import { Title } from '@/types/data/title';
 import { Complement } from '@/types/data/complement';
 import { MenuIndexes } from '@/types/menu-indexes';
+import { TYPE_ALIMENT_BITS } from '@/types/enums/type-aliment';
+import { getCompatibilityMask, getMaskIndexes } from '@/lib/menu/compatibility-mask';
 
 export const ingredientOne: Ingredient = {
   id: 'ing-1',
@@ -185,10 +187,33 @@ function buildIndex<TItem, TType extends string>(
 }
 
 function buildMenuIndexes(source: MenuDataSource): MenuIndexes {
+  const ingredientMasks = source.ingredients.map((item) => getCompatibilityMask(item.types, TYPE_ALIMENT_BITS));
+  const usefulIngredientMasks = [
+    ...source.plats.flatMap((item) => Object.values(TypePlat).map((typePlat) =>
+      getCompatibilityMask(item.typeAliments[typePlat], TYPE_ALIMENT_BITS),
+    )),
+    getCompatibilityMask(Object.values(TypeAliment), TYPE_ALIMENT_BITS),
+    TYPE_ALIMENT_BITS[TypeAliment.SAUCE],
+  ].filter((mask) => mask > 0);
   return {
     ingredientIdsByType: buildIndex(source.ingredients, Object.values(TypeAliment), (item) => item.types),
+    ingredientIdsByCompatibilityMask: getMaskIndexes(
+      source.ingredients,
+      usefulIngredientMasks,
+      (item) => getCompatibilityMask(item.types, TYPE_ALIMENT_BITS),
+    ),
     adjectifIdsByType: buildIndex(source.adjectifs, Object.values(TypeAliment), (item) => item.types),
+    adjectifIdsByAcceptedMask: getMaskIndexes(
+      source.adjectifs,
+      ingredientMasks,
+      (item) => getCompatibilityMask(item.types, TYPE_ALIMENT_BITS),
+    ),
     lienIdsByType: buildIndex(source.liens, Object.values(TypeAliment), (item) => item.compatibleIngredientTypes),
+    lienIdsByAcceptedMask: getMaskIndexes(
+      source.liens,
+      ingredientMasks,
+      (item) => getCompatibilityMask(item.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
+    ),
     platIdsByType: buildIndex(source.plats, Object.values(TypePlat), (item) => item.types),
     postIdsByType: buildIndex(source.posts, Object.values(TypePlat), (item) => item.types),
     preIdsByType: buildIndex(source.pres, Object.values(TypePlat), (item) => item.types),
@@ -213,6 +238,7 @@ export function createMenuData(overrides: Partial<MenuDataSource> = {}): Menu {
     preSauces: source.preSauces,
     sauceTypes: source.sauceTypes,
     titles: source.titles,
+    themes: [],
     indexes: buildMenuIndexes(source),
   };
 }
