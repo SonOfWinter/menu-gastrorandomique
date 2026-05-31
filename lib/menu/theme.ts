@@ -1,4 +1,5 @@
 import { CompiledTheme } from '@/types/data/theme';
+import { hasCompatibleMask } from '@/lib/menu/compatibility-mask';
 
 export type ThemeContext = {
   theme?: CompiledTheme;
@@ -24,8 +25,8 @@ export function filterItemsByTheme<TItem>(
   }
 
   const filteredItems = items.filter((item) => {
-    const themeIds = (item as { themeIds?: readonly number[] }).themeIds;
-    return !themeIds || themeIds.includes(theme.id);
+    const themeCompatibilityMask = (item as { themeCompatibilityMask?: number }).themeCompatibilityMask ?? 0;
+    return themeCompatibilityMask === 0 || hasCompatibleMask(themeCompatibilityMask, theme.compatibilityMask);
   });
 
   return filteredItems.length > 0 ? filteredItems : [...items];

@@ -1,18 +1,23 @@
 import { describe, expect, it } from 'vitest';
 import { filterItemsByTheme, getRandomTheme } from '@/lib/menu/theme';
 import { CompiledTheme } from '@/types/data/theme';
+import { THEME_BITS, Theme } from '@/types/enums/theme';
 
 const medievalTheme: CompiledTheme = {
-  id: 4,
-  sourceId: 'f9c3fbb0-fce2-41f3-b97e-f6e496bcd4ec',
+  id: Theme.MEDIEVAL,
   nom: 'Médiéval',
+  compatibilityMask: THEME_BITS[Theme.MEDIEVAL],
 };
 
 describe('lib/menu/theme.ts', () => {
   it('selects a random theme', () => {
     const selected = getRandomTheme(
       [
-        { id: 0, sourceId: 'theme-0', nom: 'Hiver' },
+        {
+          id: Theme.HIVER,
+          nom: 'Hiver',
+          compatibilityMask: THEME_BITS[Theme.HIVER],
+        },
         medievalTheme,
       ],
       (items) => items[1],
@@ -23,7 +28,7 @@ describe('lib/menu/theme.ts', () => {
 
   it('filters themed items', () => {
     const items = [
-      { id: 1, nom: 'nuggets', themeIds: [0, 1, 2, 3] },
+      { id: 1, nom: 'nuggets', themeCompatibilityMask: THEME_BITS[Theme.HIVER] | THEME_BITS[Theme.ETE] },
       { id: 2, nom: 'ballottine' },
     ];
 
@@ -34,7 +39,7 @@ describe('lib/menu/theme.ts', () => {
 
   it('falls back to the original list when a theme would empty it', () => {
     const items = [
-      { id: 1, nom: 'nuggets', themeIds: [0, 1, 2, 3] },
+      { id: 1, nom: 'nuggets', themeCompatibilityMask: THEME_BITS[Theme.HIVER] },
     ];
 
     expect(filterItemsByTheme(items, medievalTheme)).toEqual(items);

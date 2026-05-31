@@ -1,14 +1,7 @@
-import { EntityId } from '@/types/entity-id';
-
-export type ThemeId = EntityId;
-
-export type Theme = {
-  id: ThemeId;
-  nom: string;
-};
+import { Theme } from '@/types/enums/theme';
 
 export type CompiledTheme = {
-  id: number;
-  sourceId: string;
+  id: Theme;
   nom: string;
+  compatibilityMask: number;
 };

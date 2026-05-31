@@ -3,6 +3,7 @@ import getMenuData from '@/lib/menu/get-menu-data';
 import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TYPE_PLAT_BITS, TypePlat } from '@/types/enums/type-plat';
+import { THEME_BITS, Theme } from '@/types/enums/theme';
 
 describe('generated menu data', () => {
   it('contains generated compatibility masks', () => {
@@ -33,19 +34,19 @@ describe('generated menu data', () => {
     const theme = data.themes.find((item) => item.nom === 'Hiver');
 
     expect(theme?.nom).toBe('Hiver');
-    expect(typeof theme?.id).toBe('number');
-    expect(theme?.sourceId).toMatch(
-      /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
-    );
+    expect(theme?.id).toBe(Theme.HIVER);
+    expect(theme?.compatibilityMask).toBe(THEME_BITS[Theme.HIVER]);
   });
 
-  it('compiles source theme ids on scoped data entries', () => {
+  it('compiles theme masks on scoped data entries', () => {
     const data = getMenuData();
     const medievalTheme = data.themes.find((item) => item.nom === 'Médiéval');
     const nuggets = data.plats.find((item) => item.nom === 'nuggets');
 
     expect(medievalTheme).toBeDefined();
-    expect(nuggets?.themeIds).toBeDefined();
-    expect(nuggets?.themeIds?.includes(medievalTheme?.id as number)).toBe(false);
+    expect(nuggets?.themeCompatibilityMask).toBeDefined();
+    const nuggetsMask = nuggets?.themeCompatibilityMask as number;
+    const medievalMask = medievalTheme?.compatibilityMask as number;
+    expect(nuggetsMask & medievalMask).toBe(0);
   });
 });

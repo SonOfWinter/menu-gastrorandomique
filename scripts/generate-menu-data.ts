@@ -9,12 +9,12 @@ import posts from '../data/menu-post';
 import preSauces from '../data/menu-pre-sauce';
 import pres from '../data/menu-pre';
 import sauceTypes from '../data/menu-sauce-type';
-import themes from '../data/menu-theme';
 import titles from '../data/menu-title';
 import { EntityId } from '@/types/entity-id';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TYPE_PLAT_BITS, TypePlat } from '@/types/enums/type-plat';
 import { getCompatibilityMask, getMaskIndexes } from '@/lib/menu/compatibility-mask';
+import { THEME_BITS, THEME_LABELS, Theme } from '@/types/enums/theme';
 
 function buildIndex<TItem, TType extends string>(
   items: readonly TItem[],
@@ -85,27 +85,24 @@ function uniqueNumbers(values: Iterable<number>): number[] {
 
 const typeAlimentEntries = Object.entries(TypeAliment) as [string, TypeAliment][];
 const typePlatEntries = Object.entries(TypePlat) as [string, TypePlat][];
-const normalizedThemes = normalizeIds(themes);
-const themeIdBySourceId = new Map(
-  normalizedThemes.map((theme) => [theme.sourceId, theme.id]),
-);
+const normalizedThemes = Object.values(Theme).map((theme) => ({
+  id: theme,
+  nom: THEME_LABELS[theme],
+  compatibilityMask: THEME_BITS[theme],
+}));
 
-function compileThemeIds<TItem>(item: TItem): Omit<TItem, 'themeIds'> & { themeIds?: number[] } {
-  const sourceThemeIds = (item as { themeIds?: readonly EntityId[] }).themeIds;
-  if (!sourceThemeIds) {
-    return item as Omit<TItem, 'themeIds'> & { themeIds?: number[] };
+function compileThemeMask<TItem>(item: TItem): Omit<TItem, 'themes'> & { themeCompatibilityMask?: number } {
+  const sourceThemes = (item as { themes?: readonly Theme[] }).themes;
+  if (!sourceThemes) {
+    return item as Omit<TItem, 'themes'> & { themeCompatibilityMask?: number };
   }
 
-  const themeIds = sourceThemeIds
-    .map((themeId) => themeIdBySourceId.get(String(themeId)))
-    .filter((themeId): themeId is number => themeId !== undefined);
-
-  const rest = { ...item } as { themeIds?: readonly EntityId[] };
-  delete rest.themeIds;
+  const rest = { ...item } as { themes?: readonly Theme[] };
+  delete rest.themes;
   return {
     ...rest,
-    themeIds,
-  } as Omit<TItem, 'themeIds'> & { themeIds?: number[] };
+    themeCompatibilityMask: getCompatibilityMask(sourceThemes, THEME_BITS),
+  } as Omit<TItem, 'themes'> & { themeCompatibilityMask?: number };
 }
 
 const ingredientsByType = buildIndex(ingredients, Object.values(TypeAliment), (item) => item.types);
@@ -115,15 +112,15 @@ const platsByType = buildIndex(plats, Object.values(TypePlat), (item) => item.ty
 const postsByType = buildIndex(posts, Object.values(TypePlat), (item) => item.types);
 const presByType = buildIndex(pres, Object.values(TypePlat), (item) => item.types);
 const sauceTypesByType = buildIndex(sauceTypes, Object.values(TypePlat), (item) => item.types);
-const normalizedAdjectifs = normalizeTypeAlimentItems(adjectifs).map(compileThemeIds);
-const normalizedComplements = normalizeIds(complements).map(compileThemeIds);
-const normalizedIngredients = normalizeTypeAlimentItems(ingredients).map(compileThemeIds);
+const normalizedAdjectifs = normalizeTypeAlimentItems(adjectifs).map(compileThemeMask);
+const normalizedComplements = normalizeIds(complements).map(compileThemeMask);
+const normalizedIngredients = normalizeTypeAlimentItems(ingredients).map(compileThemeMask);
 const normalizedLiens = normalizeIds(liens).map((item) => ({
-  ...compileThemeIds(item),
+  ...compileThemeMask(item),
   acceptedCompatibilityMask: getCompatibilityMask(item.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
 }));
 const normalizedPlats = normalizeTypePlatItems(plats).map((item) => ({
-  ...compileThemeIds(item),
+  ...compileThemeMask(item),
   typeAlimentMasks: Object.fromEntries(
     Object.values(TypePlat).map((typePlat) => [
       typePlat,
@@ -131,14 +128,14 @@ const normalizedPlats = normalizeTypePlatItems(plats).map((item) => ({
     ]),
   ) as Record<TypePlat, number>,
 }));
-const normalizedPosts = normalizeTypePlatItems(posts).map(compileThemeIds);
-const normalizedPreSauces = normalizeIds(preSauces).map(compileThemeIds);
-const normalizedPres = normalizeTypePlatItems(pres).map(compileThemeIds);
+const normalizedPosts = normalizeTypePlatItems(posts).map(compileThemeMask);
+const normalizedPreSauces = normalizeIds(preSauces).map(compileThemeMask);
+const normalizedPres = normalizeTypePlatItems(pres).map(compileThemeMask);
 const normalizedSauceTypes = normalizeTypePlatItems(sauceTypes).map((item) => ({
-  ...compileThemeIds(item),
+  ...compileThemeMask(item),
   acceptedCompatibilityMask: getCompatibilityMask(item.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
 }));
-const normalizedTitles = normalizeIds(titles).map(compileThemeIds);
+const normalizedTitles = normalizeIds(titles).map(compileThemeMask);
 
 const ingredientCompatibilityMasks = uniqueNumbers([
   ...normalizedPlats.flatMap((item) => Object.values(item.typeAlimentMasks)),

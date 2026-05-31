@@ -8,13 +8,13 @@ import posts from '@/data/menu-post';
 import pres from '@/data/menu-pre';
 import preSauces from '@/data/menu-pre-sauce';
 import sauceTypes from '@/data/menu-sauce-type';
-import themes from '@/data/menu-theme';
 import titles from '@/data/menu-title';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
+import { Theme } from '@/types/enums/theme';
 import { EntityId } from '@/types/entity-id';
 
 const genres = Object.values(Genre);
@@ -22,6 +22,7 @@ const nombres = Object.values(Nombre);
 const typeAliments = Object.values(TypeAliment);
 const typeDeterminants = Object.values(TypeDeterminant);
 const typePlats = Object.values(TypePlat);
+const themes = Object.values(Theme);
 
 function expectNonEmptyString(value: unknown, label: string) {
   expect(typeof value, label).toBe('string');
@@ -228,13 +229,9 @@ describe('data consistency', () => {
 
   it('keeps menu-theme entries structurally valid', () => {
     expect(themes.length).toBeGreaterThan(0);
-    expectUniqueValues(themes.map((theme) => theme.id), 'themes.ids');
+    expectUniqueValues(themes, 'themes');
     themes.forEach((theme, index) => {
-      expectNonEmptyString(theme.id, `themes[${index}].id`);
-      expect(String(theme.id), `themes[${index}].id`).toMatch(
-        /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
-      );
-      expectNonEmptyString(theme.nom, `themes[${index}].nom`);
+      expectNonEmptyString(theme, `themes[${index}]`);
     });
   });
 });

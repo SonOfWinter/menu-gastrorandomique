@@ -4,11 +4,13 @@ import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
 import { TypeAliment } from '@/types/enums/type-aliment';
+import { Theme } from '@/types/enums/theme';
 
 export type SauceType = {
   id: EntityId;
   sourceId?: string;
-  themeIds?: EntityId[];
+  themes?: Theme[];
+  themeCompatibilityMask?: number;
   nom: string;
   genre: Genre,
   nombre: Nombre,

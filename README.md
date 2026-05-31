@@ -77,9 +77,9 @@ Open http://localhost:3000 in your browser.
 
 ### Menu data
 
-Human-readable data lives in `data/*.ts` and `data-presets/*.ts`. `npm run generate:data` compiles it into `data-build/menu-data.generated.ts`, including compatibility masks, runtime indexes, and themes. Theme source IDs are UUIDs in `data/menu-theme.ts`; generated data normalizes them to numeric IDs.
+Human-readable data lives in `data/*.ts` and `data-presets/*.ts`. `npm run generate:data` compiles it into `data-build/menu-data.generated.ts`, including compatibility masks, runtime indexes, and theme masks.
 
-`TYPE_ALIMENT_BITS` and `TYPE_PLAT_BITS` are stable bit tables. Existing bit values must not be reordered or reused; add new values with the next free bit.
+`TYPE_ALIMENT_BITS`, `TYPE_PLAT_BITS`, and `THEME_BITS` are stable bit tables. Existing bit values must not be reordered or reused; add new values with the next free bit.
 
 ## License
 

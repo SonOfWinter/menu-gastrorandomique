@@ -6,6 +6,7 @@ import {
 } from '@/lib/menu/compatibility-mask';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TYPE_PLAT_BITS, TypePlat } from '@/types/enums/type-plat';
+import { THEME_BITS, Theme } from '@/types/enums/theme';
 
 describe('lib/menu/compatibility-mask.ts', () => {
   it('calculates masks from stable bit tables', () => {
@@ -55,6 +56,17 @@ describe('lib/menu/compatibility-mask.ts', () => {
       [TypePlat.ENTREE]: 1,
       [TypePlat.PLAT]: 2,
       [TypePlat.DESSERT]: 4,
+    });
+  });
+
+  it('keeps Theme bit values stable', () => {
+    expect(THEME_BITS).toEqual({
+      [Theme.HIVER]: 1,
+      [Theme.ETE]: 2,
+      [Theme.PRINTEMPS]: 4,
+      [Theme.AUTOMNE]: 8,
+      [Theme.MEDIEVAL]: 16,
+      [Theme.RENAISSANCE]: 32,
     });
   });
 
