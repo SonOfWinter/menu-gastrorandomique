@@ -6,6 +6,7 @@ import { TypeAliment } from '@/types/enums/type-aliment';
 export type Adjectif = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
+  themeIds?: EntityId[];
   noms: NomForms;
   types: TypeAliment[];
   compatibilityMask?: number;

@@ -30,28 +30,28 @@ describe('lib/generate-menu.ts', () => {
     expect(menu.price).toBeLessThanOrEqual(defaultMenuConfig.priceRange.max);
     expect(menu.title.length).toBeGreaterThan(0);
     expect(menu.complement.length).toBeGreaterThan(0);
+    expect(menu.theme.nom.length).toBeGreaterThan(0);
   });
 
-  it('generates a menu with a valid theme', () => {
-    const menu = generateMenu(undefined, undefined, undefined, 123, { themeId: 'hiver' });
+  it('selects a random theme deterministically with the seed', () => {
+    const first = generateMenu(undefined, undefined, undefined, 123);
+    const second = generateMenu(undefined, undefined, undefined, 123);
 
-    expect(menu.entree).toHaveLength(defaultMenuConfig.dishCount);
-    expect(menu.plat).toHaveLength(defaultMenuConfig.dishCount);
-    expect(menu.dessert).toHaveLength(defaultMenuConfig.dishCount);
+    expect(first.theme).toEqual(second.theme);
   });
 
-  it('falls back when the theme is unknown', () => {
-    const fallbackMenu = generateMenu(undefined, undefined, undefined, 123, { themeId: 'theme-inconnu' });
-    const defaultMenu = generateMenu(undefined, undefined, undefined, 123);
+  it('keeps the display menu format with a theme', () => {
+    const themedMenu = generateMenu(undefined, undefined, undefined, 123);
 
-    expect(fallbackMenu).toEqual(defaultMenu);
-  });
-
-  it('keeps the display menu format with and without theme', () => {
-    const defaultMenu = generateMenu(undefined, undefined, undefined, 123);
-    const themedMenu = generateMenu(undefined, undefined, undefined, 123, { themeId: 'ete' });
-
-    expect(Object.keys(themedMenu).sort()).toEqual(Object.keys(defaultMenu).sort());
+    expect(Object.keys(themedMenu).sort()).toEqual([
+      'complement',
+      'dessert',
+      'entree',
+      'plat',
+      'price',
+      'theme',
+      'title',
+    ]);
     expect(Array.isArray(themedMenu.entree)).toBe(true);
     expect(Array.isArray(themedMenu.plat)).toBe(true);
     expect(Array.isArray(themedMenu.dessert)).toBe(true);

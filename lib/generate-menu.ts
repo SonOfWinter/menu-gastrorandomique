@@ -13,13 +13,12 @@ import {
   MenuPriceRange,
 } from '@/lib/menu/menu-config';
 import { resetAlreadyUsed } from '@/lib/ssr-cache';
-import { getThemeById, ThemeContext } from '@/lib/menu/theme';
-import getThemedRandom from '@/lib/menu/get-themed-random';
-import { getCollectionWeight } from '@/lib/menu/theme';
-
-export type GenerateMenuOptions = {
-  themeId?: string;
-};
+import {
+  filterItemsByTheme,
+  getRandomTheme,
+  ThemeContext,
+} from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 function assertNonEmptyList(label: string, list: readonly unknown[]): void {
   if (list.length === 0) {
@@ -89,14 +88,13 @@ export default function generateMenu(
   inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
   priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
   seed?: number,
-  options: GenerateMenuOptions = {},
 ): DisplayMenu {
   resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
   validateMenuData(data);
   const themeContext: ThemeContext = {
-    theme: getThemeById(data.themes, options.themeId),
+    theme: getRandomTheme(data.themes, (items) => getRandom(items, rng)),
   };
   const entree = Array.from(
     { length: count },
@@ -112,16 +110,11 @@ export default function generateMenu(
   );
   return {
     price: round(random(priceRange.min, priceRange.max, true, rng), 2),
-    title: getThemedRandom(
-      data.titles,
-      (item) => getCollectionWeight(themeContext.theme, 'titles', item.id as number),
-      rng,
-    ).nom,
-    complement: getThemedRandom(
-      data.complements,
-      (item) => getCollectionWeight(themeContext.theme, 'complements', item.id as number),
-      rng,
-    ).nom,
+    title: getRandom(filterItemsByTheme(data.titles, themeContext.theme), rng).nom,
+    complement: getRandom(filterItemsByTheme(data.complements, themeContext.theme), rng).nom,
+    theme: {
+      nom: themeContext.theme?.nom ?? 'Sans thème',
+    },
     entree,
     plat,
     dessert,

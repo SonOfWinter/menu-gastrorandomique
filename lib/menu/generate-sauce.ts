@@ -18,12 +18,8 @@ import {
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
 import getItemsByIds from '@/lib/menu/get-items-by-ids';
-import getThemedRandom from '@/lib/menu/get-themed-random';
-import {
-  getCollectionWeight,
-  getTypePlatWeight,
-  ThemeContext,
-} from '@/lib/menu/theme';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 export default function generateSauce(
   data: Menu,
@@ -70,12 +66,8 @@ export default function generateSauce(
 }
 
 function getPreSauce(data: Menu, rng?: RandomGenerator, themeContext: ThemeContext = {}): PreSauce {
-  const availablePreSauces = [...data.preSauces];
-  return getThemedRandom(
-    availablePreSauces,
-    (item) => getCollectionWeight(themeContext.theme, 'preSauces', item.id as number),
-    rng,
-  );
+  const availablePreSauces = filterItemsByTheme(data.preSauces, themeContext.theme);
+  return getRandom(availablePreSauces, rng);
 }
 
 function getSauceType(
@@ -84,17 +76,15 @@ function getSauceType(
   rng?: RandomGenerator,
   themeContext: ThemeContext = {},
 ): SauceType {
-  const availableSauceTypes = getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]);
+  const availableSauceTypes = filterItemsByTheme(
+    getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]),
+    themeContext.theme,
+  );
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
     !getSauceTypesAlreadyUsed().includes(item.id as number),
   );
   const selectableSauceTypes = unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes;
-  const selected = getThemedRandom(
-    selectableSauceTypes,
-    (item) => getCollectionWeight(themeContext.theme, 'sauceTypes', item.id as number)
-      * getTypePlatWeight(themeContext.theme, item.compatibilityMask),
-    rng,
-  );
+  const selected = getRandom(selectableSauceTypes, rng);
   addSauceTypesAlreadyUsed(selected.id as number);
   return selected;
 }

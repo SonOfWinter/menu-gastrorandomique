@@ -5,6 +5,7 @@ import { TypePlat } from '@/types/enums/type-plat';
 import { Plat } from '@/types/data/plat';
 import { alimentTypePresets } from '@/data-presets/type-aliment-presets';
 import { platTypePresets } from '@/data-presets/type-plat-presets';
+import { THEME_SOURCE_IDS } from '@/data/menu-theme';
 
 const dessertAndPastryPlats: Plat[] = [
   {
@@ -687,6 +688,12 @@ const friedPlats: Plat[] = [
   },
   {
     id: '381426e3-5c29-4495-9c46-37cf1441265d',
+    themeIds: [
+      THEME_SOURCE_IDS.HIVER,
+      THEME_SOURCE_IDS.ETE,
+      THEME_SOURCE_IDS.PRINTEMPS,
+      THEME_SOURCE_IDS.AUTOMNE,
+    ],
     nom: 'nuggets',
     genre: Genre.MASCULIN,
     nombre: Nombre.PLURIEL,

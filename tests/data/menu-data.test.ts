@@ -231,15 +231,10 @@ describe('data consistency', () => {
     expectUniqueValues(themes.map((theme) => theme.id), 'themes.ids');
     themes.forEach((theme, index) => {
       expectNonEmptyString(theme.id, `themes[${index}].id`);
+      expect(String(theme.id), `themes[${index}].id`).toMatch(
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+      );
       expectNonEmptyString(theme.nom, `themes[${index}].nom`);
-
-      for (const typeAliment of Object.keys(theme.weights.typeAliments ?? {})) {
-        expect(typeAliments.includes(typeAliment as TypeAliment), `themes[${index}].typeAliments`).toBe(true);
-      }
-
-      for (const typePlat of Object.keys(theme.weights.typePlats ?? {})) {
-        expect(typePlats.includes(typePlat as TypePlat), `themes[${index}].typePlats`).toBe(true);
-      }
     });
   });
 });

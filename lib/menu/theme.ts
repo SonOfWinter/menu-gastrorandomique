@@ -1,52 +1,32 @@
-import { CompiledTheme, ThemeId } from '@/types/data/theme';
+import { CompiledTheme } from '@/types/data/theme';
 
 export type ThemeContext = {
   theme?: CompiledTheme;
 };
 
-export function getThemeById(
+export function getRandomTheme(
   themes: readonly CompiledTheme[],
-  themeId?: ThemeId,
+  select: <TItem>(items: TItem[]) => TItem,
 ): CompiledTheme | undefined {
-  if (!themeId) {
+  if (themes.length === 0) {
     return undefined;
   }
 
-  return themes.find((theme) => theme.id === themeId);
+  return select([...themes]);
 }
 
-export function getCollectionWeight(
+export function filterItemsByTheme<TItem>(
+  items: readonly TItem[],
   theme: CompiledTheme | undefined,
-  collectionName: keyof Omit<CompiledTheme['weights'], 'typeAlimentMasks' | 'typePlatMasks'>,
-  id: number,
-): number {
-  return theme?.weights[collectionName][id] ?? 1;
-}
-
-export function getMaskWeight(
-  weights: Partial<Record<number, number>>,
-  mask: number | undefined,
-): number {
-  if (!mask) {
-    return 1;
+): TItem[] {
+  if (!theme) {
+    return [...items];
   }
 
-  return Object.entries(weights).reduce((weight, [weightedMask, weightedValue]) => {
-    const maskNumber = Number(weightedMask);
-    return (mask & maskNumber) !== 0 ? weight * (weightedValue ?? 1) : weight;
-  }, 1);
-}
+  const filteredItems = items.filter((item) => {
+    const themeIds = (item as { themeIds?: readonly number[] }).themeIds;
+    return !themeIds || themeIds.includes(theme.id);
+  });
 
-export function getTypeAlimentWeight(
-  theme: CompiledTheme | undefined,
-  mask: number | undefined,
-): number {
-  return theme ? getMaskWeight(theme.weights.typeAlimentMasks, mask) : 1;
-}
-
-export function getTypePlatWeight(
-  theme: CompiledTheme | undefined,
-  mask: number | undefined,
-): number {
-  return theme ? getMaskWeight(theme.weights.typePlatMasks, mask) : 1;
+  return filteredItems.length > 0 ? filteredItems : [...items];
 }

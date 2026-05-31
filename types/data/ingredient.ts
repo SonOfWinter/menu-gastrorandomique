@@ -8,6 +8,7 @@ import { TypeDeterminant } from '@/types/enums/type-determinant';
 export type Ingredient = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
+  themeIds?: EntityId[];
   nom: string,
   genre: Genre,
   nombre: Nombre,

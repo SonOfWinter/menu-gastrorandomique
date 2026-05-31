@@ -8,6 +8,7 @@ import { TypeAliment } from '@/types/enums/type-aliment';
 export type SauceType = {
   id: EntityId;
   sourceId?: string;
+  themeIds?: EntityId[];
   nom: string;
   genre: Genre,
   nombre: Nombre,

@@ -11,12 +11,8 @@ import { MenuIndexes } from '@/types/menu-indexes';
 import getIndexedItemsByMask from '@/lib/menu/get-indexed-items-by-mask';
 import { TYPE_ALIMENT_BITS } from '@/types/enums/type-aliment';
 import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
-import getThemedRandom from '@/lib/menu/get-themed-random';
-import {
-  getCollectionWeight,
-  getTypeAlimentWeight,
-  ThemeContext,
-} from '@/lib/menu/theme';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 const getAdjectifBasedOnIngredient = (
   adjectifs: Adjectif[],
@@ -27,27 +23,23 @@ const getAdjectifBasedOnIngredient = (
   themeContext: ThemeContext = {},
 ): Adjectif | null => {
   const ingredientMask = ingredient.compatibilityMask ?? getCompatibilityMask(ingredient.types, TYPE_ALIMENT_BITS);
+  const themedAdjectifs = filterItemsByTheme(adjectifs, themeContext.theme);
   const filteredAdjectifs = isInconsistent(inconsistentLevel, rng)
-    ? adjectifs
+    ? themedAdjectifs
     : indexes
-      ? getIndexedItemsByMask(adjectifs, indexes.adjectifIdsByAcceptedMask, ingredientMask)
+      ? filterItemsByTheme(
+        getIndexedItemsByMask(adjectifs, indexes.adjectifIdsByAcceptedMask, ingredientMask),
+        themeContext.theme,
+      )
         .filter((item: Adjectif) => !getAdjectifsAlreadyUsed().includes(item.id as number))
-      : adjectifs.filter((item: Adjectif) =>
+      : themedAdjectifs.filter((item: Adjectif) =>
         hasCompatibleMask(item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_ALIMENT_BITS), ingredientMask)
         && !getAdjectifsAlreadyUsed().includes(item.id as number),
       );
   if (filteredAdjectifs.length === 0) {
     return null;
   }
-  const selected = getThemedRandom(
-    filteredAdjectifs,
-    (item) => getCollectionWeight(themeContext.theme, 'adjectifs', item.id as number)
-      * getTypeAlimentWeight(
-        themeContext.theme,
-        item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_ALIMENT_BITS),
-      ),
-    rng,
-  );
+  const selected = getRandom(filteredAdjectifs, rng);
   if (!selected) {
     return null;
   }

@@ -30,9 +30,22 @@ describe('generated menu data', () => {
 
   it('contains compiled themes', () => {
     const data = getMenuData();
-    const theme = data.themes.find((item) => item.id === 'hiver');
+    const theme = data.themes.find((item) => item.nom === 'Hiver');
 
     expect(theme?.nom).toBe('Hiver');
-    expect(theme?.weights.typeAlimentMasks[TYPE_ALIMENT_BITS[TypeAliment.FROMAGE]]).toBeGreaterThan(1);
+    expect(typeof theme?.id).toBe('number');
+    expect(theme?.sourceId).toMatch(
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+    );
+  });
+
+  it('compiles source theme ids on scoped data entries', () => {
+    const data = getMenuData();
+    const medievalTheme = data.themes.find((item) => item.nom === 'Médiéval');
+    const nuggets = data.plats.find((item) => item.nom === 'nuggets');
+
+    expect(medievalTheme).toBeDefined();
+    expect(nuggets?.themeIds).toBeDefined();
+    expect(nuggets?.themeIds?.includes(medievalTheme?.id as number)).toBe(false);
   });
 });

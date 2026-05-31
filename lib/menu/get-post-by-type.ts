@@ -6,12 +6,8 @@ import {
   getPostsAlreadyUsed,
 } from '@/lib/ssr-cache';
 import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
-import getThemedRandom from '@/lib/menu/get-themed-random';
-import {
-  getCollectionWeight,
-  getTypePlatWeight,
-  ThemeContext,
-} from '@/lib/menu/theme';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 const getPostByType = (
   posts: Post[],
@@ -20,20 +16,16 @@ const getPostByType = (
   themeContext: ThemeContext = {},
 ): Post => {
   const requiredMask = TYPE_PLAT_BITS[mainType];
-  const typedPosts = posts.filter((item: Post) =>
+  const themedPosts = filterItemsByTheme(posts, themeContext.theme);
+  const typedPosts = themedPosts.filter((item: Post) =>
     hasCompatibleMask(item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_PLAT_BITS), requiredMask),
   );
-  const availablePosts = typedPosts.length > 0 ? typedPosts : posts;
+  const availablePosts = typedPosts.length > 0 ? typedPosts : themedPosts;
   const unusedPosts = availablePosts.filter((item: Post) =>
     !getPostsAlreadyUsed().includes(item.id as number),
   );
   const selectablePosts = unusedPosts.length > 0 ? unusedPosts : availablePosts;
-  const selected = getThemedRandom(
-    selectablePosts,
-    (item) => getCollectionWeight(themeContext.theme, 'posts', item.id as number)
-      * getTypePlatWeight(themeContext.theme, item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_PLAT_BITS)),
-    rng,
-  );
+  const selected = getRandom(selectablePosts, rng);
   addPostsAlreadyUsed(selected.id as number);
   return selected;
 };

@@ -7,6 +7,7 @@ import { TypeAliment } from '@/types/enums/type-aliment';
 export type Lien = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
+  themeIds?: EntityId[];
   noms: NomForms;
   suite: TypeDeterminant;
   compatibleIngredientTypes: TypeAliment[];

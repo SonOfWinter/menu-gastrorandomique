@@ -20,12 +20,8 @@ import formatIngredientName from '@/lib/menu/format-ingredient-name';
 import getItemsByIds from '@/lib/menu/get-items-by-ids';
 import { TYPE_ALIMENT_BITS } from '@/types/enums/type-aliment';
 import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
-import getThemedRandom from '@/lib/menu/get-themed-random';
-import {
-  getCollectionWeight,
-  getTypeAlimentWeight,
-  ThemeContext,
-} from '@/lib/menu/theme';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 const generateSecond = (
   data: Menu,
@@ -52,22 +48,22 @@ const generateSecond = (
   selectedIngredients?.push(ingredientSecondaire);
   const ingredientMask = ingredientSecondaire.compatibilityMask ?? getCompatibilityMask(ingredientSecondaire.types, TYPE_ALIMENT_BITS);
   const availableLiens = data.indexes.lienIdsByAcceptedMask[ingredientMask]
-    ? getIndexedItemsByMask(data.liens, data.indexes.lienIdsByAcceptedMask, ingredientMask)
+    ? filterItemsByTheme(
+      getIndexedItemsByMask(data.liens, data.indexes.lienIdsByAcceptedMask, ingredientMask),
+      themeContext.theme,
+    )
     : data.liens.filter((lien) => hasCompatibleMask(
       lien.acceptedCompatibilityMask ?? getCompatibilityMask(lien.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
       ingredientMask,
     ));
-  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
+  const compatibleLiens = availableLiens.length > 0
+    ? availableLiens
+    : filterItemsByTheme(data.liens, themeContext.theme);
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id as number),
   );
   const selectableLiens = unusedLiens.length > 0 ? unusedLiens : compatibleLiens;
-  const lienSecondaire: Lien = getThemedRandom(
-    selectableLiens,
-    (item) => getCollectionWeight(themeContext.theme, 'liens', item.id as number)
-      * getTypeAlimentWeight(themeContext.theme, item.acceptedCompatibilityMask),
-    rng,
-  );
+  const lienSecondaire: Lien = getRandom(selectableLiens, rng);
   addLiensAlreadyUsed(lienSecondaire.id as number);
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(

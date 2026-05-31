@@ -6,6 +6,7 @@ import { TypePlat } from '@/types/enums/type-plat';
 export type Pre = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
+  themeIds?: EntityId[];
   noms: NomForms;
   types: TypePlat[];
   compatibilityMask?: number;

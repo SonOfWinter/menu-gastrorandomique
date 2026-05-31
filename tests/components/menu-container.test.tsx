@@ -53,6 +53,7 @@ describe('components/menu-container.tsx', () => {
           title: 'Menu Test',
           complement: 'du chef',
           price: 42,
+          theme: { nom: 'Hiver' },
           entree: [],
           plat: [],
           dessert: [],

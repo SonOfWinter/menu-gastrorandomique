@@ -1,106 +1,38 @@
 import { Theme } from '@/types/data/theme';
-import { TypeAliment } from '@/types/enums/type-aliment';
-import { TypePlat } from '@/types/enums/type-plat';
+
+export const THEME_SOURCE_IDS = {
+  HIVER: '5b2b9df0-c7cf-4d2b-94d7-a799f0d6f8c2',
+  ETE: '8d68c368-8ef8-4d36-8d7b-279339186a5e',
+  PRINTEMPS: 'eeccac1f-b1ef-4815-8698-714a5cf4abf4',
+  AUTOMNE: '227d2e2c-4665-47c5-bd08-734e8acdfeb1',
+  MEDIEVAL: 'f9c3fbb0-fce2-41f3-b97e-f6e496bcd4ec',
+  RENAISSANCE: 'f260be05-718a-4878-b009-cad51a26c11a',
+} as const;
 
 const themes: Theme[] = [
   {
-    id: 'hiver',
+    id: THEME_SOURCE_IDS.HIVER,
     nom: 'Hiver',
-    weights: {
-      typeAliments: {
-        [TypeAliment.CHAMPIGNON]: 2,
-        [TypeAliment.FROMAGE]: 2,
-        [TypeAliment.VIANDE_ROUGE]: 2,
-        [TypeAliment.CEREALE]: 1.5,
-        [TypeAliment.SUCRE]: 1.4,
-      },
-      typePlats: {
-        [TypePlat.PLAT]: 1.4,
-        [TypePlat.DESSERT]: 1.2,
-      },
-    },
   },
   {
-    id: 'ete',
+    id: THEME_SOURCE_IDS.ETE,
     nom: 'Été',
-    weights: {
-      typeAliments: {
-        [TypeAliment.FRUIT]: 2,
-        [TypeAliment.SALADE]: 2,
-        [TypeAliment.LEGUME]: 1.6,
-        [TypeAliment.HERBE]: 1.5,
-        [TypeAliment.SOFT]: 1.4,
-      },
-      typePlats: {
-        [TypePlat.ENTREE]: 1.3,
-        [TypePlat.DESSERT]: 1.3,
-      },
-    },
   },
   {
-    id: 'printemps',
+    id: THEME_SOURCE_IDS.PRINTEMPS,
     nom: 'Printemps',
-    weights: {
-      typeAliments: {
-        [TypeAliment.HERBE]: 2,
-        [TypeAliment.LEGUME]: 1.7,
-        [TypeAliment.SALADE]: 1.6,
-        [TypeAliment.FROMAGE]: 1.3,
-        [TypeAliment.FRUIT]: 1.2,
-      },
-      typePlats: {
-        [TypePlat.ENTREE]: 1.4,
-      },
-    },
   },
   {
-    id: 'automne',
+    id: THEME_SOURCE_IDS.AUTOMNE,
     nom: 'Automne',
-    weights: {
-      typeAliments: {
-        [TypeAliment.CHAMPIGNON]: 2.2,
-        [TypeAliment.FRUIT_A_COQUE]: 2,
-        [TypeAliment.FRUIT]: 1.5,
-        [TypeAliment.VIANDE_BLANCHE]: 1.3,
-        [TypeAliment.EPICE]: 1.3,
-      },
-      typePlats: {
-        [TypePlat.PLAT]: 1.3,
-      },
-    },
   },
   {
-    id: 'medieval',
+    id: THEME_SOURCE_IDS.MEDIEVAL,
     nom: 'Médiéval',
-    weights: {
-      typeAliments: {
-        [TypeAliment.VIANDE_ROUGE]: 2,
-        [TypeAliment.VIANDE_BLANCHE]: 1.7,
-        [TypeAliment.CEREALE]: 1.5,
-        [TypeAliment.EPICE]: 1.5,
-        [TypeAliment.ALCOOL]: 1.4,
-      },
-      typePlats: {
-        [TypePlat.PLAT]: 1.5,
-      },
-    },
   },
   {
-    id: 'renaissance',
+    id: THEME_SOURCE_IDS.RENAISSANCE,
     nom: 'Renaissance',
-    weights: {
-      typeAliments: {
-        [TypeAliment.FRUIT]: 1.7,
-        [TypeAliment.SUCRE]: 1.6,
-        [TypeAliment.ALCOOL]: 1.5,
-        [TypeAliment.EPICE]: 1.4,
-        [TypeAliment.FRUIT_DE_MER]: 1.3,
-      },
-      typePlats: {
-        [TypePlat.ENTREE]: 1.2,
-        [TypePlat.DESSERT]: 1.4,
-      },
-    },
   },
 ];
 
