@@ -16,6 +16,7 @@ import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
 import { Theme } from '@/types/enums/theme';
 import { EntityId } from '@/types/entity-id';
+import { themePresets } from '@/data-presets/theme-presets';
 
 const genres = Object.values(Genre);
 const nombres = Object.values(Nombre);
@@ -232,6 +233,12 @@ describe('data consistency', () => {
     expectUniqueValues(themes, 'themes');
     themes.forEach((theme, index) => {
       expectNonEmptyString(theme, `themes[${index}]`);
+    });
+  });
+
+  it('keeps theme presets structurally valid', () => {
+    Object.entries(themePresets).forEach(([name, preset]) => {
+      expectKnownValues(preset, themes, `themePresets.${name}`);
     });
   });
 });

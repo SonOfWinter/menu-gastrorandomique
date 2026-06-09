@@ -66,7 +66,6 @@ describe('lib/menu/compatibility-mask.ts', () => {
       [Theme.PRINTEMPS]: 4,
       [Theme.AUTOMNE]: 8,
       [Theme.MEDIEVAL]: 16,
-      [Theme.RENAISSANCE]: 32,
     });
   });
 
