@@ -47,17 +47,18 @@ const generateSecond = (
   }
   selectedIngredients?.push(ingredientSecondaire);
   const ingredientMask = ingredientSecondaire.compatibilityMask ?? getCompatibilityMask(ingredientSecondaire.types, TYPE_ALIMENT_BITS);
-  const availableLiens = data.indexes.lienIdsByAcceptedMask[ingredientMask]
-    ? filterItemsByTheme(
-      getIndexedItemsByMask(data.liens, data.indexes.lienIdsByAcceptedMask, ingredientMask),
-      themeContext.theme,
-    )
+  const typeCompatibleLiens = data.indexes.lienIdsByAcceptedMask[ingredientMask]
+    ? getIndexedItemsByMask(data.liens, data.indexes.lienIdsByAcceptedMask, ingredientMask)
     : data.liens.filter((lien) => hasCompatibleMask(
       lien.acceptedCompatibilityMask ?? getCompatibilityMask(lien.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
       ingredientMask,
     ));
-  const compatibleLiens = availableLiens.length > 0
-    ? availableLiens
+  const themedCompatibleLiens = filterItemsByTheme(
+    typeCompatibleLiens,
+    themeContext.theme,
+  );
+  const compatibleLiens = themedCompatibleLiens.length > 0
+    ? themedCompatibleLiens
     : filterItemsByTheme(data.liens, themeContext.theme);
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id as number),

@@ -3,10 +3,12 @@ import generateSecond from '@/lib/menu/generate-second';
 import { alreadyUsed } from '@/lib/ssr-cache';
 import { createMenuData, ingredientOne, menuData, plat } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
-import { TypeAliment } from '@/types/enums/type-aliment';
+import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
+import { THEME_BITS, Theme } from '@/types/enums/theme';
+import { getCompatibilityMask } from '@/lib/menu/compatibility-mask';
 
 const ingredients = [ingredientOne];
 
@@ -143,9 +145,141 @@ describe('lib/menu/generate-second.ts', () => {
     expect(first).toBe('au de la pomme sucree');
     expect(second).toBe('avec une poire croquante');
   });
+
+  it('applies the theme after manually filtering compatible links', () => {
+    const data = withoutLienMaskIndex(createMenuData({
+      liens: [
+        createLien('lien-winter', 'hivernal', [TypeAliment.FRUIT], Theme.HIVER),
+        createLien('lien-medieval', 'medieval', [TypeAliment.FRUIT], Theme.MEDIEVAL),
+      ],
+    }), ingredientOne);
+
+    const second = generateSecond(
+      data,
+      plat,
+      ingredients,
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+      undefined,
+      medievalThemeContext,
+    );
+
+    expect(second).toBe('medieval de la pomme sucree');
+  });
+
+  it('keeps type compatibility before relaxing the theme', () => {
+    const data = withoutLienMaskIndex(createMenuData({
+      liens: [
+        createLien('lien-compatible', 'compatible', [TypeAliment.FRUIT], Theme.HIVER),
+        createLien('lien-themed', 'thematique', [TypeAliment.LEGUME], Theme.MEDIEVAL),
+      ],
+    }), ingredientOne);
+
+    const second = generateSecond(
+      data,
+      plat,
+      ingredients,
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+      undefined,
+      medievalThemeContext,
+    );
+
+    expect(second).toBe('compatible de la pomme sucree');
+  });
+
+  it('falls back to a themed link when no link is type-compatible', () => {
+    const data = withoutLienMaskIndex(createMenuData({
+      liens: [
+        createLien('lien-winter', 'hivernal', [TypeAliment.LEGUME], Theme.HIVER),
+        createLien('lien-medieval', 'medieval', [TypeAliment.LEGUME], Theme.MEDIEVAL),
+      ],
+    }), ingredientOne);
+
+    const second = generateSecond(
+      data,
+      plat,
+      ingredients,
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+      undefined,
+      medievalThemeContext,
+    );
+
+    expect(second).toBe('medieval de la pomme sucree');
+  });
+
+  it('falls back to all links when neither compatibility nor theme matches', () => {
+    const data = withoutLienMaskIndex(createMenuData({
+      liens: [
+        createLien('lien-winter', 'hivernal', [TypeAliment.LEGUME], Theme.HIVER),
+      ],
+    }), ingredientOne);
+
+    const second = generateSecond(
+      data,
+      plat,
+      ingredients,
+      TypePlat.DESSERT,
+      0,
+      () => 0,
+      undefined,
+      medievalThemeContext,
+    );
+
+    expect(second).toBe('hivernal de la pomme sucree');
+  });
 });
 
 function createSequenceRng(values: number[]): () => number {
   let index = 0;
   return () => values[index++] ?? 0;
+}
+
+const medievalThemeContext = {
+  theme: {
+    id: Theme.MEDIEVAL,
+    nom: 'Médiéval',
+    compatibilityMask: THEME_BITS[Theme.MEDIEVAL],
+  },
+};
+
+function createLien(
+  id: string,
+  nom: string,
+  compatibleIngredientTypes: TypeAliment[],
+  theme: Theme,
+) {
+  return {
+    ...menuData.liens[0],
+    id,
+    noms: {
+      [Genre.FEMININ]: { [Nombre.SINGULIER]: nom, [Nombre.PLURIEL]: nom },
+      [Genre.MASCULIN]: { [Nombre.SINGULIER]: nom, [Nombre.PLURIEL]: nom },
+    },
+    compatibleIngredientTypes,
+    themeCompatibilityMask: THEME_BITS[theme],
+  };
+}
+
+function withoutLienMaskIndex(
+  data: ReturnType<typeof createMenuData>,
+  ingredient: typeof ingredientOne,
+) {
+  const mask = ingredient.compatibilityMask
+    ?? getCompatibilityMask(ingredient.types, TYPE_ALIMENT_BITS);
+  const { [mask]: omitted, ...lienIdsByAcceptedMask } =
+    data.indexes.lienIdsByAcceptedMask;
+  expect(omitted).toBeDefined();
+
+  return {
+    ...data,
+    indexes: {
+      ...data.indexes,
+      lienIdsByAcceptedMask,
+    },
+  };
 }

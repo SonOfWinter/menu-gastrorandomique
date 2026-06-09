@@ -18,8 +18,8 @@ describe('components/menu/menu-section.tsx', () => {
       <MenuSection
         title="Entrees"
         dishes={[
-          { main: 'Tarte', second: 'aux pommes', sauce: null },
-          { main: 'Soupe', second: 'du jour', sauce: null },
+          { main: 'Tarte', second: 'aux pommes', sauce: null, icons: [] },
+          { main: 'Soupe', second: 'du jour', sauce: null, icons: [] },
         ]}
       />,
     );

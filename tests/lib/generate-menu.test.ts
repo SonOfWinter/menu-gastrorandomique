@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest';
 import generateMenu, { validateMenuData } from '@/lib/generate-menu';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { defaultMenuConfig } from '@/lib/menu/menu-config';
-import { TypeAliment } from '@/types/enums/type-aliment';
+import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
+import { getCompatibilityMask } from '@/lib/menu/compatibility-mask';
 
 describe('lib/generate-menu.ts', () => {
   it('exposes a default menu config', () => {
@@ -99,5 +100,67 @@ describe('lib/generate-menu.ts', () => {
         `Menu data list is empty: ${indexName}.fruit`,
       );
     }
+  });
+
+  it('rejects missing required mask indexes before generation', () => {
+    const data = getMenuData();
+    const allIngredientTypesMask = getCompatibilityMask(
+      Object.values(TypeAliment),
+      TYPE_ALIMENT_BITS,
+    );
+    const ingredientMask = data.ingredients[0].compatibilityMask as number;
+    const indexCases = [
+      {
+        name: 'ingredientIdsByCompatibilityMask',
+        mask: allIngredientTypesMask,
+      },
+      {
+        name: 'adjectifIdsByAcceptedMask',
+        mask: ingredientMask,
+      },
+      {
+        name: 'lienIdsByAcceptedMask',
+        mask: ingredientMask,
+      },
+    ] as const;
+
+    for (const { name, mask } of indexCases) {
+      const { [mask]: omitted, ...incompleteIndex } = data.indexes[name];
+      expect(omitted).toBeDefined();
+
+      const invalidData = {
+        ...data,
+        indexes: {
+          ...data.indexes,
+          [name]: incompleteIndex,
+        },
+      };
+
+      expect(() => validateMenuData(invalidData)).toThrow(
+        `Menu data mask index is missing: ${name}.${mask}`,
+      );
+    }
+  });
+
+  it('rejects an empty required ingredient mask index before generation', () => {
+    const data = getMenuData();
+    const allIngredientTypesMask = getCompatibilityMask(
+      Object.values(TypeAliment),
+      TYPE_ALIMENT_BITS,
+    );
+    const invalidData = {
+      ...data,
+      indexes: {
+        ...data.indexes,
+        ingredientIdsByCompatibilityMask: {
+          ...data.indexes.ingredientIdsByCompatibilityMask,
+          [allIngredientTypesMask]: [],
+        },
+      },
+    };
+
+    expect(() => validateMenuData(invalidData)).toThrow(
+      `Menu data list is empty: ingredientIdsByCompatibilityMask.${allIngredientTypesMask}`,
+    );
   });
 });

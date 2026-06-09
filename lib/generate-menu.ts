@@ -1,7 +1,7 @@
 import { DisplayMenu } from '@/types/display-menu';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { Menu } from '@/types/menu';
-import { TypeAliment } from '@/types/enums/type-aliment';
+import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
 import { createSeededRandom } from '@/lib/utils/seeded-rng';
 import random from '@/lib/utils/random';
@@ -19,6 +19,7 @@ import {
   ThemeContext,
 } from '@/lib/menu/theme';
 import getRandom from '@/lib/menu/get-random';
+import { getCompatibilityMask } from '@/lib/menu/compatibility-mask';
 
 function assertNonEmptyList(label: string, list: readonly unknown[]): void {
   if (list.length === 0) {
@@ -45,6 +46,27 @@ function assertNonEmptyTypeAlimentIndex(
   }
 }
 
+function assertMaskIndexEntries(
+  label: string,
+  index: Record<number, readonly unknown[]>,
+  masks: Iterable<number>,
+  requireNonEmpty: boolean = false,
+): void {
+  for (const mask of new Set(masks)) {
+    if (mask === 0) {
+      continue;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(index, mask)) {
+      throw new Error(`Menu data mask index is missing: ${label}.${mask}`);
+    }
+
+    if (requireNonEmpty) {
+      assertNonEmptyList(`${label}.${mask}`, index[mask]);
+    }
+  }
+}
+
 function getRequiredTypeAliments(data: Menu): Set<TypeAliment> {
   const typeAliments = new Set<TypeAliment>([TypeAliment.SAUCE]);
 
@@ -57,6 +79,40 @@ function getRequiredTypeAliments(data: Menu): Set<TypeAliment> {
   }
 
   return typeAliments;
+}
+
+function getRequiredIngredientMasks(data: Menu): Set<number> {
+  const masks = new Set<number>([
+    getCompatibilityMask(Object.values(TypeAliment), TYPE_ALIMENT_BITS),
+    TYPE_ALIMENT_BITS[TypeAliment.SAUCE],
+  ]);
+
+  for (const plat of data.plats) {
+    for (const typePlat of Object.values(TypePlat)) {
+      masks.add(
+        plat.typeAlimentMasks?.[typePlat]
+        ?? getCompatibilityMask(plat.typeAliments[typePlat], TYPE_ALIMENT_BITS),
+      );
+    }
+  }
+
+  for (const sauceType of data.sauceTypes) {
+    masks.add(
+      sauceType.acceptedCompatibilityMask
+      ?? getCompatibilityMask(sauceType.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
+    );
+  }
+
+  return masks;
+}
+
+function getIngredientMasks(data: Menu): Set<number> {
+  return new Set(
+    data.ingredients.map((ingredient) =>
+      ingredient.compatibilityMask
+      ?? getCompatibilityMask(ingredient.types, TYPE_ALIMENT_BITS),
+    ),
+  );
 }
 
 export function validateMenuData(data: Menu): void {
@@ -81,6 +137,24 @@ export function validateMenuData(data: Menu): void {
   assertNonEmptyTypeAlimentIndex('ingredientIdsByType', data.indexes.ingredientIdsByType, requiredTypeAliments);
   assertNonEmptyTypeAlimentIndex('adjectifIdsByType', data.indexes.adjectifIdsByType, requiredTypeAliments);
   assertNonEmptyTypeAlimentIndex('lienIdsByType', data.indexes.lienIdsByType, requiredTypeAliments);
+
+  assertMaskIndexEntries(
+    'ingredientIdsByCompatibilityMask',
+    data.indexes.ingredientIdsByCompatibilityMask,
+    getRequiredIngredientMasks(data),
+    true,
+  );
+  const ingredientMasks = getIngredientMasks(data);
+  assertMaskIndexEntries(
+    'adjectifIdsByAcceptedMask',
+    data.indexes.adjectifIdsByAcceptedMask,
+    ingredientMasks,
+  );
+  assertMaskIndexEntries(
+    'lienIdsByAcceptedMask',
+    data.indexes.lienIdsByAcceptedMask,
+    ingredientMasks,
+  );
 }
 
 export default function generateMenu(
