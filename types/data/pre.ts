@@ -8,6 +8,7 @@ export type Pre = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
   themes?: Theme[];
+  unthemedOnly?: boolean;
   themeCompatibilityMask?: number;
   noms: NomForms;
   types: TypePlat[];

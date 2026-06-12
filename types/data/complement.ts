@@ -6,6 +6,7 @@ export type Complement = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
   themes?: Theme[];
+  unthemedOnly?: boolean;
   themeCompatibilityMask?: number;
   nom: string;
 }>

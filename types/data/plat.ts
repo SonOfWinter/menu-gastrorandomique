@@ -10,6 +10,7 @@ export type Plat = DeepReadonly<{
   id: EntityId;
   sourceId?: string;
   themes?: Theme[];
+  unthemedOnly?: boolean;
   themeCompatibilityMask?: number;
   nom: string;
   genre: Genre;

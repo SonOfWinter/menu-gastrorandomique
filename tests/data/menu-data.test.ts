@@ -85,7 +85,35 @@ function expectCollectionNames(
   expectUniqueValues(collection.map((item) => item.nom), `${label}.noms`);
 }
 
+function expectValidThemeScope(
+  collection: readonly {
+    themes?: readonly Theme[];
+    unthemedOnly?: boolean;
+  }[],
+  label: string,
+) {
+  collection.forEach((item, index) => {
+    expect(
+      item.themes !== undefined && item.unthemedOnly === true,
+      `${label}[${index}] cannot combine themes and unthemedOnly`,
+    ).toBe(false);
+  });
+}
+
 describe('data consistency', () => {
+  it('keeps theme scopes structurally valid', () => {
+    expectValidThemeScope(adjectifs, 'adjectifs');
+    expectValidThemeScope(complements, 'complements');
+    expectValidThemeScope(ingredients, 'ingredients');
+    expectValidThemeScope(liens, 'liens');
+    expectValidThemeScope(plats, 'plats');
+    expectValidThemeScope(posts, 'posts');
+    expectValidThemeScope(pres, 'pres');
+    expectValidThemeScope(preSauces, 'preSauces');
+    expectValidThemeScope(sauceTypes, 'sauceTypes');
+    expectValidThemeScope(titles, 'titles');
+  });
+
   it('keeps menu-adjectif entries structurally valid', () => {
     expectCollectionIds(adjectifs, 'adjectifs');
 
