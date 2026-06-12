@@ -6,6 +6,7 @@ import { Plat } from '@/types/data/plat';
 import { alimentTypePresets } from '@/data-presets/type-aliment-presets';
 import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { themePresets } from '@/data-presets/theme-presets';
+import { Theme } from '@/types/enums/theme';
 
 const dessertAndPastryPlats: Plat[] = [
   {
@@ -40,7 +41,7 @@ const dessertAndPastryPlats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
-    themes: themePresets.winterSpringAutumnAndMedieval,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: alimentTypePresets.none,
@@ -53,7 +54,7 @@ const dessertAndPastryPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
-    themes: themePresets.summerAndSpring,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: alimentTypePresets.none,
@@ -66,7 +67,7 @@ const dessertAndPastryPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.dessert,
-    themes: themePresets.winterAutumnAndMedieval,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: alimentTypePresets.none,
@@ -844,6 +845,7 @@ const stuffedAndRolledPlats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE],
@@ -962,6 +964,7 @@ const stewedAndSaucyPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_DE_MER],
@@ -1089,6 +1092,7 @@ const stewedAndSaucyPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.FROMAGE],
@@ -1101,6 +1105,7 @@ const stewedAndSaucyPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
@@ -1138,6 +1143,7 @@ const stewedAndSaucyPlats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.main,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.none,
       [TypePlat.PLAT]: [TypeAliment.CEREALE, TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER],
@@ -1187,6 +1193,7 @@ const stewedAndSaucyPlats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
+    themes: [Theme.ETE, Theme.AUTOMNE],
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.vegetable,
       [TypePlat.PLAT]: alimentTypePresets.vegetable,
@@ -1330,7 +1337,7 @@ const rawAndColdPlats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
-    themes: themePresets.medievalSummerSpringAndAutumn,
+    themes: [Theme.ETE, Theme.PRINTEMPS, Theme.AUTOMNE],
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: alimentTypePresets.none,
@@ -1343,7 +1350,7 @@ const rawAndColdPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndDessert,
-    themes: themePresets.summerAndSpring,
+    themes: [Theme.ETE],
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.FRUIT],
       [TypePlat.PLAT]: alimentTypePresets.none,
@@ -1368,6 +1375,7 @@ const rawAndColdPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: alimentTypePresets.redMeat,
       [TypePlat.PLAT]: alimentTypePresets.redMeat,
@@ -1435,6 +1443,7 @@ const fastFoodAndStreetFoodPlats: Plat[] = [
     genre: Genre.MASCULIN,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: alimentTypePresets.savoryCoreWithCheese,
@@ -2040,6 +2049,7 @@ const otherPlats: Plat[] = [
     genre: Genre.FEMININ,
     nombre: Nombre.SINGULIER,
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
     typeAliments: {
       [TypePlat.ENTREE]: [TypeAliment.LEGUME, TypeAliment.VIANDE_ROUGE, TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.CHAMPIGNON, TypeAliment.SALADE, TypeAliment.FROMAGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT_A_COQUE, TypeAliment.CHARCUTERIE],
       [TypePlat.PLAT]: [TypeAliment.VIANDE_ROUGE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_BLANCHE, TypeAliment.FROMAGE],

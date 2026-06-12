@@ -3,6 +3,7 @@ import { Nombre } from '@/types/enums/nombre';
 import { TypePlat } from '@/types/enums/type-plat';
 import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { Pre } from '@/types/data/pre';
+import { themePresets } from '@/data-presets/theme-presets';
 
 const pres: Pre[] = [
   {
@@ -18,6 +19,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'cbb038c4-e9fe-4c7a-945f-11cb530bbc49',
@@ -104,20 +106,6 @@ const pres: Pre[] = [
     types: [TypePlat.DESSERT, TypePlat.PLAT],
   },
   {
-    id: '402baa14-d6c2-429e-85b7-f0eae75b3795',
-    noms: {
-      [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'l’authentique',
-        [Nombre.PLURIEL]: 'les authentiques',
-      },
-      [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'l’authentique',
-        [Nombre.PLURIEL]: 'les authentiques',
-      },
-    },
-    types: platTypePresets.entryAndMain,
-  },
-  {
     id: '3a8cf34d-d80f-4772-be9a-3f336dab79b6',
     noms: {
       [Genre.MASCULIN]: {
@@ -130,6 +118,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'e55c2b74-7f34-4bb1-9808-d6b5e106f992',
@@ -200,6 +189,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'bd5a9a01-c8a7-47ec-b46e-aedd54a06022',
@@ -312,6 +302,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'b9939ac9-c3ce-42b2-900e-8f3d705811a9',
@@ -359,11 +350,11 @@ const pres: Pre[] = [
     id: 'cb1c6eaf-03cf-450f-8db0-ec9a82e36890',
     noms: {
       [Genre.MASCULIN]: {
-        [Nombre.SINGULIER]: 'le élégant',
+        [Nombre.SINGULIER]: 'l’élégant',
         [Nombre.PLURIEL]: 'les élégants',
       },
       [Genre.FEMININ]: {
-        [Nombre.SINGULIER]: 'la élégante',
+        [Nombre.SINGULIER]: 'l’élégante',
         [Nombre.PLURIEL]: 'les élégantes',
       },
     },
@@ -620,6 +611,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: '1a7d8082-4d5e-46b3-8c76-2ae839fde6bb',
@@ -676,6 +668,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'e7c8bced-857e-4f19-8eaa-f5c5e4415c9d',
@@ -816,6 +809,7 @@ const pres: Pre[] = [
       },
     },
     types: platTypePresets.allCoursesEntryDessertMain,
+    themes: themePresets.allSeasons,
   },
 ];
 export default pres;

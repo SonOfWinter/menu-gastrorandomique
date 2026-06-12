@@ -5,6 +5,7 @@ import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { determinantPresets } from '@/data-presets/determinant-presets';
+import { themePresets } from '@/data-presets/theme-presets';
 
 const sauceTypes: SauceType[] = [
   {
@@ -101,6 +102,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.feminineVowel,
     types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [
       TypeAliment.LEGUME,
       TypeAliment.FROMAGE,
@@ -154,6 +156,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.masculineConsonant,
     types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT,
       TypeAliment.LEGUME,
@@ -196,6 +199,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.feminineConsonant,
     types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [
       TypeAliment.VIANDE_ROUGE,
       TypeAliment.VIANDE_BLANCHE,
@@ -212,6 +216,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.masculineVowel,
     types: platTypePresets.allCourses,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [
       TypeAliment.LEGUME,
       TypeAliment.FRUIT,
@@ -291,6 +296,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.feminineConsonant,
     types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.summerSpringAndMedieval,
     compatibleIngredientTypes: [
       TypeAliment.HERBE,
       TypeAliment.SALADE,
@@ -305,6 +311,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.feminineConsonant,
     types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.summerAndSpring,
     compatibleIngredientTypes: [
       TypeAliment.FRUIT_A_COQUE,
       TypeAliment.LEGUME,
@@ -319,6 +326,7 @@ const sauceTypes: SauceType[] = [
     determinants: determinantPresets.masculineConsonant,
     types: platTypePresets.entryAndMain,
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.summerAndSpring,
     compatibleIngredientTypes: [
       TypeAliment.HERBE,
       TypeAliment.FRUIT_A_COQUE,

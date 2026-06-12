@@ -11,6 +11,11 @@ export const themePresets = {
     Theme.ETE,
     Theme.PRINTEMPS,
   ],
+  summerSpringAndMedieval: [
+    Theme.ETE,
+    Theme.PRINTEMPS,
+    Theme.MEDIEVAL,
+  ],
   winterAutumnAndMedieval: [
     Theme.HIVER,
     Theme.AUTOMNE,

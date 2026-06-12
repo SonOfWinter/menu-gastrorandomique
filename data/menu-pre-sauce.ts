@@ -2,6 +2,7 @@ import { PreSauce } from '@/types/data/pre-sauce';
 import { Nombre } from '@/types/enums/nombre';
 import { Genre } from '@/types/enums/genre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
+import { themePresets } from '@/data-presets/theme-presets';
 
 const preSauces: PreSauce[] = [
   {
@@ -27,6 +28,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'rehaussée', [Nombre.PLURIEL]: 'rehaussées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: '5f38c14a-2698-4e63-a36f-2d3fb5811c77',
@@ -35,6 +37,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'nappée', [Nombre.PLURIEL]: 'nappées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: '2caa88b9-d81e-4c63-b2cf-5d7f5f2dc65d',
@@ -43,6 +46,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'parfumée', [Nombre.PLURIEL]: 'parfumées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'a4f6ed0d-ef9c-4a4f-9689-1f6b0a37d329',
@@ -51,6 +55,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'agrémentée', [Nombre.PLURIEL]: 'agrémentées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'e72c8442-2d6e-4a35-914c-2c33e4a6c902',
@@ -59,6 +64,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'relevée', [Nombre.PLURIEL]: 'relevées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'cd432ca9-2493-42e3-8928-1dfc29e3f16c',
@@ -67,6 +73,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'arrosée', [Nombre.PLURIEL]: 'arrosées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: '21c142d8-184b-47dd-9d6d-0d9e80a5b51d',
@@ -83,6 +90,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'baignée', [Nombre.PLURIEL]: 'baignées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: '9d6f2c2a-ed99-4d76-90f5-443b58929c25',
@@ -99,6 +107,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'escortée', [Nombre.PLURIEL]: 'escortées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: '017d2473-4096-4486-8dca-d78bfe54f8a3',
@@ -107,6 +116,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'glacée', [Nombre.PLURIEL]: 'glacées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'a0aad96f-1fe2-4386-aac8-e74b8bd7776d',
@@ -115,6 +125,7 @@ const preSauces: PreSauce[] = [
       [Genre.FEMININ]: { [Nombre.SINGULIER]: 'laquée', [Nombre.PLURIEL]: 'laquées' },
     },
     suite: TypeDeterminant.INDEFINI,
+    themes: themePresets.allSeasons,
   },
 ];
 export default preSauces;

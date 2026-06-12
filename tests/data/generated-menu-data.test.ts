@@ -49,4 +49,12 @@ describe('generated menu data', () => {
     const medievalMask = medievalTheme?.compatibilityMask as number;
     expect(nuggetsMask & medievalMask).toBe(0);
   });
+
+  it('preserves unthemed-only scopes', () => {
+    const data = getMenuData();
+    const title = data.titles.find((item) => item.nom === 'Menu 404 – Saveur Not Found');
+
+    expect(title?.unthemedOnly).toBe(true);
+    expect(title?.themeCompatibilityMask).toBeUndefined();
+  });
 });
