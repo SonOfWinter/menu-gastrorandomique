@@ -2,9 +2,6 @@ import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { Post } from '@/types/data/post';
 import { themePresets } from '@/data-presets/theme-presets';
 import { Theme } from '@/types/enums/theme';
-import { Genre } from '@/types/enums/genre';
-import { Nombre } from '@/types/enums/nombre';
-import { TypeAliment } from '@/types/enums/type-aliment';
 
 const posts: Post[] = [
   {

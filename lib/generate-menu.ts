@@ -162,13 +162,16 @@ export default function generateMenu(
   inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
   priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
   seed?: number,
+  themesEnabled = false,
 ): DisplayMenu {
   resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
   validateMenuData(data);
   const themeContext: ThemeContext = {
-    theme: getRandomTheme(data.themes, (items) => getRandom(items, rng)),
+    theme: themesEnabled
+      ? getRandomTheme(data.themes, (items) => getRandom(items, rng))
+      : undefined,
   };
   const entree = Array.from(
     { length: count },

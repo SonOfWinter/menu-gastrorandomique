@@ -30,9 +30,6 @@ export default function MenuTitle({
       <p className={cn("font-normal text-lg leading-3 text-center text-secondary", manrope.className)}>
         {`${menu.price}€`}
       </p>
-      <p className={cn("font-normal text-sm leading-4 text-center text-secondary", manrope.className)}>
-        {`Thème : ${menu.theme.nom}`}
-      </p>
     </div>
   );
 }

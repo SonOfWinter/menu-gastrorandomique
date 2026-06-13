@@ -31,18 +31,25 @@ describe('lib/generate-menu.ts', () => {
     expect(menu.price).toBeLessThanOrEqual(defaultMenuConfig.priceRange.max);
     expect(menu.title.length).toBeGreaterThan(0);
     expect(menu.complement.length).toBeGreaterThan(0);
-    expect(menu.theme.nom.length).toBeGreaterThan(0);
+    expect(menu.theme.nom).toBe('Sans thème');
   });
 
-  it('selects a random theme deterministically with the seed', () => {
-    const first = generateMenu(undefined, undefined, undefined, 123);
-    const second = generateMenu(undefined, undefined, undefined, 123);
+  it('disables themes by default', () => {
+    const menu = generateMenu(undefined, undefined, undefined, 0);
+
+    expect(menu.theme.nom).toBe('Sans thème');
+  });
+
+  it('selects a random theme deterministically when themes are enabled', () => {
+    const first = generateMenu(undefined, undefined, undefined, 0, true);
+    const second = generateMenu(undefined, undefined, undefined, 0, true);
 
     expect(first.theme).toEqual(second.theme);
+    expect(first.theme.nom).not.toBe('Sans thème');
   });
 
   it('keeps the display menu format with a theme', () => {
-    const themedMenu = generateMenu(undefined, undefined, undefined, 123);
+    const themedMenu = generateMenu(undefined, undefined, undefined, 0, true);
 
     expect(Object.keys(themedMenu).sort()).toEqual([
       'complement',

@@ -37,6 +37,8 @@ describe('components/menu-container.tsx', () => {
       <MenuContainer
         variant="main"
         menu={null}
+        themesEnabled={false}
+        onThemesEnabledChange={vi.fn()}
       />,
     );
 
@@ -49,6 +51,8 @@ describe('components/menu-container.tsx', () => {
     render(
       <MenuContainer
         variant="right"
+        themesEnabled={false}
+        onThemesEnabledChange={vi.fn()}
         menu={{
           title: 'Menu Test',
           complement: 'du chef',
@@ -70,5 +74,25 @@ describe('components/menu-container.tsx', () => {
     await waitFor(() => {
       expect(toast.success).toHaveBeenCalledWith('Lien copié dans le presse-papiers');
     });
+  });
+
+  it('renders and updates the experimental theme setting', () => {
+    const onThemesEnabledChange = vi.fn();
+    render(
+      <MenuContainer
+        variant="info"
+        menu={null}
+        themesEnabled={false}
+        onThemesEnabledChange={onThemesEnabledChange}
+      />,
+    );
+
+    const themeSwitch = screen.getByRole('switch', {
+      name: 'Activer les thèmes',
+    });
+    expect(themeSwitch).not.toBeChecked();
+
+    fireEvent.click(themeSwitch);
+    expect(onThemesEnabledChange).toHaveBeenCalledWith(true);
   });
 });
