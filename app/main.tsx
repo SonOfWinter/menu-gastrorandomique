@@ -11,6 +11,11 @@ import MenuContainer from '@/components/menu-container';
 import { DisplayMenu } from '@/types/display-menu';
 import { MenuResponse } from '@/types/menu-response';
 import { toast } from 'sonner';
+import {
+  readThemesEnabled,
+  subscribeThemesEnabled,
+  writeThemesEnabled,
+} from '@/lib/client/theme-preference';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
@@ -24,6 +29,11 @@ export default function Main() {
   const [position, setPosition] = React.useState<Position>('main');
   const [menu, setMenu] = React.useState<DisplayMenu | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
+  const themesEnabled = React.useSyncExternalStore(
+    subscribeThemesEnabled,
+    readThemesEnabled,
+    () => false,
+  );
   const initialSeedRef = useRef<number | null>(null);
   const initialSeedUsedRef = useRef(false);
   const menuRef = useRef<HTMLElement>(null);
@@ -48,6 +58,10 @@ export default function Main() {
     }
   }, []);
 
+  const updateThemesEnabled = useCallback((enabled: boolean) => {
+    writeThemesEnabled(enabled);
+  }, []);
+
   const getMenu = useCallback(async (transition: Transition) => {
     if (transition === 'none') {
       return;
@@ -67,7 +81,13 @@ export default function Main() {
       return createSeed();
     })();
     try {
-      const res: Response = await fetch(`/generate?seed=${nextSeed}`);
+      const params = new URLSearchParams({
+        seed: String(nextSeed),
+      });
+      if (themesEnabled) {
+        params.set('themes', '1');
+      }
+      const res: Response = await fetch(`/generate?${params.toString()}`);
       if (res.status === 429) {
         toast.error('Vous êtes trop gourmand ! veuillez reessayer plus tard');
         setPosition('main');
@@ -93,13 +113,15 @@ export default function Main() {
     } finally {
       setIsLoading(false);
     }
-  }, [createSeed, isLoading, updateSeedUrl]);
+  }, [createSeed, isLoading, themesEnabled, updateSeedUrl]);
 
   return (<>
       <MenuContainer
         ref={menuRef}
         variant={position}
         menu={menu}
+        themesEnabled={themesEnabled}
+        onThemesEnabledChange={updateThemesEnabled}
       />
       <Navigation
         variant={position}

@@ -50,11 +50,13 @@ export async function GET(request: NextRequest):Promise<Response> {
   const seedParam = request.nextUrl.searchParams.get('seed');
   const parsedSeed = seedParam ? Number.parseInt(seedParam, 10) : NaN;
   const seed = Number.isFinite(parsedSeed) ? parsedSeed : undefined;
+  const themesEnabled = request.nextUrl.searchParams.get('themes') === '1';
   const menu:DisplayMenu = generateMenu(
     defaultMenuConfig.dishCount,
     defaultMenuConfig.inconsistentLevel,
     defaultMenuConfig.priceRange,
     seed,
+    themesEnabled,
   );
   const response: MenuResponse = { menu: menu };
   return Response.json(response);

@@ -1,5 +1,7 @@
 import { platTypePresets } from '@/data-presets/type-plat-presets';
 import { Post } from '@/types/data/post';
+import { themePresets } from '@/data-presets/theme-presets';
+import { Theme } from '@/types/enums/theme';
 
 const posts: Post[] = [
   {
@@ -16,11 +18,13 @@ const posts: Post[] = [
     id: 'b36504ed-f511-4594-a255-5e9d18de6503',
     nom: 'à l’italienne',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '716254be-f6f1-488c-837f-740d5d43821e',
     nom: 'à l’orientale',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'c4dd8cdf-bc77-4293-9fef-56c5428c01bb',
@@ -31,31 +35,37 @@ const posts: Post[] = [
     id: '505e1661-0ba4-40ec-988e-2fa2f5fdcb58',
     nom: 'à la française',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'bafda1da-3616-489e-95ff-1cf766e4a809',
     nom: 'à la japonaise',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '18324cd3-c190-4678-9cb2-54894fd3ea12',
     nom: 'à la libanaise',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '71142806-ab91-4c37-88cd-6a0d8da9e0d1',
     nom: 'à la mexicaine',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: '202dd86c-1e51-4390-abb6-9e0b21d9f0dd',
     nom: 'à la normande',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '04ee29c8-356b-4668-b503-c37cbf4503f7',
     nom: 'à la provençale',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: '3267ca77-e498-41a5-9ea3-ca8bbe15522e',
@@ -66,6 +76,7 @@ const posts: Post[] = [
     id: 'dccff73c-4734-48cf-8dd1-92e30f89dd32',
     nom: 'à la sicilienne',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '39328cd9-70c7-44dc-95c8-4a685452aa9f',
@@ -81,11 +92,13 @@ const posts: Post[] = [
     id: '79ece5d9-27d1-40d1-943b-16db09fef323',
     nom: 'aux fragrances d’automne',
     types: platTypePresets.mainAndDessert,
+    themes: [Theme.AUTOMNE],
   },
   {
     id: '54618a01-f758-47a5-a4f4-d06e54573d3c',
     nom: 'aux mille éclats de goût',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '294a26a6-1f56-4845-b8d3-c86b84b6f718',
@@ -101,6 +114,7 @@ const posts: Post[] = [
     id: 'f4fcbffa-00e4-42ca-898b-295f58c0f872',
     nom: 'aux parfums de voyage',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'a063b7a8-8f7a-47eb-8691-130bd517886e',
@@ -186,31 +200,37 @@ const posts: Post[] = [
     id: 'd56fb865-af9e-4c18-b4ea-a7f9d6142f08',
     nom: 'en 2 interprétations',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'd48714ae-cfd9-4230-bfab-3de4cae9e633',
     nom: 'en 3 déclinaisons',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '2e869431-4c52-4030-b94c-8bf41c82b0d4',
     nom: 'en 5 temps',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '397c7cd4-3d93-4cd0-9350-09a24ecefad9',
     nom: 'en 5 textures',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '46352aeb-1b56-42b8-b85e-4ed24b9e4f82',
     nom: 'en accord parfait',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'dc6c4eed-257b-43c2-9a5a-27b2cc02fc7e',
     nom: 'en ballet gustatif',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '5043476c-7f94-48a1-a2a6-e311d6fb5aa9',
@@ -221,6 +241,7 @@ const posts: Post[] = [
     id: '433e349f-9970-41d0-b213-e075fe4896a6',
     nom: 'en chapelure fine',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: '2c72629b-11f0-4471-a60d-40d9aa5a0655',
@@ -231,6 +252,7 @@ const posts: Post[] = [
     id: '5635676a-bd29-49f5-829a-ba13b440c503',
     nom: 'en cuisson basse température',
     types: platTypePresets.main,
+    themes: themePresets.allSeasons,
   },
   {
     id: '1a58e03a-5e96-4e69-983f-d2f874bb3fb0',
@@ -241,11 +263,13 @@ const posts: Post[] = [
     id: '92180800-3c78-46b8-8d69-2ea91dcd9aa2',
     nom: 'en déclinaison gourmande',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '689dde5a-9b3b-4a3c-96eb-2de16a49813b',
     nom: 'en duo raffiné',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'd3a404de-c68e-4a6a-b311-3da0e5e31151',
@@ -261,41 +285,49 @@ const posts: Post[] = [
     id: 'b9bfff37-5cf0-4085-81fa-1fbbda2592ce',
     nom: 'en fine émulsion',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: '33a82094-3560-4393-aa20-ecee5b2908ad',
     nom: 'en habit feuilleté',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'b466bbc6-7bec-4671-833c-9ab30df82944',
     nom: 'en harmonie subtile',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'd11dbfae-47d6-4026-aaf5-457f5edced38',
     nom: 'en infusion légère',
     types: platTypePresets.entryAndDessert,
+    themes: themePresets.allSeasons,
   },
   {
     id: '2169695a-2c50-42d3-abf0-3d3dd3fcf403',
     nom: 'en mille-feuille de saveurs',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: '9d6c17b5-7196-4b3d-98c4-3159c9f2abc9',
     nom: 'en palette de saveurs',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'a1ea90ce-f25e-46b3-ab6a-0172d063e47e',
     nom: 'en papillote parfumée',
     types: platTypePresets.entryAndMain,
+    themes: themePresets.allSeasons,
   },
   {
     id: '7dc6c174-0a58-4a34-b7b0-7aa97fa6acbc',
     nom: 'en vapeur douce',
     types: platTypePresets.main,
+    themes: themePresets.allSeasons,
   },
   {
     id: '93cf7e13-aafe-4300-91e3-7e42fe5a00d0',
@@ -306,13 +338,20 @@ const posts: Post[] = [
     id: '01742647-d0d1-4f47-a57a-76687917dcfc',
     nom: 'façon tatin',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
   {
     id: 'b34314e6-9a77-480e-81fb-3fd2ecc26fc7',
     nom: 'selon l’inspiration de notre chef',
     types: platTypePresets.allCourses,
+    themes: themePresets.allSeasons,
   },
-
+  {
+    id: '75760754-e592-45fc-aa17-1bd795c21ece',
+    nom: 'façon grand banquet',
+    types: platTypePresets.allCourses,
+    themes: [Theme.MEDIEVAL],
+  },
 ];
 
 export default posts;

@@ -2,7 +2,6 @@ import { Menu } from '@/types/menu';
 import { Plat } from '@/types/data/plat';
 import { Ingredient } from '@/types/data/ingredient';
 import { Lien } from '@/types/data/lien';
-import getRandom from '@/lib/menu/get-random';
 import getIngredient from '@/lib/menu/get-ingredient';
 import { Adjectif } from '@/types/data/adjectif';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
@@ -11,7 +10,7 @@ import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
 import { TypePlat } from '@/types/enums/type-plat';
 import getPostByType from '@/lib/menu/get-post-by-type';
-import getIndexedItemsByTypes from '@/lib/menu/get-indexed-items-by-types';
+import getIndexedItemsByMask from '@/lib/menu/get-indexed-items-by-mask';
 import {
   addLiensAlreadyUsed,
   getLiensAlreadyUsed,
@@ -19,6 +18,10 @@ import {
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
 import getItemsByIds from '@/lib/menu/get-items-by-ids';
+import { TYPE_ALIMENT_BITS } from '@/types/enums/type-aliment';
+import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 const generateSecond = (
   data: Menu,
@@ -28,6 +31,7 @@ const generateSecond = (
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
   selectedIngredients?: Ingredient[],
+  themeContext: ThemeContext = {},
 ): string => {
   let second: string = '';
   const ingredientSecondaire: Ingredient | null = getIngredient(
@@ -36,20 +40,31 @@ const generateSecond = (
     true,
     null,
     rng,
+    themeContext,
   );
   if (!ingredientSecondaire) {
     return '';
   }
   selectedIngredients?.push(ingredientSecondaire);
-  const availableLiens = getIndexedItemsByTypes(data.liens, data.indexes.lienIdsByType, ingredientSecondaire.types);
-  const compatibleLiens = availableLiens.length > 0 ? availableLiens : data.liens;
+  const ingredientMask = ingredientSecondaire.compatibilityMask ?? getCompatibilityMask(ingredientSecondaire.types, TYPE_ALIMENT_BITS);
+  const typeCompatibleLiens = data.indexes.lienIdsByAcceptedMask[ingredientMask]
+    ? getIndexedItemsByMask(data.liens, data.indexes.lienIdsByAcceptedMask, ingredientMask)
+    : data.liens.filter((lien) => hasCompatibleMask(
+      lien.acceptedCompatibilityMask ?? getCompatibilityMask(lien.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
+      ingredientMask,
+    ));
+  const themedCompatibleLiens = filterItemsByTheme(
+    typeCompatibleLiens,
+    themeContext.theme,
+  );
+  const compatibleLiens = themedCompatibleLiens.length > 0
+    ? themedCompatibleLiens
+    : filterItemsByTheme(data.liens, themeContext.theme);
   const unusedLiens = compatibleLiens.filter((lien: Lien) =>
     !getLiensAlreadyUsed().includes(lien.id as number),
   );
-  const lienSecondaire: Lien = getRandom(
-    unusedLiens.length > 0 ? unusedLiens : compatibleLiens,
-    rng,
-  );
+  const selectableLiens = unusedLiens.length > 0 ? unusedLiens : compatibleLiens;
+  const lienSecondaire: Lien = getRandom(selectableLiens, rng);
   addLiensAlreadyUsed(lienSecondaire.id as number);
   const preIngredient: string = ingredientSecondaire.determinants[lienSecondaire.suite];
   const adjectifSecondaire: Adjectif | null = getAdjectifBasedOnIngredient(
@@ -58,6 +73,7 @@ const generateSecond = (
     inconsistentLevel,
     rng,
     data.indexes,
+    themeContext,
   );
   second += `${lienSecondaire.noms[platPrincipal.genre][platPrincipal.nombre]} ${preIngredient}${determinantSeparator(preIngredient)}`;
   second += `${formatIngredientName(ingredientSecondaire, rng)}`;
@@ -70,6 +86,7 @@ const generateSecond = (
       getItemsByIds(data.posts, data.indexes.postIdsByType[mainType]),
       mainType,
       rng,
+      themeContext,
     );
     second += ` ${postSecondaire.nom}`;
   }

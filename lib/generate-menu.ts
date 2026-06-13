@@ -1,12 +1,11 @@
 import { DisplayMenu } from '@/types/display-menu';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { Menu } from '@/types/menu';
-import { TypeAliment } from '@/types/enums/type-aliment';
+import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
 import { createSeededRandom } from '@/lib/utils/seeded-rng';
 import random from '@/lib/utils/random';
 import round from '@/lib/utils/round';
-import getRandom from '@/lib/menu/get-random';
 import getMenuData from '@/lib/menu/get-menu-data';
 import { generateDish } from '@/lib/menu/generate-dish';
 import {
@@ -14,6 +13,13 @@ import {
   MenuPriceRange,
 } from '@/lib/menu/menu-config';
 import { resetAlreadyUsed } from '@/lib/ssr-cache';
+import {
+  filterItemsByTheme,
+  getRandomTheme,
+  ThemeContext,
+} from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
+import { getCompatibilityMask } from '@/lib/menu/compatibility-mask';
 
 function assertNonEmptyList(label: string, list: readonly unknown[]): void {
   if (list.length === 0) {
@@ -40,6 +46,27 @@ function assertNonEmptyTypeAlimentIndex(
   }
 }
 
+function assertMaskIndexEntries(
+  label: string,
+  index: Record<number, readonly unknown[]>,
+  masks: Iterable<number>,
+  requireNonEmpty: boolean = false,
+): void {
+  for (const mask of new Set(masks)) {
+    if (mask === 0) {
+      continue;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(index, mask)) {
+      throw new Error(`Menu data mask index is missing: ${label}.${mask}`);
+    }
+
+    if (requireNonEmpty) {
+      assertNonEmptyList(`${label}.${mask}`, index[mask]);
+    }
+  }
+}
+
 function getRequiredTypeAliments(data: Menu): Set<TypeAliment> {
   const typeAliments = new Set<TypeAliment>([TypeAliment.SAUCE]);
 
@@ -52,6 +79,40 @@ function getRequiredTypeAliments(data: Menu): Set<TypeAliment> {
   }
 
   return typeAliments;
+}
+
+function getRequiredIngredientMasks(data: Menu): Set<number> {
+  const masks = new Set<number>([
+    getCompatibilityMask(Object.values(TypeAliment), TYPE_ALIMENT_BITS),
+    TYPE_ALIMENT_BITS[TypeAliment.SAUCE],
+  ]);
+
+  for (const plat of data.plats) {
+    for (const typePlat of Object.values(TypePlat)) {
+      masks.add(
+        plat.typeAlimentMasks?.[typePlat]
+        ?? getCompatibilityMask(plat.typeAliments[typePlat], TYPE_ALIMENT_BITS),
+      );
+    }
+  }
+
+  for (const sauceType of data.sauceTypes) {
+    masks.add(
+      sauceType.acceptedCompatibilityMask
+      ?? getCompatibilityMask(sauceType.compatibleIngredientTypes, TYPE_ALIMENT_BITS),
+    );
+  }
+
+  return masks;
+}
+
+function getIngredientMasks(data: Menu): Set<number> {
+  return new Set(
+    data.ingredients.map((ingredient) =>
+      ingredient.compatibilityMask
+      ?? getCompatibilityMask(ingredient.types, TYPE_ALIMENT_BITS),
+    ),
+  );
 }
 
 export function validateMenuData(data: Menu): void {
@@ -76,6 +137,24 @@ export function validateMenuData(data: Menu): void {
   assertNonEmptyTypeAlimentIndex('ingredientIdsByType', data.indexes.ingredientIdsByType, requiredTypeAliments);
   assertNonEmptyTypeAlimentIndex('adjectifIdsByType', data.indexes.adjectifIdsByType, requiredTypeAliments);
   assertNonEmptyTypeAlimentIndex('lienIdsByType', data.indexes.lienIdsByType, requiredTypeAliments);
+
+  assertMaskIndexEntries(
+    'ingredientIdsByCompatibilityMask',
+    data.indexes.ingredientIdsByCompatibilityMask,
+    getRequiredIngredientMasks(data),
+    true,
+  );
+  const ingredientMasks = getIngredientMasks(data);
+  assertMaskIndexEntries(
+    'adjectifIdsByAcceptedMask',
+    data.indexes.adjectifIdsByAcceptedMask,
+    ingredientMasks,
+  );
+  assertMaskIndexEntries(
+    'lienIdsByAcceptedMask',
+    data.indexes.lienIdsByAcceptedMask,
+    ingredientMasks,
+  );
 }
 
 export default function generateMenu(
@@ -83,27 +162,36 @@ export default function generateMenu(
   inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
   priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
   seed?: number,
+  themesEnabled = false,
 ): DisplayMenu {
   resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
   const data: Menu = getMenuData();
   validateMenuData(data);
+  const themeContext: ThemeContext = {
+    theme: themesEnabled
+      ? getRandomTheme(data.themes, (items) => getRandom(items, rng))
+      : undefined,
+  };
   const entree = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel, rng),
+    () => generateDish(data, TypePlat.ENTREE, inconsistentLevel, rng, themeContext),
   );
   const plat = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.PLAT, inconsistentLevel, rng),
+    () => generateDish(data, TypePlat.PLAT, inconsistentLevel, rng, themeContext),
   );
   const dessert = Array.from(
     { length: count },
-    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel, rng),
+    () => generateDish(data, TypePlat.DESSERT, inconsistentLevel, rng, themeContext),
   );
   return {
     price: round(random(priceRange.min, priceRange.max, true, rng), 2),
-    title: getRandom(data.titles, rng).nom,
-    complement: getRandom(data.complements, rng).nom,
+    title: getRandom(filterItemsByTheme(data.titles, themeContext.theme), rng).nom,
+    complement: getRandom(filterItemsByTheme(data.complements, themeContext.theme), rng).nom,
+    theme: {
+      nom: themeContext.theme?.nom ?? 'Sans thème',
+    },
     entree,
     plat,
     dessert,

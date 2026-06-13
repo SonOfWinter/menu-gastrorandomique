@@ -5,7 +5,6 @@ import { Ingredient } from '@/types/data/ingredient';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { Adjectif } from '@/types/data/adjectif';
 import { PreSauce } from '@/types/data/pre-sauce';
-import getRandom from '@/lib/menu/get-random';
 import { SauceType } from '@/types/data/sauce-type';
 import getAdjectifBasedOnIngredient from '@/lib/menu/get-adjectif-based-on-ingredient';
 import getIngredient from '@/lib/menu/get-ingredient';
@@ -19,6 +18,8 @@ import {
 import { determinantSeparator } from '@/lib/menu/format-determinant';
 import formatIngredientName from '@/lib/menu/format-ingredient-name';
 import getItemsByIds from '@/lib/menu/get-items-by-ids';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 export default function generateSauce(
   data: Menu,
@@ -27,9 +28,10 @@ export default function generateSauce(
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
   selectedIngredients?: Ingredient[],
+  themeContext: ThemeContext = {},
 ): string {
-  const preSauce = getPreSauce(data, rng);
-  const typeSauce = getSauceType(data, typePlat, rng);
+  const preSauce = getPreSauce(data, rng, themeContext);
+  const typeSauce = getSauceType(data, typePlat, rng, themeContext);
 
   let preSuite: string = typeSauce.determinants[preSauce.suite];
   preSuite = preSuite + determinantSeparator(preSuite);
@@ -39,6 +41,7 @@ export default function generateSauce(
     false,
     isInconsistent(inconsistentLevel, rng) ? [] : typeSauce.compatibleIngredientTypes,
     rng,
+    themeContext,
   );
   if (!ingredientSauce) {
     return '';
@@ -52,6 +55,7 @@ export default function generateSauce(
     inconsistentLevel,
     rng,
     data.indexes,
+    themeContext,
   );
 
   let sauce: string = preSauce.noms[platPrincipal.genre][platPrincipal.nombre] + ' ' + preSuite + typeSauce.nom + ' ' + typeSuite + formatIngredientName(ingredientSauce, rng);
@@ -61,8 +65,8 @@ export default function generateSauce(
   return sauce;
 }
 
-function getPreSauce(data: Menu, rng?: RandomGenerator): PreSauce {
-  const availablePreSauces = [...data.preSauces];
+function getPreSauce(data: Menu, rng?: RandomGenerator, themeContext: ThemeContext = {}): PreSauce {
+  const availablePreSauces = filterItemsByTheme(data.preSauces, themeContext.theme);
   return getRandom(availablePreSauces, rng);
 }
 
@@ -70,15 +74,17 @@ function getSauceType(
   data: Menu,
   typePlat: TypePlat,
   rng?: RandomGenerator,
+  themeContext: ThemeContext = {},
 ): SauceType {
-  const availableSauceTypes = getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]);
+  const availableSauceTypes = filterItemsByTheme(
+    getItemsByIds(data.sauceTypes, data.indexes.sauceTypeIdsByType[typePlat]),
+    themeContext.theme,
+  );
   const unusedSauceTypes = availableSauceTypes.filter((item: SauceType) =>
     !getSauceTypesAlreadyUsed().includes(item.id as number),
   );
-  const selected = getRandom(
-    unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes,
-    rng,
-  );
+  const selectableSauceTypes = unusedSauceTypes.length > 0 ? unusedSauceTypes : availableSauceTypes;
+  const selected = getRandom(selectableSauceTypes, rng);
   addSauceTypesAlreadyUsed(selected.id as number);
   return selected;
 }

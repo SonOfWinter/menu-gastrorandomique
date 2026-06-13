@@ -13,6 +13,7 @@ The project focuses on:
 ## Features
 
 - Random menu name generation
+- Random French theme selection to orient generation
 - Each main course is composed of:
     - a main element
     - a secondary element
@@ -73,6 +74,12 @@ npm install
 npm run dev
 ```
 Open http://localhost:3000 in your browser.
+
+### Menu data
+
+Human-readable data lives in `data/*.ts` and `data-presets/*.ts`. `npm run generate:data` compiles it into `data-build/menu-data.generated.ts`, including compatibility masks, runtime indexes, and theme masks.
+
+`TYPE_ALIMENT_BITS`, `TYPE_PLAT_BITS`, and `THEME_BITS` are stable bit tables. Existing bit values must not be reordered or reused; add new values with the next free bit.
 
 ## License
 

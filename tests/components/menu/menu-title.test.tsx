@@ -15,6 +15,7 @@ describe('components/menu/menu-title.tsx', () => {
           title: 'Menu Test',
           complement: 'du chef',
           price: 42,
+          theme: { nom: 'Médiéval' },
           entree: [],
           plat: [],
           dessert: [],
@@ -25,5 +26,6 @@ describe('components/menu/menu-title.tsx', () => {
     expect(screen.getByText('Menu Test')).toBeInTheDocument();
     expect(screen.getByText('du chef')).toBeInTheDocument();
     expect(screen.getByText('42€')).toBeInTheDocument();
+    expect(screen.queryByText('Thème : Médiéval')).not.toBeInTheDocument();
   });
 });

@@ -4,6 +4,7 @@ import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { Lien } from '@/types/data/lien';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { alimentTypePresets } from '@/data-presets/type-aliment-presets';
+import { themePresets } from '@/data-presets/theme-presets';
 
 const liens: Lien[] = [
   {
@@ -64,6 +65,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -124,6 +126,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -139,6 +142,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -154,6 +158,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -169,6 +174,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -214,6 +220,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -229,6 +236,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -259,6 +267,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -274,6 +283,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -319,6 +329,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -334,6 +345,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -364,6 +376,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -424,6 +437,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -454,6 +468,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
@@ -484,6 +499,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -529,6 +545,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -589,6 +606,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -619,6 +637,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE]
   },
   {
@@ -664,6 +683,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -739,6 +759,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -754,6 +775,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -814,6 +836,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -829,6 +852,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -934,6 +958,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -949,6 +974,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1009,6 +1035,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    unthemedOnly: true,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1054,6 +1081,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.HERBE, TypeAliment.EPICE, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
@@ -1069,6 +1097,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1099,6 +1128,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1129,6 +1159,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1144,6 +1175,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    unthemedOnly: true,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1159,6 +1191,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    unthemedOnly: true,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1174,6 +1207,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.POSSESSIF,
+    unthemedOnly: true,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1189,6 +1223,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1204,6 +1239,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1219,6 +1255,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    unthemedOnly: true,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1249,6 +1286,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1279,6 +1317,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1294,6 +1333,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1309,6 +1349,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1324,6 +1365,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1339,6 +1381,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.SECONDAIRE,
+    unthemedOnly: true,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1354,6 +1397,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.ARTICLE_INDEFINI,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.CHARCUTERIE, TypeAliment.LAITIER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE]
   },
   {
@@ -1444,6 +1488,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.allWithoutCharcuterieAndRedMeat
   },
   {
@@ -1489,6 +1534,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {
@@ -1504,6 +1550,7 @@ const liens: Lien[] = [
       },
     },
     suite: TypeDeterminant.PRINCIPAL,
+    themes: themePresets.allSeasons,
     compatibleIngredientTypes: alimentTypePresets.all
   },
   {

@@ -39,11 +39,18 @@ const bebasNeue = Bebas_Neue({
 
 const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'section'>
   & VariantProps<typeof menuContainerVariants>
-  & { variant: Position, menu: DisplayMenu | null }
+  & {
+  variant: Position,
+  menu: DisplayMenu | null,
+  themesEnabled: boolean,
+  onThemesEnabledChange: (enabled: boolean) => void,
+}
   & {}>(function MenuContainer({
   className,
   variant = 'main',
   menu,
+  themesEnabled,
+  onThemesEnabledChange,
   ...props
 }, ref) {
   const copyShareUrl = () => {
@@ -82,7 +89,12 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
           )
           : null}
         {variant === 'info'
-          ? <InfoPanel />
+          ? (
+            <InfoPanel
+              themesEnabled={themesEnabled}
+              onThemesEnabledChange={onThemesEnabledChange}
+            />
+          )
           : null}
         {menu !== null && variant !== 'info'
           ? <>

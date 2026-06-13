@@ -14,13 +14,16 @@ import { Nombre } from '@/types/enums/nombre';
 import { TypeAliment } from '@/types/enums/type-aliment';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
 import { TypePlat } from '@/types/enums/type-plat';
+import { Theme } from '@/types/enums/theme';
 import { EntityId } from '@/types/entity-id';
+import { themePresets } from '@/data-presets/theme-presets';
 
 const genres = Object.values(Genre);
 const nombres = Object.values(Nombre);
 const typeAliments = Object.values(TypeAliment);
 const typeDeterminants = Object.values(TypeDeterminant);
 const typePlats = Object.values(TypePlat);
+const themes = Object.values(Theme);
 
 function expectNonEmptyString(value: unknown, label: string) {
   expect(typeof value, label).toBe('string');
@@ -82,7 +85,35 @@ function expectCollectionNames(
   expectUniqueValues(collection.map((item) => item.nom), `${label}.noms`);
 }
 
+function expectValidThemeScope(
+  collection: readonly {
+    themes?: readonly Theme[];
+    unthemedOnly?: boolean;
+  }[],
+  label: string,
+) {
+  collection.forEach((item, index) => {
+    expect(
+      item.themes !== undefined && item.unthemedOnly === true,
+      `${label}[${index}] cannot combine themes and unthemedOnly`,
+    ).toBe(false);
+  });
+}
+
 describe('data consistency', () => {
+  it('keeps theme scopes structurally valid', () => {
+    expectValidThemeScope(adjectifs, 'adjectifs');
+    expectValidThemeScope(complements, 'complements');
+    expectValidThemeScope(ingredients, 'ingredients');
+    expectValidThemeScope(liens, 'liens');
+    expectValidThemeScope(plats, 'plats');
+    expectValidThemeScope(posts, 'posts');
+    expectValidThemeScope(pres, 'pres');
+    expectValidThemeScope(preSauces, 'preSauces');
+    expectValidThemeScope(sauceTypes, 'sauceTypes');
+    expectValidThemeScope(titles, 'titles');
+  });
+
   it('keeps menu-adjectif entries structurally valid', () => {
     expectCollectionIds(adjectifs, 'adjectifs');
 
@@ -223,5 +254,19 @@ describe('data consistency', () => {
   it('keeps menu-title entries structurally valid', () => {
     expectCollectionIds(titles, 'titles');
     titles.forEach((title, index) => expectNonEmptyString(title.nom, `titles[${index}].nom`));
+  });
+
+  it('keeps menu-theme entries structurally valid', () => {
+    expect(themes.length).toBeGreaterThan(0);
+    expectUniqueValues(themes, 'themes');
+    themes.forEach((theme, index) => {
+      expectNonEmptyString(theme, `themes[${index}]`);
+    });
+  });
+
+  it('keeps theme presets structurally valid', () => {
+    Object.entries(themePresets).forEach(([name, preset]) => {
+      expectKnownValues(preset, themes, `themePresets.${name}`);
+    });
   });
 });

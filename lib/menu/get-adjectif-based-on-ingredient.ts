@@ -1,16 +1,18 @@
 import { Adjectif } from '@/types/data/adjectif';
 import { Ingredient } from '@/types/data/ingredient';
 import isInconsistent from '@/lib/menu/is-inconsistent';
-import intersection from '@/lib/utils/intersection';
-import getRandom from '@/lib/menu/get-random';
 import {
   addAdjectifsAlreadyUsed,
   getAdjectifsAlreadyUsed,
 } from '@/lib/ssr-cache';
 import { InconsistentLevel } from '@/types/inconsistent-level';
 import { RandomGenerator } from '@/lib/utils/seeded-rng';
-import getIndexedItemsByTypes from '@/lib/menu/get-indexed-items-by-types';
 import { MenuIndexes } from '@/types/menu-indexes';
+import getIndexedItemsByMask from '@/lib/menu/get-indexed-items-by-mask';
+import { TYPE_ALIMENT_BITS } from '@/types/enums/type-aliment';
+import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
+import { filterItemsByTheme, ThemeContext } from '@/lib/menu/theme';
+import getRandom from '@/lib/menu/get-random';
 
 const getAdjectifBasedOnIngredient = (
   adjectifs: Adjectif[],
@@ -18,17 +20,20 @@ const getAdjectifBasedOnIngredient = (
   inconsistentLevel: InconsistentLevel,
   rng?: RandomGenerator,
   indexes?: MenuIndexes,
+  themeContext: ThemeContext = {},
 ): Adjectif | null => {
+  const ingredientMask = ingredient.compatibilityMask ?? getCompatibilityMask(ingredient.types, TYPE_ALIMENT_BITS);
+  const themedAdjectifs = filterItemsByTheme(adjectifs, themeContext.theme);
   const filteredAdjectifs = isInconsistent(inconsistentLevel, rng)
-    ? adjectifs
+    ? themedAdjectifs
     : indexes
-      ? getIndexedItemsByTypes(adjectifs, indexes.adjectifIdsByType, ingredient.types)
+      ? filterItemsByTheme(
+        getIndexedItemsByMask(adjectifs, indexes.adjectifIdsByAcceptedMask, ingredientMask),
+        themeContext.theme,
+      )
         .filter((item: Adjectif) => !getAdjectifsAlreadyUsed().includes(item.id as number))
-      : adjectifs.filter((item: Adjectif) =>
-        intersection(
-          [...item.types],
-          [...ingredient.types],
-        ).length > 0
+      : themedAdjectifs.filter((item: Adjectif) =>
+        hasCompatibleMask(item.compatibilityMask ?? getCompatibilityMask(item.types, TYPE_ALIMENT_BITS), ingredientMask)
         && !getAdjectifsAlreadyUsed().includes(item.id as number),
       );
   if (filteredAdjectifs.length === 0) {

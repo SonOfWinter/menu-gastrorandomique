@@ -1,4 +1,5 @@
 import { Complement } from '@/types/data/complement';
+import { Theme } from '@/types/enums/theme';
 
 const complements: Complement[] = [
   {
@@ -28,6 +29,7 @@ const complements: Complement[] = [
   {
     id: 'b97b42f0-e448-4698-8d5c-2cae3dbd74cb',
     nom: 'Garanti sans calories',
+    unthemedOnly: true,
   },
   {
     id: '38f98628-2999-49ec-ad6d-5b7799ca3a7c',
@@ -40,6 +42,7 @@ const complements: Complement[] = [
   {
     id: '2de03c18-4398-4bfd-9e05-b0b58eb4172e',
     nom: 'Meilleur qu’un simple sandwich',
+    unthemedOnly: true,
   },
   {
     id: '4eb247f8-fbf9-49b3-af0a-1d60ed4e503b',
@@ -64,6 +67,7 @@ const complements: Complement[] = [
   {
     id: '0434085b-20bf-4fcd-a1bf-0f521e9efcc7',
     nom: 'Parfait pour impressionner votre date',
+    unthemedOnly: true,
   },
   {
     id: '31b6eaf4-3dc7-4410-b563-7ac1e1664f13',
@@ -104,6 +108,7 @@ const complements: Complement[] = [
   {
     id: '5f1bef03-165e-4692-be4c-73aa715dde97',
     nom: 'Recommandé par 9 gourmands sur 10',
+    unthemedOnly: true,
   },
   {
     id: 'f5c0e06c-2c3f-41fd-a870-db95f4ab9022',
@@ -132,10 +137,12 @@ const complements: Complement[] = [
   {
     id: 'a30e91e7-0ac5-4e4d-b24c-6e6565c17966',
     nom: 'Sur place ou à emporter',
+    unthemedOnly: true,
   },
   {
     id: '969052e2-92a7-445f-a46e-5f9549d83bd5',
     nom: 'Sur place uniquement',
+    unthemedOnly: true,
   },
   {
     id: '5784f99e-5654-4ed4-86f6-70ddcc061c3c',
@@ -164,6 +171,7 @@ const complements: Complement[] = [
   {
     id: 'de97b6b4-ce2f-4e51-93c9-7d28febf5a6e',
     nom: 'Un prix accessible',
+    unthemedOnly: true,
   },
   {
     id: '8f2b21f7-74c9-4162-85ee-06a973dda88e',
@@ -180,6 +188,7 @@ const complements: Complement[] = [
   {
     id: '23b81d7b-0bbe-4f17-9f8f-408f2d861e7d',
     nom: 'Uniquement à Noël',
+    themes: [Theme.HIVER],
   },
   {
     id: '98f4c7a0-de2f-4f67-8a24-4ed10c93df88',
@@ -266,6 +275,7 @@ const complements: Complement[] = [
   {
     id: 'f39caac2-8007-4f51-90e6-0d3a7d129217',
     nom: 'Certifié 0% light, 100% bonheur',
+    unthemedOnly: true,
   },
   {
     id: '01b40251-f3aa-44e4-bc30-9e7c196dc1a1',
@@ -286,6 +296,7 @@ const complements: Complement[] = [
   {
     id: 'ba122087-6fcd-4eb2-9c59-d5af92a51df6',
     nom: 'Idéal pour oublier vos bonnes résolutions',
+    themes: [Theme.HIVER],
   },
   {
     id: '5748233b-812e-4e4e-8dc4-562528aff860',
@@ -302,6 +313,7 @@ const complements: Complement[] = [
   {
     id: '986577b9-b353-491a-8b83-9d1492cade69',
     nom: 'Mieux qu’au resto étoilé',
+    unthemedOnly: true,
   },
   {
     id: '95b20352-1fed-4f26-a620-2129bbf8741a',
@@ -310,6 +322,7 @@ const complements: Complement[] = [
   {
     id: '5de79285-4161-466a-b0df-437d856e5ab5',
     nom: 'Non contractuel.',
+    unthemedOnly: true,
   },
   {
     id: '82925168-87b9-4db6-8cdd-1b27ce5ad8d2',
@@ -318,6 +331,7 @@ const complements: Complement[] = [
   {
     id: '7e222a00-8984-4b02-9420-b68943826281',
     nom: 'Préparé sans IA',
+    unthemedOnly: true,
   },
   {
     id: 'c7417fc7-7a6c-4f2f-b43d-42287899e4ac',
@@ -330,6 +344,7 @@ const complements: Complement[] = [
   {
     id: '1c8bba1b-b57d-47f9-b825-4462b283e7e6',
     nom: 'Sans gluten, sans regrets',
+    unthemedOnly: true,
   },
   {
     id: '59910c61-d9a3-4166-9c4d-acf4b07f66ad',
@@ -350,6 +365,7 @@ const complements: Complement[] = [
   {
     id: '9103d864-1d1b-4916-8c76-ad20534f6a8a',
     nom: 'Une recette tenue secrète depuis 1865',
+    unthemedOnly: true,
   },
   {
     id: '1ee03909-c101-4dc6-b13d-a415cb5834a6',
@@ -362,14 +378,17 @@ const complements: Complement[] = [
   {
     id: '217ca965-995c-4efc-b27a-27246d5e8e83',
     nom: 'Résultat d’années de recherche',
+    unthemedOnly: true,
   },
   {
     id: '34dc95b6-5724-4f24-81de-251e13e90dc8',
     nom: 'Élaboré dans un environnement contrôlé',
+    unthemedOnly: true,
   },
   {
     id: 'ca60fd03-ee0f-4bd5-a468-e00b4b1ab886',
     nom: 'Testé en conditions réelles',
+    unthemedOnly: true,
   },
   {
     id: '3aff3042-5fc4-4afd-976a-2039d1eaca95',
@@ -378,6 +397,7 @@ const complements: Complement[] = [
   {
     id: '6324a7a2-398b-4393-9081-b603d514436a',
     nom: 'Certifié comestible',
+    unthemedOnly: true,
   },
   {
     id: '5d7bfea9-8548-47ab-a8ad-55797090a2e3',
@@ -418,6 +438,111 @@ const complements: Complement[] = [
   {
     id: '2cfe1f59-e06b-4339-be66-bb32fc2c200e',
     nom: 'Si vous comprenez ce menu, vous avez déjà faim',
+  },
+  {
+    id: '84e43c0c-e40b-4dd1-8709-2a37f342ccb7',
+    nom: 'Préparé avec les trésors du potager d’hiver',
+    themes: [Theme.HIVER],
+  },
+  {
+    id: 'ada36b7a-3ea9-4f25-a381-396c72417dd4',
+    nom: 'Inspiré des repas de réveillon',
+    themes: [Theme.HIVER],
+  },
+  {
+    id: 'e71ddc06-0cf8-4ba1-9bc8-288e06960817',
+    nom: 'À savourer après une journée dans le froid',
+    themes: [Theme.HIVER],
+  },
+  {
+    id: 'c01d7b06-6dd2-4ae6-8a10-733a99eaecdf',
+    nom: 'Cuisiné avec les premières récoltes du printemps',
+    themes: [Theme.PRINTEMPS],
+  },
+  {
+    id: 'e3dce00b-417a-433c-b85b-185dce1ef589',
+    nom: 'Inspiré par les jeunes pousses du potager',
+    themes: [Theme.PRINTEMPS],
+  },
+  {
+    id: 'b34e4287-280b-406b-a229-80fbb5976303',
+    nom: 'À déguster pour célébrer le retour des beaux jours',
+    themes: [Theme.PRINTEMPS],
+  },
+  {
+    id: '9c21350e-8c1a-4028-96c8-29b3f43885d7',
+    nom: 'Préparé avec les récoltes gorgées de soleil',
+    themes: [Theme.ETE],
+  },
+  {
+    id: 'fcb50829-a557-4035-9135-1bee5ea1cfa1',
+    nom: 'À savourer au retour du marché d’été',
+    themes: [Theme.ETE],
+  },
+  {
+    id: '56e4a3bc-1ca8-4f4f-ad28-14441df092f1',
+    nom: 'Pensé pour les longues soirées estivales',
+    themes: [Theme.ETE],
+  },
+  {
+    id: 'c4e9ca3c-8f8e-4fde-9f65-6d9cdadc1401',
+    nom: 'Cuisiné avec les trésors de la récolte d’automne',
+    themes: [Theme.AUTOMNE],
+  },
+  {
+    id: '8b48a0f1-5a73-4c4f-9984-195b75cbbcd3',
+    nom: 'Inspiré par la saison des champignons',
+    themes: [Theme.AUTOMNE],
+  },
+  {
+    id: 'bcb0842d-7768-4fcb-99d3-119d050b5b3a',
+    nom: 'À déguster au retour d’une promenade en forêt',
+    themes: [Theme.AUTOMNE],
+  },
+  {
+    id: '72c5254c-0cfe-44c0-bf6c-169665a20e92',
+    nom: 'Digne d’un banquet seigneurial',
+    themes: [Theme.MEDIEVAL],
+  },
+  {
+    id: '67e3f0a0-a86a-437a-8978-6b8478e9f1fa',
+    nom: 'À partager comme au temps des chevaliers',
+    themes: [Theme.MEDIEVAL],
+  },
+  {
+    id: 'cd001af6-cda8-49ba-b863-5e5ba0b8c590',
+    nom: 'Inspiré des cuisines du Moyen Âge',
+    themes: [Theme.MEDIEVAL],
+  },
+  {
+    id: 'c81ea522-32e8-4134-84e6-7bb568751ff3',
+    nom: 'Servi chaud, contrairement à vos pieds',
+    themes: [Theme.HIVER],
+  },
+  {
+    id: '8ff4428a-a58d-4481-a455-a38045cadf69',
+    nom: 'Le printemps dans l’assiette, les allergies restent dehors',
+    themes: [Theme.PRINTEMPS],
+  },
+  {
+    id: '097b13f7-ddf9-40ca-9648-caeae33865a0',
+    nom: 'Le soleil est dans l’assiette, la crème solaire reste facultative',
+    themes: [Theme.ETE],
+  },
+  {
+    id: '3b1929b0-eb65-49dd-9fad-8eeda83929db',
+    nom: 'Approuvé par trois chevaliers et un ménestrel',
+    themes: [Theme.MEDIEVAL],
+  },
+  {
+    id: '5a462961-a45d-4720-ad85-f19a108faaf6',
+    nom: 'À manger avec les doigts, la fourchette arrive plus tard',
+    themes: [Theme.MEDIEVAL],
+  },
+  {
+    id: '6ab85c19-4e97-4532-9cfb-2a15642b0dae',
+    nom: 'Digne d’un roi, même sans château',
+    themes: [Theme.MEDIEVAL],
   },
 ];
 export default complements;

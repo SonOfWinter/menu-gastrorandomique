@@ -2,6 +2,8 @@ import { TypeAliment } from '@/types/enums/type-aliment';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { Adjectif } from '@/types/data/adjectif';
+import { themePresets } from '@/data-presets/theme-presets';
+import { Theme } from '@/types/enums/theme';
 
 const adjectifs: Adjectif[] = [
   {
@@ -44,6 +46,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'allégées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
@@ -100,6 +103,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'AOP',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.BASE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -128,6 +132,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'artisanales',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.FROMAGE, TypeAliment.SUCRE, TypeAliment.SOFT, TypeAliment.SAUCE],
   },
   {
@@ -142,6 +147,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'atypiques',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.BASE, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SOFT, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -184,6 +190,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'barigoules',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.LEGUME, TypeAliment.SALADE],
   },
   {
@@ -198,6 +205,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'basquaises',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -212,6 +220,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'belges',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.FROMAGE, TypeAliment.CEREALE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -240,6 +249,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'bistrotières',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.CEREALE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.SALADE, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -366,6 +376,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'caramélisées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -506,6 +517,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'croustillantes',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE],
   },
   {
@@ -562,6 +574,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'cuites sous vide',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.FRUIT],
   },
   {
@@ -618,6 +631,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'déglacées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -646,6 +660,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'du chef',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.FROMAGE, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -674,6 +689,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'du terroir',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LIQUIDE, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -772,6 +788,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'exotiques',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.SAUCE],
   },
   {
@@ -842,6 +859,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'flambées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.SUCRE, TypeAliment.FRUIT],
   },
   {
@@ -996,6 +1014,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'gélifiées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -1066,6 +1085,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'grandes crues',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL],
   },
   {
@@ -1080,6 +1100,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'gratinées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -1136,6 +1157,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'iodées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SAUCE],
   },
   {
@@ -1318,6 +1340,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'meringuées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.SAUCE],
   },
   {
@@ -1332,6 +1355,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'meunières',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER],
   },
   {
@@ -1360,6 +1384,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'mi-cuites',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -1388,6 +1413,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'mixées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -1458,6 +1484,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'nacrées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.POISSON, TypeAliment.FRUIT_DE_MER, TypeAliment.SAUCE],
   },
   {
@@ -1500,6 +1527,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'panées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.SALADE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -1528,6 +1556,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'parmentières',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.LEGUME, TypeAliment.POISSON],
   },
   {
@@ -1696,6 +1725,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'réinventées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.FROMAGE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.ALCOOL, TypeAliment.LIQUIDE, TypeAliment.SOFT, TypeAliment.CHARCUTERIE],
   },
   {
@@ -1766,6 +1796,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'rôties au sautoir',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.VIANDE_ROUGE, TypeAliment.LEGUME, TypeAliment.CHAMPIGNON, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -1808,6 +1839,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'sablées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.SAUCE],
   },
   {
@@ -1920,6 +1952,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'snackées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -1934,6 +1967,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'soufflées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.SUCRE, TypeAliment.FRUIT, TypeAliment.LEGUME],
   },
   {
@@ -1962,6 +1996,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'sublimées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT_A_COQUE, TypeAliment.FRUIT_DE_MER, TypeAliment.POISSON, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.FRUIT, TypeAliment.LIQUIDE, TypeAliment.SUCRE, TypeAliment.VIANDE_ROUGE, TypeAliment.SOFT, TypeAliment.VIANDE_BLANCHE, TypeAliment.CHARCUTERIE],
   },
   {
@@ -2046,6 +2081,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'toastées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_DE_MER, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE],
   },
   {
@@ -2060,6 +2096,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'torréfiées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.BASE, TypeAliment.SUCRE, TypeAliment.CEREALE],
   },
   {
@@ -2130,6 +2167,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'vanillées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
@@ -2144,6 +2182,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'vegan',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.ALCOOL, TypeAliment.CEREALE, TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.SUCRE],
   },
   {
@@ -2172,6 +2211,7 @@ const adjectifs: Adjectif[] = [
         [Nombre.PLURIEL]: 'veloutées',
       },
     },
+    themes: themePresets.allSeasons,
     types: [TypeAliment.FRUIT, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT_A_COQUE, TypeAliment.LEGUME, TypeAliment.FROMAGE, TypeAliment.POISSON, TypeAliment.SALADE],
   },
   {
@@ -2229,6 +2269,125 @@ const adjectifs: Adjectif[] = [
       },
     },
     types: [TypeAliment.SAUCE, TypeAliment.SALADE, TypeAliment.LEGUME, TypeAliment.SUCRE, TypeAliment.CHAMPIGNON, TypeAliment.VIANDE_ROUGE, TypeAliment.VIANDE_BLANCHE, TypeAliment.POISSON, TypeAliment.FROMAGE, TypeAliment.FRUIT_DE_MER, TypeAliment.FRUIT, TypeAliment.CHARCUTERIE],
+  },
+  {
+    id: '9d67da3a-e041-437a-afec-902cec2d6214',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'verjuté',
+        [Nombre.PLURIEL]: 'verjutés',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'verjutée',
+        [Nombre.PLURIEL]: 'verjutées',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.SAUCE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: '1074f137-5e1a-4b19-ad6a-76706b75a8d2',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'miellé aux épices',
+        [Nombre.PLURIEL]: 'miellés aux épices',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'miellée aux épices',
+        [Nombre.PLURIEL]: 'miellées aux épices',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.FRUIT, TypeAliment.FRUIT_A_COQUE, TypeAliment.SAUCE, TypeAliment.SUCRE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: '170bb5b9-f6df-4eee-b112-025c4aa62b7f',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'rôti à la broche',
+        [Nombre.PLURIEL]: 'rôtis à la broche',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'rôtie à la broche',
+        [Nombre.PLURIEL]: 'rôties à la broche',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: 'f2b0e22a-742a-4996-b417-17fe91c0f1f5',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'cuit sous la cendre',
+        [Nombre.PLURIEL]: 'cuits sous la cendre',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'cuite sous la cendre',
+        [Nombre.PLURIEL]: 'cuites sous la cendre',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.BASE, TypeAliment.CHAMPIGNON, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: '6bf3eb4e-e37d-4436-9fde-d7643773c16b',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'aigredoux',
+        [Nombre.PLURIEL]: 'aigredoux',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'aigredouce',
+        [Nombre.PLURIEL]: 'aigredouces',
+      },
+    },
+    types: [TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: 'c4e1b77d-d74b-4441-be77-59a83fced539',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'relevé de verjus',
+        [Nombre.PLURIEL]: 'relevés de verjus',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'relevée de verjus',
+        [Nombre.PLURIEL]: 'relevées de verjus',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: '6aa7fc4a-9da8-4aa1-9320-c4d657bee3c2',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'parfumé aux herbes du cloître',
+        [Nombre.PLURIEL]: 'parfumés aux herbes du cloître',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'parfumée aux herbes du cloître',
+        [Nombre.PLURIEL]: 'parfumées aux herbes du cloître',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.CHAMPIGNON, TypeAliment.FROMAGE, TypeAliment.LEGUME, TypeAliment.POISSON, TypeAliment.SALADE, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE, TypeAliment.VIANDE_ROUGE],
+  },
+  {
+    id: 'beb6ed80-830d-43cf-8b53-c4e16b579fdf',
+    noms: {
+      [Genre.MASCULIN]: {
+        [Nombre.SINGULIER]: 'préparé selon l’usage monastique',
+        [Nombre.PLURIEL]: 'préparés selon l’usage monastique',
+      },
+      [Genre.FEMININ]: {
+        [Nombre.SINGULIER]: 'préparée selon l’usage monastique',
+        [Nombre.PLURIEL]: 'préparées selon l’usage monastique',
+      },
+    },
+    themes: [Theme.MEDIEVAL],
+    types: [TypeAliment.ALCOOL, TypeAliment.BASE, TypeAliment.CEREALE, TypeAliment.FROMAGE, TypeAliment.FRUIT, TypeAliment.LEGUME, TypeAliment.LIQUIDE, TypeAliment.POISSON, TypeAliment.SAUCE, TypeAliment.VIANDE_BLANCHE],
   },
 ];
 
