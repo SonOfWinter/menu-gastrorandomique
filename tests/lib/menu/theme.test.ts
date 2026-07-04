@@ -5,12 +5,13 @@ import {
   getRandomTheme,
 } from '@/lib/menu/theme';
 import { CompiledTheme } from '@/types/data/theme';
-import { THEME_BITS, Theme } from '@/types/enums/theme';
+import { THEME_BITS, THEME_PALETTES, Theme } from '@/types/enums/theme';
 
 const medievalTheme: CompiledTheme = {
   id: Theme.MEDIEVAL,
   nom: 'Médiéval',
   compatibilityMask: THEME_BITS[Theme.MEDIEVAL],
+  palette: THEME_PALETTES[Theme.MEDIEVAL],
 };
 
 describe('lib/menu/theme.ts', () => {
@@ -21,6 +22,7 @@ describe('lib/menu/theme.ts', () => {
           id: Theme.HIVER,
           nom: 'Hiver',
           compatibilityMask: THEME_BITS[Theme.HIVER],
+          palette: THEME_PALETTES[Theme.HIVER],
         },
         medievalTheme,
       ],

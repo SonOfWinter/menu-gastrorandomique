@@ -3,6 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import MenuContainer from '@/components/menu-container';
 import { copyText } from '@/lib/client/copy-text';
 import { toast } from 'sonner';
+import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
 
 vi.mock('@/lib/client/copy-text', () => ({
   copyText: vi.fn().mockResolvedValue(undefined),
@@ -57,7 +58,10 @@ describe('components/menu-container.tsx', () => {
           title: 'Menu Test',
           complement: 'du chef',
           price: 42,
-          theme: { nom: 'Hiver' },
+          theme: {
+            nom: 'Hiver',
+            palette: DEFAULT_THEME_PALETTE,
+          },
           entree: [],
           plat: [],
           dessert: [],
@@ -94,5 +98,7 @@ describe('components/menu-container.tsx', () => {
 
     fireEvent.click(themeSwitch);
     expect(onThemesEnabledChange).toHaveBeenCalledWith(true);
+    expect(screen.getByText('T')).toBeInTheDocument();
+    expect(screen.getByText('Activer ou désactiver les thèmes')).toBeInTheDocument();
   });
 });

@@ -3,7 +3,7 @@ import getMenuData from '@/lib/menu/get-menu-data';
 import { getCompatibilityMask, hasCompatibleMask } from '@/lib/menu/compatibility-mask';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TYPE_PLAT_BITS, TypePlat } from '@/types/enums/type-plat';
-import { THEME_BITS, Theme } from '@/types/enums/theme';
+import { THEME_BITS, THEME_PALETTES, Theme } from '@/types/enums/theme';
 
 describe('generated menu data', () => {
   it('contains generated compatibility masks', () => {
@@ -36,6 +36,7 @@ describe('generated menu data', () => {
     expect(theme?.nom).toBe('Hiver');
     expect(theme?.id).toBe(Theme.HIVER);
     expect(theme?.compatibilityMask).toBe(THEME_BITS[Theme.HIVER]);
+    expect(theme?.palette).toEqual(THEME_PALETTES[Theme.HIVER]);
   });
 
   it('compiles theme masks on scoped data entries', () => {

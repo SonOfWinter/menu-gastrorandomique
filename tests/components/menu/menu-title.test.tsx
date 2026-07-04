@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import MenuTitle from '@/components/menu/menu-title';
+import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
 
 vi.mock('next/font/google', () => ({
   Bebas_Neue: () => ({ className: 'font-bebas' }),
@@ -15,7 +16,10 @@ describe('components/menu/menu-title.tsx', () => {
           title: 'Menu Test',
           complement: 'du chef',
           price: 42,
-          theme: { nom: 'Médiéval' },
+          theme: {
+            nom: 'Médiéval',
+            palette: DEFAULT_THEME_PALETTE,
+          },
           entree: [],
           plat: [],
           dessert: [],

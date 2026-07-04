@@ -74,7 +74,7 @@ export default function Navigation({
         variant="default"
         type="button"
         className={cn(
-          'text-xl border-white border-2 absolute bottom-4 left-1/2 -translate-x-1/2',
+          'text-xl border-primary-foreground border-2 absolute bottom-4 left-1/2 -translate-x-1/2',
           {
             'hidden': variant !== 'main' && variant !== 'info',
           },

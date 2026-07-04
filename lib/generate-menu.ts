@@ -3,6 +3,7 @@ import { InconsistentLevel } from '@/types/inconsistent-level';
 import { Menu } from '@/types/menu';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
+import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
 import { createSeededRandom } from '@/lib/utils/seeded-rng';
 import random from '@/lib/utils/random';
 import round from '@/lib/utils/round';
@@ -191,6 +192,7 @@ export default function generateMenu(
     complement: getRandom(filterItemsByTheme(data.complements, themeContext.theme), rng).nom,
     theme: {
       nom: themeContext.theme?.nom ?? 'Sans thème',
+      palette: themeContext.theme?.palette ?? DEFAULT_THEME_PALETTE,
     },
     entree,
     plat,

@@ -45,7 +45,7 @@ export default function MenuDish({ dish }: {
         {dish.second}
       </p>
       {dish.sauce
-        ? <div className="flex items-center gap-2 text-primary ">
+        ? <div className="flex items-center gap-2 text-primary transition-colors duration-500 ease-in-out">
           <DiceIcon
             color={'currentColor'}
             className="shrink-0 w-4 h-4"

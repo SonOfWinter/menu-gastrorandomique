@@ -12,7 +12,7 @@ import {
   plat,
 } from './fixtures';
 import { TypePlat } from '@/types/enums/type-plat';
-import { THEME_BITS, Theme } from '@/types/enums/theme';
+import { THEME_BITS, THEME_PALETTES, Theme } from '@/types/enums/theme';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 
@@ -128,6 +128,7 @@ describe('lib/menu/generate-dish.ts', () => {
           id: Theme.MEDIEVAL,
           nom: 'Médiéval',
           compatibilityMask: THEME_BITS[Theme.MEDIEVAL],
+          palette: THEME_PALETTES[Theme.MEDIEVAL],
         },
       },
     );

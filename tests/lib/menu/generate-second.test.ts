@@ -7,7 +7,7 @@ import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { Genre } from '@/types/enums/genre';
 import { Nombre } from '@/types/enums/nombre';
 import { TypeDeterminant } from '@/types/enums/type-determinant';
-import { THEME_BITS, Theme } from '@/types/enums/theme';
+import { THEME_BITS, THEME_PALETTES, Theme } from '@/types/enums/theme';
 import { getCompatibilityMask } from '@/lib/menu/compatibility-mask';
 
 const ingredients = [ingredientOne];
@@ -244,6 +244,7 @@ const medievalThemeContext = {
     id: Theme.MEDIEVAL,
     nom: 'Médiéval',
     compatibilityMask: THEME_BITS[Theme.MEDIEVAL],
+    palette: THEME_PALETTES[Theme.MEDIEVAL],
   },
 };
 

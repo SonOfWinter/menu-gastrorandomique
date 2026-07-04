@@ -27,7 +27,7 @@ export default function MenuTitle({
       <h2 className={cn("text-base", manrope.className)}>
         {menu.complement}
       </h2>
-      <p className={cn("font-normal text-lg leading-3 text-center text-secondary", manrope.className)}>
+      <p className={cn("font-normal text-lg leading-3 text-center text-secondary transition-colors duration-500 ease-in-out", manrope.className)}>
         {`${menu.price}€`}
       </p>
     </div>

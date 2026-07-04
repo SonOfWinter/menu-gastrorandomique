@@ -126,7 +126,7 @@ export default function DishIcons({
 
   return (
     <span
-      className={cn('inline-flex items-center gap-1 text-primary', className)}
+      className={cn('inline-flex items-center gap-1', className)}
       role="group"
       aria-label={icons.map((icon) => iconConfig[icon].label).join(', ')}
     >
@@ -146,7 +146,7 @@ export default function DishIcons({
               <button
                 type="button"
                 className={cn(
-                  'dish-icon-badge inline-flex size-5 items-center justify-center rounded-full border border-primary/25 bg-primary/5 p-0 text-current',
+                  'dish-icon-badge inline-flex size-5 items-center justify-center rounded-full border border-primary bg-primary p-0 text-primary-foreground',
                   config.animationClass,
                 )}
                 aria-label={config.label}
