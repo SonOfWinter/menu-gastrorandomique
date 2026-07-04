@@ -53,7 +53,7 @@ export default function DiceButton({
     if (variant === 'left') {
       setTransition('left-to-right');
     }
-    if (variant === 'right' || variant === 'main') {
+    if (variant === 'right' || variant === 'main' || variant === 'info') {
       setTransition('right-to-left');
     }
   }, [isLoading, setTransition, variant]);
