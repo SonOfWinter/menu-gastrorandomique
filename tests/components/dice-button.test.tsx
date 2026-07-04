@@ -59,6 +59,22 @@ describe('components/dice-button.tsx', () => {
     expect(setTransition).toHaveBeenCalledWith('right-to-left');
   });
 
+  it('triggers right-to-left transition from the info keyboard shortcut', () => {
+    const setTransition = vi.fn();
+    render(
+      <DiceButton
+        variant="info"
+        setTransition={setTransition}
+        isLoading={false}
+      />,
+    );
+
+    const shortcutHandler = vi.mocked(useKeyboardShortcut).mock.calls[0][1];
+    shortcutHandler();
+
+    expect(setTransition).toHaveBeenCalledWith('right-to-left');
+  });
+
   it('does not trigger transition when pending', () => {
     const setTransition = vi.fn();
     const { getByRole } = render(
