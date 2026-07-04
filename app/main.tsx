@@ -5,6 +5,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
+import type { CSSProperties } from 'react';
 import Navigation from '@/components/navigation';
 import DiceButton from '@/components/dice-button';
 import MenuContainer from '@/components/menu-container';
@@ -16,18 +17,59 @@ import {
   subscribeThemesEnabled,
   writeThemesEnabled,
 } from '@/lib/client/theme-preference';
+import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
+import type { ThemePalette } from '@/types/data/theme';
+import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
 
+const NAVIGATION_TRANSITION_DURATION_MS = 500;
+const MENU_COLOR_TRANSITION_DURATION_MS = 500;
+const MENU_COLOR_TRANSITION_DELAY_MS = Math.max(
+  0,
+  NAVIGATION_TRANSITION_DURATION_MS - MENU_COLOR_TRANSITION_DURATION_MS,
+);
+
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getThemePaletteStyle(palette: ThemePalette): CSSProperties {
+  return {
+    '--primary': palette.primary,
+    '--accent': palette.primary,
+    '--sidebar-primary': palette.primary,
+    '--sidebar-accent': palette.primary,
+    '--primary-foreground': palette.primaryForeground,
+    '--accent-foreground': palette.primaryForeground,
+    '--sidebar-primary-foreground': palette.primaryForeground,
+    '--sidebar-accent-foreground': palette.primaryForeground,
+    '--secondary': palette.secondary,
+    '--secondary-foreground': palette.secondaryForeground,
+  } as CSSProperties;
+}
+
+function applyThemePaletteStyle(style: CSSProperties): () => void {
+  const rootStyle = document.documentElement.style;
+  const properties = Object.entries(style) as Array<[string, string]>;
+
+  for (const [property, value] of properties) {
+    rootStyle.setProperty(property, value);
+  }
+
+  return () => {
+    for (const [property] of properties) {
+      rootStyle.removeProperty(property);
+    }
+  };
 }
 
 export default function Main() {
 
   const [position, setPosition] = React.useState<Position>('main');
   const [menu, setMenu] = React.useState<DisplayMenu | null>(null);
+  const [delayedMenuPalette, setDelayedMenuPalette] = React.useState<ThemePalette>(DEFAULT_THEME_PALETTE);
   const [isLoading, setIsLoading] = React.useState(false);
   const themesEnabled = React.useSyncExternalStore(
     subscribeThemesEnabled,
@@ -61,6 +103,60 @@ export default function Main() {
   const updateThemesEnabled = useCallback((enabled: boolean) => {
     writeThemesEnabled(enabled);
   }, []);
+
+  const toggleThemesEnabled = useCallback(() => {
+    const nextThemesEnabled = !themesEnabled;
+    writeThemesEnabled(nextThemesEnabled);
+    toast.success(
+      nextThemesEnabled
+        ? 'Thèmes activés'
+        : 'Thèmes désactivés',
+    );
+  }, [themesEnabled]);
+
+  useKeyboardShortcut('t', toggleThemesEnabled);
+
+  const activePalette = useMemo(() => {
+    if (position !== 'left' && position !== 'right') {
+      return DEFAULT_THEME_PALETTE;
+    }
+
+    return menu?.theme.palette ?? DEFAULT_THEME_PALETTE;
+  }, [menu?.theme.palette, position]);
+
+  const themePaletteStyle = useMemo(
+    () => getThemePaletteStyle(activePalette),
+    [activePalette],
+  );
+
+  useEffect(() => applyThemePaletteStyle(themePaletteStyle), [themePaletteStyle]);
+
+  useEffect(() => {
+    if (position === 'main' || position === 'info') {
+      return;
+    }
+
+    if (position === 'pending') {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setDelayedMenuPalette(menu?.theme.palette ?? DEFAULT_THEME_PALETTE);
+    }, MENU_COLOR_TRANSITION_DELAY_MS);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, [menu?.theme.palette, position]);
+
+  const menuPalette = position === 'main' || position === 'info'
+    ? DEFAULT_THEME_PALETTE
+    : delayedMenuPalette;
+
+  const menuPaletteStyle = useMemo(
+    () => getThemePaletteStyle(menuPalette),
+    [menuPalette],
+  );
 
   const getMenu = useCallback(async (transition: Transition) => {
     if (transition === 'none') {
@@ -115,13 +211,18 @@ export default function Main() {
     }
   }, [createSeed, isLoading, themesEnabled, updateSeedUrl]);
 
-  return (<>
+  return (
+    <div
+      className="theme-palette relative flex items-center justify-center w-full h-full overflow-hidden"
+      style={themePaletteStyle}
+    >
       <MenuContainer
         ref={menuRef}
         variant={position}
         menu={menu}
         themesEnabled={themesEnabled}
         onThemesEnabledChange={updateThemesEnabled}
+        style={menuPaletteStyle}
       />
       <Navigation
         variant={position}
@@ -132,6 +233,6 @@ export default function Main() {
         variant={position}
         isLoading={isLoading}
       />
-    </>
+    </div>
   );
 }

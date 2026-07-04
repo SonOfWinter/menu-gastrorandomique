@@ -1,4 +1,5 @@
 import { Dish } from '@/types/dish';
+import { ThemePalette } from '@/types/data/theme';
 
 export type DisplayMenu = {
   price: number;
@@ -6,6 +7,7 @@ export type DisplayMenu = {
   complement: string;
   theme: {
     nom: string;
+    palette: ThemePalette;
   };
   entree: Dish[];
   plat: Dish[];

@@ -14,7 +14,7 @@ import { EntityId } from '@/types/entity-id';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TYPE_PLAT_BITS, TypePlat } from '@/types/enums/type-plat';
 import { getCompatibilityMask, getMaskIndexes } from '@/lib/menu/compatibility-mask';
-import { THEME_BITS, THEME_LABELS, Theme } from '@/types/enums/theme';
+import { THEME_BITS, THEME_LABELS, THEME_PALETTES, Theme } from '@/types/enums/theme';
 import { assertValidThemeScope } from '@/lib/menu/theme';
 
 function buildIndex<TItem, TType extends string>(
@@ -90,6 +90,7 @@ const normalizedThemes = Object.values(Theme).map((theme) => ({
   id: theme,
   nom: THEME_LABELS[theme],
   compatibilityMask: THEME_BITS[theme],
+  palette: THEME_PALETTES[theme],
 }));
 
 function compileThemeMask<TItem>(item: TItem): Omit<TItem, 'themes'> & { themeCompatibilityMask?: number } {

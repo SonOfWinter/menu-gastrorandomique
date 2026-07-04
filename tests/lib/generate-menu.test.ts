@@ -4,6 +4,7 @@ import getMenuData from '@/lib/menu/get-menu-data';
 import { defaultMenuConfig } from '@/lib/menu/menu-config';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
+import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
 import { getCompatibilityMask } from '@/lib/menu/compatibility-mask';
 
 describe('lib/generate-menu.ts', () => {
@@ -32,12 +33,14 @@ describe('lib/generate-menu.ts', () => {
     expect(menu.title.length).toBeGreaterThan(0);
     expect(menu.complement.length).toBeGreaterThan(0);
     expect(menu.theme.nom).toBe('Sans thème');
+    expect(menu.theme.palette).toEqual(DEFAULT_THEME_PALETTE);
   });
 
   it('disables themes by default', () => {
     const menu = generateMenu(undefined, undefined, undefined, 0);
 
     expect(menu.theme.nom).toBe('Sans thème');
+    expect(menu.theme.palette).toEqual(DEFAULT_THEME_PALETTE);
   });
 
   it('selects a random theme deterministically when themes are enabled', () => {
@@ -46,6 +49,7 @@ describe('lib/generate-menu.ts', () => {
 
     expect(first.theme).toEqual(second.theme);
     expect(first.theme.nom).not.toBe('Sans thème');
+    expect(first.theme.palette.primary).toMatch(/^#[0-9A-F]{6}$/);
   });
 
   it('keeps the display menu format with a theme', () => {

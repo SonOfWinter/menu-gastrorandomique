@@ -77,7 +77,7 @@ export default function DiceButton({
     >
       <DiceIcon
         className="m-auto w-4 h-4 md:w-5 md:h-5"
-        color="#FFFFFF"
+        color="currentColor"
       />
     </Button>
   );

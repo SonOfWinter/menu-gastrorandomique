@@ -14,6 +14,7 @@ const shortcuts = [
   { key: 'R', description: 'Nouveau menu' },
   { key: 'M', description: 'Revenir au menu principal' },
   { key: 'I', description: 'Voir la page informations' },
+  { key: 'T', description: 'Activer ou désactiver les thèmes' },
 ];
 
 export default function InfoPanel({
