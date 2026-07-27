@@ -1,5 +1,8 @@
 import { DisplayMenu } from '@/types/display-menu';
-import { InconsistentLevel } from '@/types/inconsistent-level';
+import {
+  InconsistentLevel,
+  InconsistentLevelSetting,
+} from '@/types/inconsistent-level';
 import { Menu } from '@/types/menu';
 import { TYPE_ALIMENT_BITS, TypeAliment } from '@/types/enums/type-aliment';
 import { TypePlat } from '@/types/enums/type-plat';
@@ -160,13 +163,16 @@ export function validateMenuData(data: Menu): void {
 
 export default function generateMenu(
   count: number = defaultMenuConfig.dishCount,
-  inconsistentLevel: InconsistentLevel = defaultMenuConfig.inconsistentLevel,
+  inconsistentLevelSetting: InconsistentLevelSetting = defaultMenuConfig.inconsistentLevel,
   priceRange: MenuPriceRange = defaultMenuConfig.priceRange,
   seed?: number,
   themesEnabled = false,
 ): DisplayMenu {
   resetAlreadyUsed();
   const rng = seed !== undefined ? createSeededRandom(seed) : undefined;
+  const inconsistentLevel: InconsistentLevel = inconsistentLevelSetting === -1
+    ? random(0, 20, false, rng) as InconsistentLevel
+    : inconsistentLevelSetting;
   const data: Menu = getMenuData();
   validateMenuData(data);
   const themeContext: ThemeContext = {

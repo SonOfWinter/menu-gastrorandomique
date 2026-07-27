@@ -13,6 +13,7 @@ import { Bebas_Neue } from 'next/font/google';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { copyText } from '@/lib/client/copy-text';
+import { InconsistentLevelSetting } from '@/types/inconsistent-level';
 
 const menuContainerVariants = cva(
   'absolute top-0 left-0 overflow-y-auto w-full py-15 px-4 md:p-15 h-[calc(100dvh-60px)] md:h-full block opacity-0 transition-all duration-500 ease-in-out',
@@ -44,6 +45,10 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
   menu: DisplayMenu | null,
   themesEnabled: boolean,
   onThemesEnabledChange: (enabled: boolean) => void,
+  inconsistencyEnabled: boolean,
+  inconsistencyLevel: InconsistentLevelSetting,
+  onInconsistencyEnabledChange: (enabled: boolean) => void,
+  onInconsistencyLevelChange: (level: InconsistentLevelSetting) => void,
 }
   & {}>(function MenuContainer({
   className,
@@ -51,6 +56,10 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
   menu,
   themesEnabled,
   onThemesEnabledChange,
+  inconsistencyEnabled,
+  inconsistencyLevel,
+  onInconsistencyEnabledChange,
+  onInconsistencyLevelChange,
   ...props
 }, ref) {
   const copyShareUrl = () => {
@@ -93,6 +102,10 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
             <InfoPanel
               themesEnabled={themesEnabled}
               onThemesEnabledChange={onThemesEnabledChange}
+              inconsistencyEnabled={inconsistencyEnabled}
+              inconsistencyLevel={inconsistencyLevel}
+              onInconsistencyEnabledChange={onInconsistencyEnabledChange}
+              onInconsistencyLevelChange={onInconsistencyLevelChange}
             />
           )
           : null}

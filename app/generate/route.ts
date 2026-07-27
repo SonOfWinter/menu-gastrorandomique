@@ -6,6 +6,13 @@ import { defaultMenuConfig } from '@/lib/menu/menu-config';
 import { logSecurityEvent } from '@/lib/security/audit-log';
 import { rateLimitConfig } from '@/lib/env';
 import { createRateLimiter } from '@/lib/security/rate-limit';
+import {
+  InconsistentLevelSetting,
+} from '@/types/inconsistent-level';
+
+const isInconsistentLevelSetting = (value: number): value is InconsistentLevelSetting => (
+  Number.isInteger(value) && value >= -1 && value <= 20
+);
 
 export const dynamic = 'force-dynamic';
 
@@ -51,9 +58,16 @@ export async function GET(request: NextRequest):Promise<Response> {
   const parsedSeed = seedParam ? Number.parseInt(seedParam, 10) : NaN;
   const seed = Number.isFinite(parsedSeed) ? parsedSeed : undefined;
   const themesEnabled = request.nextUrl.searchParams.get('themes') === '1';
+  const inconsistentLevelParam = request.nextUrl.searchParams.get('inconsistentLevel');
+  const parsedInconsistentLevel = inconsistentLevelParam
+    ? Number.parseInt(inconsistentLevelParam, 10)
+    : NaN;
+  const inconsistentLevel = isInconsistentLevelSetting(parsedInconsistentLevel)
+    ? parsedInconsistentLevel
+    : defaultMenuConfig.inconsistentLevel;
   const menu:DisplayMenu = generateMenu(
     defaultMenuConfig.dishCount,
-    defaultMenuConfig.inconsistentLevel,
+    inconsistentLevel,
     defaultMenuConfig.priceRange,
     seed,
     themesEnabled,

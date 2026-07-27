@@ -40,6 +40,10 @@ describe('components/menu-container.tsx', () => {
         menu={null}
         themesEnabled={false}
         onThemesEnabledChange={vi.fn()}
+        inconsistencyEnabled={false}
+        inconsistencyLevel={0}
+        onInconsistencyEnabledChange={vi.fn()}
+        onInconsistencyLevelChange={vi.fn()}
       />,
     );
 
@@ -54,6 +58,10 @@ describe('components/menu-container.tsx', () => {
         variant="right"
         themesEnabled={false}
         onThemesEnabledChange={vi.fn()}
+        inconsistencyEnabled={false}
+        inconsistencyLevel={0}
+        onInconsistencyEnabledChange={vi.fn()}
+        onInconsistencyLevelChange={vi.fn()}
         menu={{
           title: 'Menu Test',
           complement: 'du chef',
@@ -82,12 +90,18 @@ describe('components/menu-container.tsx', () => {
 
   it('renders and updates the experimental theme setting', () => {
     const onThemesEnabledChange = vi.fn();
+    const onInconsistencyEnabledChange = vi.fn();
+    const onInconsistencyLevelChange = vi.fn();
     render(
       <MenuContainer
         variant="info"
         menu={null}
         themesEnabled={false}
         onThemesEnabledChange={onThemesEnabledChange}
+        inconsistencyEnabled={false}
+        inconsistencyLevel={0}
+        onInconsistencyEnabledChange={onInconsistencyEnabledChange}
+        onInconsistencyLevelChange={onInconsistencyLevelChange}
       />,
     );
 
@@ -98,6 +112,15 @@ describe('components/menu-container.tsx', () => {
 
     fireEvent.click(themeSwitch);
     expect(onThemesEnabledChange).toHaveBeenCalledWith(true);
+
+    const inconsistencySwitch = screen.getByRole('switch', {
+      name: "Activer l'inconsistance",
+    });
+    expect(inconsistencySwitch).not.toBeChecked();
+
+    fireEvent.click(inconsistencySwitch);
+    expect(onInconsistencyEnabledChange).toHaveBeenCalledWith(true);
+    expect(screen.getByText("Niveau d'inconsistance")).toBeInTheDocument();
     expect(screen.getByText('T')).toBeInTheDocument();
     expect(screen.getByText('Activer ou désactiver les thèmes')).toBeInTheDocument();
   });

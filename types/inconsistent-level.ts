@@ -20,3 +20,7 @@ export type InconsistentLevel =
   | 18
   | 19
   | 20;
+
+export type InconsistentLevelSetting =
+  | -1
+  | InconsistentLevel;

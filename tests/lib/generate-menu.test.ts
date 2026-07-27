@@ -36,6 +36,13 @@ describe('lib/generate-menu.ts', () => {
     expect(menu.theme.palette).toEqual(DEFAULT_THEME_PALETTE);
   });
 
+  it('resolves random inconsistency deterministically when level is random', () => {
+    const first = generateMenu(undefined, -1, undefined, 123);
+    const second = generateMenu(undefined, -1, undefined, 123);
+
+    expect(first).toEqual(second);
+  });
+
   it('disables themes by default', () => {
     const menu = generateMenu(undefined, undefined, undefined, 0);
 

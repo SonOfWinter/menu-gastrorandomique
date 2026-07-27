@@ -17,9 +17,17 @@ import {
   subscribeThemesEnabled,
   writeThemesEnabled,
 } from '@/lib/client/theme-preference';
+import {
+  readInconsistencyEnabled,
+  readInconsistencyLevel,
+  subscribeInconsistencyPreference,
+  writeInconsistencyEnabled,
+  writeInconsistencyLevel,
+} from '@/lib/client/inconsistency-preference';
 import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
 import type { ThemePalette } from '@/types/data/theme';
 import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
+import { InconsistentLevelSetting } from '@/types/inconsistent-level';
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
@@ -76,6 +84,16 @@ export default function Main() {
     readThemesEnabled,
     () => false,
   );
+  const inconsistencyEnabled = React.useSyncExternalStore(
+    subscribeInconsistencyPreference,
+    readInconsistencyEnabled,
+    () => false,
+  );
+  const inconsistencyLevel = React.useSyncExternalStore(
+    subscribeInconsistencyPreference,
+    readInconsistencyLevel,
+    () => 0 as InconsistentLevelSetting,
+  );
   const initialSeedRef = useRef<number | null>(null);
   const initialSeedUsedRef = useRef(false);
   const menuRef = useRef<HTMLElement>(null);
@@ -102,6 +120,14 @@ export default function Main() {
 
   const updateThemesEnabled = useCallback((enabled: boolean) => {
     writeThemesEnabled(enabled);
+  }, []);
+
+  const updateInconsistencyEnabled = useCallback((enabled: boolean) => {
+    writeInconsistencyEnabled(enabled);
+  }, []);
+
+  const updateInconsistencyLevel = useCallback((level: InconsistentLevelSetting) => {
+    writeInconsistencyLevel(level);
   }, []);
 
   const toggleThemesEnabled = useCallback(() => {
@@ -183,6 +209,10 @@ export default function Main() {
       if (themesEnabled) {
         params.set('themes', '1');
       }
+      params.set(
+        'inconsistentLevel',
+        String(inconsistencyEnabled ? inconsistencyLevel : 0),
+      );
       const res: Response = await fetch(`/generate?${params.toString()}`);
       if (res.status === 429) {
         toast.error('Vous êtes trop gourmand ! veuillez reessayer plus tard');
@@ -209,7 +239,7 @@ export default function Main() {
     } finally {
       setIsLoading(false);
     }
-  }, [createSeed, isLoading, themesEnabled, updateSeedUrl]);
+  }, [createSeed, inconsistencyEnabled, inconsistencyLevel, isLoading, themesEnabled, updateSeedUrl]);
 
   return (
     <div
@@ -222,6 +252,10 @@ export default function Main() {
         menu={menu}
         themesEnabled={themesEnabled}
         onThemesEnabledChange={updateThemesEnabled}
+        inconsistencyEnabled={inconsistencyEnabled}
+        inconsistencyLevel={inconsistencyEnabled ? inconsistencyLevel : 0}
+        onInconsistencyEnabledChange={updateInconsistencyEnabled}
+        onInconsistencyLevelChange={updateInconsistencyLevel}
         style={menuPaletteStyle}
       />
       <Navigation
