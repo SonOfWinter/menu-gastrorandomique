@@ -20,6 +20,22 @@ import {
 import { DEFAULT_THEME_PALETTE } from '@/types/enums/theme';
 import type { ThemePalette } from '@/types/data/theme';
 import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
+import {
+  readInconsistentLevel,
+  subscribeInconsistentLevel,
+  writeInconsistentLevel,
+} from '@/lib/client/inconsistent-level-preference';
+import {
+  MIN_INCONSISTENT_LEVEL,
+  parseInconsistentLevel,
+  type InconsistentLevel,
+} from '@/types/inconsistent-level';
+
+type SharedMenuSettings = {
+  seed: number;
+  inconsistentLevel: InconsistentLevel;
+  themesEnabled?: boolean;
+};
 
 export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
@@ -76,8 +92,12 @@ export default function Main() {
     readThemesEnabled,
     () => false,
   );
-  const initialSeedRef = useRef<number | null>(null);
-  const initialSeedUsedRef = useRef(false);
+  const inconsistentLevel = React.useSyncExternalStore<InconsistentLevel>(
+    subscribeInconsistentLevel,
+    readInconsistentLevel,
+    () => MIN_INCONSISTENT_LEVEL,
+  );
+  const sharedMenuRef = useRef<SharedMenuSettings | null>(null);
   const menuRef = useRef<HTMLElement>(null);
 
   const createSeed = useMemo(
@@ -85,18 +105,17 @@ export default function Main() {
     [],
   );
 
-  const updateSeedUrl = useCallback((nextSeed: number) => {
-    const url = new URL(window.location.href);
-    url.searchParams.set('seed', String(nextSeed));
-    window.history.replaceState(null, '', url.toString());
-  }, []);
-
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const seedParam = params.get('seed');
     const parsedSeed = seedParam ? Number.parseInt(seedParam, 10) : NaN;
     if (Number.isFinite(parsedSeed)) {
-      initialSeedRef.current = parsedSeed;
+      const themes = params.get('themes');
+      sharedMenuRef.current = {
+        seed: parsedSeed,
+        inconsistentLevel: parseInconsistentLevel(params.get('inconsistentLevel')) ?? MIN_INCONSISTENT_LEVEL,
+        themesEnabled: themes === '1' ? true : themes === '0' ? false : undefined,
+      };
     }
   }, []);
 
@@ -167,22 +186,15 @@ export default function Main() {
     }
     setIsLoading(true);
     setPosition('pending');
-    // wait end of animation
+    const sharedMenu = sharedMenuRef.current;
+    const params = new URLSearchParams({
+      seed: String(sharedMenu?.seed ?? createSeed()),
+      inconsistentLevel: String(sharedMenu?.inconsistentLevel ?? inconsistentLevel),
+      themes: (sharedMenu?.themesEnabled ?? themesEnabled) ? '1' : '0',
+    });
+    // Wait for the dice animation.
     await sleep(500);
-    const nextSeed = (() => {
-      if (!initialSeedUsedRef.current && initialSeedRef.current !== null) {
-        initialSeedUsedRef.current = true;
-        return initialSeedRef.current;
-      }
-      return createSeed();
-    })();
     try {
-      const params = new URLSearchParams({
-        seed: String(nextSeed),
-      });
-      if (themesEnabled) {
-        params.set('themes', '1');
-      }
       const res: Response = await fetch(`/generate?${params.toString()}`);
       if (res.status === 429) {
         toast.error('Vous êtes trop gourmand ! veuillez reessayer plus tard');
@@ -201,7 +213,12 @@ export default function Main() {
       }
       menuRef?.current?.scrollTo(0, 0);
       setMenu(newMenu.menu);
-      updateSeedUrl(nextSeed);
+      const url = new URL(window.location.href);
+      for (const [key, value] of params) {
+        url.searchParams.set(key, value);
+      }
+      window.history.replaceState(null, '', url.toString());
+      sharedMenuRef.current = null;
     } catch (error) {
       setPosition('main');
       console.error('Erreur lors de la generation du menu:', error);
@@ -209,7 +226,7 @@ export default function Main() {
     } finally {
       setIsLoading(false);
     }
-  }, [createSeed, isLoading, themesEnabled, updateSeedUrl]);
+  }, [createSeed, inconsistentLevel, isLoading, themesEnabled]);
 
   return (
     <div
@@ -222,6 +239,8 @@ export default function Main() {
         menu={menu}
         themesEnabled={themesEnabled}
         onThemesEnabledChange={updateThemesEnabled}
+        inconsistentLevel={inconsistentLevel}
+        onInconsistentLevelChange={writeInconsistentLevel}
         style={menuPaletteStyle}
       />
       <Navigation

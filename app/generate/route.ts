@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server';
 import generateMenu from '@/lib/generate-menu';
 import { DisplayMenu } from '@/types/display-menu';
 import { MenuResponse } from '@/types/menu-response';
+import { parseInconsistentLevel } from '@/types/inconsistent-level';
 import { defaultMenuConfig } from '@/lib/menu/menu-config';
 import { logSecurityEvent } from '@/lib/security/audit-log';
 import { rateLimitConfig } from '@/lib/env';
@@ -51,9 +52,11 @@ export async function GET(request: NextRequest):Promise<Response> {
   const parsedSeed = seedParam ? Number.parseInt(seedParam, 10) : NaN;
   const seed = Number.isFinite(parsedSeed) ? parsedSeed : undefined;
   const themesEnabled = request.nextUrl.searchParams.get('themes') === '1';
+  const inconsistentLevel = parseInconsistentLevel(request.nextUrl.searchParams.get('inconsistentLevel'))
+    ?? defaultMenuConfig.inconsistentLevel;
   const menu:DisplayMenu = generateMenu(
     defaultMenuConfig.dishCount,
-    defaultMenuConfig.inconsistentLevel,
+    inconsistentLevel,
     defaultMenuConfig.priceRange,
     seed,
     themesEnabled,
