@@ -39,6 +39,8 @@ describe('components/menu-container.tsx', () => {
         variant="main"
         menu={null}
         themesEnabled={false}
+        inconsistentLevel={0}
+        onInconsistentLevelChange={vi.fn()}
         onThemesEnabledChange={vi.fn()}
       />,
     );
@@ -53,6 +55,8 @@ describe('components/menu-container.tsx', () => {
       <MenuContainer
         variant="right"
         themesEnabled={false}
+        inconsistentLevel={0}
+        onInconsistentLevelChange={vi.fn()}
         onThemesEnabledChange={vi.fn()}
         menu={{
           title: 'Menu Test',
@@ -87,6 +91,8 @@ describe('components/menu-container.tsx', () => {
         variant="info"
         menu={null}
         themesEnabled={false}
+        inconsistentLevel={0}
+        onInconsistentLevelChange={vi.fn()}
         onThemesEnabledChange={onThemesEnabledChange}
       />,
     );
@@ -102,6 +108,8 @@ describe('components/menu-container.tsx', () => {
         variant="info"
         menu={null}
         themesEnabled
+        inconsistentLevel={0}
+        onInconsistentLevelChange={vi.fn()}
         onThemesEnabledChange={onThemesEnabledChange}
       />,
     );

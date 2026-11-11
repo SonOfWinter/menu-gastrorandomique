@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { DisplayMenu } from '@/types/display-menu';
 import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
+import type { InconsistentLevel } from '@/types/inconsistent-level';
 import InfoPanel from '@/components/info-panel';
 import { Bebas_Neue } from 'next/font/google';
 import { toast } from 'sonner';
@@ -44,6 +45,8 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
   menu: DisplayMenu | null,
   themesEnabled: boolean,
   onThemesEnabledChange: (enabled: boolean) => void,
+  inconsistentLevel: InconsistentLevel,
+  onInconsistentLevelChange: (level: InconsistentLevel) => void,
 }
   & {}>(function MenuContainer({
   className,
@@ -51,6 +54,8 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
   menu,
   themesEnabled,
   onThemesEnabledChange,
+  inconsistentLevel,
+  onInconsistentLevelChange,
   ...props
 }, ref) {
   const copyShareUrl = () => {
@@ -93,6 +98,8 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
             <InfoPanel
               themesEnabled={themesEnabled}
               onThemesEnabledChange={onThemesEnabledChange}
+              inconsistentLevel={inconsistentLevel}
+              onInconsistentLevelChange={onInconsistentLevelChange}
             />
           )
           : null}

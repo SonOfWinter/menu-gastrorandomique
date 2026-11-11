@@ -52,6 +52,13 @@ describe('lib/generate-menu.ts', () => {
     expect(first.theme.palette.primary).toMatch(/^#[0-9A-F]{6}$/);
   });
 
+  it('reproduces the entire menu at a nonzero absurdity level with seed zero', () => {
+    const first = generateMenu(undefined, 10, undefined, 0, true);
+
+    expect(generateMenu(undefined, 10, undefined, 0, true)).toEqual(first);
+    expect(generateMenu(undefined, 0, undefined, 0, true)).not.toEqual(first);
+  });
+
   it('keeps the display menu format with a theme', () => {
     const themedMenu = generateMenu(undefined, undefined, undefined, 0, true);
 
