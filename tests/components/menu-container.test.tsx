@@ -80,9 +80,9 @@ describe('components/menu-container.tsx', () => {
     });
   });
 
-  it('renders and updates the experimental theme setting', () => {
+  it('shows both theme button states and requests the opposite setting on click', () => {
     const onThemesEnabledChange = vi.fn();
-    render(
+    const { rerender } = render(
       <MenuContainer
         variant="info"
         menu={null}
@@ -91,13 +91,24 @@ describe('components/menu-container.tsx', () => {
       />,
     );
 
-    const themeSwitch = screen.getByRole('switch', {
-      name: 'Activer les thèmes',
-    });
-    expect(themeSwitch).not.toBeChecked();
+    const themeButton = screen.getByRole('button', { name: 'Thèmes', pressed: false });
+    expect(screen.getByText('Thèmes : désactivé')).toBeVisible();
 
-    fireEvent.click(themeSwitch);
+    fireEvent.click(themeButton);
     expect(onThemesEnabledChange).toHaveBeenCalledWith(true);
+
+    rerender(
+      <MenuContainer
+        variant="info"
+        menu={null}
+        themesEnabled
+        onThemesEnabledChange={onThemesEnabledChange}
+      />,
+    );
+
+    expect(screen.getByText('Thèmes : activé')).toBeVisible();
+    fireEvent.click(screen.getByRole('button', { name: 'Thèmes', pressed: true }));
+    expect(onThemesEnabledChange).toHaveBeenLastCalledWith(false);
     expect(screen.getByText('T')).toBeInTheDocument();
     expect(screen.getByText('Activer ou désactiver les thèmes')).toBeInTheDocument();
   });
