@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
 import Navigation from '@/components/navigation';
 import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
 
@@ -13,6 +13,7 @@ vi.mock('@hugeicons/react', () => ({
 
 vi.mock('@hugeicons/core-free-icons', () => ({
   Cancel01Icon: {},
+  Tag01Icon: {},
 }));
 
 describe('components/navigation.tsx', () => {
@@ -96,5 +97,56 @@ describe('components/navigation.tsx', () => {
     expect(closeButton).toBeTruthy();
     fireEvent.click(closeButton as Element);
     expect(setPosition).toHaveBeenCalledWith('main');
+  });
+
+  it('shows the theme in both result views and clears it between draws', () => {
+    const setPosition = vi.fn();
+    const { getByRole, queryByRole, queryByText, rerender } = render(
+      <Navigation variant="left" setPosition={setPosition} themeName="Bretagne" />,
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Thème · Bretagne' }));
+    rerender(<Navigation variant="pending" setPosition={setPosition} themeName="Bretagne" />);
+    expect(queryByRole('button', { name: /Thème/ })).toBeNull();
+    expect(queryByText('Thème · Bretagne')).toBeNull();
+
+    rerender(<Navigation variant="right" setPosition={setPosition} themeName="Provence" />);
+    expect(getByRole('button', { name: 'Thème · Provence' })).toHaveAttribute('aria-expanded', 'false');
+    expect(queryByRole('button', { name: 'Thème · Bretagne' })).toBeNull();
+
+    rerender(<Navigation variant="right" setPosition={setPosition} />);
+    expect(queryByRole('button', { name: /Thème/ })).toBeNull();
+  });
+
+  it('reveals the theme on focus and dismisses it with Escape or an outside press', () => {
+    const { getByRole, getByText, queryByText } = render(
+      <Navigation variant="right" setPosition={vi.fn()} themeName="Bretagne" />,
+    );
+    const indicator = getByRole('button', { name: 'Thème · Bretagne' });
+
+    act(() => indicator.focus());
+    expect(getByText('Thème · Bretagne')).toBeVisible();
+    fireEvent.keyDown(indicator, { key: 'Escape' });
+    expect(queryByText('Thème · Bretagne')).toBeNull();
+    expect(indicator).toHaveFocus();
+
+    fireEvent.click(indicator);
+    expect(getByText('Thème · Bretagne')).toBeVisible();
+    fireEvent.pointerDown(document.body);
+    expect(queryByText('Thème · Bretagne')).toBeNull();
+  });
+
+  it.each([
+    ['left', 'md:pr-6'],
+    ['right', 'md:pl-6'],
+  ] as const)('adds space toward the menu in the %s view', (variant, desktopPadding) => {
+    const { getByRole, getByText } = render(
+      <Navigation variant={variant} setPosition={vi.fn()} themeName="Bretagne" />,
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Thème · Bretagne' }));
+    expect(getByText('Thème · Bretagne').parentElement).toHaveClass(
+      desktopPadding, '-right-1', 'pb-5', 'md:pb-0',
+    );
   });
 });

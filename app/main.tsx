@@ -227,6 +227,7 @@ export default function Main() {
       <Navigation
         variant={position}
         setPosition={setPosition}
+        themeName={menu?.theme.nom === 'Sans thème' ? undefined : menu?.theme.nom}
       />
       <DiceButton
         setTransition={getMenu}

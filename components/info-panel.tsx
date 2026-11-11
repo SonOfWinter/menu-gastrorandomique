@@ -2,8 +2,10 @@ import React from 'react';
 import { Bebas_Neue } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Kbd } from '@/components/ui/kbd';
-import { Switch } from '@/components/ui/switch';
+import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
+import { Tag01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -24,6 +26,8 @@ export default function InfoPanel({
   themesEnabled: boolean;
   onThemesEnabledChange: (enabled: boolean) => void;
 }) {
+  const themeIconMask = React.useId();
+
   return (
     <div className="relative z-50 flex flex-col gap-6 text-primary-foreground">
       <div className="flex flex-col gap-2">
@@ -31,17 +35,32 @@ export default function InfoPanel({
           Paramètres
         </h2>
         <div className="flex items-center justify-start gap-4">
-          <Switch
+          <Button
             id="themes-enabled"
-            checked={themesEnabled}
-            onCheckedChange={onThemesEnabledChange}
-            aria-label="Activer les thèmes"
-          />
+            type="button"
+            size="icon-lg"
+            className="relative overflow-hidden rounded-full border-2 border-white bg-transparent text-white hover:bg-transparent focus-visible:border-white focus-visible:ring-white/70"
+            aria-label="Thèmes"
+            aria-pressed={themesEnabled}
+            onClick={() => onThemesEnabledChange(!themesEnabled)}
+          >
+            {themesEnabled ? (
+              <svg aria-hidden="true" viewBox="0 0 36 36" className="absolute inset-0 size-full">
+                <mask id={themeIconMask}>
+                  <rect width="36" height="36" fill="white" />
+                  <HugeiconsIcon icon={Tag01Icon} x={6} y={6} color="black" />
+                </mask>
+                <rect width="36" height="36" fill="white" mask={`url(#${themeIconMask})`} />
+              </svg>
+            ) : (
+              <HugeiconsIcon icon={Tag01Icon} aria-hidden="true" />
+            )}
+          </Button>
           <Label
             htmlFor="themes-enabled"
-            className="flex flex-col items-start gap-1 leading-normal"
+            className="cursor-pointer leading-normal"
           >
-            <span>Activer les thèmes</span>
+            Thèmes : {themesEnabled ? 'activé' : 'désactivé'}
           </Label>
         </div>
       </div>
