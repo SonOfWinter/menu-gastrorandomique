@@ -100,11 +100,76 @@ describe('app/main.tsx', () => {
     expect(toast.success).toHaveBeenCalledWith('Thèmes désactivés');
   });
 
+  it('opens settings from home or with P and returns only with the close button', () => {
+    render(<Main />);
+    const settingsButton = () => screen.getByRole('button', { name: 'Paramètres' });
+
+    const informationButton = screen.getByRole('button', { name: 'Informations' });
+    expect(settingsButton().nextElementSibling).toBe(informationButton);
+    expect(settingsButton().parentElement).toHaveClass('flex');
+    expect(settingsButton().parentElement).not.toHaveClass('md:flex-col');
+
+    fireEvent.click(settingsButton());
+    expect(screen.getByRole('heading', { name: 'Paramètres' })).toHaveFocus();
+    fireEvent.click(screen.getByRole('button', { name: 'Fermer les paramètres' }));
+    expect(settingsButton()).toHaveFocus();
+
+    pressKey('i');
+    expect(screen.getByRole('link', { name: 'GitHub' })).toBeInTheDocument();
+    expect(screen.getByText('Voir la page paramètres')).toBeInTheDocument();
+    expect(screen.queryByRole('slider')).toBeNull();
+
+    pressKey('P');
+    expect(getSlider()).toBeInTheDocument();
+    pressKey('p');
+    expect(getSlider()).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Fermer les paramètres' }));
+    expect(screen.getByRole('heading', { name: 'Informations' })).toHaveFocus();
+  });
+
+  it('returns to the same menu side and scroll position from settings', async () => {
+    const fetchMenu = vi.fn(async () => menuResponse());
+    vi.stubGlobal('fetch', fetchMenu);
+    render(<Main />);
+    const settingsButton = () => screen.getByRole('button', { name: 'Paramètres' });
+
+    for (const sideClass of [
+      'md:translate-x-[calc(100%-60px)]',
+      'md:-translate-x-[calc(100%-60px)]',
+    ]) {
+      pressKey('r');
+      pressKey('p');
+      expect(screen.queryByRole('heading', { name: 'Paramètres' })).toBeNull();
+      expect(screen.queryByRole('button', { name: 'Paramètres' })).toBeNull();
+
+      const gear = await screen.findByRole('button', { name: 'Paramètres' });
+      const title = screen.getByRole('heading', { name: 'Menu partagé' });
+      const menuSection = title.closest('section')!;
+      const navSection = gear.closest('section');
+      expect(navSection).toHaveClass(sideClass);
+      menuSection.scrollTop = 175;
+      const menuUrl = window.location.href;
+
+      fireEvent.click(settingsButton());
+      expect(screen.queryByRole('heading', { name: 'Menu partagé' })).toBeNull();
+      expect(menuSection.scrollTop).toBe(0);
+      fireEvent.click(screen.getByRole('button', { name: 'Fermer les paramètres' }));
+
+      expect(screen.getByRole('heading', { name: 'Menu partagé' })).toBeInTheDocument();
+      expect(navSection).toHaveClass(sideClass);
+      expect(menuSection.scrollTop).toBe(175);
+      expect(settingsButton()).toHaveFocus();
+      expect(window.location.href).toBe(menuUrl);
+    }
+
+    expect(fetchMenu).toHaveBeenCalledTimes(2);
+  });
+
   it('places the slider after themes and remembers the value on remount without rolling', () => {
     const fetchMenu = vi.fn();
     vi.stubGlobal('fetch', fetchMenu);
     const { unmount } = render(<Main />);
-    pressKey('i');
+    pressKey('p');
 
     const slider = getSlider();
     const themeButton = screen.getByRole('button', { name: 'Thèmes' });
@@ -129,7 +194,7 @@ describe('app/main.tsx', () => {
 
     unmount();
     render(<Main />);
-    pressKey('i');
+    pressKey('p');
     expect(getSlider()).toHaveValue('17');
   });
 
@@ -141,7 +206,7 @@ describe('app/main.tsx', () => {
       .mockImplementation(async () => menuResponse());
     vi.stubGlobal('fetch', fetchMenu);
     render(<Main />);
-    pressKey('i');
+    pressKey('p');
     fireEvent.change(getSlider(), { target: { value: '9' } });
 
     pressKey('r');
@@ -155,7 +220,7 @@ describe('app/main.tsx', () => {
       ['/generate?seed=0&inconsistentLevel=20&themes=0'],
     ]);
 
-    pressKey('i');
+    pressKey('p');
     expect(getSlider()).toHaveValue('9');
     expect(screen.getByRole('button', { name: 'Thèmes', pressed: true })).toBeInTheDocument();
     fireEvent.change(getSlider(), { target: { value: '10' } });
@@ -180,7 +245,7 @@ describe('app/main.tsx', () => {
     const fetchMenu = vi.fn(async () => menuResponse());
     vi.stubGlobal('fetch', fetchMenu);
     render(<Main />);
-    pressKey('i');
+    pressKey('p');
     fireEvent.change(getSlider(), { target: { value: '7' } });
 
     pressKey('r');

@@ -21,6 +21,7 @@ const diceButtonVariants = cva(
       variant: {
         'main': 'rumble-hover',
         'info': 'hidden',
+        'settings': 'hidden',
         'right': 'rumble-hover translate-y-[44dvh] md:translate-y-0 md:-translate-x-[44vw] lg:-translate-x-[46vw] xl:-translate-x-[47vw]',
         'left': 'rumble-hover translate-y-[44dvh] md:translate-y-0 md:translate-x-[44vw] lg:translate-x-[46vw] xl:translate-x-[47vw]',
         'pending': 'cursor-progress',
@@ -53,7 +54,7 @@ export default function DiceButton({
     if (variant === 'left') {
       setTransition('left-to-right');
     }
-    if (variant === 'right' || variant === 'main' || variant === 'info') {
+    if (variant === 'right' || variant === 'main' || variant === 'info' || variant === 'settings') {
       setTransition('right-to-left');
     }
   }, [isLoading, setTransition, variant]);

@@ -88,7 +88,7 @@ describe('components/menu-container.tsx', () => {
     const onThemesEnabledChange = vi.fn();
     const { rerender } = render(
       <MenuContainer
-        variant="info"
+        variant="settings"
         menu={null}
         themesEnabled={false}
         inconsistentLevel={0}
@@ -105,7 +105,7 @@ describe('components/menu-container.tsx', () => {
 
     rerender(
       <MenuContainer
-        variant="info"
+        variant="settings"
         menu={null}
         themesEnabled
         inconsistentLevel={0}
@@ -117,7 +117,5 @@ describe('components/menu-container.tsx', () => {
     expect(screen.getByText('Thèmes : activé')).toBeVisible();
     fireEvent.click(screen.getByRole('button', { name: 'Thèmes', pressed: true }));
     expect(onThemesEnabledChange).toHaveBeenLastCalledWith(false);
-    expect(screen.getByText('T')).toBeInTheDocument();
-    expect(screen.getByText('Activer ou désactiver les thèmes')).toBeInTheDocument();
   });
 });
