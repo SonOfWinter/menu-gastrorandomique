@@ -4,6 +4,7 @@ import React, {
   useMemo,
   useRef,
   useEffect,
+  useLayoutEffect,
 } from 'react';
 import type { CSSProperties } from 'react';
 import Navigation from '@/components/navigation';
@@ -37,7 +38,7 @@ type SharedMenuSettings = {
   themesEnabled?: boolean;
 };
 
-export type Position = 'main' | 'right' | 'left' | 'info' | 'pending';
+export type Position = 'main' | 'right' | 'left' | 'info' | 'settings' | 'pending';
 export type Transition = 'none' | 'right-to-left' | 'left-to-right';
 
 const NAVIGATION_TRANSITION_DURATION_MS = 500;
@@ -99,6 +100,44 @@ export default function Main() {
   );
   const sharedMenuRef = useRef<SharedMenuSettings | null>(null);
   const menuRef = useRef<HTMLElement>(null);
+  const settingsButtonRef = useRef<HTMLButtonElement>(null);
+  const settingsOrigin = useRef<{ position: Position; scrollTop: number } | null>(null);
+  const settingsReturn = useRef<{ scrollTop: number } | null>(null);
+
+  const toggleSettings = useCallback(() => {
+    if (isLoading || position === 'pending') return;
+
+    if (position === 'settings') {
+      const origin = settingsOrigin.current;
+      if (origin) {
+        settingsReturn.current = { scrollTop: origin.scrollTop };
+        setPosition(origin.position);
+      }
+      return;
+    }
+
+    settingsOrigin.current = { position, scrollTop: menuRef.current?.scrollTop ?? 0 };
+    setPosition('settings');
+  }, [isLoading, position]);
+
+  useKeyboardShortcut('p', toggleSettings, {
+    enabled: !isLoading && position !== 'pending' && position !== 'settings',
+  });
+
+  useLayoutEffect(() => {
+    const container = menuRef.current;
+    if (!container) return;
+
+    if (position === 'settings') {
+      container.scrollTop = 0;
+      container.querySelector('h1')?.focus({ preventScroll: true });
+    } else if (settingsReturn.current) {
+      container.scrollTop = settingsReturn.current.scrollTop;
+      settingsReturn.current = null;
+      const focusTarget = settingsButtonRef.current ?? container.querySelector('h1');
+      focusTarget?.focus({ preventScroll: true });
+    }
+  }, [position]);
 
   const createSeed = useMemo(
     () => () => Math.floor(Math.random() * 1_000_000_000),
@@ -151,11 +190,7 @@ export default function Main() {
   useEffect(() => applyThemePaletteStyle(themePaletteStyle), [themePaletteStyle]);
 
   useEffect(() => {
-    if (position === 'main' || position === 'info') {
-      return;
-    }
-
-    if (position === 'pending') {
+    if (position !== 'left' && position !== 'right') {
       return;
     }
 
@@ -168,9 +203,9 @@ export default function Main() {
     };
   }, [menu?.theme.palette, position]);
 
-  const menuPalette = position === 'main' || position === 'info'
-    ? DEFAULT_THEME_PALETTE
-    : delayedMenuPalette;
+  const menuPalette = position === 'left' || position === 'right' || position === 'pending'
+    ? delayedMenuPalette
+    : DEFAULT_THEME_PALETTE;
 
   const menuPaletteStyle = useMemo(
     () => getThemePaletteStyle(menuPalette),
@@ -246,6 +281,8 @@ export default function Main() {
       <Navigation
         variant={position}
         setPosition={setPosition}
+        onToggleSettings={toggleSettings}
+        settingsButtonRef={settingsButtonRef}
         themeName={menu?.theme.nom === 'Sans thème' ? undefined : menu?.theme.nom}
       />
       <DiceButton

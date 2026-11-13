@@ -10,6 +10,7 @@ import MenuTitle from '@/components/menu/menu-title';
 import MenuSection from '@/components/menu/menu-section';
 import type { InconsistentLevel } from '@/types/inconsistent-level';
 import InfoPanel from '@/components/info-panel';
+import SettingsPanel from '@/components/settings-panel';
 import { Bebas_Neue } from 'next/font/google';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -22,6 +23,7 @@ const menuContainerVariants = cva(
       variant: {
         'main': 'opacity-100',
         'info': 'opacity-100',
+        'settings': 'opacity-100',
         'right': 'opacity-100',
         'left': 'opacity-100',
         'pending': '',
@@ -78,32 +80,31 @@ const MenuContainer = React.forwardRef<HTMLElement, React.ComponentProps<'sectio
       {...props}
     >
       <div className="flex flex-col justify-start m-auto w-full md:max-w-[50%] gap-4 md:w-3/5 lg:w-3/4">
-        {variant === 'main' || variant === 'info'
-          ? (
+        {(variant === 'main' || variant === 'info' || variant === 'settings') && (
+          <div className="relative z-50 flex flex-col gap-4 text-primary-foreground">
             <h1
+              tabIndex={-1}
               className={cn(
                 bebasNeue.className,
-                'relative z-50 text-5xl md:text-[4rem] leading-16 text-primary-foreground text-center mt-10',
+                'text-5xl md:text-[4rem] leading-16 text-center mt-10',
               )}
             >
-              {variant === 'main'
-                ? <>Menu<br/>Gastrorandomique</>
-                : "Informations"
-              }
+              {variant === 'main' && <>Menu<br/>Gastrorandomique</>}
+              {variant === 'info' && 'Informations'}
+              {variant === 'settings' && 'Paramètres'}
             </h1>
-          )
-          : null}
-        {variant === 'info'
-          ? (
-            <InfoPanel
-              themesEnabled={themesEnabled}
-              onThemesEnabledChange={onThemesEnabledChange}
-              inconsistentLevel={inconsistentLevel}
-              onInconsistentLevelChange={onInconsistentLevelChange}
-            />
-          )
-          : null}
-        {menu !== null && variant !== 'info'
+            {variant === 'info' && <InfoPanel />}
+            {variant === 'settings' && (
+              <SettingsPanel
+                themesEnabled={themesEnabled}
+                onThemesEnabledChange={onThemesEnabledChange}
+                inconsistentLevel={inconsistentLevel}
+                onInconsistentLevelChange={onInconsistentLevelChange}
+              />
+            )}
+          </div>
+        )}
+        {menu !== null && variant !== 'info' && variant !== 'settings'
           ? <>
             <div className="flex flex-col flex-nowrap gap-4">
               <MenuTitle menu={menu} />

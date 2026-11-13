@@ -13,6 +13,7 @@ vi.mock('@hugeicons/react', () => ({
 
 vi.mock('@hugeicons/core-free-icons', () => ({
   Cancel01Icon: {},
+  Settings01Icon: {},
   Tag01Icon: {},
 }));
 
@@ -26,6 +27,7 @@ describe('components/navigation.tsx', () => {
     const setPosition = vi.fn();
     render(
       <Navigation
+        onToggleSettings={vi.fn()}
         variant="main"
         setPosition={setPosition}
       />,
@@ -41,6 +43,7 @@ describe('components/navigation.tsx', () => {
     const setPosition = vi.fn();
     const { getAllByRole, rerender } = render(
       <Navigation
+        onToggleSettings={vi.fn()}
         variant="left"
         setPosition={setPosition}
       />,
@@ -54,6 +57,7 @@ describe('components/navigation.tsx', () => {
 
     rerender(
       <Navigation
+        onToggleSettings={vi.fn()}
         variant="right"
         setPosition={setPosition}
       />,
@@ -70,6 +74,7 @@ describe('components/navigation.tsx', () => {
     const setPosition = vi.fn();
     const { getAllByRole } = render(
       <Navigation
+        onToggleSettings={vi.fn()}
         variant="main"
         setPosition={setPosition}
       />,
@@ -86,6 +91,7 @@ describe('components/navigation.tsx', () => {
     const setPosition = vi.fn();
     const { getAllByRole } = render(
       <Navigation
+        onToggleSettings={vi.fn()}
         variant="left"
         setPosition={setPosition}
       />,
@@ -102,25 +108,25 @@ describe('components/navigation.tsx', () => {
   it('shows the theme in both result views and clears it between draws', () => {
     const setPosition = vi.fn();
     const { getByRole, queryByRole, queryByText, rerender } = render(
-      <Navigation variant="left" setPosition={setPosition} themeName="Bretagne" />,
+      <Navigation onToggleSettings={vi.fn()} variant="left" setPosition={setPosition} themeName="Bretagne" />,
     );
 
     fireEvent.click(getByRole('button', { name: 'Thème · Bretagne' }));
-    rerender(<Navigation variant="pending" setPosition={setPosition} themeName="Bretagne" />);
+    rerender(<Navigation onToggleSettings={vi.fn()} variant="pending" setPosition={setPosition} themeName="Bretagne" />);
     expect(queryByRole('button', { name: /Thème/ })).toBeNull();
     expect(queryByText('Thème · Bretagne')).toBeNull();
 
-    rerender(<Navigation variant="right" setPosition={setPosition} themeName="Provence" />);
+    rerender(<Navigation onToggleSettings={vi.fn()} variant="right" setPosition={setPosition} themeName="Provence" />);
     expect(getByRole('button', { name: 'Thème · Provence' })).toHaveAttribute('aria-expanded', 'false');
     expect(queryByRole('button', { name: 'Thème · Bretagne' })).toBeNull();
 
-    rerender(<Navigation variant="right" setPosition={setPosition} />);
+    rerender(<Navigation onToggleSettings={vi.fn()} variant="right" setPosition={setPosition} />);
     expect(queryByRole('button', { name: /Thème/ })).toBeNull();
   });
 
   it('reveals the theme on focus and dismisses it with Escape or an outside press', () => {
     const { getByRole, getByText, queryByText } = render(
-      <Navigation variant="right" setPosition={vi.fn()} themeName="Bretagne" />,
+      <Navigation onToggleSettings={vi.fn()} variant="right" setPosition={vi.fn()} themeName="Bretagne" />,
     );
     const indicator = getByRole('button', { name: 'Thème · Bretagne' });
 
@@ -141,7 +147,7 @@ describe('components/navigation.tsx', () => {
     ['right', 'md:pl-6'],
   ] as const)('adds space toward the menu in the %s view', (variant, desktopPadding) => {
     const { getByRole, getByText } = render(
-      <Navigation variant={variant} setPosition={vi.fn()} themeName="Bretagne" />,
+      <Navigation onToggleSettings={vi.fn()} variant={variant} setPosition={vi.fn()} themeName="Bretagne" />,
     );
 
     fireEvent.click(getByRole('button', { name: 'Thème · Bretagne' }));

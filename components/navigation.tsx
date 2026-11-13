@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 import useKeyboardShortcut from '@/lib/client/use-keyboard-shortcut';
 import { Position } from '@/app/main';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Cancel01Icon, Tag01Icon } from '@hugeicons/core-free-icons';
+import { Cancel01Icon, Settings01Icon, Tag01Icon } from '@hugeicons/core-free-icons';
 
 function ThemeIndicator({ name, side }: { name: string; side: 'left' | 'right' }) {
   const [visibility, setVisibility] = React.useState<'closed' | 'preview' | 'pinned'>('closed');
@@ -97,6 +97,7 @@ const navigationVariants = cva(
       variant: {
         'main': 'w-full md:w-1/2',
         'info': 'w-full md:w-1/2',
+        'settings': 'w-full md:w-1/2',
         'right': 'items-start md:items-end w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:-translate-x-[calc(100%-60px)]',
         'left': 'items-start w-full translate-y-[calc(100%-60px)] md:translate-y-0 md:translate-x-[calc(100%-60px)]',
         'pending': 'w-full items-center',
@@ -112,6 +113,8 @@ export default function Navigation({
   className,
   variant = 'main',
   setPosition,
+  onToggleSettings,
+  settingsButtonRef,
   themeName,
   ...props
 }: React.ComponentProps<'section'>
@@ -119,65 +122,91 @@ export default function Navigation({
   & {
   variant: Position,
   setPosition: Dispatch<SetStateAction<Position>>;
+  onToggleSettings: () => void;
+  settingsButtonRef?: React.Ref<HTMLButtonElement>;
   themeName?: string;
 }
   & {}) {
   useKeyboardShortcut('m', () => setPosition('main'));
   useKeyboardShortcut('i', () => setPosition('info'));
 
+  const isMenu = variant === 'left' || variant === 'right';
+
   return (
     <section
       className={cn(navigationVariants({ variant }), className)}
       {...props}
     >
-      <Button
-        size="icon-lg"
-        variant="default"
-        type="button"
-        className={cn('hidden', { 'block': variant === 'left' || variant === 'right' })}
-        onClick={() => setPosition('main')}
-      >
-        <HugeiconsIcon
-          icon={Cancel01Icon}
-          size={32}
-          color="currentColor"
-          strokeWidth={1.5}
-          className="m-auto w-8 h-8"
-        />
-      </Button>
-      {themeName && (variant === 'left' || variant === 'right') && (
-        <ThemeIndicator key={themeName} name={themeName} side={variant} />
-      )}
-      <Button
-        size="icon"
-        variant="default"
-        type="button"
-        className={cn(
-          'text-xl border-primary-foreground border-2 absolute bottom-4 left-1/2 -translate-x-1/2',
-          {
-            'hidden': variant !== 'main' && variant !== 'info',
-          },
-        )}
-        onClick={() => {
-          if (variant === 'main') {
-            setPosition('info');
-          } else if (variant === 'info') {
-            setPosition('main');
-          }
-        }}
-        aria-label="Informations"
-      >
-        {variant === 'main'
-          ? 'i'
-          : <HugeiconsIcon
+      <div className={cn(
+        'flex gap-2',
+        isMenu ? 'md:flex-col' : 'absolute bottom-4 left-1/2 -translate-x-1/2',
+      )}>
+        <Button
+          size="icon-lg"
+          variant="default"
+          type="button"
+          className={isMenu ? 'block' : 'hidden'}
+          onClick={() => setPosition('main')}
+        >
+          <HugeiconsIcon
             icon={Cancel01Icon}
             size={32}
             color="currentColor"
             strokeWidth={1.5}
             className="m-auto w-8 h-8"
           />
-        }
-      </Button>
+        </Button>
+        {(variant === 'main' || isMenu) && (
+          <Button
+            ref={settingsButtonRef}
+            size={isMenu ? 'icon-lg' : 'icon'}
+            type="button"
+            className={cn(
+              variant === 'main' && 'border-2 border-primary-foreground',
+            )}
+            onClick={onToggleSettings}
+            aria-label="Paramètres"
+            aria-keyshortcuts="P"
+          >
+            <HugeiconsIcon icon={Settings01Icon} className="size-6" aria-hidden="true" />
+          </Button>
+        )}
+        <Button
+          size="icon"
+          variant="default"
+          type="button"
+          className={cn(
+            'text-xl border-primary-foreground border-2',
+            {
+              'hidden': variant !== 'main' && variant !== 'info' && variant !== 'settings',
+            },
+          )}
+          onClick={() => {
+            if (variant === 'main') {
+              setPosition('info');
+            } else if (variant === 'settings') {
+              onToggleSettings();
+            } else {
+              setPosition('main');
+            }
+          }}
+          aria-label={variant === 'settings' ? 'Fermer les paramètres' : 'Informations'}
+        >
+          {variant === 'main'
+            ? 'i'
+            : <HugeiconsIcon
+              icon={Cancel01Icon}
+              size={32}
+              color="currentColor"
+              strokeWidth={1.5}
+              className="m-auto w-8 h-8"
+            />
+          }
+        </Button>
+      </div>
+      {themeName && isMenu && (
+        <ThemeIndicator key={themeName} name={themeName} side={variant} />
+      )}
     </section>
   );
 }
